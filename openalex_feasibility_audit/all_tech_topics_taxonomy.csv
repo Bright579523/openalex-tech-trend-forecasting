@@ -1,0 +1,1026 @@
+topic_id,topic_url,display_name,field_id,field_name,subfield_id,subfield_name,domain_name,works_count,cited_by_count
+T11367,https://openalex.org/T11367,Particle accelerators and beam dynamics,22,Engineering,2202,Aerospace Engineering,Physical Sciences,3831267,584274
+T12188,https://openalex.org/T12188,"Architecture, Modernity, and Design",22,Engineering,2216,Architecture,Physical Sciences,979821,395602
+T13673,https://openalex.org/T13673,Library Science and Information,17,Computer Science,1710,Information Systems,Physical Sciences,419040,409284
+T13031,https://openalex.org/T13031,Civil and Structural Engineering Research,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,309126,139736
+T10370,https://openalex.org/T10370,Traffic and Road Safety,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,292791,1472349
+T10054,https://openalex.org/T10054,Parallel Computing and Optimization Techniques,17,Computer Science,1708,Hardware and Architecture,Physical Sciences,283243,2717690
+T11937,https://openalex.org/T11937,Research Data Management Practices,17,Computer Science,1710,Information Systems,Physical Sciences,276937,514478
+T10160,https://openalex.org/T10160,Seismic Performance and Analysis,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,264155,1647975
+T10360,https://openalex.org/T10360,Fluid Dynamics and Turbulent Flows,22,Engineering,2206,Computational Mechanics,Physical Sciences,261508,3580406
+T10121,https://openalex.org/T10121,Building Energy and Comfort Optimization,22,Engineering,2215,Building and Construction,Physical Sciences,251919,1858082
+T13681,https://openalex.org/T13681,Engineering and Information Technology,17,Computer Science,1712,Software,Physical Sciences,248335,121809
+T10396,https://openalex.org/T10396,Fatigue and fracture mechanics,22,Engineering,2211,Mechanics of Materials,Physical Sciences,240430,2210318
+T10033,https://openalex.org/T10033,Concrete and Cement Materials Research,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,239361,2963192
+T10126,https://openalex.org/T10126,"Logic, programming, and type systems",17,Computer Science,1702,Artificial Intelligence,Physical Sciences,233707,2355255
+T10018,https://openalex.org/T10018,Advancements in Battery Materials,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,226863,5986363
+T12201,https://openalex.org/T12201,Agricultural Engineering and Mechanization,22,Engineering,2210,Mechanical Engineering,Physical Sciences,226656,413978
+T10310,https://openalex.org/T10310,Corrosion Behavior and Inhibition,25,Materials Science,2505,Materials Chemistry,Physical Sciences,222431,2099136
+T10233,https://openalex.org/T10233,Geotechnical Engineering and Soil Mechanics,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,219583,1595937
+T10173,https://openalex.org/T10173,Computational Fluid Dynamics and Aerodynamics,22,Engineering,2206,Computational Mechanics,Physical Sciences,214773,2380991
+T10181,https://openalex.org/T10181,Natural Language Processing Techniques,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,213146,2207163
+T10036,https://openalex.org/T10036,Advanced Neural Network Applications,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,210235,4962884
+T13263,https://openalex.org/T13263,Building energy efficiency and sustainability,22,Engineering,2215,Building and Construction,Physical Sciences,209659,253176
+T10132,https://openalex.org/T10132,Advanced ceramic materials synthesis,25,Materials Science,2503,Ceramics and Composites,Physical Sciences,208144,2082784
+T10117,https://openalex.org/T10117,Advanced Combustion Engine Technologies,15,Chemical Engineering,1507,Fluid Flow and Transfer Processes,Physical Sciences,206803,2376862
+T10069,https://openalex.org/T10069,Antenna Design and Analysis,22,Engineering,2202,Aerospace Engineering,Physical Sciences,205853,1634273
+T13745,https://openalex.org/T13745,Media and Digital Communication,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,205173,545758
+T10430,https://openalex.org/T10430,Software Engineering Techniques and Practices,17,Computer Science,1710,Information Systems,Physical Sciences,203832,1442124
+T10211,https://openalex.org/T10211,Computational Drug Discovery Methods,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,203481,3571201
+T10030,https://openalex.org/T10030,Electrocatalysts for Energy Conversion,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,199448,6656967
+T10188,https://openalex.org/T10188,Advanced machining processes and optimization,22,Engineering,2210,Mechanical Engineering,Physical Sciences,199173,1616477
+T12216,https://openalex.org/T12216,Network Time Synchronization Technologies,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,198491,122161
+T10780,https://openalex.org/T10780,Reliability and Maintenance Optimization,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,195989,1123146
+T10078,https://openalex.org/T10078,Advanced Photocatalysis Techniques,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,189885,6127741
+T10479,https://openalex.org/T10479,Structural Behavior of Reinforced Concrete,22,Engineering,2215,Building and Construction,Physical Sciences,188993,1283214
+T10597,https://openalex.org/T10597,Nuclear reactor physics and engineering,22,Engineering,2202,Aerospace Engineering,Physical Sciences,184232,545235
+T10059,https://openalex.org/T10059,Bone Tissue Engineering Materials,22,Engineering,2204,Biomedical Engineering,Physical Sciences,183979,3603976
+T10138,https://openalex.org/T10138,Network Traffic and Congestion Control,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,181281,1449117
+T10028,https://openalex.org/T10028,Topic Modeling,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,176566,2015405
+T10052,https://openalex.org/T10052,Medical Image Segmentation Techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,176432,2809218
+T10533,https://openalex.org/T10533,Teaching and Learning Programming,17,Computer Science,1706,Computer Science Applications,Physical Sciences,176097,764883
+T10399,https://openalex.org/T10399,Hydrocarbon exploration and reservoir analysis,22,Engineering,2211,Mechanics of Materials,Physical Sciences,175495,1620250
+T10264,https://openalex.org/T10264,Asphalt Pavement Performance Evaluation,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,175184,1167650
+T13344,https://openalex.org/T13344,Industrial Automation and Control Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,173811,121398
+T10484,https://openalex.org/T10484,Wood Treatment and Properties,22,Engineering,2215,Building and Construction,Physical Sciences,173007,866911
+T10834,https://openalex.org/T10834,Welding Techniques and Residual Stresses,22,Engineering,2210,Mechanical Engineering,Physical Sciences,169413,763453
+T14423,https://openalex.org/T14423,Military Technology and Strategies,22,Engineering,2202,Aerospace Engineering,Physical Sciences,168451,77370
+T10270,https://openalex.org/T10270,Blockchain Technology Applications and Security,17,Computer Science,1710,Information Systems,Physical Sciences,168285,1515271
+T10278,https://openalex.org/T10278,Electric Motor Design and Analysis,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,167967,1116802
+T10101,https://openalex.org/T10101,Cloud Computing and Resource Management,17,Computer Science,1710,Information Systems,Physical Sciences,167826,1358967
+T10400,https://openalex.org/T10400,Network Security and Intrusion Detection,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,166625,1432106
+T11595,https://openalex.org/T11595,Textile materials and evaluations,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,165737,421230
+T10734,https://openalex.org/T10734,Information and Cyber Security,17,Computer Science,1710,Information Systems,Physical Sciences,165725,632700
+T10024,https://openalex.org/T10024,TiO2 Photocatalysis and Solar Cells,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,164570,4289636
+T11223,https://openalex.org/T11223,Maritime Ports and Logistics,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,164283,438797
+T10317,https://openalex.org/T10317,Advanced Database Systems and Queries,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,163866,1440026
+T14496,https://openalex.org/T14496,Educational Technology and E-Learning,17,Computer Science,1710,Information Systems,Physical Sciences,163491,279016
+T10219,https://openalex.org/T10219,Mechanical Behavior of Composites,22,Engineering,2211,Mechanics of Materials,Physical Sciences,163165,1813258
+T10481,https://openalex.org/T10481,Computer Graphics and Visualization Techniques,17,Computer Science,1704,Computer Graphics and Computer-Aided Design,Physical Sciences,162264,1531735
+T11429,https://openalex.org/T11429,Semiconductor Lasers and Optical Devices,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,162061,1057977
+T10323,https://openalex.org/T10323,Analog and Mixed-Signal Circuit Design,22,Engineering,2204,Biomedical Engineering,Physical Sciences,160179,1076375
+T11162,https://openalex.org/T11162,Enzyme Structure and Function,25,Materials Science,2505,Materials Chemistry,Physical Sciences,159366,2677770
+T10386,https://openalex.org/T10386,Microstructure and Mechanical Properties of Steels,22,Engineering,2210,Mechanical Engineering,Physical Sciences,159295,1143393
+T13923,https://openalex.org/T13923,Nuclear and radioactivity studies,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,158592,195397
+T10100,https://openalex.org/T10100,Metaheuristic Optimization Algorithms Research,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,158559,3160630
+T10389,https://openalex.org/T10389,Polymer crystallization and properties,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,158354,2326243
+T10842,https://openalex.org/T10842,Railway Engineering and Dynamics,22,Engineering,2210,Mechanical Engineering,Physical Sciences,157903,500565
+T10662,https://openalex.org/T10662,Ultrasonics and Acoustic Wave Propagation,22,Engineering,2211,Mechanics of Materials,Physical Sciences,156464,1142129
+T10107,https://openalex.org/T10107,Ferroelectric and Piezoelectric Materials,25,Materials Science,2505,Materials Chemistry,Physical Sciences,156274,2374860
+T10470,https://openalex.org/T10470,Usability and User Interface Design,17,Computer Science,1709,Human-Computer Interaction,Physical Sciences,155977,1117540
+T10175,https://openalex.org/T10175,Advanced DC-DC Converters,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,155781,1407049
+T11126,https://openalex.org/T11126,Metallurgical Processes and Thermodynamics,22,Engineering,2210,Mechanical Engineering,Physical Sciences,154224,746957
+T10063,https://openalex.org/T10063,Nanoparticle-Based Drug Delivery,25,Materials Science,2502,Biomaterials,Physical Sciences,154221,4512193
+T10201,https://openalex.org/T10201,Speech Recognition and Synthesis,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,150461,1459214
+T12799,https://openalex.org/T12799,Mobile and Web Applications,17,Computer Science,1710,Information Systems,Physical Sciences,150123,153472
+T10215,https://openalex.org/T10215,Semantic Web and Ontologies,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,147356,1164272
+T10262,https://openalex.org/T10262,Microwave Engineering and Waveguides,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,145836,1032102
+T10020,https://openalex.org/T10020,Quantum Information and Cryptography,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,145633,2590910
+T10192,https://openalex.org/T10192,Catalytic Processes in Materials Science,25,Materials Science,2505,Materials Chemistry,Physical Sciences,145508,3471481
+T11159,https://openalex.org/T11159,Manufacturing Process and Optimization,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,144705,440061
+T10339,https://openalex.org/T10339,Advanced Numerical Methods in Computational Mathematics,22,Engineering,2206,Computational Mechanics,Physical Sciences,144411,2157377
+T10284,https://openalex.org/T10284,Anaerobic Digestion and Biogas Production,22,Engineering,2215,Building and Construction,Physical Sciences,143731,2083665
+T10655,https://openalex.org/T10655,GNSS positioning and interference,22,Engineering,2202,Aerospace Engineering,Physical Sciences,143702,737687
+T10792,https://openalex.org/T10792,Matrix Theory and Algorithms,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,143375,1699316
+T10472,https://openalex.org/T10472,Semiconductor materials and devices,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,142787,1541536
+T10320,https://openalex.org/T10320,Neural Networks and Applications,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,142563,2851173
+T10713,https://openalex.org/T10713,Structural Load-Bearing Analysis,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,142178,887492
+T10672,https://openalex.org/T10672,Design Education and Practice,22,Engineering,2210,Mechanical Engineering,Physical Sciences,141840,656698
+T10212,https://openalex.org/T10212,Electrochemical sensors and biosensors,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,141188,3259276
+T10088,https://openalex.org/T10088,Thermochemical Biomass Conversion Processes,22,Engineering,2204,Biomedical Engineering,Physical Sciences,140647,2591993
+T10544,https://openalex.org/T10544,Glass properties and applications,25,Materials Science,2503,Ceramics and Composites,Physical Sciences,139935,1571314
+T11499,https://openalex.org/T11499,ICT Impact and Policies,22,Engineering,2214,Media Technology,Physical Sciences,139771,437861
+T14414,https://openalex.org/T14414,Artificial Intelligence in Education,17,Computer Science,1710,Information Systems,Physical Sciences,139023,512325
+T11813,https://openalex.org/T11813,Library Collection Development and Digital Resources,17,Computer Science,1710,Information Systems,Physical Sciences,138391,104747
+T12124,https://openalex.org/T12124,Engineering Education and Curriculum Development,22,Engineering,2214,Media Technology,Physical Sciences,138160,199584
+T10781,https://openalex.org/T10781,Plasma Diagnostics and Applications,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,136885,1105012
+T10306,https://openalex.org/T10306,Liquid Crystal Research Advancements,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,136604,1847806
+T10524,https://openalex.org/T10524,Traffic control and management,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,136166,1142513
+T10700,https://openalex.org/T10700,Metal Forming Simulation Techniques,22,Engineering,2210,Mechanical Engineering,Physical Sciences,135581,946905
+T10571,https://openalex.org/T10571,Robotic Mechanisms and Dynamics,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,135556,969113
+T10944,https://openalex.org/T10944,Turbomachinery Performance and Optimization,22,Engineering,2202,Aerospace Engineering,Physical Sciences,134950,689070
+T10125,https://openalex.org/T10125,Advanced Wireless Communication Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,133782,1308098
+T10220,https://openalex.org/T10220,Machine Fault Diagnosis Techniques,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,132989,1536656
+T10161,https://openalex.org/T10161,Rock Mechanics and Modeling,22,Engineering,2211,Mechanics of Materials,Physical Sciences,132850,1710413
+T12129,https://openalex.org/T12129,Global Energy Security and Policy,21,Energy,2100,General Energy,Physical Sciences,132422,303930
+T10097,https://openalex.org/T10097,Luminescence Properties of Advanced Materials,25,Materials Science,2505,Materials Chemistry,Physical Sciences,131432,2235721
+T11529,https://openalex.org/T11529,Refrigeration and Air Conditioning Technologies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,131432,509906
+T10969,https://openalex.org/T10969,Water resources management and optimization,22,Engineering,2212,Ocean Engineering,Physical Sciences,131012,847969
+T10939,https://openalex.org/T10939,Crystal Structures and Properties,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,128532,1029080
+T10573,https://openalex.org/T10573,Power Quality and Harmonics,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,127669,814299
+T10045,https://openalex.org/T10045,Organic Electronics and Photovoltaics,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,127233,3317288
+T10892,https://openalex.org/T10892,Drilling and Well Engineering,22,Engineering,2212,Ocean Engineering,Physical Sciences,127100,630861
+T10286,https://openalex.org/T10286,Information Retrieval and Search Behavior,17,Computer Science,1710,Information Systems,Physical Sciences,126480,1289531
+T10205,https://openalex.org/T10205,Advanced Fiber Optic Sensors,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,125933,1234767
+T11349,https://openalex.org/T11349,Music Technology and Sound Studies,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,124940,300600
+T10424,https://openalex.org/T10424,Electric Power System Optimization,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,124875,1208983
+T13527,https://openalex.org/T13527,Transportation Systems and Logistics,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,124160,81022
+T11375,https://openalex.org/T11375,Geotechnical Engineering and Soil Stabilization,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,123470,764262
+T10046,https://openalex.org/T10046,Stability and Control of Uncertain Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,123402,1916165
+T10689,https://openalex.org/T10689,Remote-Sensing Image Classification,22,Engineering,2214,Media Technology,Physical Sciences,122504,1860039
+T10203,https://openalex.org/T10203,Recommender Systems and Techniques,17,Computer Science,1710,Information Systems,Physical Sciences,122389,1512104
+T11006,https://openalex.org/T11006,BIM and Construction Integration,22,Engineering,2215,Building and Construction,Physical Sciences,122011,677086
+T10171,https://openalex.org/T10171,Biofuel production and bioconversion,22,Engineering,2204,Biomedical Engineering,Physical Sciences,121840,2214139
+T10232,https://openalex.org/T10232,Optical Network Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,121815,849741
+T10720,https://openalex.org/T10720,Complexity and Algorithms in Graphs,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,121105,1941971
+T10409,https://openalex.org/T10409,Fuel Cells and Related Materials,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,121102,2057019
+T10638,https://openalex.org/T10638,Optical measurement and interference techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,121031,862927
+T11010,https://openalex.org/T11010,"Logic, Reasoning, and Knowledge",17,Computer Science,1702,Artificial Intelligence,Physical Sciences,120997,1308402
+T10237,https://openalex.org/T10237,Cryptography and Data Security,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,120859,1839105
+T12940,https://openalex.org/T12940,Structural Engineering and Materials Analysis,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,120815,233385
+T10080,https://openalex.org/T10080,Energy Efficient Wireless Sensor Networks,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,120516,1448990
+T10331,https://openalex.org/T10331,Video Surveillance and Tracking Methods,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,119934,1496992
+T10511,https://openalex.org/T10511,High voltage insulation and dielectric phenomena,25,Materials Science,2505,Materials Chemistry,Physical Sciences,119434,722587
+T10402,https://openalex.org/T10402,Phase Equilibria and Thermodynamics,22,Engineering,2204,Biomedical Engineering,Physical Sciences,119315,2014151
+T10281,https://openalex.org/T10281,Advanced Battery Materials and Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,119060,3539362
+T14254,https://openalex.org/T14254,Digital Media and Visual Art,17,Computer Science,1704,Computer Graphics and Computer-Aided Design,Physical Sciences,118947,66500
+T10860,https://openalex.org/T10860,Speech and Audio Processing,17,Computer Science,1711,Signal Processing,Physical Sciences,118851,889093
+T10260,https://openalex.org/T10260,Software Engineering Research,17,Computer Science,1710,Information Systems,Physical Sciences,118548,1169361
+T13470,https://openalex.org/T13470,Surface Treatment and Coatings,22,Engineering,2210,Mechanical Engineering,Physical Sciences,116815,619926
+T10680,https://openalex.org/T10680,Wind Energy Research and Development,22,Engineering,2202,Aerospace Engineering,Physical Sciences,116289,909525
+T10998,https://openalex.org/T10998,Heat Transfer and Optimization,22,Engineering,2210,Mechanical Engineering,Physical Sciences,116217,964597
+T11062,https://openalex.org/T11062,Gear and Bearing Dynamics Analysis,22,Engineering,2210,Mechanical Engineering,Physical Sciences,115855,442720
+T10716,https://openalex.org/T10716,Soil and Unsaturated Flow,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,115584,1508126
+T10079,https://openalex.org/T10079,Nanoparticles: synthesis and applications,25,Materials Science,2505,Materials Chemistry,Physical Sciences,115221,3161176
+T13093,https://openalex.org/T13093,Electric Power Systems and Control,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,115133,101493
+T10299,https://openalex.org/T10299,Photonic and Optical Devices,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,114671,1325002
+T13856,https://openalex.org/T13856,Advanced Power Generation Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,114636,106246
+T11236,https://openalex.org/T11236,Control Systems and Identification,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,114229,1184985
+T11046,https://openalex.org/T11046,Geotechnical Engineering and Analysis,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,114072,624216
+T10305,https://openalex.org/T10305,Power System Optimization and Stability,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,114061,1091020
+T10083,https://openalex.org/T10083,Graphene research and applications,25,Materials Science,2505,Materials Chemistry,Physical Sciences,113820,3833710
+T12271,https://openalex.org/T12271,Renewable energy and sustainable power systems,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,112818,404899
+T11379,https://openalex.org/T11379,Rheology and Fluid Dynamics Studies,15,Chemical Engineering,1507,Fluid Flow and Transfer Processes,Physical Sciences,112330,1825533
+T10904,https://openalex.org/T10904,Embedded Systems Design Techniques,17,Computer Science,1708,Hardware and Architecture,Physical Sciences,112309,668616
+T10743,https://openalex.org/T10743,Software Testing and Debugging Techniques,17,Computer Science,1712,Software,Physical Sciences,112033,1008298
+T10624,https://openalex.org/T10624,Silicon and Solar Cell Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,111767,1170491
+T10615,https://openalex.org/T10615,Granular flow and fluidized beds,22,Engineering,2206,Computational Mechanics,Physical Sciences,111544,1360611
+T10905,https://openalex.org/T10905,Solar Thermal and Photovoltaic Systems,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,111190,1055704
+T11948,https://openalex.org/T11948,Machine Learning in Materials Science,25,Materials Science,2505,Materials Chemistry,Physical Sciences,110973,900796
+T11317,https://openalex.org/T11317,Fire dynamics and safety research,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,110782,438639
+T10763,https://openalex.org/T10763,Digital Transformation in Industry,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,110692,981389
+T10639,https://openalex.org/T10639,Advanced Software Engineering Methodologies,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,110414,859264
+T10204,https://openalex.org/T10204,Microstructure and mechanical properties,25,Materials Science,2505,Materials Chemistry,Physical Sciences,110175,2184371
+T10558,https://openalex.org/T10558,Advancements in Semiconductor Devices and Circuit Design,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,108571,1089876
+T10664,https://openalex.org/T10664,Sentiment Analysis and Opinion Mining,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,108521,1139033
+T11372,https://openalex.org/T11372,Hydraulic and Pneumatic Systems,22,Engineering,2210,Mechanical Engineering,Physical Sciences,108227,224626
+T11604,https://openalex.org/T11604,Ship Hydrodynamics and Maneuverability,22,Engineering,2212,Ocean Engineering,Physical Sciences,108079,459892
+T14516,https://openalex.org/T14516,English Language Learning and Teaching,17,Computer Science,1710,Information Systems,Physical Sciences,107763,258206
+T10799,https://openalex.org/T10799,Data Visualization and Analytics,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,107636,1017360
+T10805,https://openalex.org/T10805,Vehicle Dynamics and Control Systems,22,Engineering,2203,Automotive Engineering,Physical Sciences,107604,579949
+T10247,https://openalex.org/T10247,Perovskite Materials and Applications,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,107475,3605019
+T11138,https://openalex.org/T11138,Tribology and Lubrication Engineering,22,Engineering,2210,Mechanical Engineering,Physical Sciences,107146,706908
+T10369,https://openalex.org/T10369,Advanced MEMS and NEMS Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,107132,1034182
+T10460,https://openalex.org/T10460,Electronic Packaging and Soldering Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,107097,674833
+T11511,https://openalex.org/T11511,Dyeing and Modifying Textile Fibers,22,Engineering,2215,Building and Construction,Physical Sciences,106988,580072
+T10179,https://openalex.org/T10179,Supercapacitor Materials and Fabrication,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,106327,3841232
+T10592,https://openalex.org/T10592,Fusion materials and technologies,25,Materials Science,2505,Materials Chemistry,Physical Sciences,106310,1128637
+T10891,https://openalex.org/T10891,Radar Systems and Signal Processing,22,Engineering,2202,Aerospace Engineering,Physical Sciences,106005,764024
+T13236,https://openalex.org/T13236,Geotechnical and construction materials studies,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,105217,246559
+T10090,https://openalex.org/T10090,ZnO doping and properties,25,Materials Science,2505,Materials Chemistry,Physical Sciences,105131,2085986
+T10690,https://openalex.org/T10690,Vibration Control and Rheological Fluids,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,104707,878495
+T10131,https://openalex.org/T10131,Gold and Silver Nanoparticles Synthesis and Applications,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,104706,3002392
+T11382,https://openalex.org/T11382,Fluid Dynamics and Heat Transfer,22,Engineering,2206,Computational Mechanics,Physical Sciences,104011,1379527
+T13951,https://openalex.org/T13951,Fluid dynamics and aerodynamics studies,22,Engineering,2206,Computational Mechanics,Physical Sciences,103812,693299
+T12022,https://openalex.org/T12022,Hydraulic flow and structures,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,103809,357558
+T14430,https://openalex.org/T14430,Higher Education and Teaching Methods,17,Computer Science,1710,Information Systems,Physical Sciences,103768,9853
+T11091,https://openalex.org/T11091,Extraction and Separation Processes,22,Engineering,2210,Mechanical Engineering,Physical Sciences,103678,1135812
+T12863,https://openalex.org/T12863,Web and Library Services,17,Computer Science,1710,Information Systems,Physical Sciences,103623,120829
+T11517,https://openalex.org/T11517,Advanced optical system design,22,Engineering,2204,Biomedical Engineering,Physical Sciences,103368,389148
+T11082,https://openalex.org/T11082,Spacecraft Dynamics and Control,22,Engineering,2202,Aerospace Engineering,Physical Sciences,103298,653197
+T10661,https://openalex.org/T10661,biodegradable polymer synthesis and properties,25,Materials Science,2502,Biomaterials,Physical Sciences,102981,1988531
+T10663,https://openalex.org/T10663,Advanced Battery Technologies Research,22,Engineering,2203,Automotive Engineering,Physical Sciences,102916,1568481
+T14156,https://openalex.org/T14156,Engineering Applied Research,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,102401,125931
+T10783,https://openalex.org/T10783,Additive Manufacturing and 3D Printing Technologies,22,Engineering,2203,Automotive Engineering,Physical Sciences,102274,1250115
+T10553,https://openalex.org/T10553,Combustion and flame dynamics,22,Engineering,2206,Computational Mechanics,Physical Sciences,102268,1099164
+T10715,https://openalex.org/T10715,Distributed and Parallel Computing Systems,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,102253,660467
+T10311,https://openalex.org/T10311,Advancements in Solid Oxide Fuel Cells,25,Materials Science,2505,Materials Chemistry,Physical Sciences,102100,1634659
+T13420,https://openalex.org/T13420,Arduino and IoT Applications,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,101670,149934
+T11081,https://openalex.org/T11081,Advanced Control Systems Design,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,100220,869186
+T10245,https://openalex.org/T10245,Metamaterials and Metasurfaces Applications,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,100079,1788585
+T10534,https://openalex.org/T10534,Structural Health Monitoring Techniques,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,99959,952646
+T10374,https://openalex.org/T10374,Advanced Graph Theory Research,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,99461,929130
+T10295,https://openalex.org/T10295,Plasmonic and Surface Plasmon Research,22,Engineering,2204,Biomedical Engineering,Physical Sciences,99304,2076086
+T10675,https://openalex.org/T10675,Mechanical Circulatory Support Devices,22,Engineering,2204,Biomedical Engineering,Physical Sciences,99005,859729
+T10840,https://openalex.org/T10840,High Temperature Alloys and Creep,22,Engineering,2210,Mechanical Engineering,Physical Sciences,98922,816975
+T12039,https://openalex.org/T12039,Electron and X-Ray Spectroscopy Techniques,25,Materials Science,2508,"Surfaces, Coatings and Films",Physical Sciences,98664,1546598
+T10275,https://openalex.org/T10275,2D Materials and Applications,25,Materials Science,2505,Materials Chemistry,Physical Sciences,98561,2764915
+T10822,https://openalex.org/T10822,Acoustic Wave Phenomena Research,22,Engineering,2204,Biomedical Engineering,Physical Sciences,98482,897624
+T10764,https://openalex.org/T10764,Privacy-Preserving Technologies in Data,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,98362,1213294
+T10682,https://openalex.org/T10682,Quantum Computing Algorithms and Architecture,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,97379,1301366
+T11018,https://openalex.org/T11018,Lower Extremity Biomechanics and Pathologies,22,Engineering,2204,Biomedical Engineering,Physical Sciences,96653,1200618
+T10142,https://openalex.org/T10142,Formal Methods in Verification,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,96623,1123991
+T10670,https://openalex.org/T10670,Aluminum Alloy Microstructure Properties,22,Engineering,2202,Aerospace Engineering,Physical Sciences,96513,836247
+T11220,https://openalex.org/T11220,Water Systems and Optimization,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,96510,430425
+T10412,https://openalex.org/T10412,Microfluidic and Capillary Electrophoresis Applications,22,Engineering,2204,Biomedical Engineering,Physical Sciences,95754,1739368
+T10732,https://openalex.org/T10732,Laser Material Processing Techniques,22,Engineering,2206,Computational Mechanics,Physical Sciences,95512,929674
+T10551,https://openalex.org/T10551,Scheduling and Optimization Algorithms,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,95419,1140381
+T13261,https://openalex.org/T13261,Elasticity and Wave Propagation,22,Engineering,2211,Mechanics of Materials,Physical Sciences,95393,1004223
+T10495,https://openalex.org/T10495,Catalysts for Methane Reforming,15,Chemical Engineering,1503,Catalysis,Physical Sciences,95078,1927515
+T13682,https://openalex.org/T13682,Engineering Education and Pedagogy,22,Engineering,2216,Architecture,Physical Sciences,94988,159244
+T14330,https://openalex.org/T14330,Library Science and Information Systems,17,Computer Science,1710,Information Systems,Physical Sciences,94915,120536
+T10187,https://openalex.org/T10187,Radio Frequency Integrated Circuit Design,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,94705,722181
+T10791,https://openalex.org/T10791,Advanced Control Systems Optimization,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,94649,1095441
+T10648,https://openalex.org/T10648,Virtual Reality Applications and Impacts,17,Computer Science,1709,Human-Computer Interaction,Physical Sciences,94635,1001796
+T11808,https://openalex.org/T11808,Superconducting Materials and Applications,22,Engineering,2204,Biomedical Engineering,Physical Sciences,94451,614712
+T10531,https://openalex.org/T10531,Advanced Vision and Imaging,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,94306,1396006
+T10221,https://openalex.org/T10221,Composite Structure Analysis and Optimization,22,Engineering,2211,Mechanics of Materials,Physical Sciences,94281,1278256
+T10768,https://openalex.org/T10768,Electric Vehicles and Infrastructure,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,94211,993750
+T10462,https://openalex.org/T10462,Reinforcement Learning in Robotics,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,94177,1239802
+T10736,https://openalex.org/T10736,Hydrogen embrittlement and corrosion behaviors in metals,25,Materials Science,2506,Metals and Alloys,Physical Sciences,93892,977925
+T11200,https://openalex.org/T11200,Electrodeposition and Electroless Coatings,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,93554,715066
+T10461,https://openalex.org/T10461,Gas Sensing Nanomaterials and Sensors,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,93072,2008114
+T10862,https://openalex.org/T10862,AI in cancer detection,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,92860,1050597
+T11933,https://openalex.org/T11933,Mining and Resource Management,22,Engineering,2215,Building and Construction,Physical Sciences,92797,266917
+T12206,https://openalex.org/T12206,Vibration and Dynamic Analysis,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,92527,784139
+T10784,https://openalex.org/T10784,Muscle activation and electromyography studies,22,Engineering,2204,Biomedical Engineering,Physical Sciences,92498,1416256
+T10468,https://openalex.org/T10468,Photovoltaic System Optimization Techniques,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,92399,828495
+T10607,https://openalex.org/T10607,Magnetic and transport properties of perovskites and related materials,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,91731,1399314
+T10246,https://openalex.org/T10246,Mobile Ad Hoc Networks,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,90837,957592
+T12338,https://openalex.org/T12338,Digital literacy in education,17,Computer Science,1710,Information Systems,Physical Sciences,90827,280293
+T10687,https://openalex.org/T10687,Innovative concrete reinforcement materials,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,90736,972676
+T11878,https://openalex.org/T11878,Solid-state spectroscopy and crystallography,25,Materials Science,2505,Materials Chemistry,Physical Sciences,89874,969373
+T12166,https://openalex.org/T12166,Ion-surface interactions and analysis,22,Engineering,2206,Computational Mechanics,Physical Sciences,89637,1025097
+T10074,https://openalex.org/T10074,Carbon Nanotubes in Composites,25,Materials Science,2505,Materials Chemistry,Physical Sciences,89456,2279156
+T10850,https://openalex.org/T10850,Heat Transfer and Boiling Studies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,89389,1011484
+T10601,https://openalex.org/T10601,Handwritten Text Recognition Techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,89304,820684
+T10377,https://openalex.org/T10377,Metal and Thin Film Mechanics,22,Engineering,2211,Mechanics of Materials,Physical Sciences,89244,1267556
+T10440,https://openalex.org/T10440,Advanced Thermoelectric Materials and Devices,25,Materials Science,2505,Materials Chemistry,Physical Sciences,88696,1558700
+T10772,https://openalex.org/T10772,Distributed systems and fault tolerance,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,88412,950999
+T10741,https://openalex.org/T10741,Video Coding and Compression Technologies,17,Computer Science,1711,Signal Processing,Physical Sciences,87724,561061
+T10876,https://openalex.org/T10876,Fault Detection and Control Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,87524,956338
+T10491,https://openalex.org/T10491,Enhanced Oil Recovery Techniques,22,Engineering,2212,Ocean Engineering,Physical Sciences,86640,1156571
+T10191,https://openalex.org/T10191,Robotics and Sensor-Based Localization,22,Engineering,2202,Aerospace Engineering,Physical Sciences,86498,1062749
+T10972,https://openalex.org/T10972,Power Systems Fault Detection,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,86314,464889
+T11489,https://openalex.org/T11489,Air Traffic Management and Optimization,22,Engineering,2202,Aerospace Engineering,Physical Sciences,86260,302553
+T10513,https://openalex.org/T10513,Natural Fiber Reinforced Composites,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,86142,1303637
+T10388,https://openalex.org/T10388,Advanced Steganography and Watermarking Techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,85960,786916
+T11394,https://openalex.org/T11394,Dynamics and Control of Mechanical Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,85911,609294
+T12984,https://openalex.org/T12984,Transport and Logistics Innovations,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,85899,66549
+T10575,https://openalex.org/T10575,Wireless Communication Networks Research,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,85840,609634
+T13840,https://openalex.org/T13840,Chemical Safety and Risk Management,15,Chemical Engineering,1504,Chemical Health and Safety,Physical Sciences,85464,93232
+T11622,https://openalex.org/T11622,Maritime Navigation and Safety,22,Engineering,2212,Ocean Engineering,Physical Sciences,84903,248853
+T10603,https://openalex.org/T10603,Smart Grid Energy Management,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,84900,947173
+T10476,https://openalex.org/T10476,Algal biology and biofuel production,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,84517,1636476
+T12941,https://openalex.org/T12941,Embedded Systems and FPGA Design,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,84376,83965
+T10040,https://openalex.org/T10040,Adaptive Control of Nonlinear Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,84367,1403231
+T10223,https://openalex.org/T10223,Microgrid Control and Optimization,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,84288,1125466
+T11954,https://openalex.org/T11954,Energy Efficiency and Management,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,84166,211375
+T11984,https://openalex.org/T11984,Anatomy and Medical Technology,22,Engineering,2204,Biomedical Engineering,Physical Sciences,84157,511185
+T10612,https://openalex.org/T10612,Magnetism in coordination complexes,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,83955,1485441
+T13772,https://openalex.org/T13772,Geomechanics and Mining Engineering,22,Engineering,2211,Mechanics of Materials,Physical Sciences,83714,283909
+T13290,https://openalex.org/T13290,Diverse Industrial Engineering Technologies,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,83515,24376
+T10228,https://openalex.org/T10228,Multilevel Inverters and Converters,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,83306,973095
+T10888,https://openalex.org/T10888,Augmented Reality Applications,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,83173,590561
+T12560,https://openalex.org/T12560,Nuclear Engineering Thermal-Hydraulics,22,Engineering,2202,Aerospace Engineering,Physical Sciences,83131,327047
+T10808,https://openalex.org/T10808,Electric and Hybrid Vehicle Technologies,22,Engineering,2203,Automotive Engineering,Physical Sciences,83105,593143
+T10811,https://openalex.org/T10811,Hydrogen Storage and Materials,25,Materials Science,2505,Materials Chemistry,Physical Sciences,82841,1519142
+T10824,https://openalex.org/T10824,Image Retrieval and Classification Techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,82806,1129942
+T11185,https://openalex.org/T11185,Integrated Energy Systems Optimization,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,82626,827660
+T11557,https://openalex.org/T11557,Lubricants and Their Additives,22,Engineering,2210,Mechanical Engineering,Physical Sciences,82604,549849
+T10454,https://openalex.org/T10454,Optimal Power Flow Distribution,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,82454,920640
+T10273,https://openalex.org/T10273,IoT and Edge/Fog Computing,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,82310,1252135
+T10363,https://openalex.org/T10363,Low-power high-performance VLSI design,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,82244,730057
+T13905,https://openalex.org/T13905,Telecommunications and Broadcasting Technologies,22,Engineering,2214,Media Technology,Physical Sciences,82187,121184
+T11283,https://openalex.org/T11283,Experimental Learning in Engineering,22,Engineering,2214,Media Technology,Physical Sciences,82081,171566
+T12449,https://openalex.org/T12449,Spacecraft Design and Technology,22,Engineering,2202,Aerospace Engineering,Physical Sciences,82024,172307
+T10626,https://openalex.org/T10626,High-Temperature Coating Behaviors,22,Engineering,2202,Aerospace Engineering,Physical Sciences,81902,985371
+T10502,https://openalex.org/T10502,Advanced Memory and Neural Computing,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,81712,1423333
+T10361,https://openalex.org/T10361,Silicon Carbide Semiconductor Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,81660,745104
+T11242,https://openalex.org/T11242,Nuclear Materials and Properties,25,Materials Science,2505,Materials Chemistry,Physical Sciences,81253,538899
+T10507,https://openalex.org/T10507,Biodiesel Production and Applications,22,Engineering,2204,Biomedical Engineering,Physical Sciences,81216,1321027
+T12293,https://openalex.org/T12293,Dam Engineering and Safety,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,81143,206560
+T11699,https://openalex.org/T11699,High-Velocity Impact and Material Behavior,25,Materials Science,2505,Materials Chemistry,Physical Sciences,80933,727301
+T13116,https://openalex.org/T13116,Heat Transfer and Numerical Methods,22,Engineering,2206,Computational Mechanics,Physical Sciences,80782,652872
+T10637,https://openalex.org/T10637,Advanced Clustering Algorithms Research,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,80412,1562356
+T10723,https://openalex.org/T10723,Advanced Welding Techniques Analysis,22,Engineering,2210,Mechanical Engineering,Physical Sciences,80231,834665
+T10903,https://openalex.org/T10903,Porphyrin and Phthalocyanine Chemistry,25,Materials Science,2505,Materials Chemistry,Physical Sciences,80157,1318551
+T10474,https://openalex.org/T10474,Material Dynamics and Properties,25,Materials Science,2505,Materials Chemistry,Physical Sciences,79928,1897931
+T11837,https://openalex.org/T11837,Iron and Steelmaking Processes,22,Engineering,2210,Mechanical Engineering,Physical Sciences,79914,314359
+T10719,https://openalex.org/T10719,3D Shape Modeling and Analysis,22,Engineering,2206,Computational Mechanics,Physical Sciences,79578,1179546
+T10504,https://openalex.org/T10504,Sensorless Control of Electric Motors,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,79468,728920
+T10901,https://openalex.org/T10901,Advanced Data Compression Techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,79321,608622
+T10326,https://openalex.org/T10326,Indoor and Outdoor Localization Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,79166,862929
+T10705,https://openalex.org/T10705,Additive Manufacturing Materials and Processes,22,Engineering,2210,Mechanical Engineering,Physical Sciences,78959,1488134
+T11567,https://openalex.org/T11567,semigroups and automata theory,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,78739,694970
+T11727,https://openalex.org/T11727,Advanced Algebra and Logic,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,78657,672365
+T10660,https://openalex.org/T10660,Conducting polymers and applications,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,78628,1687118
+T10444,https://openalex.org/T10444,Context-Aware Activity Recognition Systems,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,78526,970825
+T11181,https://openalex.org/T11181,Advanced Data Storage Technologies,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,77946,464479
+T11023,https://openalex.org/T11023,Prosthetics and Rehabilitation Robotics,22,Engineering,2204,Biomedical Engineering,Physical Sciences,77895,643897
+T12613,https://openalex.org/T12613,X-ray Diffraction in Crystallography,25,Materials Science,2505,Materials Chemistry,Physical Sciences,77840,1319350
+T11196,https://openalex.org/T11196,Non-Invasive Vital Sign Monitoring,22,Engineering,2204,Biomedical Engineering,Physical Sciences,77770,686743
+T10806,https://openalex.org/T10806,Energetic Materials and Combustion,22,Engineering,2211,Mechanics of Materials,Physical Sciences,77732,729068
+T12111,https://openalex.org/T12111,Industrial Vision Systems and Defect Detection,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,77703,419244
+T11127,https://openalex.org/T11127,Solid State Laser Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,77048,678342
+T10456,https://openalex.org/T10456,Multi-Agent Systems and Negotiation,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,77028,689715
+T11122,https://openalex.org/T11122,Online Learning and Analytics,17,Computer Science,1706,Computer Science Applications,Physical Sciences,76950,571783
+T10688,https://openalex.org/T10688,Image and Signal Denoising Methods,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,76615,1092387
+T11130,https://openalex.org/T11130,Coding theory and cryptography,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,76515,681928
+T10545,https://openalex.org/T10545,Optimization and Variational Analysis,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,76479,1082716
+T13904,https://openalex.org/T13904,Artificial Intelligence Applications,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,76296,364929
+T11096,https://openalex.org/T11096,Aeroelasticity and Vibration Control,22,Engineering,2202,Aerospace Engineering,Physical Sciences,76165,580757
+T13645,https://openalex.org/T13645,Thermodynamic and Structural Properties of Metals and Alloys,22,Engineering,2210,Mechanical Engineering,Physical Sciences,76160,1173309
+T12888,https://openalex.org/T12888,Military Strategy and Technology,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,76099,109446
+T10586,https://openalex.org/T10586,Robotic Path Planning Algorithms,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,76073,919198
+T11450,https://openalex.org/T11450,Model-Driven Software Engineering Techniques,17,Computer Science,1712,Software,Physical Sciences,75633,589883
+T12125,https://openalex.org/T12125,Aerospace and Aviation Technology,22,Engineering,2202,Aerospace Engineering,Physical Sciences,75334,271253
+T10820,https://openalex.org/T10820,Fuzzy Logic and Control Systems,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,75326,934579
+T12169,https://openalex.org/T12169,Non-Destructive Testing Techniques,22,Engineering,2210,Mechanical Engineering,Physical Sciences,74839,266863
+T11222,https://openalex.org/T11222,Magnetic Properties and Applications,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,74805,652430
+T11444,https://openalex.org/T11444,Electromagnetic Compatibility and Noise Suppression,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,74740,272736
+T10714,https://openalex.org/T10714,Software-Defined Networks and 5G,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,74611,695994
+T10962,https://openalex.org/T10962,Thermodynamic properties of mixtures,15,Chemical Engineering,1507,Fluid Flow and Transfer Processes,Physical Sciences,74500,796985
+T11192,https://openalex.org/T11192,Underwater Vehicles and Communication Systems,22,Engineering,2212,Ocean Engineering,Physical Sciences,74268,554049
+T11007,https://openalex.org/T11007,Hybrid Renewable Energy Systems,21,Energy,2102,Energy Engineering and Power Technology,Physical Sciences,73981,966857
+T10653,https://openalex.org/T10653,Robot Manipulation and Learning,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,73806,723472
+T10801,https://openalex.org/T10801,Synthetic Aperture Radar (SAR) Applications and Techniques,22,Engineering,2202,Aerospace Engineering,Physical Sciences,73496,756595
+T10568,https://openalex.org/T10568,Thermodynamic and Exergetic Analyses of Power and Cooling Systems,22,Engineering,2210,Mechanical Engineering,Physical Sciences,73435,844936
+T11352,https://openalex.org/T11352,Masonry and Concrete Structural Analysis,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,73088,361354
+T11099,https://openalex.org/T11099,Autonomous Vehicle Technology and Safety,22,Engineering,2203,Automotive Engineering,Physical Sciences,72985,713210
+T11609,https://openalex.org/T11609,Geophysical Methods and Applications,22,Engineering,2212,Ocean Engineering,Physical Sciences,72962,348215
+T10951,https://openalex.org/T10951,Cryptographic Implementations and Security,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,72902,685151
+T10828,https://openalex.org/T10828,Biometric Identification and Security,17,Computer Science,1711,Signal Processing,Physical Sciences,72859,660260
+T11522,https://openalex.org/T11522,VLSI and FPGA Design Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,72791,592536
+T12797,https://openalex.org/T12797,History of Computing Technologies,17,Computer Science,1706,Computer Science Applications,Physical Sciences,72631,199857
+T11087,https://openalex.org/T11087,Solidification and crystal growth phenomena,25,Materials Science,2505,Materials Chemistry,Physical Sciences,72578,1045135
+T10679,https://openalex.org/T10679,Service-Oriented Architecture and Web Services,17,Computer Science,1710,Information Systems,Physical Sciences,72556,519696
+T10488,https://openalex.org/T10488,Nanocomposite Films for Food Packaging,25,Materials Science,2502,Biomaterials,Physical Sciences,72458,1738727
+T10249,https://openalex.org/T10249,Distributed Control Multi-Agent Systems,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,72385,1308964
+T10590,https://openalex.org/T10590,Chalcogenide Semiconductor Thin Films,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,72167,1012167
+T14454,https://openalex.org/T14454,Polymer Science and Applications,22,Engineering,2210,Mechanical Engineering,Physical Sciences,72077,415541
+T11814,https://openalex.org/T11814,Advanced Manufacturing and Logistics Optimization,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,71679,306245
+T10610,https://openalex.org/T10610,Advanced Cellulose Research Studies,25,Materials Science,2502,Biomaterials,Physical Sciences,71571,1629329
+T12063,https://openalex.org/T12063,Heat and Mass Transfer in Porous Media,22,Engineering,2206,Computational Mechanics,Physical Sciences,71500,987672
+T11850,https://openalex.org/T11850,Concrete Corrosion and Durability,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,71486,553938
+T11225,https://openalex.org/T11225,Geothermal Energy Systems and Applications,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,71421,491455
+T13166,https://openalex.org/T13166,Information Science and Libraries,17,Computer Science,1710,Information Systems,Physical Sciences,71183,94328
+T12564,https://openalex.org/T12564,Sensor Technology and Measurement Systems,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,71075,171136
+T10611,https://openalex.org/T10611,Organic Light-Emitting Diodes Research,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,71060,1616954
+T10864,https://openalex.org/T10864,Fluid Dynamics and Mixing,22,Engineering,2204,Biomedical Engineering,Physical Sciences,71013,792207
+T10922,https://openalex.org/T10922,Magnetic Properties and Synthesis of Ferrites,25,Materials Science,2505,Materials Chemistry,Physical Sciences,70853,1205868
+T11276,https://openalex.org/T11276,Solar Radiation and Photovoltaics,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,70781,664421
+T11479,https://openalex.org/T11479,Smart Cities and Technologies,22,Engineering,2214,Media Technology,Physical Sciences,70717,482226
+T14455,https://openalex.org/T14455,Technology and Education Systems,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,70592,85806
+T12282,https://openalex.org/T12282,Mineral Processing and Grinding,22,Engineering,2210,Mechanical Engineering,Physical Sciences,70471,303611
+T12157,https://openalex.org/T12157,Geochemistry and Geologic Mapping,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,70082,362878
+T11472,https://openalex.org/T11472,Analytical Chemistry and Sensors,15,Chemical Engineering,1502,Bioengineering,Physical Sciences,69941,901523
+T10711,https://openalex.org/T10711,Target Tracking and Data Fusion in Sensor Networks,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,69927,970443
+T11158,https://openalex.org/T11158,Wireless Networks and Protocols,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,69912,493130
+T12513,https://openalex.org/T12513,Rocket and propulsion systems research,22,Engineering,2202,Aerospace Engineering,Physical Sciences,69832,234494
+T14091,https://openalex.org/T14091,Industrial and Mining Safety,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,69747,108988
+T12971,https://openalex.org/T12971,Material Properties and Processing,22,Engineering,2211,Mechanics of Materials,Physical Sciences,69742,113644
+T11881,https://openalex.org/T11881,Crystallization and Solubility Studies,25,Materials Science,2505,Materials Chemistry,Physical Sciences,69639,927790
+T10478,https://openalex.org/T10478,Diamond and Carbon-based Materials Research,25,Materials Science,2505,Materials Chemistry,Physical Sciences,69019,1063304
+T11448,https://openalex.org/T11448,Face recognition and analysis,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,68995,937623
+T11053,https://openalex.org/T11053,Process Optimization and Integration,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,68987,653708
+T10789,https://openalex.org/T10789,Interactive and Immersive Displays,17,Computer Science,1709,Human-Computer Interaction,Physical Sciences,68890,622550
+T14303,https://openalex.org/T14303,Polymer Synthesis and Characterization,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,68795,428206
+T11583,https://openalex.org/T11583,Advanced Measurement and Metrology Techniques,22,Engineering,2210,Mechanical Engineering,Physical Sciences,68327,267337
+T11637,https://openalex.org/T11637,Advanced Semiconductor Detectors and Materials,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,68259,612511
+T11672,https://openalex.org/T11672,Recycling and utilization of industrial and municipal waste in materials production,22,Engineering,2215,Building and Construction,Physical Sciences,68213,473816
+T10321,https://openalex.org/T10321,Quantum Dots Synthesis And Properties,25,Materials Science,2505,Materials Chemistry,Physical Sciences,67898,1976644
+T13113,https://openalex.org/T13113,Engineering Technology and Methodologies,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,67858,46219
+T10767,https://openalex.org/T10767,Advanced Photonic Communication Systems,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,67558,477443
+T12899,https://openalex.org/T12899,Engineering and Technology Innovations,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,67556,64311
+T11325,https://openalex.org/T11325,Inertial Sensor and Navigation,22,Engineering,2202,Aerospace Engineering,Physical Sciences,67540,406048
+T10338,https://openalex.org/T10338,Advanced Sensor and Energy Harvesting Materials,22,Engineering,2204,Biomedical Engineering,Physical Sciences,67319,2132558
+T11664,https://openalex.org/T11664,Fiber-reinforced polymer composites,22,Engineering,2210,Mechanical Engineering,Physical Sciences,67238,625852
+T11714,https://openalex.org/T11714,Multimodal Machine Learning Applications,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,66807,737230
+T11920,https://openalex.org/T11920,Pulsed Power Technology Applications,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,66721,281108
+T13518,https://openalex.org/T13518,Architecture and Computational Design,22,Engineering,2216,Architecture,Physical Sciences,66679,167810
+T14128,https://openalex.org/T14128,Metallurgical and Alloy Processes,25,Materials Science,2500,General Materials Science,Physical Sciences,66629,538425
+T12171,https://openalex.org/T12171,Open Education and E-Learning,17,Computer Science,1706,Computer Science Applications,Physical Sciences,66411,130771
+T10530,https://openalex.org/T10530,Magnesium Alloys: Properties and Applications,25,Materials Science,2502,Biomaterials,Physical Sciences,66408,1213598
+T10986,https://openalex.org/T10986,RFID technology advancements,22,Engineering,2214,Media Technology,Physical Sciences,66109,385844
+T10567,https://openalex.org/T10567,Vehicle Routing Optimization Methods,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,65797,846832
+T11504,https://openalex.org/T11504,Advanced Authentication Protocols Security,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,65731,563175
+T12042,https://openalex.org/T12042,Satellite Communication Systems,22,Engineering,2202,Aerospace Engineering,Physical Sciences,65616,291511
+T11034,https://openalex.org/T11034,Digital Filter Design and Implementation,17,Computer Science,1711,Signal Processing,Physical Sciences,65356,607196
+T13990,https://openalex.org/T13990,Engine and Fuel Emissions,22,Engineering,2203,Automotive Engineering,Physical Sciences,65057,153889
+T10967,https://openalex.org/T10967,Carbon Dioxide Capture Technologies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,64867,1323364
+T13373,https://openalex.org/T13373,Data Mining and Machine Learning Applications,17,Computer Science,1710,Information Systems,Physical Sciences,64770,436654
+T12233,https://openalex.org/T12233,Geotechnical Engineering and Underground Structures,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,64758,380322
+T11338,https://openalex.org/T11338,Advancements in Photolithography Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,64674,422239
+T10313,https://openalex.org/T10313,Surface Modification and Superhydrophobicity,25,Materials Science,2508,"Surfaces, Coatings and Films",Physical Sciences,64103,1720351
+T10958,https://openalex.org/T10958,Ultrasound and Hyperthermia Applications,22,Engineering,2204,Biomedical Engineering,Physical Sciences,64071,937297
+T10635,https://openalex.org/T10635,Hydraulic Fracturing and Reservoir Analysis,22,Engineering,2210,Mechanical Engineering,Physical Sciences,64061,694322
+T12325,https://openalex.org/T12325,Urban Design and Spatial Analysis,22,Engineering,2215,Building and Construction,Physical Sciences,64034,295386
+T10538,https://openalex.org/T10538,Data Mining Algorithms and Applications,17,Computer Science,1710,Information Systems,Physical Sciences,64019,1043562
+T13925,https://openalex.org/T13925,Offshore Engineering and Technologies,22,Engineering,2212,Ocean Engineering,Physical Sciences,64014,196950
+T10803,https://openalex.org/T10803,Innovative Human-Technology Interaction,17,Computer Science,1709,Human-Computer Interaction,Physical Sciences,63977,622497
+T11801,https://openalex.org/T11801,Reservoir Engineering and Simulation Methods,22,Engineering,2212,Ocean Engineering,Physical Sciences,63650,425458
+T11269,https://openalex.org/T11269,Algorithms and Data Compression,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,63225,696647
+T14498,https://openalex.org/T14498,Educational Technology in Learning,17,Computer Science,1710,Information Systems,Physical Sciences,63189,289205
+T12425,https://openalex.org/T12425,Industrial Gas Emission Control,22,Engineering,2210,Mechanical Engineering,Physical Sciences,63126,467419
+T12932,https://openalex.org/T12932,Powder Metallurgy Techniques and Materials,22,Engineering,2210,Mechanical Engineering,Physical Sciences,62972,314932
+T10906,https://openalex.org/T10906,AI-based Problem Solving and Planning,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,62883,762186
+T14216,https://openalex.org/T14216,Multimedia Learning Systems,17,Computer Science,1710,Information Systems,Physical Sciences,62243,89187
+T10707,https://openalex.org/T10707,Cellular and Composite Structures,22,Engineering,2210,Mechanical Engineering,Physical Sciences,62159,1051787
+T11321,https://openalex.org/T11321,Error Correcting Code Techniques,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,62096,812446
+T11277,https://openalex.org/T11277,Thermal properties of materials,25,Materials Science,2505,Materials Chemistry,Physical Sciences,62042,1096335
+T11202,https://openalex.org/T11202,Cavitation Phenomena in Pumps,22,Engineering,2211,Mechanics of Materials,Physical Sciences,61881,343468
+T12519,https://openalex.org/T12519,Cybercrime and Law Enforcement Studies,17,Computer Science,1710,Information Systems,Physical Sciences,61848,172781
+T11187,https://openalex.org/T11187,Nonlinear Dynamics and Pattern Formation,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,61586,892219
+T11424,https://openalex.org/T11424,Security and Verification in Computing,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,61183,619013
+T11606,https://openalex.org/T11606,Infrastructure Maintenance and Monitoring,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,61163,399682
+T11254,https://openalex.org/T11254,Fluid Dynamics and Vibration Analysis,22,Engineering,2206,Computational Mechanics,Physical Sciences,61038,680278
+T11988,https://openalex.org/T11988,Sustainable Building Design and Assessment,22,Engineering,2215,Building and Construction,Physical Sciences,60803,301978
+T12358,https://openalex.org/T12358,Thermal and Kinetic Analysis,25,Materials Science,2505,Materials Chemistry,Physical Sciences,60730,875904
+T11208,https://openalex.org/T11208,Lignin and Wood Chemistry,22,Engineering,2204,Biomedical Engineering,Physical Sciences,60538,1047541
+T10480,https://openalex.org/T10480,Ionic liquids properties and applications,15,Chemical Engineering,1503,Catalysis,Physical Sciences,60379,1722128
+T10851,https://openalex.org/T10851,Optical Wireless Communication Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,60341,583267
+T10651,https://openalex.org/T10651,"IPv6, Mobility, Handover, Networks, Security",22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,60296,340277
+T10938,https://openalex.org/T10938,Phase Change Materials Research,22,Engineering,2210,Mechanical Engineering,Physical Sciences,60206,1169755
+T14390,https://openalex.org/T14390,Real estate and construction management,22,Engineering,2216,Architecture,Physical Sciences,60182,29016
+T10931,https://openalex.org/T10931,Direction-of-Arrival Estimation Techniques,17,Computer Science,1711,Signal Processing,Physical Sciences,60159,576727
+T10775,https://openalex.org/T10775,Generative Adversarial Networks and Image Synthesis,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,60020,1016568
+T10846,https://openalex.org/T10846,Photonic Crystal and Fiber Optics,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,59900,664054
+T14257,https://openalex.org/T14257,Advanced Measurement and Detection Methods,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,59484,108943
+T10735,https://openalex.org/T10735,Mesoporous Materials and Catalysis,25,Materials Science,2505,Materials Chemistry,Physical Sciences,59480,1548849
+T11362,https://openalex.org/T11362,Membrane Separation and Gas Transport,22,Engineering,2210,Mechanical Engineering,Physical Sciences,59069,1258348
+T12759,https://openalex.org/T12759,Vehicle Noise and Vibration Control,22,Engineering,2203,Automotive Engineering,Physical Sciences,58830,172572
+T11902,https://openalex.org/T11902,Intelligent Tutoring Systems and Adaptive Learning,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,58747,473887
+T12581,https://openalex.org/T12581,Engineering Structural Analysis Methods,22,Engineering,2210,Mechanical Engineering,Physical Sciences,58673,70338
+T13451,https://openalex.org/T13451,Mechanical Engineering Research and Applications,22,Engineering,2210,Mechanical Engineering,Physical Sciences,58522,68995
+T10761,https://openalex.org/T10761,Vehicular Ad Hoc Networks (VANETs),22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,58365,681036
+T10829,https://openalex.org/T10829,Interconnection Networks and Systems,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,58263,558603
+T14270,https://openalex.org/T14270,Simulation and Modeling Applications,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,58254,127174
+T13511,https://openalex.org/T13511,Geodetic Measurements and Engineering Structures,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,58179,43241
+T10933,https://openalex.org/T10933,Real-Time Systems Scheduling,17,Computer Science,1708,Hardware and Architecture,Physical Sciences,58135,510441
+T11689,https://openalex.org/T11689,Adversarial Robustness in Machine Learning,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,58024,628103
+T10717,https://openalex.org/T10717,Aluminum Alloys Composites Properties,22,Engineering,2210,Mechanical Engineering,Physical Sciences,57949,788639
+T14103,https://openalex.org/T14103,Educational Management and Quality,17,Computer Science,1710,Information Systems,Physical Sciences,57941,37430
+T12019,https://openalex.org/T12019,Calibration and Measurement Techniques,22,Engineering,2202,Aerospace Engineering,Physical Sciences,57703,432834
+T12080,https://openalex.org/T12080,Injection Molding Process and Properties,22,Engineering,2210,Mechanical Engineering,Physical Sciences,57667,183824
+T10579,https://openalex.org/T10579,Cognitive Radio Networks and Spectrum Sensing,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,57496,642144
+T11366,https://openalex.org/T11366,Elasticity and Material Modeling,22,Engineering,2204,Biomedical Engineering,Physical Sciences,57145,985537
+T11309,https://openalex.org/T11309,Music and Audio Processing,17,Computer Science,1711,Signal Processing,Physical Sciences,57058,463737
+T11307,https://openalex.org/T11307,Domain Adaptation and Few-Shot Learning,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,57057,1239557
+T10104,https://openalex.org/T10104,Nanofluid Flow and Heat Transfer,22,Engineering,2204,Biomedical Engineering,Physical Sciences,57031,1447673
+T11408,https://openalex.org/T11408,Advanced Optical Imaging Technologies,22,Engineering,2214,Media Technology,Physical Sciences,56873,330078
+T11032,https://openalex.org/T11032,VLSI and Analog Circuit Testing,17,Computer Science,1708,Hardware and Architecture,Physical Sciences,56540,440626
+T10865,https://openalex.org/T10865,Shape Memory Alloy Transformations,25,Materials Science,2505,Materials Chemistry,Physical Sciences,56525,782666
+T11690,https://openalex.org/T11690,Advanced battery technologies research,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,56497,1614183
+T12086,https://openalex.org/T12086,Structural Integrity and Reliability Analysis,22,Engineering,2210,Mechanical Engineering,Physical Sciences,56380,246927
+T11008,https://openalex.org/T11008,Aerodynamics and Acoustics in Jet Flows,22,Engineering,2202,Aerospace Engineering,Physical Sciences,56379,465466
+T10996,https://openalex.org/T10996,Computational Geometry and Mesh Generation,17,Computer Science,1704,Computer Graphics and Computer-Aided Design,Physical Sciences,56086,694454
+T11370,https://openalex.org/T11370,Mobile Learning in Education,17,Computer Science,1710,Information Systems,Physical Sciences,56068,347913
+T14428,https://openalex.org/T14428,Coal and Coke Industries Research,21,Energy,2103,Fuel Technology,Physical Sciences,55921,190856
+T10879,https://openalex.org/T10879,Robotic Locomotion and Control,22,Engineering,2204,Biomedical Engineering,Physical Sciences,55833,582172
+T10752,https://openalex.org/T10752,Terahertz technology and applications,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,55633,606240
+T11052,https://openalex.org/T11052,Energy Load and Power Forecasting,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,55536,737698
+T12222,https://openalex.org/T12222,IoT-based Smart Home Systems,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,55329,158422
+T11100,https://openalex.org/T11100,Intermetallics and Advanced Alloy Properties,22,Engineering,2210,Mechanical Engineering,Physical Sciences,55205,681138
+T11201,https://openalex.org/T11201,Metallurgy and Material Forming,22,Engineering,2211,Mechanics of Materials,Physical Sciences,55169,506144
+T12482,https://openalex.org/T12482,Tunneling and Rock Mechanics,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,55135,180044
+T10633,https://openalex.org/T10633,Metallic Glasses and Amorphous Alloys,22,Engineering,2210,Mechanical Engineering,Physical Sciences,55024,865023
+T13808,https://openalex.org/T13808,Construction Engineering and Safety,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,55016,67119
+T10847,https://openalex.org/T10847,Advanced Optical Network Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,54318,381108
+T13292,https://openalex.org/T13292,Embedded Systems and FPGA Applications,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,54215,66286
+T11038,https://openalex.org/T11038,Advanced SAR Imaging Techniques,22,Engineering,2202,Aerospace Engineering,Physical Sciences,54193,477244
+T12031,https://openalex.org/T12031,Speech and dialogue systems,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,54190,416772
+T11145,https://openalex.org/T11145,Epoxy Resin Curing Processes,22,Engineering,2210,Mechanical Engineering,Physical Sciences,54130,705544
+T12408,https://openalex.org/T12408,Educational Innovations and Challenges,17,Computer Science,1710,Information Systems,Physical Sciences,53913,116341
+T10859,https://openalex.org/T10859,Polymer Surface Interaction Studies,25,Materials Science,2508,"Surfaces, Coatings and Films",Physical Sciences,53903,1407486
+T11782,https://openalex.org/T11782,Magnetic Properties of Alloys,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,53876,554930
+T11442,https://openalex.org/T11442,Titanium Alloys Microstructure and Properties,25,Materials Science,2505,Materials Chemistry,Physical Sciences,53835,707713
+T11393,https://openalex.org/T11393,Biosensors and Analytical Detection,22,Engineering,2204,Biomedical Engineering,Physical Sciences,53802,925241
+T11110,https://openalex.org/T11110,Stability and Controllability of Differential Equations,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,53745,600867
+T12300,https://openalex.org/T12300,Advanced Electrical Measurement Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,53522,182098
+T12000,https://openalex.org/T12000,Systems Engineering Methodologies and Applications,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,53468,223407
+T10148,https://openalex.org/T10148,Advanced MIMO Systems Optimization,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,53421,771082
+T11160,https://openalex.org/T11160,Acoustic Wave Resonator Technologies,22,Engineering,2204,Biomedical Engineering,Physical Sciences,53350,556203
+T11019,https://openalex.org/T11019,Image Enhancement Techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,53288,698191
+T11245,https://openalex.org/T11245,Advanced Numerical Analysis Techniques,22,Engineering,2206,Computational Mechanics,Physical Sciences,53228,542483
+T14444,https://openalex.org/T14444,Power Systems and Renewable Energy,21,Energy,2102,Energy Engineering and Power Technology,Physical Sciences,52923,389145
+T12983,https://openalex.org/T12983,Satellite Image Processing and Photogrammetry,22,Engineering,2212,Ocean Engineering,Physical Sciences,52707,262264
+T12760,https://openalex.org/T12760,Laser Design and Applications,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,52582,284798
+T14481,https://openalex.org/T14481,Renewable Energy and Sustainability,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,52282,206803
+T11825,https://openalex.org/T11825,Catalysis and Oxidation Reactions,15,Chemical Engineering,1503,Catalysis,Physical Sciences,52225,752906
+T12026,https://openalex.org/T12026,Explainable Artificial Intelligence (XAI),17,Computer Science,1702,Artificial Intelligence,Physical Sciences,51807,725109
+T10627,https://openalex.org/T10627,Advanced Image and Video Retrieval Techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,51634,1157596
+T10514,https://openalex.org/T10514,Numerical methods in engineering,22,Engineering,2211,Mechanics of Materials,Physical Sciences,51591,959620
+T11568,https://openalex.org/T11568,Railway Systems and Energy Efficiency,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,51363,205448
+T12451,https://openalex.org/T12451,Smart Grid and Power Systems,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,51222,175119
+T10501,https://openalex.org/T10501,Polymer Nanocomposites and Properties,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,50862,990426
+T11248,https://openalex.org/T11248,Advanced Power Amplifier Design,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,50707,346345
+T11870,https://openalex.org/T11870,Structural Analysis and Optimization,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,50525,242922
+T11005,https://openalex.org/T11005,Radiation Effects in Electronics,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,50374,437660
+T11687,https://openalex.org/T11687,Teleoperation and Haptic Systems,22,Engineering,2210,Mechanical Engineering,Physical Sciences,49935,410260
+T11398,https://openalex.org/T11398,Hand Gesture Recognition Systems,17,Computer Science,1709,Human-Computer Interaction,Physical Sciences,49461,444151
+T11854,https://openalex.org/T11854,Laser-induced spectroscopy and plasma,22,Engineering,2211,Mechanics of Materials,Physical Sciences,49371,524331
+T10782,https://openalex.org/T10782,Nanoplatforms for cancer theranostics,22,Engineering,2204,Biomedical Engineering,Physical Sciences,49269,1653553
+T11847,https://openalex.org/T11847,Recycled Aggregate Concrete Performance,22,Engineering,2215,Building and Construction,Physical Sciences,49210,607713
+T11936,https://openalex.org/T11936,Chemical and Physical Properties in Aqueous Solutions,15,Chemical Engineering,1506,Filtration and Separation,Physical Sciences,49166,646048
+T11233,https://openalex.org/T11233,Advanced Adaptive Filtering Techniques,22,Engineering,2206,Computational Mechanics,Physical Sciences,48980,471443
+T10812,https://openalex.org/T10812,Human Pose and Action Recognition,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,48973,989750
+T11115,https://openalex.org/T11115,Topology Optimization in Engineering,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,48889,609923
+T10559,https://openalex.org/T10559,Particle Accelerators and Free-Electron Lasers,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,48799,291204
+T10740,https://openalex.org/T10740,Wind Turbine Control Systems,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,48766,528192
+T11574,https://openalex.org/T11574,Artificial Intelligence in Games,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,48522,269002
+T11240,https://openalex.org/T11240,Luminescence and Fluorescent Materials,25,Materials Science,2505,Materials Chemistry,Physical Sciences,48501,1205893
+T12709,https://openalex.org/T12709,Optimization and Mathematical Programming,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,48478,386949
+T11279,https://openalex.org/T11279,Lanthanide and Transition Metal Complexes,25,Materials Science,2505,Materials Chemistry,Physical Sciences,48461,881347
+T14502,https://openalex.org/T14502,High-Voltage Power Transmission Systems,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,48358,90212
+T10868,https://openalex.org/T10868,Soft Robotics and Applications,22,Engineering,2204,Biomedical Engineering,Physical Sciences,48256,644492
+T12698,https://openalex.org/T12698,3D Modeling in Geospatial Applications,22,Engineering,2215,Building and Construction,Physical Sciences,48242,120425
+T12163,https://openalex.org/T12163,Aerosol Filtration and Electrostatic Precipitation,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,48165,288088
+T12537,https://openalex.org/T12537,Flow Measurement and Analysis,22,Engineering,2211,Mechanics of Materials,Physical Sciences,47822,158344
+T11105,https://openalex.org/T11105,Advanced Image Processing Techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,47795,748264
+T11852,https://openalex.org/T11852,Clay minerals and soil interactions,25,Materials Science,2502,Biomaterials,Physical Sciences,47614,759424
+T11224,https://openalex.org/T11224,Electromagnetic wave absorption materials,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,47460,1183110
+T12427,https://openalex.org/T12427,Metal Alloys Wear and Properties,25,Materials Science,2505,Materials Chemistry,Physical Sciences,47432,218248
+T12350,https://openalex.org/T12350,Particle Dynamics in Fluid Flows,22,Engineering,2212,Ocean Engineering,Physical Sciences,47430,569140
+T11303,https://openalex.org/T11303,Bayesian Modeling and Causal Inference,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,47291,854816
+T10729,https://openalex.org/T10729,Electrospun Nanofibers in Biomedical Applications,25,Materials Science,2502,Biomaterials,Physical Sciences,47279,1222886
+T12084,https://openalex.org/T12084,Synthesis and properties of polymers,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,47275,449136
+T13034,https://openalex.org/T13034,Information Systems Education and Curriculum Development,17,Computer Science,1710,Information Systems,Physical Sciences,47234,110150
+T11851,https://openalex.org/T11851,Electromagnetic Compatibility and Measurements,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,47104,166798
+T10057,https://openalex.org/T10057,Face and Expression Recognition,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,46817,924861
+T12105,https://openalex.org/T12105,Hygrothermal properties of building materials,22,Engineering,2215,Building and Construction,Physical Sciences,46782,240985
+T11607,https://openalex.org/T11607,Microwave and Dielectric Measurement Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,46758,389641
+T10936,https://openalex.org/T10936,Millimeter-Wave Propagation and Modeling,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,46606,546865
+T12095,https://openalex.org/T12095,Vehicle emissions and performance,22,Engineering,2203,Automotive Engineering,Physical Sciences,46547,363191
+T11301,https://openalex.org/T11301,Advanced Surface Polishing Techniques,22,Engineering,2204,Biomedical Engineering,Physical Sciences,46471,345040
+T12601,https://openalex.org/T12601,Web Applications and Data Management,17,Computer Science,1710,Information Systems,Physical Sciences,46415,146101
+T12617,https://openalex.org/T12617,"Energy, Environment, and Transportation Policies",21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,46346,413385
+T12639,https://openalex.org/T12639,Global Energy and Sustainability Research,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,46319,228064
+T11800,https://openalex.org/T11800,User Authentication and Security Systems,17,Computer Science,1710,Information Systems,Physical Sciences,46037,278049
+T11723,https://openalex.org/T11723,Optical Coatings and Gratings,25,Materials Science,2508,"Surfaces, Coatings and Films",Physical Sciences,45780,413261
+T11249,https://openalex.org/T11249,Wireless Power Transfer Systems,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,45753,439161
+T11758,https://openalex.org/T11758,Organic and Molecular Conductors Research,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,45563,551347
+T11615,https://openalex.org/T11615,Control and Dynamics of Mobile Robots,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,45435,334755
+T13171,https://openalex.org/T13171,Polymer Science and PVC,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,45320,356978
+T12395,https://openalex.org/T12395,Educational Innovations and Technology,17,Computer Science,1710,Information Systems,Physical Sciences,45299,83968
+T12127,https://openalex.org/T12127,Software System Performance and Reliability,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,45151,217502
+T10623,https://openalex.org/T10623,Thin-Film Transistor Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,45079,554357
+T11125,https://openalex.org/T11125,Petri Nets in System Modeling,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,44947,438090
+T11360,https://openalex.org/T11360,Flame retardant materials and properties,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,44944,692889
+T12677,https://openalex.org/T12677,Sports Dynamics and Biomechanics,22,Engineering,2204,Biomedical Engineering,Physical Sciences,44876,206975
+T11978,https://openalex.org/T11978,Soil Mechanics and Vehicle Dynamics,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,44650,154392
+T11009,https://openalex.org/T11009,Catalysis for Biomass Conversion,22,Engineering,2204,Biomedical Engineering,Physical Sciences,44493,1113667
+T11263,https://openalex.org/T11263,Electromagnetic Simulation and Numerical Methods,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,44392,415285
+T10500,https://openalex.org/T10500,Sparse and Compressive Sensing Techniques,22,Engineering,2206,Computational Mechanics,Physical Sciences,44383,934312
+T10886,https://openalex.org/T10886,Multiferroics and related materials,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,44370,822485
+T11675,https://openalex.org/T11675,Open Source Software Innovations,17,Computer Science,1706,Computer Science Applications,Physical Sciences,43912,305342
+T11701,https://openalex.org/T11701,Space Satellite Systems and Control,22,Engineering,2202,Aerospace Engineering,Physical Sciences,43790,216205
+T11608,https://openalex.org/T11608,Dielectric materials and actuators,22,Engineering,2204,Biomedical Engineering,Physical Sciences,43179,779076
+T12285,https://openalex.org/T12285,Surface Chemistry and Catalysis,22,Engineering,2204,Biomedical Engineering,Physical Sciences,43038,928750
+T10848,https://openalex.org/T10848,Advanced Multi-Objective Optimization Algorithms,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,42955,923805
+T11644,https://openalex.org/T11644,Spam and Phishing Detection,17,Computer Science,1710,Information Systems,Physical Sciences,42941,376276
+T11947,https://openalex.org/T11947,Molten salt chemistry and electrochemical processes,15,Chemical Engineering,1507,Fluid Flow and Transfer Processes,Physical Sciences,42702,295299
+T11619,https://openalex.org/T11619,Combustion and Detonation Processes,22,Engineering,2202,Aerospace Engineering,Physical Sciences,42653,404987
+T11451,https://openalex.org/T11451,Advanced Machining and Optimization Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,42450,393728
+T12102,https://openalex.org/T12102,Fire effects on concrete materials,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,42150,319479
+T10742,https://openalex.org/T10742,Peer-to-Peer Network Technologies,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,42038,402081
+T12152,https://openalex.org/T12152,Concrete Properties and Behavior,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,41947,259452
+T11025,https://openalex.org/T11025,Nonlinear Optical Materials Research,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,41829,703354
+T11417,https://openalex.org/T11417,Advancements in PLL and VCO Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,41622,260459
+T11284,https://openalex.org/T11284,Coal Properties and Utilization,22,Engineering,2212,Ocean Engineering,Physical Sciences,41295,525223
+T13477,https://openalex.org/T13477,Sustainable Design and Development,22,Engineering,2215,Building and Construction,Physical Sciences,41266,141470
+T12128,https://openalex.org/T12128,AI in Service Interactions,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,41180,338057
+T11073,https://openalex.org/T11073,Metal Extraction and Bioleaching,22,Engineering,2204,Biomedical Engineering,Physical Sciences,41152,524688
+T13065,https://openalex.org/T13065,Mining Techniques and Economics,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,41025,76985
+T11992,https://openalex.org/T11992,CCD and CMOS Imaging Sensors,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,40683,196765
+T11165,https://openalex.org/T11165,Image and Video Quality Assessment,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,40667,566128
+T11737,https://openalex.org/T11737,Advanced Materials and Mechanics,22,Engineering,2210,Mechanical Engineering,Physical Sciences,40585,863168
+T11435,https://openalex.org/T11435,Polynomial and algebraic computation,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,40494,355695
+T11351,https://openalex.org/T11351,Catalysis and Hydrodesulfurization Studies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,40473,645274
+T13155,https://openalex.org/T13155,Digital Communication and Language,17,Computer Science,1709,Human-Computer Interaction,Physical Sciences,40289,217544
+T11383,https://openalex.org/T11383,Advanced Antenna and Metasurface Technologies,22,Engineering,2202,Aerospace Engineering,Physical Sciences,40245,458852
+T13382,https://openalex.org/T13382,Robotics and Automated Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,40239,198410
+T11190,https://openalex.org/T11190,3D Printing in Biomedical Research,22,Engineering,2204,Biomedical Engineering,Physical Sciences,40176,1017108
+T11975,https://openalex.org/T11975,Evolutionary Algorithms and Applications,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,40149,582491
+T11409,https://openalex.org/T11409,Advanced Wireless Network Optimization,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,39922,367640
+T11241,https://openalex.org/T11241,Advanced Malware Detection Techniques,17,Computer Science,1711,Signal Processing,Physical Sciences,39860,392624
+T11500,https://openalex.org/T11500,Evacuation and Crowd Dynamics,22,Engineering,2212,Ocean Engineering,Physical Sciences,39789,361183
+T13816,https://openalex.org/T13816,Advanced Signal Processing Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,39677,107069
+T11550,https://openalex.org/T11550,Text and Document Classification Technologies,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,39475,519940
+T11942,https://openalex.org/T11942,Transportation and Mobility Innovations,22,Engineering,2203,Automotive Engineering,Physical Sciences,38975,341397
+T11169,https://openalex.org/T11169,Silicon Nanostructures and Photoluminescence,25,Materials Science,2505,Materials Chemistry,Physical Sciences,38939,542359
+T11106,https://openalex.org/T11106,Data Management and Algorithms,17,Computer Science,1711,Signal Processing,Physical Sciences,38900,476821
+T11230,https://openalex.org/T11230,Innovative Energy Harvesting Technologies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,38880,550069
+T12050,https://openalex.org/T12050,Optical Polarization and Ellipsometry,22,Engineering,2204,Biomedical Engineering,Physical Sciences,38849,371907
+T11707,https://openalex.org/T11707,Gaze Tracking and Assistive Technology,17,Computer Science,1709,Human-Computer Interaction,Physical Sciences,38733,339166
+T11250,https://openalex.org/T11250,Wave and Wind Energy Systems,22,Engineering,2212,Ocean Engineering,Physical Sciences,38495,352933
+T12205,https://openalex.org/T12205,Time Series Analysis and Forecasting,17,Computer Science,1711,Signal Processing,Physical Sciences,38446,595763
+T12405,https://openalex.org/T12405,Characterization and Applications of Magnetic Nanoparticles,22,Engineering,2204,Biomedical Engineering,Physical Sciences,38437,784224
+T11904,https://openalex.org/T11904,Spatial Cognition and Navigation,22,Engineering,2203,Automotive Engineering,Physical Sciences,38368,561831
+T11614,https://openalex.org/T11614,Cloud Data Security Solutions,17,Computer Science,1710,Information Systems,Physical Sciences,38004,280529
+T11626,https://openalex.org/T11626,Metalloenzymes and iron-sulfur proteins,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,37999,1044378
+T10796,https://openalex.org/T10796,Cooperative Communication and Network Coding,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,37714,503089
+T11343,https://openalex.org/T11343,Power Transformer Diagnostics and Insulation,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,37712,233806
+T14025,https://openalex.org/T14025,Educational Technology and Assessment,17,Computer Science,1710,Information Systems,Physical Sciences,37605,112712
+T14412,https://openalex.org/T14412,Marine and Coastal Research,22,Engineering,2212,Ocean Engineering,Physical Sciences,37574,10836
+T11741,https://openalex.org/T11741,Flexible and Reconfigurable Manufacturing Systems,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,37504,197597
+T11278,https://openalex.org/T11278,Calcium Carbonate Crystallization and Inhibition,25,Materials Science,2502,Biomaterials,Physical Sciences,36899,816174
+T11523,https://openalex.org/T11523,Nanomaterials and Printing Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,36857,666576
+T11856,https://openalex.org/T11856,Thermography and Photoacoustic Techniques,22,Engineering,2211,Mechanics of Materials,Physical Sciences,36792,274055
+T11821,https://openalex.org/T11821,Odor and Emission Control Technologies,15,Chemical Engineering,1508,Process Chemistry and Technology,Physical Sciences,36727,258738
+T11286,https://openalex.org/T11286,Polyoxometalates: Synthesis and Applications,25,Materials Science,2505,Materials Chemistry,Physical Sciences,36694,709054
+T12012,https://openalex.org/T12012,Diatoms and Algae Research,25,Materials Science,2502,Biomaterials,Physical Sciences,36549,334245
+T12002,https://openalex.org/T12002,"Computability, Logic, AI Algorithms",17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,36387,350546
+T11255,https://openalex.org/T11255,Microfluidic and Bio-sensing Technologies,22,Engineering,2204,Biomedical Engineering,Physical Sciences,36327,623066
+T12959,https://openalex.org/T12959,Engineering and Materials Science Studies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,36277,52231
+T11512,https://openalex.org/T11512,Anomaly Detection Techniques and Applications,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,36256,497098
+T11558,https://openalex.org/T11558,Composite Material Mechanics,22,Engineering,2211,Mechanics of Materials,Physical Sciences,36253,644611
+T11273,https://openalex.org/T11273,Advanced Graph Neural Networks,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,36221,681421
+T11419,https://openalex.org/T11419,Supramolecular Self-Assembly in Materials,25,Materials Science,2502,Biomaterials,Physical Sciences,36104,1061151
+T14089,https://openalex.org/T14089,Nanotechnology research and applications,22,Engineering,2204,Biomedical Engineering,Physical Sciences,36036,273422
+T12304,https://openalex.org/T12304,Radiative Heat Transfer Studies,22,Engineering,2206,Computational Mechanics,Physical Sciences,35964,370177
+T12692,https://openalex.org/T12692,Magnetic Field Sensors Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,35869,221002
+T12772,https://openalex.org/T12772,Control and Stability of Dynamical Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,35863,592900
+T13398,https://openalex.org/T13398,Data Analysis with R,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,35706,968094
+T13602,https://openalex.org/T13602,Educational Methods and Media Use,17,Computer Science,1710,Information Systems,Physical Sciences,35635,43346
+T11693,https://openalex.org/T11693,Cryptography and Residue Arithmetic,17,Computer Science,1710,Information Systems,Physical Sciences,35602,298580
+T11128,https://openalex.org/T11128,Transition Metal Oxide Nanomaterials,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,35564,649054
+T12106,https://openalex.org/T12106,Surface Treatment and Residual Stress,22,Engineering,2210,Mechanical Engineering,Physical Sciences,35550,298619
+T13983,https://openalex.org/T13983,Cybersecurity and Information Systems,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,35360,44570
+T13855,https://openalex.org/T13855,Aerospace Engineering and Control Systems,22,Engineering,2202,Aerospace Engineering,Physical Sciences,35320,192868
+T12203,https://openalex.org/T12203,Mobile Agent-Based Network Management,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,35138,119663
+T13121,https://openalex.org/T13121,Radio Wave Propagation Studies,22,Engineering,2202,Aerospace Engineering,Physical Sciences,34676,180595
+T11874,https://openalex.org/T11874,Structural Response to Dynamic Loads,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,34604,258450
+T12260,https://openalex.org/T12260,Educational Technology and Pedagogy,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,34469,54369
+T13213,https://openalex.org/T13213,Mechanical Failure Analysis and Simulation,22,Engineering,2210,Mechanical Engineering,Physical Sciences,34303,80591
+T11063,https://openalex.org/T11063,Rough Sets and Fuzzy Logic,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,33846,447419
+T11842,https://openalex.org/T11842,Ultrasound and Cavitation Phenomena,25,Materials Science,2505,Materials Chemistry,Physical Sciences,33750,520944
+T11102,https://openalex.org/T11102,HVDC Systems and Fault Protection,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,33728,332967
+T11527,https://openalex.org/T11527,3D IC and TSV technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,33615,281987
+T11941,https://openalex.org/T11941,Power System Reliability and Maintenance,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,33457,233812
+T12479,https://openalex.org/T12479,Web Application Security Vulnerabilities,17,Computer Science,1710,Information Systems,Physical Sciences,33375,158289
+T11170,https://openalex.org/T11170,Biomimetic flight and propulsion mechanisms,22,Engineering,2202,Aerospace Engineering,Physical Sciences,33345,489836
+T11341,https://openalex.org/T11341,Boron and Carbon Nanomaterials Research,25,Materials Science,2505,Materials Chemistry,Physical Sciences,33321,668620
+T10913,https://openalex.org/T10913,Molecular Junctions and Nanostructures,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,33255,825649
+T11478,https://openalex.org/T11478,Caching and Content Delivery,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,33210,383125
+T12118,https://openalex.org/T12118,Forest Biomass Utilization and Management,22,Engineering,2211,Mechanics of Materials,Physical Sciences,33147,225802
+T12085,https://openalex.org/T12085,Collagen: Extraction and Characterization,25,Materials Science,2502,Biomaterials,Physical Sciences,33125,741941
+T11315,https://openalex.org/T11315,Phase-change materials and chalcogenides,25,Materials Science,2505,Materials Chemistry,Physical Sciences,33114,446288
+T11807,https://openalex.org/T11807,Infrastructure Resilience and Vulnerability Analysis,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,32981,315967
+T11017,https://openalex.org/T11017,Chaos-based Image/Signal Encryption,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,32959,479565
+T11784,https://openalex.org/T11784,CO2 Reduction Techniques and Catalysts,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,32736,1152356
+T10917,https://openalex.org/T10917,Smart Grid Security and Resilience,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,32691,419213
+T12420,https://openalex.org/T12420,Silicone and Siloxane Chemistry,25,Materials Science,2505,Materials Chemistry,Physical Sciences,32661,421917
+T11569,https://openalex.org/T11569,Optical Coherence Tomography Applications,22,Engineering,2204,Biomedical Engineering,Physical Sciences,32603,430619
+T13194,https://openalex.org/T13194,ICT in Developing Communities,17,Computer Science,1710,Information Systems,Physical Sciences,32395,155546
+T13858,https://openalex.org/T13858,Technical Engine Diagnostics and Monitoring,22,Engineering,2203,Automotive Engineering,Physical Sciences,32338,24316
+T11708,https://openalex.org/T11708,Photochromic and Fluorescence Chemistry,25,Materials Science,2505,Materials Chemistry,Physical Sciences,31966,624731
+T12016,https://openalex.org/T12016,Web Data Mining and Analysis,17,Computer Science,1710,Information Systems,Physical Sciences,31904,227405
+T13050,https://openalex.org/T13050,Oil and Gas Production Techniques,22,Engineering,2212,Ocean Engineering,Physical Sciences,31886,79546
+T14214,https://openalex.org/T14214,Space Exploration and Technology,22,Engineering,2202,Aerospace Engineering,Physical Sciences,31873,49125
+T13200,https://openalex.org/T13200,Spacecraft and Cryogenic Technologies,22,Engineering,2202,Aerospace Engineering,Physical Sciences,31869,122925
+T14252,https://openalex.org/T14252,Water and Wastewater Treatment,22,Engineering,2206,Computational Mechanics,Physical Sciences,31688,31812
+T13049,https://openalex.org/T13049,Surface Roughness and Optical Measurements,22,Engineering,2206,Computational Mechanics,Physical Sciences,31681,250050
+T11596,https://openalex.org/T11596,Constraint Satisfaction and Optimization,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,31649,393108
+T11458,https://openalex.org/T11458,Advanced Wireless Communication Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,31443,538817
+T12141,https://openalex.org/T12141,Fluid Dynamics and Thin Films,22,Engineering,2206,Computational Mechanics,Physical Sciences,31330,548956
+T12306,https://openalex.org/T12306,Urban and Freight Transport Logistics,22,Engineering,2215,Building and Construction,Physical Sciences,31291,197013
+T11602,https://openalex.org/T11602,Magnetic Bearings and Levitation Dynamics,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,31248,172644
+T11799,https://openalex.org/T11799,"Adhesion, Friction, and Surface Interactions",22,Engineering,2211,Mechanics of Materials,Physical Sciences,31138,589592
+T11143,https://openalex.org/T11143,High Entropy Alloys Studies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,31033,944263
+T11774,https://openalex.org/T11774,Adsorption and Cooling Systems,22,Engineering,2210,Mechanical Engineering,Physical Sciences,30978,360393
+T12535,https://openalex.org/T12535,Machine Learning and Data Classification,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,30880,715228
+T11133,https://openalex.org/T11133,UAV Applications and Optimization,22,Engineering,2202,Aerospace Engineering,Physical Sciences,30809,409326
+T13295,https://openalex.org/T13295,Safety Systems Engineering in Autonomy,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,30266,129277
+T12158,https://openalex.org/T12158,Guidance and Control Systems,22,Engineering,2202,Aerospace Engineering,Physical Sciences,30165,200577
+T11661,https://openalex.org/T11661,Copper Interconnects and Reliability,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,30096,316656
+T13852,https://openalex.org/T13852,Seismic and Structural Analysis of Tall Buildings,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,29982,77965
+T11471,https://openalex.org/T11471,Block Copolymer Self-Assembly,25,Materials Science,2505,Materials Chemistry,Physical Sciences,29853,670177
+T12642,https://openalex.org/T12642,Polymer-Based Agricultural Enhancements,22,Engineering,2204,Biomedical Engineering,Physical Sciences,29781,389942
+T11694,https://openalex.org/T11694,Fluid Dynamics Simulations and Interactions,22,Engineering,2206,Computational Mechanics,Physical Sciences,29695,384885
+T10810,https://openalex.org/T10810,Polymer composites and self-healing,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,29667,752892
+T11652,https://openalex.org/T11652,Imbalanced Data Classification Techniques,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,29661,635126
+T12099,https://openalex.org/T12099,Advanced materials and composites,22,Engineering,2210,Mechanical Engineering,Physical Sciences,29650,267709
+T12072,https://openalex.org/T12072,Machine Learning and Algorithms,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,29642,1114095
+T11407,https://openalex.org/T11407,Innovative Microfluidic and Catalytic Techniques Innovation,22,Engineering,2204,Biomedical Engineering,Physical Sciences,29507,618851
+T11272,https://openalex.org/T11272,Nanowire Synthesis and Applications,22,Engineering,2204,Biomedical Engineering,Physical Sciences,29469,640189
+T14335,https://openalex.org/T14335,Educational Robotics and Engineering,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,29353,79241
+T14306,https://openalex.org/T14306,Technology Assessment and Management,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,29293,86675
+T14158,https://openalex.org/T14158,Optical Systems and Laser Technology,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,29231,67387
+T12034,https://openalex.org/T12034,Digital and Cyber Forensics,17,Computer Science,1710,Information Systems,Physical Sciences,29180,143228
+T11344,https://openalex.org/T11344,Traffic Prediction and Management Techniques,22,Engineering,2215,Building and Construction,Physical Sciences,29172,419084
+T11498,https://openalex.org/T11498,Security in Wireless Sensor Networks,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,29170,336705
+T11525,https://openalex.org/T11525,Piezoelectric Actuators and Control,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,29117,248361
+T13104,https://openalex.org/T13104,Chemical and Physical Properties of Materials,25,Materials Science,2505,Materials Chemistry,Physical Sciences,29098,463794
+T11659,https://openalex.org/T11659,Advanced Image Fusion Techniques,22,Engineering,2214,Media Technology,Physical Sciences,29091,417886
+T12197,https://openalex.org/T12197,Brake Systems and Friction Analysis,22,Engineering,2203,Automotive Engineering,Physical Sciences,29065,134777
+T11945,https://openalex.org/T11945,Heat Transfer Mechanisms,22,Engineering,2210,Mechanical Engineering,Physical Sciences,28951,417967
+T13722,https://openalex.org/T13722,Ergonomics and Human Factors,22,Engineering,2204,Biomedical Engineering,Physical Sciences,28769,120746
+T12362,https://openalex.org/T12362,Tribology and Wear Analysis,22,Engineering,2211,Mechanics of Materials,Physical Sciences,28740,305121
+T12371,https://openalex.org/T12371,Electrical Contact Performance and Analysis,22,Engineering,2210,Mechanical Engineering,Physical Sciences,28508,96307
+T14445,https://openalex.org/T14445,Transportation Safety and Impact Analysis,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,28431,76729
+T11598,https://openalex.org/T11598,Internet Traffic Analysis and Secure E-voting,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,28360,273004
+T11439,https://openalex.org/T11439,Video Analysis and Summarization,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,28315,251023
+T11582,https://openalex.org/T11582,Nanopore and Nanochannel Transport Studies,22,Engineering,2204,Biomedical Engineering,Physical Sciences,28036,686093
+T11342,https://openalex.org/T11342,Carbon and Quantum Dots Applications,25,Materials Science,2505,Materials Chemistry,Physical Sciences,27878,1050036
+T11667,https://openalex.org/T11667,Advanced Chemical Sensor Technologies,22,Engineering,2204,Biomedical Engineering,Physical Sciences,27831,442167
+T12074,https://openalex.org/T12074,Membrane-based Ion Separation Techniques,22,Engineering,2204,Biomedical Engineering,Physical Sciences,27818,511845
+T11697,https://openalex.org/T11697,Numerical Methods and Algorithms,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,27797,241774
+T14146,https://openalex.org/T14146,Earthquake and Tsunami Effects,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,27749,236710
+T13083,https://openalex.org/T13083,Advanced Text Analysis Techniques,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,27737,279675
+T11946,https://openalex.org/T11946,Antenna Design and Optimization,22,Engineering,2202,Aerospace Engineering,Physical Sciences,27641,227406
+T12546,https://openalex.org/T12546,Smart Parking Systems Research,22,Engineering,2215,Building and Construction,Physical Sciences,27561,83198
+T12238,https://openalex.org/T12238,Green IT and Sustainability,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,27363,209775
+T11565,https://openalex.org/T11565,Thermoelastic and Magnetoelastic Phenomena,22,Engineering,2211,Mechanics of Materials,Physical Sciences,27260,347621
+T12579,https://openalex.org/T12579,Muon and positron interactions and applications,22,Engineering,2211,Mechanics of Materials,Physical Sciences,27144,268253
+T12588,https://openalex.org/T12588,Electronic and Structural Properties of Oxides,25,Materials Science,2505,Materials Chemistry,Physical Sciences,27142,351277
+T13129,https://openalex.org/T13129,Material Properties and Applications,25,Materials Science,2500,General Materials Science,Physical Sciences,27109,91943
+T11901,https://openalex.org/T11901,Bayesian Methods and Mixture Models,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,27084,529610
+T12139,https://openalex.org/T12139,Advanced Thermodynamic Systems and Engines,22,Engineering,2210,Mechanical Engineering,Physical Sciences,26969,183509
+T13889,https://openalex.org/T13889,Advanced Materials and Semiconductor Technologies,25,Materials Science,2505,Materials Chemistry,Physical Sciences,26856,118604
+T13615,https://openalex.org/T13615,Transportation Systems and Safety,17,Computer Science,1704,Computer Graphics and Computer-Aided Design,Physical Sciences,26841,27113
+T12299,https://openalex.org/T12299,Radiation Shielding Materials Analysis,25,Materials Science,2505,Materials Chemistry,Physical Sciences,26826,253841
+T12406,https://openalex.org/T12406,IoT and GPS-based Vehicle Safety Systems,22,Engineering,2210,Mechanical Engineering,Physical Sciences,26826,63269
+T12292,https://openalex.org/T12292,Graph Theory and Algorithms,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,26401,321808
+T14392,https://openalex.org/T14392,Geoscience and Mining Technology,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,26344,85367
+T14456,https://openalex.org/T14456,Blasting Impact and Analysis,22,Engineering,2215,Building and Construction,Physical Sciences,26333,84438
+T12290,https://openalex.org/T12290,Human Motion and Animation,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,26325,265183
+T13190,https://openalex.org/T13190,Engineering and Environmental Studies,22,Engineering,2212,Ocean Engineering,Physical Sciences,26236,26600
+T11932,https://openalex.org/T11932,Wireless Body Area Networks,22,Engineering,2204,Biomedical Engineering,Physical Sciences,26101,279064
+T12340,https://openalex.org/T12340,Anodic Oxide Films and Nanostructures,25,Materials Science,2505,Materials Chemistry,Physical Sciences,26009,354595
+T13293,https://openalex.org/T13293,Engineering and Test Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,25920,47471
+T12224,https://openalex.org/T12224,Nanofabrication and Lithography Techniques,22,Engineering,2204,Biomedical Engineering,Physical Sciences,25847,386195
+T12696,https://openalex.org/T12696,Icing and De-icing Technologies,22,Engineering,2202,Aerospace Engineering,Physical Sciences,25753,199040
+T11593,https://openalex.org/T11593,Carbon dioxide utilization in catalysis,15,Chemical Engineering,1508,Process Chemistry and Technology,Physical Sciences,25557,663234
+T12357,https://openalex.org/T12357,Digital Media Forensic Detection,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,25553,294385
+T12078,https://openalex.org/T12078,Environmental remediation with nanomaterials,22,Engineering,2204,Biomedical Engineering,Physical Sciences,25463,579879
+T12597,https://openalex.org/T12597,Fire Detection and Safety Systems,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,25417,126548
+T13702,https://openalex.org/T13702,Machine Learning in Healthcare,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,25366,292876
+T14215,https://openalex.org/T14215,Chemical and Environmental Engineering Research,17,Computer Science,1710,Information Systems,Physical Sciences,25356,115958
+T11612,https://openalex.org/T11612,Stochastic Gradient Optimization Techniques,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,25327,644244
+T12907,https://openalex.org/T12907,Mechanical Engineering and Vibrations Research,22,Engineering,2210,Mechanical Engineering,Physical Sciences,25209,45267
+T11646,https://openalex.org/T11646,Nonlocal and gradient elasticity in micro/nano structures,25,Materials Science,2505,Materials Chemistry,Physical Sciences,25115,628934
+T12326,https://openalex.org/T12326,Network Packet Processing and Optimization,17,Computer Science,1708,Hardware and Architecture,Physical Sciences,24849,164594
+T12079,https://openalex.org/T12079,IoT Networks and Protocols,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,24842,256048
+T12549,https://openalex.org/T12549,Image and Object Detection Techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,24621,346298
+T12469,https://openalex.org/T12469,"Chaos, Complexity, and Education",17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,24612,156101
+T11686,https://openalex.org/T11686,Dendrimers and Hyperbranched Polymers,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,24541,670578
+T12386,https://openalex.org/T12386,Advanced X-ray and CT Imaging,22,Engineering,2204,Biomedical Engineering,Physical Sciences,24181,266781
+T12008,https://openalex.org/T12008,Solar-Powered Water Purification Methods,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,24094,604996
+T11778,https://openalex.org/T11778,Electrical and Bioimpedance Tomography,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,24034,247117
+T12506,https://openalex.org/T12506,Nuclear materials and radiation effects,25,Materials Science,2505,Materials Chemistry,Physical Sciences,24010,252883
+T12865,https://openalex.org/T12865,Tailings Management and Properties,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,23921,160530
+T13623,https://openalex.org/T13623,Linguistic Studies and Language Acquisition,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,23805,54524
+T12262,https://openalex.org/T12262,Hate Speech and Cyberbullying Detection,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,23736,186397
+T12628,https://openalex.org/T12628,Polymer Foaming and Composites,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,23678,244882
+T10964,https://openalex.org/T10964,Wireless Communication Security Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,23377,339134
+T13644,https://openalex.org/T13644,Control Systems in Engineering,22,Engineering,2210,Mechanical Engineering,Physical Sciences,23270,102614
+T13018,https://openalex.org/T13018,Seismology and Earthquake Studies,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,23142,154018
+T13081,https://openalex.org/T13081,Digital Education and Society,17,Computer Science,1710,Information Systems,Physical Sciences,23128,149777
+T13286,https://openalex.org/T13286,Modeling and Simulation Systems,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,22940,115862
+T11873,https://openalex.org/T11873,PAPR reduction in OFDM,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,22938,219509
+T12540,https://openalex.org/T12540,Cyclone Separators and Fluid Dynamics,22,Engineering,2206,Computational Mechanics,Physical Sciences,22903,121442
+T12309,https://openalex.org/T12309,solar cell performance optimization,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,22740,237454
+T12809,https://openalex.org/T12809,Contact Mechanics and Variational Inequalities,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,22700,262530
+T12442,https://openalex.org/T12442,Thermal Radiation and Cooling Technologies,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,22615,392060
+T14189,https://openalex.org/T14189,Intravenous Infusion Technology and Safety,22,Engineering,2204,Biomedical Engineering,Physical Sciences,22614,56358
+T11751,https://openalex.org/T11751,Lattice Boltzmann Simulation Studies,22,Engineering,2206,Computational Mechanics,Physical Sciences,22567,460461
+T13371,https://openalex.org/T13371,Military Defense Systems Analysis,22,Engineering,2202,Aerospace Engineering,Physical Sciences,22390,55499
+T13465,https://openalex.org/T13465,"Graphite, nuclear technology, radiation studies",25,Materials Science,2505,Materials Chemistry,Physical Sciences,22190,216577
+T13596,https://openalex.org/T13596,"Grouting, Rheology, and Soil Mechanics",22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,22142,88935
+T11887,https://openalex.org/T11887,Quasicrystal Structures and Properties,25,Materials Science,2505,Materials Chemistry,Physical Sciences,22141,266113
+T13038,https://openalex.org/T13038,Internet of Things and AI,17,Computer Science,1710,Information Systems,Physical Sciences,22097,218027
+T13584,https://openalex.org/T13584,Coal Combustion and Slurry Processing,22,Engineering,2210,Mechanical Engineering,Physical Sciences,22064,168167
+T14225,https://openalex.org/T14225,Advanced Sensor and Control Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,22060,24492
+T12112,https://openalex.org/T12112,Ammonia Synthesis and Nitrogen Reduction,15,Chemical Engineering,1503,Catalysis,Physical Sciences,22053,633637
+T11802,https://openalex.org/T11802,Chemical Looping and Thermochemical Processes,22,Engineering,2204,Biomedical Engineering,Physical Sciences,22003,440554
+T12100,https://openalex.org/T12100,Advanced Mathematical Modeling in Engineering,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,21943,270794
+T12923,https://openalex.org/T12923,Digital Image Processing Techniques,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,21866,278103
+T13249,https://openalex.org/T13249,Dielectric properties of ceramics,25,Materials Science,2505,Materials Chemistry,Physical Sciences,21770,317511
+T13928,https://openalex.org/T13928,Advanced Sensor Technologies Research,22,Engineering,2204,Biomedical Engineering,Physical Sciences,21763,77207
+T11347,https://openalex.org/T11347,Neural Networks Stability and Synchronization,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,21703,470956
+T13140,https://openalex.org/T13140,Materials Engineering and Processing,22,Engineering,2210,Mechanical Engineering,Physical Sciences,21649,117288
+T12162,https://openalex.org/T12162,Cellular Automata and Applications,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,21462,188937
+T12081,https://openalex.org/T12081,Aerodynamics and Fluid Dynamics Research,22,Engineering,2202,Aerospace Engineering,Physical Sciences,21392,125227
+T11704,https://openalex.org/T11704,Mobile Crowdsensing and Crowdsourcing,17,Computer Science,1706,Computer Science Applications,Physical Sciences,21325,370460
+T12015,https://openalex.org/T12015,Photoacoustic and Ultrasonic Imaging,22,Engineering,2204,Biomedical Engineering,Physical Sciences,21169,342883
+T12541,https://openalex.org/T12541,Graph Labeling and Dimension Problems,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,21140,97847
+T11605,https://openalex.org/T11605,Visual Attention and Saliency Detection,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,21041,521036
+T11966,https://openalex.org/T11966,Silk-based biomaterials and applications,25,Materials Science,2502,Biomaterials,Physical Sciences,21001,484005
+T12416,https://openalex.org/T12416,Polymer Nanocomposite Synthesis and Irradiation,25,Materials Science,2507,Polymers and Plastics,Physical Sciences,20972,243440
+T12071,https://openalex.org/T12071,Marine Biology and Environmental Chemistry,22,Engineering,2212,Ocean Engineering,Physical Sciences,20860,339700
+T12277,https://openalex.org/T12277,Frequency Control in Power Systems,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,20661,255263
+T13807,https://openalex.org/T13807,Cultural Insights and Digital Impacts,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,20655,32943
+T12007,https://openalex.org/T12007,Plasma and Flow Control in Aerodynamics,22,Engineering,2202,Aerospace Engineering,Physical Sciences,20633,208549
+T11766,https://openalex.org/T11766,Iron-based superconductors research,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,20233,372721
+T13386,https://openalex.org/T13386,Educational Methods and Teacher Development,17,Computer Science,1710,Information Systems,Physical Sciences,20200,5731
+T13650,https://openalex.org/T13650,Computational Physics and Python Applications,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,20197,424913
+T13197,https://openalex.org/T13197,Spreadsheets and End-User Computing,17,Computer Science,1712,Software,Physical Sciences,20162,59422
+T11788,https://openalex.org/T11788,Nonlinear Optical Materials Studies,22,Engineering,2204,Biomedical Engineering,Physical Sciences,20121,374002
+T11739,https://openalex.org/T11739,Microwave Imaging and Scattering Analysis,22,Engineering,2204,Biomedical Engineering,Physical Sciences,20082,209117
+T11940,https://openalex.org/T11940,Layered Double Hydroxides Synthesis and Applications,25,Materials Science,2505,Materials Chemistry,Physical Sciences,20066,468643
+T13094,https://openalex.org/T13094,Mining and Gasification Technologies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,19991,112444
+T12938,https://openalex.org/T12938,Material Selection and Properties,25,Materials Science,2505,Materials Chemistry,Physical Sciences,19753,77765
+T13312,https://openalex.org/T13312,Mechanical and Thermal Properties Analysis,22,Engineering,2210,Mechanical Engineering,Physical Sciences,19736,51074
+T11392,https://openalex.org/T11392,Energy Harvesting in Wireless Networks,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,19717,299167
+T12122,https://openalex.org/T12122,Physical Unclonable Functions (PUFs) and Hardware Security,17,Computer Science,1708,Hardware and Architecture,Physical Sciences,19688,231878
+T11915,https://openalex.org/T11915,Pickering emulsions and particle stabilization,25,Materials Science,2505,Materials Chemistry,Physical Sciences,19681,492138
+T13287,https://openalex.org/T13287,Robotic Process Automation Applications,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,19627,56770
+T14359,https://openalex.org/T14359,Wetland Management and Conservation,22,Engineering,2212,Ocean Engineering,Physical Sciences,19625,155773
+T12875,https://openalex.org/T12875,Thermal Expansion and Ionic Conductivity,25,Materials Science,2505,Materials Chemistry,Physical Sciences,19607,254204
+T14029,https://openalex.org/T14029,Thoreau and American Literature,17,Computer Science,1710,Information Systems,Physical Sciences,19587,52803
+T12046,https://openalex.org/T12046,MXene and MAX Phase Materials,25,Materials Science,2505,Materials Chemistry,Physical Sciences,19532,764734
+T13734,https://openalex.org/T13734,Advanced Computational Techniques and Applications,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,19404,43237
+T12176,https://openalex.org/T12176,Optimization and Packing Problems,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,19303,201795
+T13954,https://openalex.org/T13954,Aerospace Engineering and Applications,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,19235,32573
+T12729,https://openalex.org/T12729,Tree Root and Stability Studies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,18922,177860
+T13418,https://openalex.org/T13418,Photocathodes and Microchannel Plates,22,Engineering,2204,Biomedical Engineering,Physical Sciences,18878,132893
+T12737,https://openalex.org/T12737,Electrical Fault Detection and Protection,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,18692,55917
+T12252,https://openalex.org/T12252,Mechanical stress and fatigue analysis,22,Engineering,2211,Mechanics of Materials,Physical Sciences,18687,183407
+T14345,https://openalex.org/T14345,Scientific Research and Philosophical Inquiry,17,Computer Science,1710,Information Systems,Physical Sciences,18572,82376
+T11907,https://openalex.org/T11907,Copper-based nanomaterials and applications,25,Materials Science,2505,Materials Chemistry,Physical Sciences,18546,386771
+T12146,https://openalex.org/T12146,Power Line Communications and Noise,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,18507,96670
+T13341,https://openalex.org/T13341,Belt Conveyor Systems Engineering,22,Engineering,2210,Mechanical Engineering,Physical Sciences,18304,20376
+T12038,https://openalex.org/T12038,Covalent Organic Framework Applications,25,Materials Science,2505,Materials Chemistry,Physical Sciences,18150,749390
+T13790,https://openalex.org/T13790,Waste Management and Environmental Impact,22,Engineering,2210,Mechanical Engineering,Physical Sciences,17892,70364
+T12536,https://openalex.org/T12536,Topological and Geometric Data Analysis,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,17810,144820
+T11447,https://openalex.org/T11447,Blind Source Separation Techniques,17,Computer Science,1711,Signal Processing,Physical Sciences,17387,279117
+T14117,https://openalex.org/T14117,Integrated Circuits and Semiconductor Failure Analysis,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,17366,67724
+T12776,https://openalex.org/T12776,Electrohydrodynamics and Fluid Dynamics,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,17350,213767
+T12611,https://openalex.org/T12611,Neural Networks and Reservoir Computing,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,17327,204031
+T13535,https://openalex.org/T13535,Wireless Sensor Networks and IoT,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,17283,51930
+T13016,https://openalex.org/T13016,Innovative Educational Technologies,17,Computer Science,1710,Information Systems,Physical Sciences,17099,30465
+T13267,https://openalex.org/T13267,Advanced Theoretical and Applied Studies in Material Sciences and Geometry,22,Engineering,2204,Biomedical Engineering,Physical Sciences,17022,4516
+T12719,https://openalex.org/T12719,Aerospace Engineering and Energy Systems,22,Engineering,2202,Aerospace Engineering,Physical Sciences,16909,65908
+T12784,https://openalex.org/T12784,Modular Robots and Swarm Intelligence,22,Engineering,2210,Mechanical Engineering,Physical Sciences,16720,171027
+T13282,https://openalex.org/T13282,Automated Road and Building Extraction,22,Engineering,2212,Ocean Engineering,Physical Sciences,16644,185001
+T13674,https://openalex.org/T13674,Computer Science and Engineering,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,16629,165895
+T12239,https://openalex.org/T12239,Construction Management and Sustainability,22,Engineering,2215,Building and Construction,Physical Sciences,16617,11181
+T12810,https://openalex.org/T12810,Real-time simulation and control systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,16614,74187
+T13891,https://openalex.org/T13891,Engineering Diagnostics and Reliability,22,Engineering,2211,Mechanics of Materials,Physical Sciences,16591,6514
+T13559,https://openalex.org/T13559,Edcuational Technology Systems,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,16570,26792
+T12200,https://openalex.org/T12200,Heusler alloys: electronic and magnetic properties,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,16400,200333
+T11877,https://openalex.org/T11877,Iron oxide chemistry and applications,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,16385,457737
+T12380,https://openalex.org/T12380,Authorship Attribution and Profiling,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,16324,125376
+T12814,https://openalex.org/T12814,Gaussian Processes and Bayesian Inference,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,16276,305270
+T13362,https://openalex.org/T13362,Slime Mold and Myxomycetes Research,22,Engineering,2204,Biomedical Engineering,Physical Sciences,16058,191948
+T14381,https://openalex.org/T14381,"Psychiatry, Mental Health, Neuroscience",17,Computer Science,1702,Artificial Intelligence,Physical Sciences,15881,90161
+T12898,https://openalex.org/T12898,Induction Heating and Inverter Technology,22,Engineering,2210,Mechanical Engineering,Physical Sciences,15864,52824
+T12024,https://openalex.org/T12024,Ultra-Wideband Communications Technology,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,15861,115945
+T12149,https://openalex.org/T12149,Nanocluster Synthesis and Applications,25,Materials Science,2505,Materials Chemistry,Physical Sciences,15854,555076
+T14011,https://openalex.org/T14011,Elevator Systems and Control,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,15764,20176
+T12302,https://openalex.org/T12302,Advanced Nanomaterials in Catalysis,25,Materials Science,2505,Materials Chemistry,Physical Sciences,15712,522738
+T13578,https://openalex.org/T13578,Stonefly species taxonomy and ecology,22,Engineering,2212,Ocean Engineering,Physical Sciences,15620,22939
+T13270,https://openalex.org/T13270,QR Code Applications and Technologies,17,Computer Science,1710,Information Systems,Physical Sciences,15557,40046
+T12288,https://openalex.org/T12288,Optimization and Search Problems,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,15486,176831
+T12808,https://openalex.org/T12808,Ferroelectric and Negative Capacitance Devices,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,15454,255800
+T12155,https://openalex.org/T12155,Microwave Dielectric Ceramics Synthesis,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,15407,206293
+T13552,https://openalex.org/T13552,Advanced Materials Characterization Techniques,22,Engineering,2204,Biomedical Engineering,Physical Sciences,15078,186694
+T13298,https://openalex.org/T13298,Solar Energy Systems and Technologies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,15015,114050
+T13251,https://openalex.org/T13251,Electrical and Thermal Properties of Materials,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,14988,101003
+T12435,https://openalex.org/T12435,Bladed Disk Vibration Dynamics,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,14967,122686
+T13436,https://openalex.org/T13436,Space Technology and Applications,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,14707,17026
+T12746,https://openalex.org/T12746,Sustainable Industrial Ecology,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,14678,111531
+T14114,https://openalex.org/T14114,Digital Media and Philosophy,17,Computer Science,1706,Computer Science Applications,Physical Sciences,14619,49989
+T14519,https://openalex.org/T14519,Innovations in Education and Learning Technologies,17,Computer Science,1710,Information Systems,Physical Sciences,14592,8363
+T12131,https://openalex.org/T12131,Wireless Signal Modulation Classification,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,14505,145251
+T12487,https://openalex.org/T12487,Structural Engineering and Vibration Analysis,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,14282,60499
+T11896,https://openalex.org/T11896,Opportunistic and Delay-Tolerant Networks,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,14075,162850
+T13691,https://openalex.org/T13691,"Energy, Environment, Agriculture Analysis",21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,14020,83845
+T12389,https://openalex.org/T12389,Infrared Target Detection Methodologies,22,Engineering,2202,Aerospace Engineering,Physical Sciences,14017,100739
+T12510,https://openalex.org/T12510,Magneto-Optical Properties and Applications,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,13790,123209
+T12529,https://openalex.org/T12529,Ga2O3 and related materials,25,Materials Science,2504,"Electronic, Optical and Magnetic Materials",Physical Sciences,13621,277539
+T14184,https://openalex.org/T14184,Metallurgy and Material Science,25,Materials Science,2505,Materials Chemistry,Physical Sciences,13569,49399
+T13114,https://openalex.org/T13114,Image Processing Techniques and Applications,22,Engineering,2214,Media Technology,Physical Sciences,13536,73350
+T12627,https://openalex.org/T12627,Graphene and Nanomaterials Applications,22,Engineering,2204,Biomedical Engineering,Physical Sciences,13494,474090
+T13885,https://openalex.org/T13885,Geophysics and Sensor Technology,22,Engineering,2212,Ocean Engineering,Physical Sciences,13453,51265
+T12190,https://openalex.org/T12190,Innovations in Concrete and Construction Materials,22,Engineering,2215,Building and Construction,Physical Sciences,13415,191060
+T14307,https://openalex.org/T14307,Bioethics and Human Rights Issues,17,Computer Science,1710,Information Systems,Physical Sciences,13322,85122
+T12794,https://openalex.org/T12794,Adaptive Dynamic Programming Control,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,13291,272677
+T12801,https://openalex.org/T12801,Bluetooth and Wireless Communication Technologies,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,13264,60054
+T14446,https://openalex.org/T14446,Civil and Geotechnical Engineering Research,22,Engineering,2200,General Engineering,Physical Sciences,13248,4394
+T14224,https://openalex.org/T14224,"Oil, Gas, and Environmental Issues",21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,13221,41054
+T14067,https://openalex.org/T14067,Cloud Computing and Remote Desktop Technologies,17,Computer Science,1708,Hardware and Architecture,Physical Sciences,13200,27526
+T12495,https://openalex.org/T12495,Electrostatic Discharge in Electronics,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,13199,68476
+T11749,https://openalex.org/T11749,Iterative Learning Control Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,13113,163944
+T13062,https://openalex.org/T13062,Cognitive Computing and Networks,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,13101,94828
+T13941,https://openalex.org/T13941,Geotechnical and Mining Engineering,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,13051,46535
+T13976,https://openalex.org/T13976,Web visibility and informetrics,17,Computer Science,1710,Information Systems,Physical Sciences,13051,35460
+T12567,https://openalex.org/T12567,Heat transfer and supercritical fluids,22,Engineering,2206,Computational Mechanics,Physical Sciences,13007,142676
+T13999,https://openalex.org/T13999,Digital Rights Management and Security,17,Computer Science,1710,Information Systems,Physical Sciences,12996,29021
+T13752,https://openalex.org/T13752,Mechanics and Biomechanics Studies,22,Engineering,2204,Biomedical Engineering,Physical Sciences,12915,79469
+T12423,https://openalex.org/T12423,Software Reliability and Analysis Research,17,Computer Science,1712,Software,Physical Sciences,12490,119181
+T13851,https://openalex.org/T13851,"Law, AI, and Intellectual Property",17,Computer Science,1702,Artificial Intelligence,Physical Sciences,12407,17653
+T12391,https://openalex.org/T12391,Artificial Immune Systems Applications,22,Engineering,2204,Biomedical Engineering,Physical Sciences,12313,112664
+T12707,https://openalex.org/T12707,Vehicle License Plate Recognition,22,Engineering,2214,Media Technology,Physical Sciences,12161,66298
+T13689,https://openalex.org/T13689,Underground infrastructure and sustainability,22,Engineering,2215,Building and Construction,Physical Sciences,12155,23761
+T12740,https://openalex.org/T12740,Gait Recognition and Analysis,22,Engineering,2204,Biomedical Engineering,Physical Sciences,11882,171774
+T13185,https://openalex.org/T13185,Phytochemistry and Bioactive Compounds,25,Materials Science,2502,Biomaterials,Physical Sciences,11760,86494
+T14276,https://openalex.org/T14276,Power Systems and Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,11722,35868
+T13715,https://openalex.org/T13715,Power Line Inspection Robots,22,Engineering,2210,Mechanical Engineering,Physical Sciences,11718,75935
+T12874,https://openalex.org/T12874,Digital Imaging for Blood Diseases,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,11592,106874
+T13257,https://openalex.org/T13257,Advanced Control and Stabilization in Aerospace Systems,22,Engineering,2202,Aerospace Engineering,Physical Sciences,11550,32366
+T13629,https://openalex.org/T13629,Text Readability and Simplification,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,11507,78311
+T12466,https://openalex.org/T12466,Near-Field Optical Microscopy,22,Engineering,2204,Biomedical Engineering,Physical Sciences,11497,161759
+T12706,https://openalex.org/T12706,Subcritical and Supercritical Water Processes,22,Engineering,2204,Biomedical Engineering,Physical Sciences,11339,231869
+T12897,https://openalex.org/T12897,Structural Analysis of Composite Materials,22,Engineering,2210,Mechanical Engineering,Physical Sciences,11246,44454
+T12452,https://openalex.org/T12452,Electrowetting and Microfluidic Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,11229,177247
+T14479,https://openalex.org/T14479,Freezing and Crystallization Processes,22,Engineering,2211,Mechanics of Materials,Physical Sciences,11097,99695
+T14304,https://openalex.org/T14304,Transport Systems and Technology,22,Engineering,2210,Mechanical Engineering,Physical Sciences,11089,35314
+T13874,https://openalex.org/T13874,Information Architecture and Usability,17,Computer Science,1710,Information Systems,Physical Sciences,10814,30507
+T12676,https://openalex.org/T12676,Machine Learning and ELM,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,10716,247069
+T12782,https://openalex.org/T12782,Assembly Line Balancing Optimization,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,10705,118157
+T14339,https://openalex.org/T14339,Image Processing and 3D Reconstruction,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,10629,27851
+T13232,https://openalex.org/T13232,Laser-Ablation Synthesis of Nanoparticles,22,Engineering,2204,Biomedical Engineering,Physical Sciences,10528,158671
+T14510,https://openalex.org/T14510,Medical Imaging and Analysis,22,Engineering,2204,Biomedical Engineering,Physical Sciences,10515,83573
+T13827,https://openalex.org/T13827,Mechatronics Education and Applications,22,Engineering,2210,Mechanical Engineering,Physical Sciences,9868,21848
+T13867,https://openalex.org/T13867,Economic Growth and Development,17,Computer Science,1710,Information Systems,Physical Sciences,9814,68867
+T12879,https://openalex.org/T12879,Distributed Sensor Networks and Detection Algorithms,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,9752,125316
+T14474,https://openalex.org/T14474,Industrial Technology and Control Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,9741,15140
+T12804,https://openalex.org/T12804,Thermal Analysis in Power Transmission,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,9693,46024
+T12761,https://openalex.org/T12761,Data Stream Mining Techniques,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,9617,132477
+T13039,https://openalex.org/T13039,Magnesium Oxide Properties and Applications,25,Materials Science,2505,Materials Chemistry,Physical Sciences,9596,126562
+T12943,https://openalex.org/T12943,COVID-19 Digital Contact Tracing,17,Computer Science,1710,Information Systems,Physical Sciences,9462,71871
+T13619,https://openalex.org/T13619,Geotechnical and Geomechanical Engineering,22,Engineering,2211,Mechanics of Materials,Physical Sciences,9448,34437
+T14164,https://openalex.org/T14164,Marine and Offshore Engineering Studies,22,Engineering,2212,Ocean Engineering,Physical Sciences,9131,23000
+T12699,https://openalex.org/T12699,Electromagnetic Launch and Propulsion Technology,22,Engineering,2202,Aerospace Engineering,Physical Sciences,8497,44066
+T13440,https://openalex.org/T13440,Electromagnetic Effects on Materials,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,8364,62519
+T14042,https://openalex.org/T14042,Technology and Security Systems,17,Computer Science,1710,Information Systems,Physical Sciences,8164,3738
+T13046,https://openalex.org/T13046,Electrokinetic Soil Remediation Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,7966,98260
+T12850,https://openalex.org/T12850,Field-Flow Fractionation Techniques,22,Engineering,2206,Computational Mechanics,Physical Sciences,7935,138568
+T13820,https://openalex.org/T13820,SAS software applications and methods,22,Engineering,2204,Biomedical Engineering,Physical Sciences,7903,64255
+T12774,https://openalex.org/T12774,Bauxite Residue and Utilization,22,Engineering,2210,Mechanical Engineering,Physical Sciences,7889,103687
+T13862,https://openalex.org/T13862,"Soil, Finite Element Methods",22,Engineering,2211,Mechanics of Materials,Physical Sciences,7407,45844
+T14098,https://openalex.org/T14098,Energy Efficiency in Computing,17,Computer Science,1708,Hardware and Architecture,Physical Sciences,7399,73354
+T13280,https://openalex.org/T13280,Biomedical and Engineering Education,22,Engineering,2204,Biomedical Engineering,Physical Sciences,7151,18436
+T13182,https://openalex.org/T13182,Quantum-Dot Cellular Automata,17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,7118,92800
+T11797,https://openalex.org/T11797,graph theory and CDMA systems,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,7033,50509
+T14368,https://openalex.org/T14368,Evaluation and Optimization Models,22,Engineering,2213,"Safety, Risk, Reliability and Quality",Physical Sciences,6538,14315
+T13898,https://openalex.org/T13898,Diverse Interdisciplinary Research Studies,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,6532,109273
+T13717,https://openalex.org/T13717,Advanced Algorithms and Applications,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,6386,7166
+T14246,https://openalex.org/T14246,E-Learning and Knowledge Management,17,Computer Science,1706,Computer Science Applications,Physical Sciences,6381,20949
+T13274,https://openalex.org/T13274,Expert finding and Q&A systems,17,Computer Science,1710,Information Systems,Physical Sciences,6355,71716
+T14076,https://openalex.org/T14076,Material Properties and Failure Mechanisms,25,Materials Science,2505,Materials Chemistry,Physical Sciences,6340,20371
+T13523,https://openalex.org/T13523,"Mathematics, Computing, and Information Processing",17,Computer Science,1703,Computational Theory and Mathematics,Physical Sciences,6315,13428
+T13917,https://openalex.org/T13917,Engineering and Material Science Research,25,Materials Science,2500,General Materials Science,Physical Sciences,6286,11791
+T12791,https://openalex.org/T12791,Full-Duplex Wireless Communications,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,6236,84820
+T13918,https://openalex.org/T13918,Advanced Data and IoT Technologies,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,6228,16364
+T12805,https://openalex.org/T12805,Cognitive Science and Mapping,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,5440,64831
+T13913,https://openalex.org/T13913,Blockchain Technology in Education and Learning,17,Computer Science,1710,Information Systems,Physical Sciences,5324,29540
+T12565,https://openalex.org/T12565,Physics and Engineering Research Articles,22,Engineering,2206,Computational Mechanics,Physical Sciences,5303,8484
+T13429,https://openalex.org/T13429,Electricity Theft Detection Techniques,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,5151,41733
+T14382,https://openalex.org/T14382,Electrophoretic Deposition in Materials Science,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,5029,61795
+T13307,https://openalex.org/T13307,Diverse Scientific and Engineering Research,22,Engineering,2206,Computational Mechanics,Physical Sciences,4880,3767
+T14327,https://openalex.org/T14327,Advanced Energy Technologies and Civil Engineering Innovations,21,Energy,2104,Nuclear Energy and Engineering,Physical Sciences,4814,17845
+T13553,https://openalex.org/T13553,Age of Information Optimization,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,4744,75670
+T13052,https://openalex.org/T13052,Molecular Communication and Nanonetworks,22,Engineering,2204,Biomedical Engineering,Physical Sciences,4680,66516
+T13935,https://openalex.org/T13935,Mathematical Control Systems and Analysis,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,4415,44322
+T13183,https://openalex.org/T13183,Islanding Detection in Power Systems,22,Engineering,2208,Electrical and Electronic Engineering,Physical Sciences,4377,59596
+T13579,https://openalex.org/T13579,Image and Video Stabilization,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,4364,28381
+T14163,https://openalex.org/T14163,Astronomical Observations and Instrumentation,22,Engineering,2206,Computational Mechanics,Physical Sciences,4187,14287
+T14353,https://openalex.org/T14353,Wireless Sensor Networks for Data Analysis,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,3868,30524
+T13965,https://openalex.org/T13965,Laser and Thermal Forming Techniques,22,Engineering,2206,Computational Mechanics,Physical Sciences,3867,21246
+T14409,https://openalex.org/T14409,Educational Systems and Policies,17,Computer Science,1710,Information Systems,Physical Sciences,3654,446
+T13601,https://openalex.org/T13601,Urban Transport Systems Analysis,22,Engineering,2205,Civil and Structural Engineering,Physical Sciences,3265,1624
+T14319,https://openalex.org/T14319,Currency Recognition and Detection,17,Computer Science,1707,Computer Vision and Pattern Recognition,Physical Sciences,3240,11639
+T13870,https://openalex.org/T13870,Environmental and Ecological Studies,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,3173,8180
+T13638,https://openalex.org/T13638,Human auditory perception and evaluation,22,Engineering,2202,Aerospace Engineering,Physical Sciences,3051,32700
+T13975,https://openalex.org/T13975,"Energy, Economy, and Technology Trends",21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,2915,9739
+T14074,https://openalex.org/T14074,Persona Design and Applications,17,Computer Science,1709,Human-Computer Interaction,Physical Sciences,2896,21304
+T13565,https://openalex.org/T13565,Education and Learning Interventions,17,Computer Science,1710,Information Systems,Physical Sciences,2879,10125
+T13832,https://openalex.org/T13832,Advanced Decision-Making Techniques,17,Computer Science,1710,Information Systems,Physical Sciences,2814,11632
+T13746,https://openalex.org/T13746,Mechanical Systems and Engineering,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,2768,989
+T14083,https://openalex.org/T14083,Extremum Seeking Control Systems,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,2627,34509
+T14435,https://openalex.org/T14435,Information Retrieval and Data Mining,17,Computer Science,1710,Information Systems,Physical Sciences,2609,19636
+T13640,https://openalex.org/T13640,Ranque-Hilsch vortex tube,22,Engineering,2210,Mechanical Engineering,Physical Sciences,2592,20673
+T13463,https://openalex.org/T13463,Nanoporous metals and alloys,25,Materials Science,2505,Materials Chemistry,Physical Sciences,2529,57307
+T13331,https://openalex.org/T13331,Energy and Environmental Sustainability,21,Energy,2105,"Renewable Energy, Sustainability and the Environment",Physical Sciences,2436,24337
+T14262,https://openalex.org/T14262,Extenics and Innovation Methods,22,Engineering,2206,Computational Mechanics,Physical Sciences,2232,4490
+T14071,https://openalex.org/T14071,Healthcare during COVID-19 Pandemic,17,Computer Science,1710,Information Systems,Physical Sciences,2216,12315
+T13159,https://openalex.org/T13159,Structural mechanics and materials,25,Materials Science,2505,Materials Chemistry,Physical Sciences,1975,7736
+T14403,https://openalex.org/T14403,Educational Challenges and Innovations,17,Computer Science,1710,Information Systems,Physical Sciences,1172,303
+T13647,https://openalex.org/T13647,AI and Big Data Applications,17,Computer Science,1710,Information Systems,Physical Sciences,1131,2143
+T13020,https://openalex.org/T13020,Heat Transfer and Mathematical Modeling,22,Engineering,2210,Mechanical Engineering,Physical Sciences,980,3117
+T13045,https://openalex.org/T13045,Industrial Engineering and Technologies,22,Engineering,2210,Mechanical Engineering,Physical Sciences,821,3666
+T13482,https://openalex.org/T13482,Engineering Education and Technology,17,Computer Science,1710,Information Systems,Physical Sciences,768,5008
+T14351,https://openalex.org/T14351,Statistical and Computational Modeling,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,731,4942
+T14347,https://openalex.org/T14347,Big Data and Digital Economy,17,Computer Science,1710,Information Systems,Physical Sciences,723,2067
+T13932,https://openalex.org/T13932,"Education, Technology, and Economics",17,Computer Science,1710,Information Systems,Physical Sciences,582,327
+T13873,https://openalex.org/T13873,Educational Methods and Technology,17,Computer Science,1710,Information Systems,Physical Sciences,329,527
+T14484,https://openalex.org/T14484,Technology and Data Analysis,17,Computer Science,1710,Information Systems,Physical Sciences,151,1158
+T13676,https://openalex.org/T13676,Educational and Technological Research,17,Computer Science,1710,Information Systems,Physical Sciences,52,415
+T13608,https://openalex.org/T13608,Advanced Computational Techniques in Science and Engineering,17,Computer Science,1710,Information Systems,Physical Sciences,48,116
+T14470,https://openalex.org/T14470,Advanced Data Processing Techniques,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,19,4
+T13345,https://openalex.org/T13345,Advanced Technologies and Applied Computing,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,17,25
+T13027,https://openalex.org/T13027,Applied Advanced Technologies,22,Engineering,2209,Industrial and Manufacturing Engineering,Physical Sciences,5,6
+T14387,https://openalex.org/T14387,Environmental Engineering and Cultural Studies,17,Computer Science,1710,Information Systems,Physical Sciences,2,3
+T13514,https://openalex.org/T13514,Experience-Based Knowledge Management,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,0,0
+T13541,https://openalex.org/T13541,IoT-based Control Systems,17,Computer Science,1706,Computer Science Applications,Physical Sciences,0,0
+T13567,https://openalex.org/T13567,AI and Multimedia in Education,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,0,0
+T13685,https://openalex.org/T13685,Material Science and Thermodynamics,22,Engineering,2210,Mechanical Engineering,Physical Sciences,0,0
+T13693,https://openalex.org/T13693,Smart Systems and Machine Learning,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,0,0
+T13748,https://openalex.org/T13748,Advanced Statistical Modeling Techniques,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,0,0
+T13836,https://openalex.org/T13836,Educational Research and Pedagogy,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,0,0
+T13924,https://openalex.org/T13924,Internet of Things and Social Network Interactions,17,Computer Science,1705,Computer Networks and Communications,Physical Sciences,0,0
+T13964,https://openalex.org/T13964,Educational Technology and Optimization,17,Computer Science,1710,Information Systems,Physical Sciences,0,0
+T14064,https://openalex.org/T14064,Organizational and Employee Performance,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,0,0
+T14096,https://openalex.org/T14096,Advancements in Materials Engineering,22,Engineering,2210,Mechanical Engineering,Physical Sciences,0,0
+T14100,https://openalex.org/T14100,Scientific Research and Technology,17,Computer Science,1706,Computer Science Applications,Physical Sciences,0,0
+T14145,https://openalex.org/T14145,Diverse Cultural Media Analysis,22,Engineering,2214,Media Technology,Physical Sciences,0,0
+T14155,https://openalex.org/T14155,Advanced Technology in Applications,17,Computer Science,1710,Information Systems,Physical Sciences,0,0
+T14174,https://openalex.org/T14174,Artificial Intelligence and Decision Support Systems,17,Computer Science,1710,Information Systems,Physical Sciences,0,0
+T14175,https://openalex.org/T14175,Intuitionistic Fuzzy Systems Applications,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,0,0
+T14204,https://openalex.org/T14204,Railway Systems and Materials Science,22,Engineering,2211,Mechanics of Materials,Physical Sciences,0,0
+T14413,https://openalex.org/T14413,Advanced Technologies in Various Fields,17,Computer Science,1702,Artificial Intelligence,Physical Sciences,0,0
+T14420,https://openalex.org/T14420,Advanced Research in Systems and Signal Processing,22,Engineering,2207,Control and Systems Engineering,Physical Sciences,0,0
+T14431,https://openalex.org/T14431,Diverse Research and Applications,17,Computer Science,1710,Information Systems,Physical Sciences,0,0
