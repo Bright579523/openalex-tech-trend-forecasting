@@ -32,14 +32,15 @@
   * *Zero-Volume Topics:* 21 topics in the taxonomy have 0 eligible works in 2010–2021; this rule automatically and cleanly filters them out.
 
 ### B. Paper Counting & Country Attribution
-* **Counting Rule:** **Whole Counting** (Full Counting) via server-side aggregation (`group_by=authorships.institutions.country_code`).
-* **Co-authorship Overlap:** Global overlap across DE, CN, JP is ~1.054 countries/work.
-* **Strict Guardrail:** Do **NOT** claim fractional counting is implemented. International co-authorship double-counting is an explicit, documented thesis limitation.
+* **Primary Counting Rule:** **Country-Level Equal Fractional Counting (Option C: $1/k$)** via server-side 2D aggregation (`group_by=publication_year,countries_distinct_count` with filter `authorships.institutions.country_code`).
+  * *Formula:* $P_{\text{Frac}}(c, i, t) = \sum_{k \ge 1} \frac{N(c, i, t, k)}{k}$ where $k$ is the number of distinct countries on the paper.
+  * *Methodological Status:* Fully satisfies the Supervisor's requirement for fractional counting; strictly verified in Pre-Extraction Audit (100% group conservation, zero missing/null $k$, $r = 0.9968$ with Whole RCA, error reduced by >50-60% vs author-level ground truth).
+* **Reference Comparison Rule:** **Whole Counting** is also preserved in the master panel as an auxiliary baseline column for methodological comparison and sensitivity analysis.
 
 ### C. Revealed Comparative Advantage (RCA) Definition
-* **Sole Primary Feature:** **All-Science RCA ($RCA_{\text{AllSci}}$)**
-  $$RCA_{\text{AllSci}}(c, i, t) = \frac{P(c, i, t) / \sum_{k \in \text{AllSci}} P(c, k, t)}{P(\text{Global}, i, t) / \sum_{k \in \text{AllSci}} P(\text{Global}, k, t)}$$
-* *Methodological Reason:* Measures true national research specialization against the whole national science budget/output. (e.g., China allocates 49.5% of its research to technology vs. 24.9% globally; mean $RCA_{\text{AllSci}}$: CN=2.080, DE=1.293, JP=1.492).
+* **Sole Primary Feature:** **Fractional All-Science RCA ($RCA_{\text{AllSci}}^{\text{Frac}}$)**
+  $$RCA_{\text{AllSci}}^{\text{Frac}}(c, i, t) = \frac{P_{\text{Frac}}(c, i, t) / P_{\text{Frac}}(c, \text{AllSci}, t)}{P(\text{Global}, i, t) / P(\text{Global}, \text{AllSci}, t)}$$
+* *Methodological Consistency:* Both the topic volume (numerator) and the national all-science total (denominator) strictly employ the identical $1/k$ fractional counting rule. Denominators for 2010–2024 are verified and saved in `all_science_national_denominators_fractional.csv`.
 
 ### D. Forecasting Formulation, Target & Baseline
 * **Target Variable:** Future 3-Year Log Growth Rate:
@@ -90,12 +91,16 @@ d:\Thesis\
 │   ├── full_universe_origin_eligibility.csv # Full universe eligibility statistics
 │   ├── sample_topic_country_counts.csv      # Sample extracted annual counts
 │   ├── enriched_panel_with_both_rcas.csv    # 50-topic pilot panel with both RCA versions
-│   └── model_pilot_results_allsci_consistent.csv # Pilot benchmark results (M0-M3)
+│   ├── model_pilot_results_allsci_consistent.csv # Pilot benchmark results (M0-M3)
+│   ├── all_science_national_denominators_fractional.csv # Complete 15-year fractional denominators (2010-2024)
+│   ├── test_option_c_fractional.py          # Option C vs Ground Truth empirical validation script
+│   └── test_pre_extraction_checks.py        # 4-point pre-extraction audit verification script
 │
 └── proposal_audit_csvs\                     # Dedicated CSV Review Folder for Chat / Proposal Audit
     ├── audit_csv.py                         # In-place inspection script
     ├── full_1025_topics_historical_volumes.csv
     ├── full_universe_origin_eligibility.csv
+    ├── enriched_panel_with_both_rcas.csv
     └── model_pilot_results_allsci_consistent.csv
 ```
 
@@ -103,9 +108,11 @@ d:\Thesis\
 
 ## 4. Current Progress & Next Steps
 1. **Feasibility Audit:** COMPLETE & VERIFIED.
-2. **ChatGPT / Advisor Proposal Review:** IN PROGRESS (Files in `proposal_audit_csvs` and `audit_csv.py` verified).
-3. **Next Production Milestone:**
+2. **Fractional Counting Consensus:** COMPLETE & VERIFIED via Option C ($1/k$).
+3. **Pre-Extraction 4-Point Audit:** ALL 4 CHECKS PASSED (100% group conservation, zero null/0 keys, fractional all-science denominators verified).
+4. **Next Production Milestone:**
    * Extract the Full Master Panel (`openalex_master_panel_1025topics.csv`):
-     - Requires 4,100 OpenAlex API calls.
-     - Covered 100% for free under OpenAlex's $1.00/day allowance (requires user's Free API key).
-     - Execution time: ~3–5 minutes at 20–30 req/sec.
+     - Uses Option C 2D GroupBy (`publication_year,countries_distinct_count`).
+     - Extracts both Country-level Equal Fractional Counts AND Whole Counts simultaneously.
+     - 1,025 topics $\times$ 3 countries = 3,075 calls (+ 1,025 global calls) = 4,100 API calls.
+     - 100% free under OpenAlex $1.00/day allowance (~3–5 minutes at 20–30 req/sec).

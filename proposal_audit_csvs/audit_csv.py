@@ -9,7 +9,7 @@ FILES = [
 ]
 
 for filename in FILES:
-    path = Path(filename)
+    path = Path(__file__).resolve().parent / filename
     print("\n" + "=" * 80)
     print(f"FILE: {filename}")
     if not path.exists():

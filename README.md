@@ -78,12 +78,16 @@ d:\Thesis\
 │   ├── full_universe_origin_eligibility.csv # สถิติสัดส่วน Topics ที่ผ่านเกณฑ์ >= 50 works (96-97%)
 │   ├── sample_topic_country_counts.csv      # ตัวอย่างข้อมูล 45 แถว
 │   ├── enriched_panel_with_both_rcas.csv    # Pilot Panel 50 Topics x 15 ปี พร้อม RCA ทั้งสองแบบ
-│   └── model_pilot_results_allsci_consistent.csv # ผลประเมินโมเดล M0-M3 ของช่วงนำร่อง
+│   ├── model_pilot_results_allsci_consistent.csv # ผลประเมินโมเดล M0-M3 ของช่วงนำร่อง
+│   ├── all_science_national_denominators_fractional.csv # ตัวหาร All-Science Fractional ครบ 15 ปี (2010-2024)
+│   ├── test_option_c_fractional.py          # สคริปต์ทดสอบ Option C vs Ground Truth
+│   └── test_pre_extraction_checks.py        # สคริปต์ตรวจความพร้อม 4 ด้านก่อนสกัดจริง
 │
 └── proposal_audit_csvs\                     # โฟลเดอร์สำหรับตรวจไฟล์ CSV เพื่อเขียน Proposal
     ├── audit_csv.py                         # สคริปต์ Python ตรวจโครงสร้างและค่าสถิติในเครื่อง
     ├── full_1025_topics_historical_volumes.csv
     ├── full_universe_origin_eligibility.csv
+    ├── enriched_panel_with_both_rcas.csv
     └── model_pilot_results_allsci_consistent.csv
 ```
 
@@ -94,11 +98,12 @@ d:\Thesis\
 1. **Taxonomy & Scope:**
    - 1,025 Topics ใน 5 สาขาเทคโนโลยี (Engineering: 560, Computer Science: 302, Materials Science: 123, Energy: 27, Chemical Engineering: 13) ภายใต้ OpenAlex Topics Taxonomy
    - คัดกรองด้วย **Origin-Specific Historical Eligibility** ($\ge 50$ works ในอดีต 3 ปี $[t-2, t]$) ครอบคลุม 96.1% ถึง 97.2% โดยไม่มีปัญหา Lookahead Bias และตัด Topics ที่ไม่มีผลงาน (21 topics) ออกโดยอัตโนมัติ
-2. **Attribution & Counting:**
-   - ใช้ **Whole Counting** ผ่าน Server-side aggregation (`group_by=authorships.institutions.country_code`) เพื่อความคุ้มค่าและเป็นไปได้จริง
-   - ยอมรับข้อจำกัดการนับซ้ำจาก International Co-authorship (~1.054 ประเทศต่อบทความ) ในบทข้อจำกัดของวิทยานิพนธ์
-3. **Specialization Metric:**
-   - ใช้ **All-Science RCA ($RCA_{\text{AllSci}}$)** เป็นฟีเจอร์หลักในการวัดความเชี่ยวชาญระดับชาติเมื่อเทียบกับงบวิจัยและศักยภาพวิทยาศาสตร์รวมของประเทศ
+2. **Attribution & Counting (Country-Level Equal Fractional Counting):**
+   - ใช้ **Option C: Country-Level Equal Fractional Counting ($1/k$)** ผ่านเซิร์ฟเวอร์ 2D GroupBy (`publication_year,countries_distinct_count`) เพื่อให้ตรงตามข้อกำหนด Fractional Counting ของ Supervisor
+   - สูตร: $P_{\text{Frac}}(c, i, t) = \sum_{k \ge 1} \frac{N(c, i, t, k)}{k}$ (โดย $k$ คือจำนวนประเทศไม่ซ้ำในบทความ)
+   - เก็บค่า Whole Counting ควบคู่ไว้ใน Master Panel เป็นคอลัมน์อ้างอิงสำหรับการวิเคราะห์ความอ่อนไหว (Sensitivity Analysis)
+3. **Specialization Metric (Fractional All-Science RCA):**
+   - ใช้ **Fractional All-Science RCA ($RCA_{\text{AllSci}}^{\text{Frac}}$)** เป็นฟีเจอร์หลัก โดยทั้งตัวเศษ (ยอดผลงาน Topic) และตัวหาร (ยอดรวมวิทยาศาสตร์ทั้งประเทศ) ใช้การนับแบบ Fractional เดียวกันอย่างสอดคล้อง 100%
 4. **Target & Baseline:**
    - Target: การเติบโต 3 ปีข้างหน้า $G(i, t) = \ln(1 + P_{[t+1, t+3]}) - \ln(1 + P_{[t-2, t]})$
    - Baseline $M0$: Momentum ช่วงเวลา 3 ปีที่สอดคล้องกัน $M_{\text{window}}(i, t) = \ln(1 + P_{[t-2, t]}) - \ln(1 + P_{[t-5, t-3]})$
@@ -110,4 +115,4 @@ d:\Thesis\
 
 ## 🚀 แผนงานขั้นต่อไป (Next Steps)
 1. นำข้อมูลจาก `proposal_audit_csvs` และคำอธิบายใน `README.md` / `AGENTS.md` ไปเขียนเล่ม Proposal
-2. เมื่อพร้อมรันการสกัดข้อมูลจริงขนาดเต็ม (Master Panel 1,025 Topics $\times$ 4 ประเทศ $\times$ 15 ปี = 4,100 API calls) สามารถใส่ OpenAlex Free API Key แล้วรันได้ทันที (ใช้เวลาประมาณ 3–5 นาที โดยไม่มีค่าใช้จ่ายจริง)
+2. สกัดข้อมูล Master Panel ขนาดเต็ม 1,025 Topics $\times$ 4 ประเทศ $\times$ 15 ปี = 4,100 API calls ด้วย Option C ได้ทันที (ใช้เวลาประมาณ 3–5 นาที โดยไม่มีค่าใช้จ่ายจริง)

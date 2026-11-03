@@ -1,0 +1,16 @@
+topic_id,topic_name,country,census_works,whole_count,country_frac,author_frac,inst_frac,diff_auth_vs_ctry_pct,rca_whole,rca_country_frac,rca_author_frac
+T12510,Control & Systems Engineering,DE,5,5,3.0,3.32,2.64,10.6,0.963,0.811,0.897
+T12510,Control & Systems Engineering,CN,34,34,29.0,27.96,28.52,-3.6,2.315,2.309,2.226
+T12510,Control & Systems Engineering,JP,24,24,20.17,18.7,19.65,-7.3,6.072,6.031,5.592
+T10586,Robotics and Path Planning,DE,87,87,73.08,69.55,71.14,-4.8,1.173,1.384,1.317
+T10586,Robotics and Path Planning,CN,100,744,683.12,86.82,85.32,-87.3,3.547,3.809,0.484
+T10586,Robotics and Path Planning,JP,96,96,81.5,79.47,80.65,-2.5,1.701,1.707,1.664
+T10682,Quantum Computing Algorithms,DE,100,182,120.4,62.36,56.75,-48.2,2.112,1.963,1.016
+T10682,Quantum Computing Algorithms,CN,100,309,244.35,79.62,77.17,-67.4,1.268,1.173,0.382
+T10682,Quantum Computing Algorithms,JP,100,191,155.57,80.74,78.91,-48.1,2.912,2.804,1.455
+T10181,Natural Language Processing,DE,100,314,242.12,63.93,65.32,-73.6,2.042,2.211,0.584
+T10181,Natural Language Processing,CN,100,690,601.9,88.21,84.28,-85.3,1.587,1.619,0.237
+T10181,Natural Language Processing,JP,100,255,217.97,80.77,82.98,-62.9,2.179,2.201,0.816
+T10281,Advanced Battery Materials,DE,100,307,223.03,65.28,64.77,-70.7,1.908,1.946,0.57
+T10281,Advanced Battery Materials,CN,100,2817,2346.32,72.69,73.6,-96.9,6.189,6.029,0.187
+T10281,Advanced Battery Materials,JP,100,477,407.57,68.61,67.09,-83.2,3.894,3.933,0.662
