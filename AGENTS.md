@@ -81,27 +81,28 @@ d:\Thesis\
 ├── openalex_feasibility_audit\              # Master Feasibility Audit (1,025-topic universe)
 │   ├── OPENALEX_FEASIBILITY_REPORT.md       # Comprehensive Audit Report (CONDITIONAL PASS)
 │   ├── AUDIT_CORRECTIONS.md                 # Complete technical resolution notes
-│   ├── openalex_feasibility_audit.py        # Executable 3-step audit script
-│   ├── data_audit_summary.json              # Machine-readable audit summary
-│   ├── run_log.md                           # Chronological API call log
+│   ├── FINAL_FREEZE_REPORT.md               # Master Panel Freeze Certification & Quality Audit
+│   ├── DOCUMENT_TYPE_AND_METADATA_AUDIT.md  # Detailed Scope, Metadata & Mathematical Audit Report
+│   ├── openalex_master_panel_1025topics.csv # FROZEN Master Panel v1 (All Types Baseline, 15,375 rows)
+│   ├── all_science_national_denominators_fractional.csv # All-science 15-yr fractional denominators (v1)
+│   ├── all_science_national_denominators_fractional_v2_selected_types.csv # All-science denominators (v2 Selected Types)
+│   ├── extract_denominators_v2.py           # Denominator extraction script for Selected Types
 │   ├── candidate_topics.csv                 # 1,025 topics classification & rationale
 │   ├── all_tech_topics_taxonomy.csv         # Full 1,025 technology taxonomy metadata
 │   ├── national_annual_totals_all_science.csv # All-science annual totals (Global, DE, CN, JP)
 │   ├── full_1025_topics_historical_volumes.csv # 1,025 topics volume matrix across 4 origins
 │   ├── full_universe_origin_eligibility.csv # Full universe eligibility statistics
-│   ├── sample_topic_country_counts.csv      # Sample extracted annual counts
-│   ├── enriched_panel_with_both_rcas.csv    # 50-topic pilot panel with both RCA versions
-│   ├── model_pilot_results_allsci_consistent.csv # Pilot benchmark results (M0-M3)
-│   ├── all_science_national_denominators_fractional.csv # Complete 15-year fractional denominators (2010-2024)
 │   ├── test_option_c_fractional.py          # Option C vs Ground Truth empirical validation script
 │   └── test_pre_extraction_checks.py        # 4-point pre-extraction audit verification script
 │
+├── extract_master_panel_1025topics.py       # Production extraction script for Master Panel v1
+├── extract_modeling_panel_v2_selected_types.py # Production extraction script for Modeling Panel v2 (Selected Types)
+│
 └── proposal_audit_csvs\                     # Dedicated CSV Review Folder for Chat / Proposal Audit
-    ├── audit_csv.py                         # In-place inspection script
-    ├── full_1025_topics_historical_volumes.csv
-    ├── full_universe_origin_eligibility.csv
-    ├── enriched_panel_with_both_rcas.csv
-    └── model_pilot_results_allsci_consistent.csv
+    ├── openalex_master_panel_1025topics.csv # Mirror of Master Panel v1
+    ├── test_rca_math.py                     # Mathematical verification script for RCA discrepancy
+    ├── test_type_filter_api.py              # API test for type:article|conference-paper|review
+    └── ...
 ```
 
 ---
@@ -109,10 +110,14 @@ d:\Thesis\
 ## 4. Current Progress & Next Steps
 1. **Feasibility Audit:** COMPLETE & VERIFIED.
 2. **Fractional Counting Consensus:** COMPLETE & VERIFIED via Option C ($1/k$).
-3. **Pre-Extraction 4-Point Audit:** ALL 4 CHECKS PASSED (100% group conservation, zero null/0 keys, fractional all-science denominators verified).
-4. **Next Production Milestone:**
-   * Extract the Full Master Panel (`openalex_master_panel_1025topics.csv`):
-     - Uses Option C 2D GroupBy (`publication_year,countries_distinct_count`).
-     - Extracts both Country-level Equal Fractional Counts AND Whole Counts simultaneously.
-     - 1,025 topics $\times$ 3 countries = 3,075 calls (+ 1,025 global calls) = 4,100 API calls.
-     - 100% free under OpenAlex $1.00/day allowance (~3–5 minutes at 20–30 req/sec).
+3. **Master Panel v1 Extraction (All Types Baseline):** COMPLETE, AUDITED, AND FROZEN (15,375 rows, 26 columns, 0 nulls, 0 duplicates, 100% group conservation).
+4. **Classifier Metadata Documented:**
+   - Topic Classifier: Fine-tuned **Qwen3-8B** (deployed 6 October 2026, analyzing Title, Abstract, Source Name).
+   - Work Type Classifier: Major reclassification update (deployed 15 July 2026, reclassified 49.6M works).
+5. **RCA Numerical Precision Resolved:** Verified that Whole RCA has zero intermediate rounding ($\Delta \le 0.00000500$), while Fractional RCA had intermediate 4-decimal numerator rounding in v1 CSV; resolved in v2 pipeline by storing 6 decimals ($\Delta \le 0.00000500$).
+6. **Dual-Panel Architecture Established:**
+   - **Master Panel v1 (All Types):** Frozen baseline for methodological comparison / sensitivity analysis.
+   - **Modeling Panel v2 (Selected Types: `type:article|conference-paper|review`):** Primary research design dataset matching proposal. Denominators extracted (`all_science_national_denominators_fractional_v2_selected_types.csv`), production script verified (`extract_modeling_panel_v2_selected_types.py`).
+7. **Next Production Milestone:**
+   - Run Modeling Panel v2 extraction (4,100 API calls, ~3–5 minutes) once approved.
+   - Proceed to Feature Engineering ($M0-M3$ features) and Target Variable generation ($G(i, t)$).
