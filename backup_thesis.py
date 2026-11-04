@@ -33,7 +33,13 @@ EXCLUDE_EXTENSIONS = {
     ".pyc",
     ".pyo",
     ".tmp",
-    ".log"
+    ".log",
+    ".env"
+}
+
+EXCLUDE_FILES = {
+    ".env",
+    ".env.local"
 }
 
 def create_backup(backup_target_dir=DEFAULT_BACKUP_DIR):
@@ -58,6 +64,8 @@ def create_backup(backup_target_dir=DEFAULT_BACKUP_DIR):
             dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
             
             for file in files:
+                if file in EXCLUDE_FILES or file.startswith(".env"):
+                    continue
                 file_path = Path(root) / file
                 if file_path.suffix.lower() in EXCLUDE_EXTENSIONS:
                     continue

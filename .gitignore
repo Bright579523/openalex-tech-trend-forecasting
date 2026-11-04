@@ -14,3 +14,8 @@ env/
 # Ignore backups if placed inside workspace
 *_Backups/
 *.zip
+
+# Ignore local environment files and secrets
+.env
+*.env
+.env.*
