@@ -41,3 +41,4 @@ df = pd.DataFrame(records)
 out_path = r'openalex_feasibility_audit\all_science_national_denominators_fractional_v2_selected_types.csv'
 df.to_csv(out_path, index=False)
 print(f"Saved {out_path} successfully!")
+

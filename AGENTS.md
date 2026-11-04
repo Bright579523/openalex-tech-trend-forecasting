@@ -96,13 +96,7 @@ d:\Thesis\
 │   └── test_pre_extraction_checks.py        # 4-point pre-extraction audit verification script
 │
 ├── extract_master_panel_1025topics.py       # Production extraction script for Master Panel v1
-├── extract_modeling_panel_v2_selected_types.py # Production extraction script for Modeling Panel v2 (Selected Types)
-│
-└── proposal_audit_csvs\                     # Dedicated CSV Review Folder for Chat / Proposal Audit
-    ├── openalex_master_panel_1025topics.csv # Mirror of Master Panel v1
-    ├── test_rca_math.py                     # Mathematical verification script for RCA discrepancy
-    ├── test_type_filter_api.py              # API test for type:article|conference-paper|review
-    └── ...
+└── extract_modeling_panel_v2_selected_types.py # Production extraction script for Modeling Panel v2 (Selected Types)
 ```
 
 ---

@@ -80,15 +80,9 @@ d:\Thesis\
 │   ├── enriched_panel_with_both_rcas.csv    # Pilot Panel 50 Topics x 15 ปี พร้อม RCA ทั้งสองแบบ
 │   ├── model_pilot_results_allsci_consistent.csv # ผลประเมินโมเดล M0-M3 ของช่วงนำร่อง
 │   ├── all_science_national_denominators_fractional.csv # ตัวหาร All-Science Fractional ครบ 15 ปี (2010-2024)
+│   ├── all_science_national_denominators_fractional_v2_selected_types.csv # ตัวหาร All-Science Selected Types (2010-2024)
 │   ├── test_option_c_fractional.py          # สคริปต์ทดสอบ Option C vs Ground Truth
 │   └── test_pre_extraction_checks.py        # สคริปต์ตรวจความพร้อม 4 ด้านก่อนสกัดจริง
-│
-└── proposal_audit_csvs\                     # โฟลเดอร์สำหรับตรวจไฟล์ CSV เพื่อเขียน Proposal
-    ├── audit_csv.py                         # สคริปต์ Python ตรวจโครงสร้างและค่าสถิติในเครื่อง
-    ├── full_1025_topics_historical_volumes.csv
-    ├── full_universe_origin_eligibility.csv
-    ├── enriched_panel_with_both_rcas.csv
-    └── model_pilot_results_allsci_consistent.csv
 ```
 
 ---
@@ -114,5 +108,5 @@ d:\Thesis\
 ---
 
 ## 🚀 แผนงานขั้นต่อไป (Next Steps)
-1. นำข้อมูลจาก `proposal_audit_csvs` และคำอธิบายใน `README.md` / `AGENTS.md` ไปเขียนเล่ม Proposal
+1. นำข้อมูลจาก `openalex_feasibility_audit` และคำอธิบายใน `README.md` / `AGENTS.md` ไปเขียนเล่ม Proposal และเอกสารวิทยานิพนธ์
 2. สกัดข้อมูล Master Panel ขนาดเต็ม 1,025 Topics $\times$ 4 ประเทศ $\times$ 15 ปี = 4,100 API calls ด้วย Option C ได้ทันที (ใช้เวลาประมาณ 3–5 นาที โดยไม่มีค่าใช้จ่ายจริง)

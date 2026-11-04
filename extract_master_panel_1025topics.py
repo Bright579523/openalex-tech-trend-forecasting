@@ -26,7 +26,6 @@ import numpy as np
 MAILTO = "student@ue-germany.de"
 BASE_DIR = Path(__file__).resolve().parent
 AUDIT_DIR = BASE_DIR / "openalex_feasibility_audit"
-PROPOSAL_DIR = BASE_DIR / "proposal_audit_csvs"
 LOG_FILE = AUDIT_DIR / "extraction_run.log"
 
 def get_secure_api_key(cmd_arg_key: str = "") -> str:
@@ -369,14 +368,11 @@ def main():
         log_msg(f"Checkpoint saved ({len(extracted_topic_ids)} topics). Re-run script to resume.")
         sys.exit(1)
         
-    # Save Final Master Panels
+    # Save Final Master Panel
     df_final = pd.DataFrame(all_rows)
-    final_csv1 = AUDIT_DIR / "openalex_master_panel_1025topics.csv"
-    final_csv2 = PROPOSAL_DIR / "openalex_master_panel_1025topics.csv"
-    
-    df_final.to_csv(final_csv1, index=False)
-    df_final.to_csv(final_csv2, index=False)
-    log_msg(f"Saved master dataset to:\n  - {final_csv1}\n  - {final_csv2}")
+    final_csv = AUDIT_DIR / "openalex_master_panel_1025topics.csv"
+    df_final.to_csv(final_csv, index=False)
+    log_msg(f"Saved master dataset to {final_csv}")
     
     # Run Final Quality Audit
     run_post_extraction_validation(df_final, expected_topics=total_topics)

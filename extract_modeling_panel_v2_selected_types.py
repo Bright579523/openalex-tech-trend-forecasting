@@ -27,12 +27,10 @@ import numpy as np
 MAILTO = "student@ue-germany.de"
 BASE_DIR = Path(__file__).resolve().parent
 AUDIT_DIR = BASE_DIR / "openalex_feasibility_audit"
-PROPOSAL_DIR = BASE_DIR / "proposal_audit_csvs"
 LOG_FILE = AUDIT_DIR / "extraction_run_v2.log"
 CHECKPOINT_FILE = AUDIT_DIR / "checkpoint_v2_extraction.json"
 DENOM_FILE = AUDIT_DIR / "all_science_national_denominators_fractional_v2_selected_types.csv"
 OUTPUT_PANEL_CSV = AUDIT_DIR / "openalex_modeling_panel_1025topics_v2_selected_types.csv"
-PROPOSAL_MIRROR_CSV = PROPOSAL_DIR / "openalex_modeling_panel_1025topics_v2_selected_types.csv"
 
 DOC_TYPE_FILTER = "type:article|conference-paper|review"
 
@@ -289,10 +287,6 @@ def run_v2_extraction(args):
     df_final = pd.DataFrame(processed_records)
     df_final.to_csv(OUTPUT_PANEL_CSV, index=False)
     log_msg(f"Saved {len(df_final)} rows to {OUTPUT_PANEL_CSV}")
-    
-    PROPOSAL_DIR.mkdir(parents=True, exist_ok=True)
-    df_final.to_csv(PROPOSAL_MIRROR_CSV, index=False)
-    log_msg(f"Mirrored to {PROPOSAL_MIRROR_CSV}")
     
     # Run Structural & Precision Validation
     validate_dataset(df_final)
