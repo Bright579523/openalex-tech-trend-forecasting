@@ -102,11 +102,12 @@ d:\Thesis\
 3. **Specialization Metric (Fractional All-Science RCA):**
    - ใช้ **Fractional All-Science RCA ($RCA_{\text{AllSci}}^{\text{Frac}}$)** เป็นฟีเจอร์หลัก โดยทั้งตัวเศษ (ยอดผลงาน Topic) และตัวหาร (ยอดรวมวิทยาศาสตร์ทั้งประเทศ) ใช้การนับแบบ Fractional เดียวกันอย่างสอดคล้อง 100%
 4. **Target & Baseline:**
-   - Target: การเติบโต 3 ปีข้างหน้า $G(i, t) = \ln(1 + P_{[t+1, t+3]}) - \ln(1 + P_{[t-2, t]})$
+   - Target: การเติบโต 3 ปีข้างหน้าปรับด้วยการเติบโตของวิทยาศาสตร์โลก (Global All-Science Adjusted Growth):
+     $$G_{\text{adj}}(i, t) = [\ln(1 + P_{[t+1, t+3]}^{(i)}) - \ln(1 + P_{[t-2, t]}^{(i)})] - [\ln(1 + W_{[t+1, t+3]}) - \ln(1 + W_{[t-2, t]})]$$
    - Baseline $M0$: Momentum ช่วงเวลา 3 ปีที่สอดคล้องกัน $M_{\text{window}}(i, t) = \ln(1 + P_{[t-2, t]}) - \ln(1 + P_{[t-5, t-3]})$
-5. **Temporal Train/Test Split:**
-   - Cutoff ป้องกันการรั่วไหล: $t_{\text{train}} \le \text{test\_origin} - 3$
-   - สาเหตุที่ $N_{\text{train}} = 50$ (ที่ origin 2018) และ $200$ (ที่ origin 2021) ใน Pilot เกิดจากการขยายช่วงรายปี (Annual Rolling) โดยที่ origin 2018 มีปีย้อนหลังถึงปี 2015 ได้ 1 ปี ($1 \times 50 = 50$) ส่วน origin 2021 มีปี 2015..2018 ได้ 4 ปี ($4 \times 50 = 200$)
+5. **Forecast Origins Scope:**
+   - ใช้เฉพาะ 2 Origins ตามข้อเสนอวิจัยที่ได้รับอนุมัติ: **Origin 2018** (ประเมินช่วง 2019–2021) และ **Origin 2021** (ประเมินช่วง 2022–2024)
+   - ไม่ใช้ Origin 2012 เนื่องจาก Feature Momentum $[t-5, t-3]$ จะต้องใช้ข้อมูลปี 2007–2009 ซึ่งอยู่นอกช่วงข้อมูลปี 2010–2024 ของเรา
 
 ---
 

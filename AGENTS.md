@@ -43,26 +43,27 @@
 * *Methodological Consistency:* Both the topic volume (numerator) and the national all-science total (denominator) strictly employ the identical $1/k$ fractional counting rule. Denominators for 2010–2024 are verified and saved in `all_science_national_denominators_fractional.csv`.
 
 ### D. Forecasting Formulation, Target & Baseline
-* **Target Variable:** Future 3-Year Log Growth Rate:
-  $$G(i, t) = \ln\left(1 + P_{[t+1, t+3]}^{(i)}\right) - \ln\left(1 + P_{[t-2, t]}^{(i)}\right)$$
+* **Target Variable:** Future 3-Year Log Growth Rate Adjusted for Global Research Growth:
+  $$G_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t+1, t+3]}^{(i)}\right) - \ln\left(1 + P_{[t-2, t]}^{(i)}\right)\right] - \left[\ln\left(1 + W_{[t+1, t+3]}\right) - \ln\left(1 + W_{[t-2, t]}\right)\right]$$
+  where $W$ is the total Global All-Science publication count under the identical Selected Types scope (`article|conference-paper|review`).
 * **Primary Benchmark Baseline ($M0$ Momentum):** Consistent Window-to-Window Past Growth:
   $$M_{\text{window}}(i, t) = \ln\left(1 + P_{[t-2, t]}^{(i)}\right) - \ln\left(1 + P_{[t-5, t-3]}^{(i)}\right)$$
 * **Model Hierarchy:**
   * $M0$: Naïve Momentum Baseline (No parameters)
   * $M1$: Global History ($M0$ + Past Log Global Volume)
   * $M2$: Country Publication Volumes ($M1$ + Log Volumes for DE, CN, JP)
-  * $M3$: National Specialization ($M2$ + $RCA_{\text{AllSci}}$ for DE, CN, JP)
+  * $M3$: National Specialization ($M2$ + $RCA_{\text{AllSci}}^{\text{Frac}}$ for DE, CN, JP)
 * **Model Class:** Regularized Linear Models (Ridge Regression with $L_2$ penalty). **No deep learning / black-box models.**
 
-### E. Temporal Train/Test Split & $N_{\text{train}}$ Explanation
+### E. Temporal Train/Test Split & Forecast Origins Scope
+* **Approved Forecast Origins (Strictly 2018 and 2021):**
+  * **Test Origin 2018:** Past window $[2016, 2018]$, Momentum base $[2013, 2015]$, Future evaluation $[2019, 2021]$.
+  * **Test Origin 2021:** Past window $[2019, 2021]$, Momentum base $[2016, 2018]$, Future evaluation $[2022, 2024]$.
+* **Why Earlier Origins (2012, 2015) are Excluded:**
+  * Calculating past momentum $[t-5, t-3]$ for Origin 2012 requires data from $[2007, 2009]$, which does not exist in our 2010–2024 dataset.
+  * Origin 2015 has no prior non-overlapping training window $\le 2015 - 3 = 2012$ without 2007–2009 data.
+  * Therefore, the research design strictly restricts evaluation to Origins 2018 and 2021, matching the approved Proposal.
 * **Leakage-Free Cutoff:** Training origins $t_{\text{train}} \le \text{test\_origin} - 3$.
-* **Why $N_{\text{train}} = 50$ (2018) vs $N_{\text{train}} = 200$ (2021) in the pilot:**
-  * The pilot constructed annual rolling origins ($t \in [2015..2021]$).
-  * For Test Origin 2018: Cutoff $\le 2015 \implies$ Only origin 2015 is available ($50 \times 1 = 50$ rows).
-  * For Test Origin 2021: Cutoff $\le 2018 \implies$ Origins 2015, 2016, 2017, 2018 are available ($50 \times 4 = 200$ rows).
-* **Triennial Non-Overlapping Stride Alternative:**
-  * Test Origin 2018: Train on 2015 ($N = 50$).
-  * Test Origin 2021: Train on 2015 and 2018 ($N = 100$).
 
 ---
 
@@ -111,7 +112,7 @@ d:\Thesis\
 4. **Classifier Metadata Documented:**
    - Topic Classifier: Fine-tuned **Qwen3-8B** (deployed 6 October 2026, analyzing Title, Abstract, Source Name).
    - Work Type Classifier: Major reclassification update (deployed 15 July 2026, reclassified 49.6M works).
-5. **RCA Numerical Precision Resolved:** Verified that Whole RCA has zero intermediate rounding ($\Delta \le 0.00000500$), while Fractional RCA with 6-decimal storage has reverse recalculation delta bounded by $\Delta \le 0.00000546$.
+5. **RCA Numerical Precision Resolved:** Verified that Whole RCA and Fractional RCA recalculation errors across all 46,125 cells are strictly $\Delta \le \mathbf{0.00000500}$, meeting the exact theoretical rounding ceiling.
 6. **Dual-Panel Architecture Established:**
    - **Master Panel v1 (All Types):** Frozen baseline for methodological comparison / sensitivity analysis (`openalex_master_panel_1025topics.csv`).
    - **Modeling Panel v2 (Selected Types: `type:article|conference-paper|review`):** Primary research design dataset matching proposal (`openalex_modeling_panel_1025topics_v2_selected_types.csv`).

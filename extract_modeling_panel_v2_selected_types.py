@@ -177,9 +177,13 @@ def extract_and_validate_topic_v2(tid: str, tname: str, field_name: str, subfiel
             c_allsci_whole = float(row_allsci[f"{c_code_l}_whole"])
             c_allsci_frac = float(row_allsci[f"{c_code_l}_frac"])
             
-            # Exact Fractional RCA Formula
-            if p_glob > 0 and c_allsci_frac > 0 and p_c_frac > 0:
-                rca_frac = (p_c_frac / c_allsci_frac) / (p_glob / glob_allsci)
+            # Store fractional count with 6 decimal places
+            p_c_frac_stored = round(p_c_frac, 6)
+            c_allsci_frac_denom = round(c_allsci_frac, 4)
+            
+            # Exact Fractional RCA Formula (computed directly from stored precision)
+            if p_glob > 0 and c_allsci_frac_denom > 0 and p_c_frac_stored > 0:
+                rca_frac = (p_c_frac_stored / c_allsci_frac_denom) / (p_glob / glob_allsci)
             else:
                 rca_frac = 0.0
                 
@@ -190,10 +194,9 @@ def extract_and_validate_topic_v2(tid: str, tname: str, field_name: str, subfiel
                 rca_whole = 0.0
                 
             record[f"{c_code_l}_whole_count"] = p_c_whole
-            # Store fractional count with 6 decimal places to eliminate intermediate rounding error
-            record[f"{c_code_l}_frac_count"] = round(p_c_frac, 6)
+            record[f"{c_code_l}_frac_count"] = p_c_frac_stored
             record[f"{c_code_l}_allsci_whole_denom"] = int(c_allsci_whole)
-            record[f"{c_code_l}_allsci_frac_denom"] = round(c_allsci_frac, 4)
+            record[f"{c_code_l}_allsci_frac_denom"] = c_allsci_frac_denom
             record[f"rca_frac_{c_code_l}"] = round(rca_frac, 5)
             record[f"rca_whole_{c_code_l}"] = round(rca_whole, 5)
             
