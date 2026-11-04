@@ -288,6 +288,13 @@ def run_v2_extraction(args):
     df_final.to_csv(OUTPUT_PANEL_CSV, index=False)
     log_msg(f"Saved {len(df_final)} rows to {OUTPUT_PANEL_CSV}")
     
+    if len(completed_topics) == len(df_topics) and CHECKPOINT_FILE.exists():
+        try:
+            CHECKPOINT_FILE.unlink()
+            log_msg("Cleaned up checkpoint file after successful completion.")
+        except Exception:
+            pass
+    
     # Run Structural & Precision Validation
     validate_dataset(df_final)
 

@@ -79,8 +79,11 @@ d:\Thesis\
 │   ├── sample_topic_country_counts.csv      # ตัวอย่างข้อมูล 45 แถว
 │   ├── enriched_panel_with_both_rcas.csv    # Pilot Panel 50 Topics x 15 ปี พร้อม RCA ทั้งสองแบบ
 │   ├── model_pilot_results_allsci_consistent.csv # ผลประเมินโมเดล M0-M3 ของช่วงนำร่อง
+│   ├── openalex_master_panel_1025topics.csv # FROZEN Master Panel v1 (All Types Baseline, 15,375 แถว)
+│   ├── openalex_modeling_panel_1025topics_v2_selected_types.csv # CERTIFIED Modeling Panel v2 (15,375 แถว)
 │   ├── all_science_national_denominators_fractional.csv # ตัวหาร All-Science Fractional ครบ 15 ปี (2010-2024)
 │   ├── all_science_national_denominators_fractional_v2_selected_types.csv # ตัวหาร All-Science Selected Types (2010-2024)
+│   ├── STAGE2_DATASET_AUDIT_REPORT.md       # รายงานสรุปผลการสกัดและตรวจสอบ Dataset Stage 2
 │   ├── test_option_c_fractional.py          # สคริปต์ทดสอบ Option C vs Ground Truth
 │   └── test_pre_extraction_checks.py        # สคริปต์ตรวจความพร้อม 4 ด้านก่อนสกัดจริง
 ```
@@ -108,5 +111,5 @@ d:\Thesis\
 ---
 
 ## 🚀 แผนงานขั้นต่อไป (Next Steps)
-1. นำข้อมูลจาก `openalex_feasibility_audit` และคำอธิบายใน `README.md` / `AGENTS.md` ไปเขียนเล่ม Proposal และเอกสารวิทยานิพนธ์
-2. สกัดข้อมูล Master Panel ขนาดเต็ม 1,025 Topics $\times$ 4 ประเทศ $\times$ 15 ปี = 4,100 API calls ด้วย Option C ได้ทันที (ใช้เวลาประมาณ 3–5 นาที โดยไม่มีค่าใช้จ่ายจริง)
+1. **Stage 2:** สกัดและตรวจสอบชุดข้อมูลสมบูรณ์แล้วทั้ง 2 ชุด (Master Panel v1: All Types และ Modeling Panel v2: Selected Types)
+2. **Stage 3:** เข้าสู่กระบวนการสร้าง Feature ($M0-M3$) และ Target Variable $G(i, t)$ สำหรับการเทรน Ridge Regression เมื่อได้รับการอนุมัติจากผู้ใช้

@@ -83,10 +83,13 @@ d:\Thesis\
 │   ├── AUDIT_CORRECTIONS.md                 # Complete technical resolution notes
 │   ├── FINAL_FREEZE_REPORT.md               # Master Panel Freeze Certification & Quality Audit
 │   ├── DOCUMENT_TYPE_AND_METADATA_AUDIT.md  # Detailed Scope, Metadata & Mathematical Audit Report
+│   ├── STAGE2_DATASET_AUDIT_REPORT.md       # Final Stage 2 Dataset Preparation Audit & Certification
 │   ├── openalex_master_panel_1025topics.csv # FROZEN Master Panel v1 (All Types Baseline, 15,375 rows)
+│   ├── openalex_modeling_panel_1025topics_v2_selected_types.csv # CERTIFIED Modeling Panel v2 (15,375 rows)
 │   ├── all_science_national_denominators_fractional.csv # All-science 15-yr fractional denominators (v1)
 │   ├── all_science_national_denominators_fractional_v2_selected_types.csv # All-science denominators (v2 Selected Types)
 │   ├── extract_denominators_v2.py           # Denominator extraction script for Selected Types
+│   ├── independent_audit_v2.py              # Automated 5-point audit script for Panel v2
 │   ├── candidate_topics.csv                 # 1,025 topics classification & rationale
 │   ├── all_tech_topics_taxonomy.csv         # Full 1,025 technology taxonomy metadata
 │   ├── national_annual_totals_all_science.csv # All-science annual totals (Global, DE, CN, JP)
@@ -108,10 +111,11 @@ d:\Thesis\
 4. **Classifier Metadata Documented:**
    - Topic Classifier: Fine-tuned **Qwen3-8B** (deployed 6 October 2026, analyzing Title, Abstract, Source Name).
    - Work Type Classifier: Major reclassification update (deployed 15 July 2026, reclassified 49.6M works).
-5. **RCA Numerical Precision Resolved:** Verified that Whole RCA has zero intermediate rounding ($\Delta \le 0.00000500$), while Fractional RCA had intermediate 4-decimal numerator rounding in v1 CSV; resolved in v2 pipeline by storing 6 decimals ($\Delta \le 0.00000500$).
+5. **RCA Numerical Precision Resolved:** Verified that Whole RCA has zero intermediate rounding ($\Delta \le 0.00000500$), while Fractional RCA with 6-decimal storage has reverse recalculation delta bounded by $\Delta \le 0.00000546$.
 6. **Dual-Panel Architecture Established:**
-   - **Master Panel v1 (All Types):** Frozen baseline for methodological comparison / sensitivity analysis.
-   - **Modeling Panel v2 (Selected Types: `type:article|conference-paper|review`):** Primary research design dataset matching proposal. Denominators extracted (`all_science_national_denominators_fractional_v2_selected_types.csv`), production script verified (`extract_modeling_panel_v2_selected_types.py`).
-7. **Next Production Milestone:**
-   - Run Modeling Panel v2 extraction (4,100 API calls, ~3–5 minutes) once approved.
-   - Proceed to Feature Engineering ($M0-M3$ features) and Target Variable generation ($G(i, t)$).
+   - **Master Panel v1 (All Types):** Frozen baseline for methodological comparison / sensitivity analysis (`openalex_master_panel_1025topics.csv`).
+   - **Modeling Panel v2 (Selected Types: `type:article|conference-paper|review`):** Primary research design dataset matching proposal (`openalex_modeling_panel_1025topics_v2_selected_types.csv`).
+7. **Stage 2: Full Modeling Dataset Extraction & Audit:** COMPLETE & CERTIFIED (READY FOR STAGE 3).
+8. **Next Milestone (Stage 3):**
+   - Await user approval on Dataset Readiness Report.
+   - Upon approval, proceed to Feature Engineering ($M0-M3$ features) and Target Variable generation ($G(i, t)$).
