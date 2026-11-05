@@ -121,7 +121,24 @@ d:\Thesis\
 │   └── extraction_run_denominators_v2.log   # Production run log for Synchronized Denominators (4 Nov 23:54 UTC)
 │
 ├── extract_master_panel_1025topics.py       # Production extraction script for Master Panel v1
-└── extract_modeling_panel_v2_selected_types.py # Production extraction script for Modeling Panel v2 (Selected Types)
+├── extract_modeling_panel_v2_selected_types.py # Production extraction script for Modeling Panel v2 (Selected Types)
+│
+└── thesis/                                  # Master LaTeX Thesis Workspace (uethesis.cls + Harvard agsm)
+    ├── thesis.tex                           # Master LaTeX document combining all chapters and appendices
+    ├── uethesis.cls                         # Official University of Europe for Applied Sciences LaTeX class
+    ├── ue-logo.pdf                          # Official university crest logo
+    ├── ref.bib                              # BibTeX bibliographic references (Author-Date Harvard agsm)
+    ├── chapters/                            # Modular chapter documents
+    │   ├── chapter1_introduction.tex        # Chapter 1: Introduction (Background, Problems, RQs, Contributions)
+    │   ├── chapter2_background.tex          # Chapter 2: Background (Emerging Topics, Bibliometrics, RCA)
+    │   ├── chapter3_literature_review.tex   # Chapter 3: Literature Review (Prior Studies, Predictors, Research Gap)
+    │   ├── chapter4_methodology.tex         # Chapter 4: Methodology (OpenAlex, 1/k Counting, M0-M3, Evaluation)
+    │   ├── chapter5_results_discussion.tex  # Chapter 5: Results & Discussion (RQ1, RQ2, RQ3)
+    │   └── chapter6_conclusions.tex         # Chapter 6: Conclusions, Limitations, and Future Work
+    ├── figures/                             # High-resolution charts, diagrams, and figures
+    └── appendix/                            # Supplementary appendices
+        ├── appendix_a_audit.tex             # Appendix A: 29-Check Automated Audit Protocol
+        └── appendix_b_data_dict.tex         # Appendix B: 26-Column Data Dictionary & Phase 1 Pilot Note
 ```
 
 ---

@@ -91,7 +91,24 @@ d:\Thesis\
 │   └── extraction_run_denominators_v2.log   # บันทึกการดึงข้อมูลตัวหาร Synchronized Denominators (4 พ.ย. 23:54 UTC)
 │
 ├── extract_master_panel_1025topics.py       # สคริปต์สกัดข้อมูล Master Panel v1
-└── extract_modeling_panel_v2_selected_types.py # สคริปต์สกัดข้อมูล Modeling Panel v2 (Selected Types)
+├── extract_modeling_panel_v2_selected_types.py # สคริปต์สกัดข้อมูล Modeling Panel v2 (Selected Types)
+│
+└── thesis/                                  # โฟลเดอร์เอกสารวิทยานิพนธ์ฉบับสมบูรณ์ (LaTeX Master Workspace)
+    ├── thesis.tex                           # ไฟล์ LaTeX หลักสำหรับรวมทุกบทและภาคผนวก
+    ├── uethesis.cls                         # Template Class File ทางการของ UE Potsdam (เขียนโดย Supervisor)
+    ├── ue-logo.pdf                          # ตราสัญลักษณ์มหาวิทยาลัย University of Europe for Applied Sciences
+    ├── ref.bib                              # ฐานข้อมูลบรรณานุกรม BibTeX (Harvard Author-Date agsm)
+    ├── chapters/                            # โฟลเดอร์เนื้อหาแยกเป็น 6 บท
+    │   ├── chapter1_introduction.tex        # บทที่ 1: บทนำ (Background, Problems, RQs, Contributions)
+    │   ├── chapter2_background.tex          # บทที่ 2: ภูมิหลังทฤษฎี (Emerging Topics, Bibliometrics, RCA)
+    │   ├── chapter3_literature_review.tex   # บทที่ 3: วรรณกรรมที่เกี่ยวข้อง (Prior Studies, Predictors, Gap)
+    │   ├── chapter4_methodology.tex         # บทที่ 4: ระเบียบวิธีวิจัย (Data Preparation, 1/k, M0-M3, Evaluation)
+    │   ├── chapter5_results_discussion.tex  # บทที่ 5: ผลการวิจัยและการอภิปราย (RQ1, RQ2, RQ3)
+    │   └── chapter6_conclusions.tex         # บทที่ 6: บทสรุป ข้อจำกัด และข้อเสนอแนะ
+    ├── figures/                             # โฟลเดอร์จัดเก็บภาพ แผนภูมิ และไดอะแกรมความละเอียดสูง
+    └── appendix/                            # ภาคผนวก
+        ├── appendix_a_audit.tex             # ภาคผนวก A: รายละเอียดการตรวจสอบอัตโนมัติ 29 รายการ
+        └── appendix_b_data_dict.tex         # ภาคผนวก B: พจนานุกรมข้อมูล 26 คอลัมน์ และผลการทดสอบ Pilot Phase 1
 ```
 
 ---

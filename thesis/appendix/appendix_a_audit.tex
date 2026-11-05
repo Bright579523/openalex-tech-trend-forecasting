@@ -1,0 +1,45 @@
+\chapter{Independent Audit and Quality Control Verification} \label{app:audit}
+
+To guarantee complete dataset integrity and computational reproducibility, the final primary modeling panel (\texttt{openalex\_modeling\_panel\_1025topics\_v2\_synchronized.csv}) was evaluated against an automated 29-check programmatic audit gate (\texttt{independent\_audit\_v2.py}). All 29 assertions returned a hard pass status (\texttt{EXIT\_CODE=0}).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Complete 29-Check Verification Gate Protocol}
+    \label{tab:app_audit_checks}
+    \small
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{ID} & \textbf{Validation Dimension} & \textbf{Empirical Result / Metric} \\
+        \midrule
+        \#01 & Master Panel v1 Preservation & SHA-256 match (\texttt{37de2b5d...}) \\
+        \#02 & Original Modeling Panel v2 Preservation & SHA-256 match (\texttt{3d869014...}) \\
+        \#03 & Synchronized Modeling Panel v2 Verification & SHA-256 match (\texttt{f0049cd7...}) \\
+        \#04 & Total Matrix Row Count & Exactly 15,375 rows \\
+        \#05 & Total Schema Column Count & Exactly 26 columns \\
+        \#06 & Unique Technology Topics Universe & Exactly 1,025 unique topics \\
+        \#07 & Temporal Coverage (2010--2024) & Exactly 15 annual intervals \\
+        \#08 & Balanced Panel Structure & Exactly 15 observations per topic \\
+        \#09 & Key Uniqueness & Zero duplicate \texttt{(topic\_id, year)} keys \\
+        \#10 & Matrix Completeness & Zero null or missing values (0 / 399,750 cells) \\
+        \#11 & Denominator Table Coverage & Exactly 15 annual denominator rows \\
+        \#12 & Denominator Table Concordance & 100\% match with coverage census \\
+        \#13 & Global All-Science Denominator & 0 mismatched rows across 15,375 rows \\
+        \#14 & Germany Whole Denominator & 0 mismatched rows across 15,375 rows \\
+        \#15 & Germany Fractional Denominator & 0 mismatched rows across 15,375 rows \\
+        \#16 & China Whole Denominator & 0 mismatched rows across 15,375 rows \\
+        \#17 & China Fractional Denominator & 0 mismatched rows across 15,375 rows \\
+        \#18 & Japan Whole Denominator & 0 mismatched rows across 15,375 rows \\
+        \#19 & Japan Fractional Denominator & 0 mismatched rows across 15,375 rows \\
+        \#20 & Global Count Non-Negativity & Zero negative values \\
+        \#21 & Germany Fractional Count Bounds & $0 \le P_{\text{Frac}} \le P_{\text{Whole}}$ (0 violations, retention: 75.35\%) \\
+        \#22 & China Fractional Count Bounds & $0 \le P_{\text{Frac}} \le P_{\text{Whole}}$ (0 violations, retention: 90.03\%) \\
+        \#23 & Japan Fractional Count Bounds & $0 \le P_{\text{Frac}} \le P_{\text{Whole}}$ (0 violations, retention: 87.46\%) \\
+        \#24 & Germany Whole RCA Recalculation & $\Delta_{\text{max}} \le 0.00000500$ (0 exceedances) \\
+        \#25 & Germany Fractional RCA Recalculation & $\Delta_{\text{max}} \le 0.00000500$ (0 exceedances) \\
+        \#26 & China Whole RCA Recalculation & $\Delta_{\text{max}} \le 0.00000500$ (0 exceedances) \\
+        \#27 & China Fractional RCA Recalculation & $\Delta_{\text{max}} \le 0.00000500$ (0 exceedances) \\
+        \#28 & Japan Whole RCA Recalculation & $\Delta_{\text{max}} \le 0.00000500$ (0 exceedances) \\
+        \#29 & Japan Fractional RCA Recalculation & $\Delta_{\text{max}} \le 0.00000500$ (0 exceedances) \\
+        \bottomrule
+    \end{tabular}
+\end{table}

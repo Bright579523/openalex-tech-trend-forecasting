@@ -1,0 +1,25 @@
+\chapter{Literature Review} \label{chap:lit}
+
+\section{Previous Studies in Research Topic Forecasting}
+Forecasting emerging scientific and technological topics has attracted significant interest across computational scientometrics, science policy, and information systems. Earlier studies focused primarily on univariate time-series extrapolation, Gompertz growth models, and S-curve fitting of publication counts. More recently, computational approaches have integrated machine learning regressors and neural networks to model non-linear scientific expansion \citep{liang2021}.
+
+\section{Bibliometric Indicators in Emerging Topic Prediction}
+A variety of bibliometric indicators have been deployed to predict topic emergence:
+\begin{itemize}
+    \item \textbf{Volume and Growth Dynamics:} Past publication counts, acceleration rates, and momentum.
+    \item \textbf{Citation Trajectories:} Early citation velocity, citation percentile ranks, and international citation diffusion.
+    \item \textbf{Textual and Semantic Signals:} Keyword burstiness, term co-occurrence density, and embedding drift.
+\end{itemize}
+While these indicators capture intrinsic topic characteristics, they predominantly measure aggregate global signals and cannot capture localized national incubators of specialized capability.
+
+\section{National Specialisation in Science Dynamics}
+Recent empirical work has examined how countries evolve their scientific specializations over time. \citet{galanmena2026} applied network science and economic complexity methods to forecast country-level scientific diversification across 27 disciplines, demonstrating that accumulated national capabilities predict which research areas a country will enter. However, their inquiry focused on predicting the future research profile of individual countries, rather than examining whether country-level specialization predicts future global topic growth.
+
+\section{Research Gap}
+Despite the extensive literature on topic emergence and national specialization, a critical research gap persists:
+\begin{enumerate}
+    \item \textbf{Lack of Cross-Scale Linkage:} Existing forecasting models treat global topic growth as an endogenous function of global history, overlooking whether national specialisation in major research powers (such as Germany, China, and Japan) acts as a leading indicator of global expansion.
+    \item \textbf{Inadequate Control for Database Expansion:} Many prior studies evaluate raw publication growth without adjusting for underlying bibliographic database coverage expansion, introducing systematic confounding over multi-year observation horizons.
+    \item \textbf{Double-Counting in Collaborative Works:} Most comparative studies apply whole counting to internationally co-authored papers, distorting comparative advantage metrics through multi-country inflation.
+\end{enumerate}
+This thesis directly addresses this gap by implementing an aligned, fractionally counted, and temporally evaluated forecasting framework across 1,025 technology topics in OpenAlex.
