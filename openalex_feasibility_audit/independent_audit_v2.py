@@ -152,11 +152,26 @@ def run_audit() -> int:
     # 4. RCA Recalculation & Numerical Precision Enforcement (6 checks)
     # -------------------------------------------------------------------------
     print(f"\n[4] RCA RECALCULATION & PRECISION ENFORCEMENT (TOLERANCE <= {TOLERANCE_RCA:.8f})")
+    global_share = np.divide(
+        df_v2["global_count"].to_numpy(dtype=float),
+        df_v2["global_allsci_denom"].to_numpy(dtype=float),
+        out=np.zeros(len(df_v2), dtype=float),
+        where=(df_v2["global_allsci_denom"].to_numpy(dtype=float) > 0)
+        & (df_v2["global_count"].to_numpy(dtype=float) > 0),
+    )
     for c in ["de", "cn", "jp"]:
-        calc_rca_whole = np.where(
-            (df_v2["global_count"] > 0) & (df_v2[f"{c}_allsci_whole_denom"] > 0) & (df_v2[f"{c}_whole_count"] > 0),
-            (df_v2[f"{c}_whole_count"] / df_v2[f"{c}_allsci_whole_denom"]) / (df_v2["global_count"] / df_v2["global_allsci_denom"]),
-            0.0
+        topic_share_w = np.divide(
+            df_v2[f"{c}_whole_count"].to_numpy(dtype=float),
+            df_v2[f"{c}_allsci_whole_denom"].to_numpy(dtype=float),
+            out=np.zeros(len(df_v2), dtype=float),
+            where=(df_v2[f"{c}_allsci_whole_denom"].to_numpy(dtype=float) > 0)
+            & (df_v2[f"{c}_whole_count"].to_numpy(dtype=float) > 0),
+        )
+        calc_rca_whole = np.divide(
+            topic_share_w,
+            global_share,
+            out=np.zeros(len(df_v2), dtype=float),
+            where=(global_share > 0),
         )
         diff_whole = np.abs(calc_rca_whole - df_v2[f"rca_whole_{c}"])
         max_idx_w = int(np.argmax(diff_whole))
@@ -164,10 +179,18 @@ def run_audit() -> int:
         exceed_w = int((diff_whole > TOLERANCE_RCA + FLOAT_EPS).sum())
         invalid_w = int((np.isnan(df_v2[f"rca_whole_{c}"]) | np.isinf(df_v2[f"rca_whole_{c}"]) | (df_v2[f"rca_whole_{c}"] < 0)).sum())
 
-        calc_rca_frac = np.where(
-            (df_v2["global_count"] > 0) & (df_v2[f"{c}_allsci_frac_denom"] > 0) & (df_v2[f"{c}_frac_count"] > 0),
-            (df_v2[f"{c}_frac_count"] / df_v2[f"{c}_allsci_frac_denom"]) / (df_v2["global_count"] / df_v2["global_allsci_denom"]),
-            0.0
+        topic_share_f = np.divide(
+            df_v2[f"{c}_frac_count"].to_numpy(dtype=float),
+            df_v2[f"{c}_allsci_frac_denom"].to_numpy(dtype=float),
+            out=np.zeros(len(df_v2), dtype=float),
+            where=(df_v2[f"{c}_allsci_frac_denom"].to_numpy(dtype=float) > 0)
+            & (df_v2[f"{c}_frac_count"].to_numpy(dtype=float) > 0),
+        )
+        calc_rca_frac = np.divide(
+            topic_share_f,
+            global_share,
+            out=np.zeros(len(df_v2), dtype=float),
+            where=(global_share > 0),
         )
         diff_frac = np.abs(calc_rca_frac - df_v2[f"rca_frac_{c}"])
         max_idx_f = int(np.argmax(diff_frac))
