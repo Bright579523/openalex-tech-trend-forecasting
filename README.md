@@ -65,27 +65,29 @@ d:\Thesis\
 ├── Lecture 01 Master Colliquim Reseach Topic.pdf  # เอกสารประกอบการเรียน/ข้อกำหนด
 ├── Lecture 02 Master Good Thesis.pdf        # เอกสารเกณฑ์วิทยานิพนธ์ที่ดี
 │
-├── openalex_feasibility_audit\              # โฟลเดอร์ผลการตรวจสอบความเป็นไปได้ (Audit Deliverables)
-│   ├── OPENALEX_FEASIBILITY_REPORT.md       # รายงาน Audit ฉบับสมบูรณ์ (CONDITIONAL PASS)
-│   ├── AUDIT_CORRECTIONS.md                 # รายละเอียดการตอบข้อซักถามทางเทคนิค
-│   ├── openalex_feasibility_audit.py        # โค้ดสำหรับรัน Audit 3 ขั้นตอน
-│   ├── data_audit_summary.json              # สรุปผลทางสถิติในรูปแบบ JSON
-│   ├── run_log.md                           # บันทึก API call และประวัติการรัน
-│   ├── candidate_topics.csv                 # รายชื่อ 1,025 Topics ใน 5 สาขาเทคโนโลยี
-│   ├── all_tech_topics_taxonomy.csv         # เมตาดาต้าอนุกรมวิธาน OpenAlex Topics
-│   ├── national_annual_totals_all_science.csv # ยอดตีพิมพ์รวมระดับชาติรายปี (Global, DE, CN, JP)
-│   ├── full_1025_topics_historical_volumes.csv # ตารางปริมาณผลงานย้อนหลังของ 1,025 Topics ใน 4 Origins
-│   ├── full_universe_origin_eligibility.csv # สถิติสัดส่วน Topics ที่ผ่านเกณฑ์ >= 50 works (96-97%)
-│   ├── sample_topic_country_counts.csv      # ตัวอย่างข้อมูล 45 แถว
-│   ├── enriched_panel_with_both_rcas.csv    # Pilot Panel 50 Topics x 15 ปี พร้อม RCA ทั้งสองแบบ
-│   ├── model_pilot_results_allsci_consistent.csv # ผลประเมินโมเดล M0-M3 ของช่วงนำร่อง
-│   ├── openalex_master_panel_1025topics.csv # FROZEN Master Panel v1 (All Types Baseline, 15,375 แถว)
-│   ├── openalex_modeling_panel_1025topics_v2_selected_types.csv # CERTIFIED Modeling Panel v2 (15,375 แถว)
-│   ├── all_science_national_denominators_fractional.csv # ตัวหาร All-Science Fractional ครบ 15 ปี (2010-2024)
-│   ├── all_science_national_denominators_fractional_v2_selected_types.csv # ตัวหาร All-Science Selected Types (2010-2024)
+├── openalex_feasibility_audit\              # โฟลเดอร์ชุดข้อมูลหลักและรายงานการตรวจสอบ (Stage 1 & Stage 2 Deliverables)
+│   ├── OPENALEX_FEASIBILITY_REPORT.md       # รายงาน Audit ความเป็นไปได้ฉบับสมบูรณ์ (Stage 1)
+│   ├── FINAL_FREEZE_REPORT.md               # รายงานรับรองความถูกต้อง Master Panel v1
+│   ├── DOCUMENT_TYPE_AND_METADATA_AUDIT.md  # รายงานตรวจสอบขอบเขตประเภทเอกสารและเมตาดาต้า
 │   ├── STAGE2_DATASET_AUDIT_REPORT.md       # รายงานสรุปผลการสกัดและตรวจสอบ Dataset Stage 2
-│   ├── test_option_c_fractional.py          # สคริปต์ทดสอบ Option C vs Ground Truth
-│   └── test_pre_extraction_checks.py        # สคริปต์ตรวจความพร้อม 4 ด้านก่อนสกัดจริง
+│   ├── STAGE2_FINAL_CORRECTION_REPORT.md    # รายงานการกระทบยอดตัวหารและการแก้ไข Stage 2
+│   ├── FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md # รายงานยืนยันความถูกต้องของ Synchronized Panel v2 และ RCA
+│   ├── CHATGPT_REVIEW_BUNDLE.md             # เอกสารรวมศูนย์สำหรับ Independent Review
+│   ├── openalex_master_panel_1025topics.csv # FROZEN Master Panel v1 (All Types Baseline, 15,375 แถว)
+│   ├── openalex_modeling_panel_1025topics_v2_selected_types.csv # PRESERVED Original Modeling Panel v2 (15,375 แถว)
+│   ├── openalex_modeling_panel_1025topics_v2_synchronized.csv # PRIMARY Synchronized Modeling Panel v2 (15,375 แถว)
+│   ├── all_science_national_denominators_fractional.csv # ตัวหาร All-Science Fractional ครบ 15 ปี (v1)
+│   ├── all_science_national_denominators_fractional_v2_selected_types.csv # ตัวหาร All-Science Selected Types เดิม (เก็บอนุรักษ์)
+│   ├── all_science_national_denominators_fractional_v2_live_recheck_20261105.csv # ตัวหาร All-Science Selected Types ที่ซิงก์ตรงเวลา
+│   ├── annual_work_types_and_topic_coverage.csv # ตารางสัดส่วนประเภทเอกสารและความครอบคลุม 15 ปี
+│   ├── synchronize_modeling_panel_v2.py     # สคริปต์สร้าง Synchronized Panel v2 แบบทำซ้ำได้ 100% โดยไม่ต้องยิง API
+│   ├── extract_denominators_v2.py           # สคริปต์สกัดตัวหารระดับประเทศสำหรับ Selected Scholarly Work Types
+│   ├── independent_audit_v2.py              # สคริปต์ตรวจสอบความถูกต้องอัตโนมัติ 28 รายการ
+│   ├── candidate_topics.csv                 # รายชื่อ 1,025 Topics ใน 5 สาขาเทคโนโลยี
+│   └── all_tech_topics_taxonomy.csv         # เมตาดาต้าอนุกรมวิธาน OpenAlex Topics
+│
+├── extract_master_panel_1025topics.py       # สคริปต์สกัดข้อมูล Master Panel v1
+└── extract_modeling_panel_v2_selected_types.py # สคริปต์สกัดข้อมูล Modeling Panel v2 (Selected Types)
 ```
 
 ---

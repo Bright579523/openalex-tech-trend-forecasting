@@ -81,28 +81,26 @@ d:\Thesis\
 ├── Lecture 01 Master Colliquim Reseach Topic.pdf  # Academic guideline
 ├── Lecture 02 Master Good Thesis.pdf        # Academic guideline
 │
-├── openalex_feasibility_audit\              # Master Feasibility Audit (1,025-topic universe)
-│   ├── OPENALEX_FEASIBILITY_REPORT.md       # Comprehensive Audit Report (CONDITIONAL PASS)
-│   ├── AUDIT_CORRECTIONS.md                 # Complete technical resolution notes
-│   ├── FINAL_FREEZE_REPORT.md               # Master Panel Freeze Certification & Quality Audit
+├── openalex_feasibility_audit\              # Master Feasibility & Stage 2 Audit (1,025-topic universe)
+│   ├── OPENALEX_FEASIBILITY_REPORT.md       # Comprehensive Stage 1 Audit Report (CONDITIONAL PASS)
+│   ├── FINAL_FREEZE_REPORT.md               # Master Panel v1 Freeze Certification & Quality Audit
 │   ├── DOCUMENT_TYPE_AND_METADATA_AUDIT.md  # Detailed Scope, Metadata & Mathematical Audit Report
-│   ├── STAGE2_DATASET_AUDIT_REPORT.md       # Final Stage 2 Dataset Preparation Audit & Certification
+│   ├── STAGE2_DATASET_AUDIT_REPORT.md       # Stage 2 Dataset Preparation Audit & Certification
+│   ├── STAGE2_FINAL_CORRECTION_REPORT.md    # Stage 2 Final Correction & Reconciliation Report
+│   ├── FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md # Synchronized Panel v2 & RCA Verification Report
+│   ├── CHATGPT_REVIEW_BUNDLE.md             # Consolidated Independent Review Bundle
 │   ├── openalex_master_panel_1025topics.csv # FROZEN Master Panel v1 (All Types Baseline, 15,375 rows)
 │   ├── openalex_modeling_panel_1025topics_v2_selected_types.csv # PRESERVED Original Modeling Panel v2 (15,375 rows)
 │   ├── openalex_modeling_panel_1025topics_v2_synchronized.csv # PRIMARY Synchronized Modeling Panel v2 (15,375 rows)
 │   ├── all_science_national_denominators_fractional.csv # All-science 15-yr fractional denominators (v1)
 │   ├── all_science_national_denominators_fractional_v2_selected_types.csv # Pre-deduplication v2 denominators (preserved)
 │   ├── all_science_national_denominators_fractional_v2_live_recheck_20261105.csv # Synchronized v2 denominators (post-dedup)
+│   ├── annual_work_types_and_topic_coverage.csv # Reconciled 15-year coverage & work types audit table
 │   ├── synchronize_modeling_panel_v2.py     # Deterministic script building synchronized v2 panel without API calls
 │   ├── extract_denominators_v2.py           # Denominator extraction script for Selected Scholarly Work Types
 │   ├── independent_audit_v2.py              # Automated 28-check verification script for Synchronized Panel v2
 │   ├── candidate_topics.csv                 # 1,025 topics classification & rationale
-│   ├── all_tech_topics_taxonomy.csv         # Full 1,025 technology taxonomy metadata
-│   ├── national_annual_totals_all_science.csv # All-science annual totals (Global, DE, CN, JP)
-│   ├── full_1025_topics_historical_volumes.csv # 1,025 topics volume matrix across 4 origins
-│   ├── full_universe_origin_eligibility.csv # Full universe eligibility statistics
-│   ├── test_option_c_fractional.py          # Option C vs Ground Truth empirical validation script
-│   └── test_pre_extraction_checks.py        # 4-point pre-extraction audit verification script
+│   └── all_tech_topics_taxonomy.csv         # Full 1,025 technology taxonomy metadata
 │
 ├── extract_master_panel_1025topics.py       # Production extraction script for Master Panel v1
 └── extract_modeling_panel_v2_selected_types.py # Production extraction script for Modeling Panel v2 (Selected Types)
