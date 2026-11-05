@@ -72,6 +72,7 @@ d:\Thesis\
 │   ├── STAGE2_DATASET_AUDIT_REPORT.md       # รายงานสรุปผลการสกัดและตรวจสอบ Dataset Stage 2
 │   ├── STAGE2_FINAL_CORRECTION_REPORT.md    # รายงานการกระทบยอดตัวหารและการแก้ไข Stage 2
 │   ├── FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md # รายงานยืนยันความถูกต้องของ Synchronized Panel v2 และ RCA
+│   ├── DATA_PREPARATION_DRAFT_v3.md         # ร่างเนื้อหา Data Preparation ฉบับสมบูรณ์ (ไทย-อังกฤษ)
 │   ├── CHATGPT_REVIEW_BUNDLE.md             # เอกสารรวมศูนย์สำหรับ Independent Review
 │   ├── openalex_master_panel_1025topics.csv # FROZEN Master Panel v1 (All Types Baseline, 15,375 แถว)
 │   ├── openalex_modeling_panel_1025topics_v2_selected_types.csv # PRESERVED Original Modeling Panel v2 (15,375 แถว)

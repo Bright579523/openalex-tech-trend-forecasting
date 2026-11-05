@@ -26,21 +26,23 @@
   4. *Energy* (27 topics)
   5. *Chemical Engineering* (13 topics)
 * **Universe Size:** Exactly **1,025 topics**.
-* **Prevalence / Eligibility Rule:** **Origin-Specific Historical Eligibility** ($\ge 50$ works in $[t-2, t]$).
+* **Prevalence / Eligibility Rule:** **Origin-Specific Historical Eligibility** ($\ge 50$ global works in $[t-2, t]$).
   * *Rationale:* Strictly eliminates Lookahead Bias. Evaluated separately at each forecast origin.
-  * *Coverage:* 2012 (985 topics, 96.1%), 2015 (990 topics, 96.6%), 2018 (992 topics, 96.8%), 2021 (996 topics, 97.2%).
+  * *Coverage on Primary Panel v2 (Selected Types):* Origin 2018 (**992 topics**, 96.78%), Origin 2021 (**995 topics**, 97.07%).
+  * *Baseline Panel v1 Note:* On the unconstrained All Types panel, coverage was 2012 (985, 96.1%), 2015 (990, 96.6%), 2018 (992, 96.8%), 2021 (996, 97.2%). For the primary research design, strictly report **992 (2018) and 995 (2021)**.
   * *Zero-Volume Topics:* 21 topics in the taxonomy have 0 eligible works in 2010–2021; this rule automatically and cleanly filters them out.
 
 ### B. Paper Counting & Country Attribution
 * **Primary Counting Rule:** **Country-Level Equal Fractional Counting (Option C: $1/k$)** via server-side 2D aggregation (`group_by=publication_year,countries_distinct_count` with filter `authorships.institutions.country_code`).
-  * *Formula:* $P_{\text{Frac}}(c, i, t) = \sum_{k \ge 1} \frac{N(c, i, t, k)}{k}$ where $k$ is the number of distinct countries on the paper.
-  * *Methodological Status:* Fully satisfies the Supervisor's requirement for fractional counting; strictly verified in Pre-Extraction Audit (100% group conservation, zero missing/null $k$, $r = 0.9968$ with Whole RCA, error reduced by >50-60% vs author-level ground truth).
+  * *Formula:* $FC_{w,c} = \frac{1}{k_w}$; $P_{\text{Frac}}(c, i, t) = \sum_{k \ge 1} \frac{N(c, i, t, k)}{k}$ where $k_w$ is the number of distinct countries on paper $w$.
+  * *Methodological Status:* Fully satisfies the Supervisor's requirement for fractional counting; strictly verified in Pre-Extraction Audit (100% group conservation, zero missing/null $k$, error reduced by >50-60% vs author-level ground truth). Note that pilot correlation $r = 0.9968$ from Phase 1 is reserved for Appendix/feasibility documentation and omitted from the main thesis text.
 * **Reference Comparison Rule:** **Whole Counting** is also preserved in the master panel as an auxiliary baseline column for methodological comparison and sensitivity analysis.
 
 ### C. Revealed Comparative Advantage (RCA) Definition
 * **Sole Primary Feature:** **Fractional All-Science RCA ($RCA_{\text{AllSci}}^{\text{Frac}}$)**
   $$RCA_{\text{AllSci}}^{\text{Frac}}(c, i, t) = \frac{P_{\text{Frac}}(c, i, t) / P_{\text{Frac}}(c, \text{AllSci}, t)}{P(\text{Global}, i, t) / P(\text{Global}, \text{AllSci}, t)}$$
-* *Methodological Consistency:* Both the topic volume (numerator) and the national all-science total (denominator) strictly employ the identical $1/k$ fractional counting rule. Denominators for 2010–2024 are verified and saved in `all_science_national_denominators_fractional.csv`.
+* *Methodological Consistency:* Both the topic volume (numerator) and the national all-science total (denominator) strictly employ the identical $1/k$ fractional counting rule. Denominators for 2010–2024 are verified and saved in `all_science_national_denominators_fractional_v2_live_recheck_20261105.csv`.
+* *Ranking Invariance:* Recalculating $RCA_{\text{AllSci}}^{\text{Frac}}$ between original and synchronized panels across all 15,375 topic-year observations yields Pearson $r = 0.99983$ (DE), $r = 0.99986$ (CN), and $r = 0.99987$ (JP), confirming that the deduplication update shifted denominator scale while preserving specialization rankings.
 
 ### D. Forecasting Formulation, Target & Baseline
 * **Target Variable:** Future 3-Year Log Growth Rate Adjusted for Global Research Growth:
@@ -88,6 +90,7 @@ d:\Thesis\
 │   ├── STAGE2_DATASET_AUDIT_REPORT.md       # Stage 2 Dataset Preparation Audit & Certification
 │   ├── STAGE2_FINAL_CORRECTION_REPORT.md    # Stage 2 Final Correction & Reconciliation Report
 │   ├── FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md # Synchronized Panel v2 & RCA Verification Report
+│   ├── DATA_PREPARATION_DRAFT_v3.md         # Definitive Data Preparation chapter draft (Bilingual, Certified Handover)
 │   ├── CHATGPT_REVIEW_BUNDLE.md             # Consolidated Independent Review Bundle
 │   ├── openalex_master_panel_1025topics.csv # FROZEN Master Panel v1 (All Types Baseline, 15,375 rows)
 │   ├── openalex_modeling_panel_1025topics_v2_selected_types.csv # PRESERVED Original Modeling Panel v2 (15,375 rows)
@@ -118,11 +121,12 @@ d:\Thesis\
 4. **Classifier Metadata Documented:**
    - Topic Classifier: Fine-tuned **Qwen3-8B** (deployed 6 October 2026, analyzing Title, Abstract, Source Name).
    - Work Type Classifier: Major reclassification update (deployed 15 July 2026, reclassified 49.6M works).
-5. **RCA Numerical Precision Resolved:** Verified that Whole RCA and Fractional RCA recalculation errors across all 46,125 cells are strictly $\Delta \le \mathbf{0.00000500}$, meeting the exact theoretical rounding ceiling.
+5. **RCA Numerical Precision Resolved:** Verified that Whole RCA and Fractional RCA recalculation errors across all 92,250 cells are strictly $\Delta \le \mathbf{0.00000500}$, meeting the exact theoretical rounding ceiling.
 6. **Dual-Panel Architecture Established:**
    - **Master Panel v1 (All Types):** Frozen baseline for methodological comparison / sensitivity analysis (`openalex_master_panel_1025topics.csv`).
-   - **Modeling Panel v2 (Selected Types: `type:article|conference-paper|review`):** Primary research design dataset matching proposal (`openalex_modeling_panel_1025topics_v2_selected_types.csv`).
-7. **Stage 2: Full Modeling Dataset Extraction & Audit:** COMPLETE & CERTIFIED (READY FOR STAGE 3).
-8. **Next Milestone (Stage 3):**
+   - **Modeling Panel v2 (Selected Types: `type:article|conference-paper|review`):** Primary research design dataset matching proposal (Synchronized: `openalex_modeling_panel_1025topics_v2_synchronized.csv`, Preserved original: `openalex_modeling_panel_1025topics_v2_selected_types.csv`).
+7. **Stage 2: Full Modeling Dataset Extraction & Audit:** COMPLETE, CERTIFIED, AND FROZEN (29/29 checks PASS, `independent_audit_v2.py`).
+8. **Handover & Chapter 3 Drafting:** `DATA_PREPARATION_DRAFT_v3.md` established as definitive single source of truth for Chapter 3 Data Preparation text (4 sections: 3.1–3.4; Forecast Windows, Eligibility, Target, and Baseline allocated to Methodology).
+9. **Next Milestone (Stage 3):**
    - Await user approval on Dataset Readiness Report.
-   - Upon approval, proceed to Feature Engineering ($M0-M3$ features) and Target Variable generation ($G(i, t)$).
+   - Upon approval, proceed to Feature Engineering ($M0-M3$ features) and Target Variable generation ($G(i, t)$). Strictly train on Primary Panel v2 (no duplicate modeling for RQ3).
