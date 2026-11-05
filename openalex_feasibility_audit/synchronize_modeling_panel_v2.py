@@ -9,8 +9,9 @@ by combining:
   1. Preserved Original Modeling Panel v2 (openalex_modeling_panel_1025topics_v2_selected_types.csv),
      which was extracted on 2026-11-04 (23:08–23:52 UTC+1) after OpenAlex's 4 November index
      deduplication (merging ~17.3M duplicate works), and
-  2. Synchronized All-Science Denominators (all_science_national_denominators_fractional_v2_live_recheck_20261105.csv),
-     extracted from the identical post-deduplication OpenAlex index state (23:54 UTC+0 / 00:54 UTC+1).
+  2. Synchronized All-Science Denominators (all_science_national_denominators_fractional_v2_live_recheck_20261105.csv).
+     Both datasets were retrieved after the 4 November deduplication update and were synchronized using
+     the corresponding denominator records.
 
 Methodological & Numerical Enhancements:
   - Full pre- and post-synchronization structural validation:

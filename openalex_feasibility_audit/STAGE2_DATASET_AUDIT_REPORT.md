@@ -1,12 +1,19 @@
-# Stage 2 Final Dataset Audit Report: Modeling Panel v2 (Selected Types)
+# Stage 2 Historical Extraction Audit Report: Modeling Panel v2 (Selected Types)
 
 **Document:** `STAGE2_DATASET_AUDIT_REPORT.md`  
 **Thesis Topic:** *Does National Specialisation Help Forecast Research-Topic Growth? Evidence from Germany, China, and Japan Using OpenAlex*  
 **Degree & Institution:** M.Sc. Data Science, University of Europe for Applied Sciences (UE Potsdam)  
 **Author / Candidate:** Bright  
 **Execution Date:** 04 November 2026 (23:08:40 – 23:52:46 UTC+1) | **Harmonization & Audit:** 05 November 2026  
-**Primary Dataset Target:** `openalex_modeling_panel_1025topics_v2_selected_types.csv`  
-**Status:** **AUDITED, MATHEMATICALLY VERIFIED ($\le 0.00000500$), AND LOCKED**
+**Audited Target in this Document:** `openalex_modeling_panel_1025topics_v2_selected_types.csv` (Preserved Original Panel v2)  
+**Definitive Primary Dataset Target:** [`openalex_modeling_panel_1025topics_v2_synchronized.csv`](file:///d:/Thesis/openalex_feasibility_audit/openalex_modeling_panel_1025topics_v2_synchronized.csv) (Synchronized Panel v2)  
+**Status:** **HISTORICAL EXTRACTION AUDIT (SUPERSEDED FOR FINAL CERTIFICATION BY `FINAL_DENOMINATOR_AND_RCA_VERIFICATION.MD`)**
+
+> [!IMPORTANT]
+> **AUDIT CONTINUUM & HISTORICAL CONTEXT NOTICE (PLEASE READ FIRST):**  
+> This document (`STAGE2_DATASET_AUDIT_REPORT.md`) records the initial extraction and structural audit of the **Original Modeling Panel v2 (`openalex_modeling_panel_1025topics_v2_selected_types.csv`)** conducted on 04 November 2026.  
+> Following OpenAlex's official 4 November deduplication update (merging >17.3M duplicate works), the primary modeling dataset was synchronized and certified in **[`FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md`](file:///d:/Thesis/openalex_feasibility_audit/FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md)** as **`openalex_modeling_panel_1025topics_v2_synchronized.csv`**.  
+> **`FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md` serves as the definitive, up-to-date certification report for the final modeling panel and denominator synchronization.** The evaluation in this document serves as the historical audit trail for the preserved Original Panel v2 baseline.
 
 ---
 
@@ -14,7 +21,7 @@
 
 This report documents the completion of **Stage 2: Dataset Preparation** and the **Stage 2.1 Methodological Consistency Audit** for the OpenAlex technology growth forecasting project.
 
-The primary modeling dataset (**Modeling Panel v2**) was extracted from OpenAlex covering **1,025 physical science and technology topics** over **15 annual intervals (2010–2024)** for **Germany (DE), China (CN), Japan (JP)**, and **Global (GLOBAL)**, restricted specifically to **Selected Scholarly Work Types** matching the approved Thesis Proposal:
+The original modeling dataset (**Modeling Panel v2**) was extracted from OpenAlex covering **1,025 physical science and technology topics** over **15 annual intervals (2010–2024)** for **Germany (DE), China (CN), Japan (JP)**, and **Global (GLOBAL)**, restricted specifically to **Selected Scholarly Work Types** matching the approved Thesis Proposal:
 $$\text{Scope} = \{\text{article}, \text{conference-paper}, \text{review}\}$$
 *(Note: This scope reflects OpenAlex's structural work-type classification and does not assert that every individual record in these categories has undergone formal peer review.)*
 
@@ -24,15 +31,16 @@ All 4,100 production API queries were executed with server-side 2D fail-fast gro
 
 ## 2. Dataset Architecture & File Metadata
 
-| Attribute | Master Panel v1 (Baseline) | Modeling Panel v2 (Primary Modeling) | Status / Notes |
-| :--- | :--- | :--- | :--- |
-| **Filename** | `openalex_master_panel_1025topics.csv` | `openalex_modeling_panel_1025topics_v2_selected_types.csv` | Both located in `openalex_feasibility_audit/` |
-| **Document Scope** | All indexed document types | `type:article\|conference-paper\|review` | Matches Thesis Proposal |
-| **Observation Window** | 2010–2024 (15 annual intervals) | 2010–2024 (15 annual intervals) | Exact 1:1 temporal alignment |
-| **Topics Universe** | 1,025 physical science & tech | 1,025 physical science & tech | 5 Engineering & Physical Sciences fields |
-| **Row Count** | 15,375 rows | 15,375 rows | $1,025 \times 15$ topic-years |
-| **Column Count** | 26 columns | 26 columns | Identical schema structure |
-| **Missing / Nulls** | 0 nulls | 0 nulls | 100% complete matrix |
+| Attribute | Master Panel v1 (Baseline) | Original Modeling Panel v2 (Preserved Baseline) | Primary Synchronized Panel v2 (Final Research Dataset) | Status / Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **Filename** | `openalex_master_panel_1025topics.csv` | `openalex_modeling_panel_1025topics_v2_selected_types.csv` | `openalex_modeling_panel_1025topics_v2_synchronized.csv` | All in `openalex_feasibility_audit/` |
+| **Document Scope** | All indexed document types | `type:article\|conference-paper\|review` | `type:article\|conference-paper\|review` | Matches Thesis Proposal |
+| **Observation Window** | 2010–2024 (15 annual intervals) | 2010–2024 (15 annual intervals) | 2010–2024 (15 annual intervals) | Exact 1:1 temporal alignment |
+| **Topics Universe** | 1,025 physical science & tech | 1,025 physical science & tech | 1,025 physical science & tech | 5 Engineering & Physical Sciences fields |
+| **Row Count** | 15,375 rows | 15,375 rows | 15,375 rows | $1,025 \times 15$ topic-years |
+| **Column Count** | 26 columns | 26 columns | 26 columns | Identical schema structure |
+| **Missing / Nulls** | 0 nulls | 0 nulls | 0 nulls | 100% complete matrix |
+| **Denominators State** | All-Science v1 (All Types) | Pre-dedup v2 (`01:09Z`) | Post-dedup v2 synchronized (`23:54Z`) | Fully reconciled in Final Verification Report |
 | **Primary Attribution** | Country Fractional ($1/k$) | Country Fractional ($1/k$) | Option C ($1/k$) server-side 2D GroupBy |
 | **Fractional Precision** | 4 decimal places | 6 decimal places | Enhanced to eliminate rounding delta |
 | **RCA Recalculation Error**| $\le 0.00000500$ (Whole), $\le 0.00009996$ (Frac) | **$\le \mathbf{0.00000500}$ (Both Whole & Frac)** | Strictly meets original criterion |

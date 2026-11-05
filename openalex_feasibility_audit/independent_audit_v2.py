@@ -6,7 +6,7 @@ Audits:
   - Preserved Original v2:      openalex_modeling_panel_1025topics_v2_selected_types.csv
   - Preserved Master Panel v1:  openalex_master_panel_1025topics.csv
 
-Enforces strict pass/fail acceptance criteria across 28 distinct checks and returns non-zero
+Enforces strict pass/fail acceptance criteria across 29 distinct checks and returns non-zero
 exit status (sys.exit(1)) if any check fails.
 """
 
@@ -53,13 +53,15 @@ def run_audit() -> int:
             failures.append(f"[#{idx:02d}] {name}: {detail}")
 
     # -------------------------------------------------------------------------
-    # 0. Preservation of Frozen Datasets (2 checks)
+    # 0. Cryptographic Integrity & Dataset Preservation (3 checks)
     # -------------------------------------------------------------------------
-    print("\n[0] PRESERVATION OF FROZEN DATASETS (SHA-256 CHECKSUMS)")
+    print("\n[0] CRYPTOGRAPHIC INTEGRITY & DATASET PRESERVATION (SHA-256 CHECKSUMS)")
     sha_v1 = hashlib.sha256(csv_v1.read_bytes()).hexdigest()
     sha_v2_orig = hashlib.sha256(csv_v2_orig.read_bytes()).hexdigest()
+    sha_v2_sync = hashlib.sha256(csv_v2_sync.read_bytes()).hexdigest()
     record_check("Master Panel v1 Unmodified", sha_v1 == EXPECTED_SHA256_V1, f"SHA256={sha_v1[:16]}...")
     record_check("Original Modeling Panel v2 Unmodified", sha_v2_orig == EXPECTED_SHA256_V2_ORIG, f"SHA256={sha_v2_orig[:16]}...")
+    record_check("Synchronized Modeling Panel v2 Verified", sha_v2_sync == EXPECTED_SHA256_V2_SYNC, f"SHA256={sha_v2_sync[:16]}...")
 
     # -------------------------------------------------------------------------
     # 1. Structural Completeness (7 checks)

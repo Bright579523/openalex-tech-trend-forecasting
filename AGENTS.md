@@ -98,7 +98,7 @@ d:\Thesis\
 │   ├── annual_work_types_and_topic_coverage.csv # Reconciled 15-year coverage & work types audit table
 │   ├── synchronize_modeling_panel_v2.py     # Deterministic script building synchronized v2 panel without API calls
 │   ├── extract_denominators_v2.py           # Denominator extraction script for Selected Scholarly Work Types
-│   ├── independent_audit_v2.py              # Automated 28-check verification script for Synchronized Panel v2
+│   ├── independent_audit_v2.py              # Automated 29-check verification script for Synchronized Panel v2
 │   ├── candidate_topics.csv                 # 1,025 topics classification & rationale
 │   ├── all_tech_topics_taxonomy.csv         # Full 1,025 technology taxonomy metadata
 │   ├── extraction_run.log                   # Production run log for Master Panel v1 (4 Nov 01:08–01:52 UTC+1)

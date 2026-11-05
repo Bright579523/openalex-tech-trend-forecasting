@@ -3,7 +3,7 @@
 > **Document Purpose:** This standalone bundle compiles all methodological documentation, empirical audits, data semantics analyses, Stage 2 final correction reports, and complete production source code for an independent academic review of **Stage 2: Dataset Preparation** for the Master's Thesis project.  
 > **Repository Location:** `D:\Thesis\openalex_feasibility_audit\CHATGPT_REVIEW_BUNDLE.md`  
 > **Target Reviewer:** Independent AI Reviewer (ChatGPT) / Academic Peer Reviewers  
-> **Date of Compilation:** 05 November 2026 (Updated with Structural Validation, Safe Division, and 28/28 Audit Checks)  
+> **Date of Compilation:** 05 November 2026 (Updated with Structural Validation, Safe Division, and 29/29 Audit Checks)  
 > **Status:** **STAGE 2 COMPLETED, SYNCHRONIZED & FROZEN — READY FOR STAGE 3**
 
 ---
@@ -19,7 +19,7 @@
    - [7.1 Production Modeling Panel v2 Extraction Script](#71-production-modeling-panel-v2-extraction-script)
    - [7.2 Synchronized All-Science Denominators Extraction Script](#72-synchronized-all-science-denominators-extraction-script)
    - [7.3 Reproducible Panel Synchronization & RCA Recalculation Script (Safe Division & Staging)](#73-reproducible-panel-synchronization--rca-recalculation-script)
-   - [7.4 Strengthened Independent Mathematical Audit Script (28 Checks + Non-Zero Exit)](#74-strengthened-independent-mathematical-audit-script)
+   - [7.4 Strengthened Independent Mathematical Audit Script (29 Checks + Non-Zero Exit)](#74-strengthened-independent-mathematical-audit-script)
 8. [File Manifest & Cryptographic Integrity Hashes](#8-file-manifest--cryptographic-integrity-hashes)
 
 ---
@@ -48,7 +48,7 @@ To maintain strict scientific integrity, all assertions in this thesis are expli
 
 | Category | Definition | Applied Elements in This Project |
 | :--- | :--- | :--- |
-| **FACT** | Empirically verified properties of the data, API responses, mathematical theorems, or code execution outputs. | 1. OpenAlex Topic Classifier update deployed on 6 October 2026 (fine-tuned Qwen3-8B).<br>2. OpenAlex Work Types reclassification deployed on 15 July 2026 (49.6M works shifted).<br>3. Both Master Panel v1 (`01:08–01:51 UTC+1`) and Modeling Panel v2 (`23:08–23:52 UTC+1`) were extracted on 4 November 2026 under identical classifier versions.<br>4. OpenAlex's 4 November 2026 database deduplication merged >17.3 million duplicate works, explaining the intraday `-1.36%` to `-5.22%` reduction in Global Selected Scholarly Work Types between `02:09 UTC+1` and `23:08 UTC+1`.<br>5. Synchronized Panel v2 (`openalex_modeling_panel_1025topics_v2_synchronized.csv`) is deterministically built by `synchronize_modeling_panel_v2.py` (`15,375 rows`, `1,025 topics`, `15 years`, `0 nulls`, `0 duplicate topic-years`, safe `np.divide`, staged file verification, 100% synchronized post-deduplication denominators `2026-11-04T23:54:00Z`).<br>6. Recalculation discrepancy from stored CSV values is bounded by $\le 0.00000500$ across all 46,125 Whole RCA and 46,125 Fractional RCA cells (`28/28` checks passed in `independent_audit_v2.py`). |
+| **FACT** | Empirically verified properties of the data, API responses, mathematical theorems, or code execution outputs. | 1. OpenAlex Topic Classifier update deployed on 6 October 2026 (fine-tuned Qwen3-8B).<br>2. OpenAlex Work Types reclassification deployed on 15 July 2026 (49.6M works shifted).<br>3. Both Master Panel v1 (`01:08–01:51 UTC+1`) and Modeling Panel v2 (`23:08–23:52 UTC+1`) were extracted on 4 November 2026 under identical classifier versions.<br>4. OpenAlex's 4 November 2026 database deduplication merged >17.3 million duplicate works, explaining the intraday `-1.36%` to `-5.22%` reduction in Global Selected Scholarly Work Types between `02:09 UTC+1` and `23:08 UTC+1`.<br>5. Synchronized Panel v2 (`openalex_modeling_panel_1025topics_v2_synchronized.csv`) is deterministically built by `synchronize_modeling_panel_v2.py` (`15,375 rows`, `1,025 topics`, `15 years`, `0 nulls`, `0 duplicate topic-years`, safe `np.divide`, staged file verification, 100% synchronized post-deduplication denominators `2026-11-04T23:54:00Z`).<br>6. Recalculation discrepancy from stored CSV values is bounded by $\le 0.00000500$ across all 46,125 Whole RCA and 46,125 Fractional RCA cells (`29/29` checks passed in `independent_audit_v2.py`). |
 | **DESIGN DECISION** | Deliberate methodological choices approved in the thesis proposal or supervisor consensus to address research questions. | 1. Selecting 1,025 physical science & tech topics from CWTS Leiden clusters.<br>2. Restricting primary panel to Selected Scholarly Work Types (`article\|conference-paper\|review`).<br>3. Adopting Option C ($1/k$) equal country-level fractional counting.<br>4. Restricting Forecast Origins strictly to 2018 and 2021.<br>5. Aligning $M0_{\text{adj}}$ and $G_{\text{adj}}$ by subtracting Global All-Science log growth.<br>6. Adopting regularized linear models (Ridge Regression with cross-sectional 5-fold CV across eligible topics within each training set) instead of black-box deep learning. |
 | **UNVERIFIED CLAIM** | Speculative hypotheses or conjectures that lack rigorous empirical demonstration across the entire corpus. | 1. Asserting that "including non-selected document types (preprints, dissertations, abstracts) captures emerging technology signals earlier without adding harmful noise." *(Treated strictly as an untested hypothesis to be examined in Sensitivity Analysis, NOT as an established scientific fact).*<br>2. Claiming that every record indexed under `article\|conference-paper\|review` has passed formal peer review *(avoided; we refer strictly to **Selected Scholarly Work Types**).* |
 
@@ -118,7 +118,7 @@ This report documents the empirical investigation, root-cause diagnosis, code an
 | :---: | :--- | :---: | :---: | :---: | :---: |
 | **Task 1** | Reconcile Global All-Science Selected Works Counts (2010–2024) | **P0** | Yes (100% Untouched) | 15/15 Years Reconciled | **PASS** |
 | **Task 2** | Align Baseline Momentum ($M0_{\text{adj}}$) with Adjusted Target ($G_{\text{adj}}$) | **P0** | Yes (100% Untouched) | Formula & Windows Aligned | **PASS** |
-| **Task 3** | Strengthen Independent Audit (`independent_audit_v2.py`) with Hard Fail Exit | **P0** | Yes (100% Untouched) | 28/28 Checks Passed (`exit 0`) | **PASS** |
+| **Task 3** | Strengthen Independent Audit (`independent_audit_v2.py`) with Hard Fail Exit | **P0** | Yes (100% Untouched) | 29/29 Checks Passed (`exit 0`) | **PASS** |
 | **Task 4** | Verify Topic Classifier Provenance & Sensitivity Analysis Isolation (v1 vs. v2) | **P0** | Yes (100% Untouched) | Provenance Certified | **PASS** |
 | **Cleanup** | Replace "Peer-reviewed Literature" with "Selected Scholarly Work Types" | **P0** | Yes (100% Untouched) | All Docs Updated | **PASS** |
 
@@ -239,17 +239,17 @@ The previous version of `independent_audit_v2.py`:
   * Printed `Whole RCA Max Discrepancy` and `Fractional RCA Max Discrepancy` without boolean pass/fail gates.
   * Did not call `sys.exit(1)` on failure.
 * **After (`independent_audit_v2.py`):**
-  * Enforces **28 distinct programmatic PASS/FAIL assertions (`#01` to `#28`)**:
-    * **Preservation Checks (2 checks: `#01–#02`):** `Master Panel v1 Unmodified` (SHA-256), `Original Modeling Panel v2 Unmodified` (SHA-256).
-    * **Structural Completeness Checks (7 checks: `#03–#09`):** `Total Row Count == 15,375`, `Total Column Count == 26`, `Unique Topics == 1,025`, `Annual Coverage == 15 years (2010-2024)`, `Balanced Panel (15 rows per topic)`, `Zero Duplicate (topic_id, year)`, `Zero Missing / Null Values`.
-    * **Synchronized Denominator Checks (9 checks: `#10–#18`):** `Denominator Table Years (2010-2024)`, `Denominator Table == Coverage Table (15 yrs)`, `Global All-Science Denominator (15 yrs x 1,025 topics)`, plus Whole and Fractional All-Science Denominators for `DE`, `CN`, and `JP` (`3 countries × 2 = 6 checks`).
-    * **Non-Negativity & Fractional Bound Checks (4 checks: `#19–#22`):** `Global Topic Count >= 0`, plus `0 <= Frac <= Whole` for `DE`, `CN`, and `JP` (`3 checks`).
-    * **RCA Recalculation & Precision Checks (6 checks: `#23–#28`):** Whole RCA and Fractional RCA recalculation precision (`<= 0.00000500`) for `DE`, `CN`, and `JP` (`3 countries × 2 = 6 checks`).
-  * Dynamically counts all executed `record_check()` assertions (`28/28`) and calls `sys.exit(1)` if any check fails, or `sys.exit(0)` only if all 28 checks pass.
+  * Enforces **29 distinct programmatic PASS/FAIL assertions (`#01` to `#29`)**:
+    * **Preservation & Integrity Checks (3 checks: `#01–#03`):** `Master Panel v1 Unmodified` (SHA-256), `Original Modeling Panel v2 Unmodified` (SHA-256), `Synchronized Modeling Panel v2 Verified` (SHA-256).
+    * **Structural Completeness Checks (7 checks: `#04–#10`):** `Total Row Count == 15,375`, `Total Column Count == 26`, `Unique Topics == 1,025`, `Annual Coverage == 15 years (2010-2024)`, `Balanced Panel (15 rows per topic)`, `Zero Duplicate (topic_id, year)`, `Zero Missing / Null Values`.
+    * **Synchronized Denominator Checks (9 checks: `#11–#19`):** `Denominator Table Years (2010-2024)`, `Denominator Table == Coverage Table (15 yrs)`, `Global All-Science Denominator (15 yrs x 1,025 topics)`, plus Whole and Fractional All-Science Denominators for `DE`, `CN`, and `JP` (`3 countries × 2 = 6 checks`).
+    * **Non-Negativity & Fractional Bound Checks (4 checks: `#20–#23`):** `Global Topic Count >= 0`, plus `0 <= Frac <= Whole` for `DE`, `CN`, and `JP` (`3 checks`).
+    * **RCA Recalculation & Precision Checks (6 checks: `#24–#29`):** Whole RCA and Fractional RCA recalculation precision (`<= 0.00000500`) for `DE`, `CN`, and `JP` (`3 countries × 2 = 6 checks`).
+  * Dynamically counts all executed `record_check()` assertions (`29/29`) and calls `sys.exit(1)` if any check fails, or `sys.exit(0)` only if all 29 checks pass.
 
 ### 5. Validation Evidence
 Executed `python openalex_feasibility_audit\independent_audit_v2.py`:
-* Output: `FINAL AUDIT VERDICT: PASS (All 28/28 critical preservation, structural, denominator, bound, and RCA checks passed)`
+* Output: `FINAL AUDIT VERDICT: PASS (All 29/29 critical preservation, structural, denominator, bound, and RCA checks passed)`
 * Process Exit Code: `0`
 * **Verdict:** **PASS**
 
@@ -329,7 +329,7 @@ While journal articles, conference papers, and reviews represent the standard sc
 **Document:** `FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md`  
 **Repository Location:** `D:\Thesis\openalex_feasibility_audit\FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md`  
 **Date:** 05 November 2026 (Revised with Complete Structural Validation, Safe Division, and Data Provenance Audit)  
-**Status:** **SYNCHRONIZED PANEL VALIDATED (`synchronize_modeling_panel_v2.py`), SAFE DIVISION ENFORCED, AND 28/28 AUDIT CHECKS PASSED (`EXIT_CODE=0`)**
+**Status:** **SYNCHRONIZED PANEL VALIDATED (`synchronize_modeling_panel_v2.py`), SAFE DIVISION ENFORCED, AND 29/29 AUDIT CHECKS PASSED (`EXIT_CODE=0`)**
 
 ---
 
@@ -344,7 +344,7 @@ Before entering Stage 3, a rigorous verification of the primary modeling panel w
   * *Root Cause:* Topic counts (`global_count`, `*_whole_count`, `*_frac_count`) were extracted on 04 November 2026 between `23:08` and `23:52 UTC+1`, whereas its stored denominators originated from an extraction run 21 hours earlier (`01:09Z` / `02:09 UTC+1`). Between these runs, OpenAlex executed a major database-wide deduplication merge (>17.3 million works), causing an intraday index count reduction of `-1.36%` to `-5.22%`.
 * **Synchronized Modeling Panel v2 (`openalex_modeling_panel_1025topics_v2_synchronized.csv`):**
   * Matches NEW live-rechecked denominators (`2026-11-04T23:54:00Z`): **`True` (100% match across all 15 years and all 7 denominator columns)**
-  * Both topic counts and denominators correspond to the identical post-deduplication index snapshot.
+  * Both datasets were retrieved after the 4 November deduplication update and were synchronized using the corresponding denominator records.
 
 ### B. Corrective Protocol Executed
 1. **Preserved Original Panel Unchanged:** `openalex_modeling_panel_1025topics_v2_selected_types.csv` was preserved 100% untouched (`SHA-256: 3d869014a463449e2c4bd44628fe174f6aedc954cd7c878922baae9488b75d6e`).
@@ -354,7 +354,7 @@ Before entering Stage 3, a rigorous verification of the primary modeling panel w
    * Employs two-stage atomic file generation (staging to `.tmp.csv`, verifying SHA-256, and atomic promotion).
    * Logs complete runtime environment and serialization parameters.
 3. **Recalculated All Six RCA Columns:** `rca_whole_de`, `rca_frac_de`, `rca_whole_cn`, `rca_frac_cn`, `rca_whole_jp`, and `rca_frac_jp` were recomputed across all 15,375 rows using synchronized post-deduplication denominators.
-4. **Executed Strengthened Independent Audit (28 Checks):** Ran `independent_audit_v2.py` across all 28 distinct checks (`#01` to `#28`), achieving `EXIT_CODE=0` with maximum recalculation error strictly bounded by $\le 0.00000500$.
+4. **Executed Strengthened Independent Audit (29 Checks):** Ran `independent_audit_v2.py` across all 29 distinct checks (`#01` to `#29`, verifying preserved hashes, synchronized panel hash, schema completeness, synchronized denominators, bound constraints, and RCA precision), achieving `EXIT_CODE=0` with maximum recalculation error strictly bounded by $\le 0.00000500$.
 
 ---
 
@@ -486,8 +486,8 @@ Independent verification across all 15,375 rows confirms that the maximum discre
 ## 7. Audit Check Count Reconciliation: Static Call Sites vs. Runtime Assertions
 
 To eliminate any ambiguity between code structure and audit reporting:
-* In [`independent_audit_v2.py`](file:///d:/Thesis/openalex_feasibility_audit/independent_audit_v2.py), there are **18 static `record_check()` invocation statements** in the source code:
-  * 2 preservation checks
+* In [`independent_audit_v2.py`](file:///d:/Thesis/openalex_feasibility_audit/independent_audit_v2.py), there are **19 static `record_check()` invocation statements** in the source code:
+  * 3 cryptographic integrity & dataset preservation checks (Master Panel v1, Original Panel v2, Synchronized Panel v2)
   * 7 single-assertion structural checks
   * 2 denominator table-level checks
   * 1 global denominator check
@@ -495,13 +495,13 @@ To eliminate any ambiguity between code structure and audit reporting:
   * 1 global count non-negativity check
   * 1 parameterized bound check inside `for c in ["de", "cn", "jp"]:` ($1 \times 3 = 3$)
   * 2 parameterized RCA precision checks inside `for c in ["de", "cn", "jp"]:` ($2 \times 3 = 6$)
-* **At runtime, these 18 code locations execute exactly 28 distinct, independently numbered test assertions (`#01` to `#28`):**
-  * `[0] Preservation of Frozen Datasets`: **2 checks** (`#01–#02`)
-  * `[1] Structural Completeness & Integrity`: **7 checks** (`#03–#09`)
-  * `[2] Synchronized Denominator Consistency`: **9 checks** (`#10–#18`)
-  * `[3] Count Non-Negativity & Fractional Bound Constraints`: **4 checks** (`#19–#22`)
-  * `[4] RCA Recalculation & Precision Enforcement`: **6 checks** (`#23–#28`)
-* **Total Executed Check Count:** Exactly **28 / 28 PASS** (`EXIT_CODE=0`).
+* **At runtime, these 19 code locations execute exactly 29 distinct, independently numbered test assertions (`#01` to `#29`):**
+  * `[0] Cryptographic Integrity & Dataset Preservation`: **3 checks** (`#01–#03`)
+  * `[1] Structural Completeness & Integrity`: **7 checks** (`#04–#10`)
+  * `[2] Synchronized Denominator Consistency`: **9 checks** (`#11–#19`)
+  * `[3] Count Non-Negativity & Fractional Bound Constraints`: **4 checks** (`#20–#23`)
+  * `[4] RCA Recalculation & Precision Enforcement`: **6 checks** (`#24–#29`)
+* **Total Executed Check Count:** Exactly **29 / 29 PASS** (`EXIT_CODE=0`).
 
 ---
 
@@ -512,7 +512,7 @@ It is critical to distinguish **Checksum Verification** from **OpenAlex Data Pro
 | Dimension | Checksum Verification | OpenAlex Data Provenance |
 | :--- | :--- | :--- |
 | **Scope & Nature** | Local static file integrity (SHA-256). | Remote database state, API endpoints, timestamps, and filters. |
-| **What it Guarantees** | Guarantees that local CSV files on disk have not suffered corruption, silent edits, or bit-rot since creation. | Guarantees that the underlying counts represent the identical snapshot of the scientific literature in OpenAlex. |
+| **What it Guarantees** | Guarantees that local CSV files on disk have not suffered corruption, silent edits, or bit-rot since creation. | Confirms that both datasets were retrieved after the 4 November deduplication update and were synchronized using the corresponding denominator records. |
 | **Empirical Evidence** | `orig_panel`: `3d869014...`<br>`sync_denom`: `9c2d9ccc...`<br>`sync_panel`: `f0049cd7...`<br>`master_v1`: `37de2b5d...` | **Extraction Window:**<br>- Modeling Panel v2: `2026-11-04 23:08:40 – 23:52:46 UTC+1`<br>- Sync Denominators: `2026-11-04 23:54:00 – 23:55:36 UTC+0` (`00:54–00:55 UTC+1`)<br>- Elapsed gap: < 1 hour in the same nocturnal window.<br>**Filter Alignment:** Both strictly queried `type:article\|conference-paper\|review`.<br>**Database Event:** Captured the index state following OpenAlex's official 4 November 2026 deduplication merge (>17.3M duplicate records merged).<br>**Census Concordance:** 100% agreement with `annual_work_types_and_topic_coverage.csv` across all 15 years. |
 
 ---
@@ -527,7 +527,7 @@ It is critical to distinguish **Checksum Verification** from **OpenAlex Data Pro
 | `openalex_feasibility_audit/openalex_modeling_panel_1025topics_v2_synchronized.csv` | **PROMOTED** | 4,117,161 | `f0049cd71f5ba8545c2e3cbb850e036a7b849828321cd23aa1d04771e60d7175` | **Primary Synchronized Modeling Panel v2 (`23:54Z` Denoms)** |
 | `openalex_feasibility_audit/all_science_national_denominators_fractional_v2_live_recheck_20261105.csv` | **PRESERVED** | 2,402 | `9c2d9cccee65c156494b96447ce53045d43e514c74aa10ec9f1c85915b33afce` | Synchronized v2 Denominators (`23:54Z`) |
 | `openalex_feasibility_audit/synchronize_modeling_panel_v2.py` | **REVISED** | 15,108 | *(Deterministic Panel + Denom Synchronizer)* | Builds `v2_synchronized.csv` with safe division & staging |
-| `openalex_feasibility_audit/independent_audit_v2.py` | **REVISED** | 12,852 | *(Audits Synchronized v2 + SHA-256 of Preserved Panels)* | **28-Check** Verification Gate with safe division (`exit 0`) |
+| `openalex_feasibility_audit/independent_audit_v2.py` | **REVISED** | 13,000+ | *(Audits Synchronized v2 + SHA-256 of All Panels)* | **29-Check** Verification Gate with safe division (`exit 0`) |
 | `openalex_feasibility_audit/FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md` | **REVISED** | — | — | This Comprehensive Verification & Provenance Report |
 
 ---
@@ -539,43 +539,44 @@ It is critical to distinguish **Checksum Verification** from **OpenAlex Data Pro
 INDEPENDENT FINAL AUDIT: SYNCHRONIZED MODELING PANEL V2 (SELECTED SCHOLARLY WORK TYPES)
 ============================================================================================
 
-[0] PRESERVATION OF FROZEN DATASETS (SHA-256 CHECKSUMS)
+[0] CRYPTOGRAPHIC INTEGRITY & DATASET PRESERVATION (SHA-256 CHECKSUMS)
   [PASS #01] Master Panel v1 Unmodified: SHA256=37de2b5d22ea0a58...
   [PASS #02] Original Modeling Panel v2 Unmodified: SHA256=3d869014a463449e...
+  [PASS #03] Synchronized Modeling Panel v2 Verified: SHA256=f0049cd71f5ba854...
 
 [1] STRUCTURAL COMPLETENESS & INTEGRITY
-  [PASS #03] Total Row Count == 15,375: Actual=15,375, Expected=15,375
-  [PASS #04] Total Column Count == 26: Actual=26, Expected=26
-  [PASS #05] Unique Topics == 1,025: Actual=1,025, Expected=1,025
-  [PASS #06] Annual Coverage == 15 years (2010-2024): Years=2010..2024 (15 yrs)
-  [PASS #07] Balanced Panel (15 rows per topic): All 1,025 topics have 15 rows=True
-  [PASS #08] Zero Duplicate (topic_id, year): Duplicates=0
-  [PASS #09] Zero Missing / Null Values: Missing/Nulls=0
+  [PASS #04] Total Row Count == 15,375: Actual=15,375, Expected=15,375
+  [PASS #05] Total Column Count == 26: Actual=26, Expected=26
+  [PASS #06] Unique Topics == 1,025: Actual=1,025, Expected=1,025
+  [PASS #07] Annual Coverage == 15 years (2010-2024): Years=2010..2024 (15 yrs)
+  [PASS #08] Balanced Panel (15 rows per topic): All 1,025 topics have 15 rows=True
+  [PASS #09] Zero Duplicate (topic_id, year): Duplicates=0
+  [PASS #10] Zero Missing / Null Values: Missing/Nulls=0
 
 [2] SYNCHRONIZED DENOMINATOR CONSISTENCY (GLOBAL, DE, CN, JP ACROSS ALL 15 YEARS & ALL ROWS)
-  [PASS #10] Denominator Table Years (2010-2024): Years=15 rows
-  [PASS #11] Denominator Table == Coverage Table (15 yrs): Exact 15-year match=True
-  [PASS #12] Global All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
-  [PASS #13] DE Whole All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
-  [PASS #14] DE Fractional All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
-  [PASS #15] CN Whole All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
-  [PASS #16] CN Fractional All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
-  [PASS #17] JP Whole All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
-  [PASS #18] JP Fractional All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
+  [PASS #11] Denominator Table Years (2010-2024): Years=15 rows
+  [PASS #12] Denominator Table == Coverage Table (15 yrs): Exact 15-year match=True
+  [PASS #13] Global All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
+  [PASS #14] DE Whole All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
+  [PASS #15] DE Fractional All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
+  [PASS #16] CN Whole All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
+  [PASS #17] CN Fractional All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
+  [PASS #18] JP Whole All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
+  [PASS #19] JP Fractional All-Science Denominator (15 yrs x 1,025 topics): Mismatched rows=0
 
 [3] COUNT NON-NEGATIVITY & FRACTIONAL BOUND CONSTRAINTS (0 <= Frac <= Whole)
-  [PASS #19] Global Topic Count >= 0: Negative rows=0
-  [PASS #20] DE Non-Negative & Bound (0 <= Frac <= Whole): NegWhole=0, NegFrac=0, Frac>Whole=0, ZeroMismatch=0 | WholeSum=722,798, FracSum=544,660.64 (Retention=75.35%)
-  [PASS #21] CN Non-Negative & Bound (0 <= Frac <= Whole): NegWhole=0, NegFrac=0, Frac>Whole=0, ZeroMismatch=0 | WholeSum=4,653,398, FracSum=4,189,429.44 (Retention=90.03%)
-  [PASS #22] JP Non-Negative & Bound (0 <= Frac <= Whole): NegWhole=0, NegFrac=0, Frac>Whole=0, ZeroMismatch=0 | WholeSum=816,615, FracSum=714,234.85 (Retention=87.46%)
+  [PASS #20] Global Topic Count >= 0: Negative rows=0
+  [PASS #21] DE Non-Negative & Bound (0 <= Frac <= Whole): NegWhole=0, NegFrac=0, Frac>Whole=0, ZeroMismatch=0 | WholeSum=722,798, FracSum=544,660.64 (Retention=75.35%)
+  [PASS #22] CN Non-Negative & Bound (0 <= Frac <= Whole): NegWhole=0, NegFrac=0, Frac>Whole=0, ZeroMismatch=0 | WholeSum=4,653,398, FracSum=4,189,429.44 (Retention=90.03%)
+  [PASS #23] JP Non-Negative & Bound (0 <= Frac <= Whole): NegWhole=0, NegFrac=0, Frac>Whole=0, ZeroMismatch=0 | WholeSum=816,615, FracSum=714,234.85 (Retention=87.46%)
 
 [4] RCA RECALCULATION & PRECISION ENFORCEMENT (TOLERANCE <= 0.00000500)
-  [PASS #23] DE Whole RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T11558, 2016)
-  [PASS #24] DE Fractional RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T14011, 2022)
-  [PASS #25] CN Whole RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T13183, 2022)
-  [PASS #26] CN Fractional RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T11574, 2013)
-  [PASS #27] JP Whole RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T10511, 2013)
-  [PASS #28] JP Fractional RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T11277, 2018)
+  [PASS #24] DE Whole RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T11558, 2016)
+  [PASS #25] DE Fractional RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T14011, 2022)
+  [PASS #26] CN Whole RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T13183, 2022)
+  [PASS #27] CN Fractional RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T11574, 2013)
+  [PASS #28] JP Whole RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T10511, 2013)
+  [PASS #29] JP Fractional RCA Precision (<= 0.00000500): MaxDiff=0.00000500, ExceedCount=0, Invalid=0 (at T11277, 2018)
 
 [5] SUMMARY COMPARISON: V1 vs. V2 ORIGINAL vs. V2 SYNCHRONIZED
   Country DE: RCA Frac Correlation (v1 vs v2_sync)=0.889471 | (v2_orig vs v2_sync)=0.99983287
@@ -583,7 +584,7 @@ INDEPENDENT FINAL AUDIT: SYNCHRONIZED MODELING PANEL V2 (SELECTED SCHOLARLY WORK
   Country JP: RCA Frac Correlation (v1 vs v2_sync)=0.959333 | (v2_orig vs v2_sync)=0.99987468
 
 ============================================================================================
-FINAL AUDIT VERDICT: PASS (All 28/28 critical preservation, structural, denominator, bound, and RCA checks passed)
+FINAL AUDIT VERDICT: PASS (All 29/29 critical preservation, structural, denominator, bound, and RCA checks passed)
 ============================================================================================
 EXIT_CODE=0
 ```
@@ -1104,8 +1105,9 @@ by combining:
   1. Preserved Original Modeling Panel v2 (openalex_modeling_panel_1025topics_v2_selected_types.csv),
      which was extracted on 2026-11-04 (23:08–23:52 UTC+1) after OpenAlex's 4 November index
      deduplication (merging ~17.3M duplicate works), and
-  2. Synchronized All-Science Denominators (all_science_national_denominators_fractional_v2_live_recheck_20261105.csv),
-     extracted from the identical post-deduplication OpenAlex index state (23:54 UTC+0 / 00:54 UTC+1).
+  2. Synchronized All-Science Denominators (all_science_national_denominators_fractional_v2_live_recheck_20261105.csv).
+     Both datasets were retrieved after the 4 November deduplication update and were synchronized using
+     the corresponding denominator records.
 
 Methodological & Numerical Enhancements:
   - Full pre- and post-synchronization structural validation:
@@ -1490,7 +1492,7 @@ Audits:
   - Preserved Original v2:      openalex_modeling_panel_1025topics_v2_selected_types.csv
   - Preserved Master Panel v1:  openalex_master_panel_1025topics.csv
 
-Enforces strict pass/fail acceptance criteria across 28 distinct checks and returns non-zero
+Enforces strict pass/fail acceptance criteria across 29 distinct checks and returns non-zero
 exit status (sys.exit(1)) if any check fails.
 """
 
@@ -1537,13 +1539,15 @@ def run_audit() -> int:
             failures.append(f"[#{idx:02d}] {name}: {detail}")
 
     # -------------------------------------------------------------------------
-    # 0. Preservation of Frozen Datasets (2 checks)
+    # 0. Cryptographic Integrity & Dataset Preservation (3 checks)
     # -------------------------------------------------------------------------
-    print("\n[0] PRESERVATION OF FROZEN DATASETS (SHA-256 CHECKSUMS)")
+    print("\n[0] CRYPTOGRAPHIC INTEGRITY & DATASET PRESERVATION (SHA-256 CHECKSUMS)")
     sha_v1 = hashlib.sha256(csv_v1.read_bytes()).hexdigest()
     sha_v2_orig = hashlib.sha256(csv_v2_orig.read_bytes()).hexdigest()
+    sha_v2_sync = hashlib.sha256(csv_v2_sync.read_bytes()).hexdigest()
     record_check("Master Panel v1 Unmodified", sha_v1 == EXPECTED_SHA256_V1, f"SHA256={sha_v1[:16]}...")
     record_check("Original Modeling Panel v2 Unmodified", sha_v2_orig == EXPECTED_SHA256_V2_ORIG, f"SHA256={sha_v2_orig[:16]}...")
+    record_check("Synchronized Modeling Panel v2 Verified", sha_v2_sync == EXPECTED_SHA256_V2_SYNC, f"SHA256={sha_v2_sync[:16]}...")
 
     # -------------------------------------------------------------------------
     # 1. Structural Completeness (7 checks)
@@ -1736,14 +1740,14 @@ if __name__ == "__main__":
 | :--- | :---: | :--- | :--- |
 | `extract_modeling_panel_v2_selected_types.py` | 16,441 | `0351adbded4d4aa13d2cb0982d2a438c4c6286429a5156039e7f7a94c05b0f9e` | **Full Source Included** |
 | `openalex_feasibility_audit/extract_denominators_v2.py` | 2,138 | `5da1c516e010c830076d0f04ee5a1ad4a2fc4b11bb347ae1763d03b6b840ef0a` | **Full Source Included** |
-| `openalex_feasibility_audit/synchronize_modeling_panel_v2.py` | 18,196 | `7f97f8bd133755d2da1a62e9d4cd37f33a6dedfa9c47a5662879e4e46013b589` | **Full Source Included** |
-| `openalex_feasibility_audit/independent_audit_v2.py` | 12,889 | `71f7bcfa2f1564360a3fc73bdb03c527071cede3b34355856283998ec7d9b3ed` | **Full Source Included** |
+| `openalex_feasibility_audit/synchronize_modeling_panel_v2.py` | 18,241 | `559fa403003a53308a03bde23e3dfb1fc55e6eac7aeb31a5479043bc796edaf3` | **Full Source Included** |
+| `openalex_feasibility_audit/independent_audit_v2.py` | 13,123 | `7e64332a27608c1bd0b41f7f78479c486ff9a7f15e35417b912c6b6efc1c3b42` | **Full Source Included** |
 | `openalex_feasibility_audit/annual_work_types_and_topic_coverage.csv` | 2,916 | `10ba5b2451caec3048ecf1a99588c056b9f13ac0e1bbec6f3b1035d59908226a` | **Full 15-Yr Table Included** |
 | `openalex_feasibility_audit/all_science_national_denominators_fractional_v2_selected_types.csv` | 1,132 | `507f5ef4b61f7d91a2919fa88c7c8f54f45560d10d64ad16b60f5ce754c13b36` | **Full 15-Yr Table Included** |
 | `openalex_feasibility_audit/all_science_national_denominators_fractional_v2_live_recheck_20261105.csv` | 2,402 | `9c2d9cccee65c156494b96447ce53045d43e514c74aa10ec9f1c85915b33afce` | **Full 15-Yr Table Included** |
-| `openalex_feasibility_audit/STAGE2_FINAL_CORRECTION_REPORT.md` | 21,478 | `4aadb33b23bc51323f0ae806cb3a0410d8ecccbf2402dc3002cb210a0fd60179` | **Full Report Included** |
-| `openalex_feasibility_audit/FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md` | 23,173 | `784edc5ffb1e71a3c853aee67da46d070ffbd18947b78bbdc2995c805f5d5bf3` | **Full Report Included** |
-| `openalex_feasibility_audit/STAGE2_DATASET_AUDIT_REPORT.md` | 15,226 | `6924aad03082ce12ade53dd382cc74b1cda9b54127e8a18acd91e51b55adb402` | **Core Sections Included** |
+| `openalex_feasibility_audit/STAGE2_FINAL_CORRECTION_REPORT.md` | 21,543 | `bc425bbc8995dafb3e135056c9251a889ba173a9317387ab882f1a1e34d7288d` | **Full Report Included** |
+| `openalex_feasibility_audit/FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md` | 23,591 | `7cbebb8b6570a1ac46068817e5dd8d15d0f78f413e48cac40e39b978e31d79d2` | **Full Report Included** |
+| `openalex_feasibility_audit/STAGE2_DATASET_AUDIT_REPORT.md` | 16,965 | `13000006c8dd335f5c315d7c9f90b4dc966ebe78625c114680aa1400359465db` | **Core Sections Included** |
 | `openalex_feasibility_audit/DOCUMENT_TYPE_AND_METADATA_AUDIT.md` | 13,671 | `946002c1fa81038db45d0a88065d8f9705ada9cca126ab184bb9ce1496d22d13` | **Core Sections Included** |
 | `openalex_feasibility_audit/all_tech_topics_taxonomy.csv` | 159,129 | `478e597b1569f16c8a6e7ba75b8a76df7085277e4d4ea538b34fda34228f148a` | Manifested (1,025 topics taxonomy) |
 | `openalex_feasibility_audit/all_science_national_denominators_fractional.csv` | 1,059 | `b35ead6d13cb76355cde020d342be7de9b6d504a0f73665f2d8d9812bc0339e3` | Manifested (v1 Baseline Denominators) |

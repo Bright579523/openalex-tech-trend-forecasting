@@ -16,7 +16,7 @@ This report documents the empirical investigation, root-cause diagnosis, code an
 | :---: | :--- | :---: | :---: | :---: | :---: |
 | **Task 1** | Reconcile Global All-Science Selected Works Counts (2010–2024) | **P0** | Yes (100% Untouched) | 15/15 Years Reconciled | **PASS** |
 | **Task 2** | Align Baseline Momentum ($M0_{\text{adj}}$) with Adjusted Target ($G_{\text{adj}}$) | **P0** | Yes (100% Untouched) | Formula & Windows Aligned | **PASS** |
-| **Task 3** | Strengthen Independent Audit (`independent_audit_v2.py`) with Hard Fail Exit | **P0** | Yes (100% Untouched) | 28/28 Checks Passed (`exit 0`) | **PASS** |
+| **Task 3** | Strengthen Independent Audit (`independent_audit_v2.py`) with Hard Fail Exit | **P0** | Yes (100% Untouched) | 29/29 Checks Passed (`exit 0`) | **PASS** |
 | **Task 4** | Verify Topic Classifier Provenance & Sensitivity Analysis Isolation (v1 vs. v2) | **P0** | Yes (100% Untouched) | Provenance Certified | **PASS** |
 | **Cleanup** | Replace "Peer-reviewed Literature" with "Selected Scholarly Work Types" | **P0** | Yes (100% Untouched) | All Docs Updated | **PASS** |
 
@@ -137,17 +137,17 @@ The previous version of `independent_audit_v2.py`:
   * Printed `Whole RCA Max Discrepancy` and `Fractional RCA Max Discrepancy` without boolean pass/fail gates.
   * Did not call `sys.exit(1)` on failure.
 * **After (`independent_audit_v2.py`):**
-  * Enforces **28 distinct programmatic PASS/FAIL assertions (`#01` to `#28`)**:
-    * **Preservation Checks (2 checks: `#01–#02`):** `Master Panel v1 Unmodified` (SHA-256), `Original Modeling Panel v2 Unmodified` (SHA-256).
-    * **Structural Completeness Checks (7 checks: `#03–#09`):** `Total Row Count == 15,375`, `Total Column Count == 26`, `Unique Topics == 1,025`, `Annual Coverage == 15 years (2010-2024)`, `Balanced Panel (15 rows per topic)`, `Zero Duplicate (topic_id, year)`, `Zero Missing / Null Values`.
-    * **Synchronized Denominator Checks (9 checks: `#10–#18`):** `Denominator Table Years (2010-2024)`, `Denominator Table == Coverage Table (15 yrs)`, `Global All-Science Denominator (15 yrs x 1,025 topics)`, plus Whole and Fractional All-Science Denominators for `DE`, `CN`, and `JP` (`3 countries × 2 = 6 checks`).
-    * **Non-Negativity & Fractional Bound Checks (4 checks: `#19–#22`):** `Global Topic Count >= 0`, plus `0 <= Frac <= Whole` for `DE`, `CN`, and `JP` (`3 checks`).
-    * **RCA Recalculation & Precision Checks (6 checks: `#23–#28`):** Whole RCA and Fractional RCA recalculation precision (`<= 0.00000500`) for `DE`, `CN`, and `JP` (`3 countries × 2 = 6 checks`).
-  * Dynamically counts all executed `record_check()` assertions (`28/28`) and calls `sys.exit(1)` if any check fails, or `sys.exit(0)` only if all 28 checks pass.
+  * Enforces **29 distinct programmatic PASS/FAIL assertions (`#01` to `#29`)**:
+    * **Preservation & Integrity Checks (3 checks: `#01–#03`):** `Master Panel v1 Unmodified` (SHA-256), `Original Modeling Panel v2 Unmodified` (SHA-256), `Synchronized Modeling Panel v2 Verified` (SHA-256).
+    * **Structural Completeness Checks (7 checks: `#04–#10`):** `Total Row Count == 15,375`, `Total Column Count == 26`, `Unique Topics == 1,025`, `Annual Coverage == 15 years (2010-2024)`, `Balanced Panel (15 rows per topic)`, `Zero Duplicate (topic_id, year)`, `Zero Missing / Null Values`.
+    * **Synchronized Denominator Checks (9 checks: `#11–#19`):** `Denominator Table Years (2010-2024)`, `Denominator Table == Coverage Table (15 yrs)`, `Global All-Science Denominator (15 yrs x 1,025 topics)`, plus Whole and Fractional All-Science Denominators for `DE`, `CN`, and `JP` (`3 countries × 2 = 6 checks`).
+    * **Non-Negativity & Fractional Bound Checks (4 checks: `#20–#23`):** `Global Topic Count >= 0`, plus `0 <= Frac <= Whole` for `DE`, `CN`, and `JP` (`3 checks`).
+    * **RCA Recalculation & Precision Checks (6 checks: `#24–#29`):** Whole RCA and Fractional RCA recalculation precision (`<= 0.00000500`) for `DE`, `CN`, and `JP` (`3 countries × 2 = 6 checks`).
+  * Dynamically counts all executed `record_check()` assertions (`29/29`) and calls `sys.exit(1)` if any check fails, or `sys.exit(0)` only if all 29 checks pass.
 
 ### 5. Validation Evidence
 Executed `python openalex_feasibility_audit\independent_audit_v2.py`:
-* Output: `FINAL AUDIT VERDICT: PASS (All 28/28 critical preservation, structural, denominator, bound, and RCA checks passed)`
+* Output: `FINAL AUDIT VERDICT: PASS (All 29/29 critical preservation, structural, denominator, bound, and RCA checks passed)`
 * Process Exit Code: `0`
 * **Verdict:** **PASS**
 
