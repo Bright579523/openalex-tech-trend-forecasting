@@ -6,7 +6,8 @@ Audits:
   - Preserved Original v2:      openalex_modeling_panel_1025topics_v2_selected_types.csv
   - Preserved Master Panel v1:  openalex_master_panel_1025topics.csv
 
-Enforces strict pass/fail acceptance criteria and returns non-zero exit status (sys.exit(1)) if any check fails.
+Enforces strict pass/fail acceptance criteria across 28 distinct checks and returns non-zero
+exit status (sys.exit(1)) if any check fails.
 """
 
 import sys
@@ -20,6 +21,7 @@ FLOAT_EPS = 1e-12  # Guard for IEEE 754 representation of 0.00000500
 
 EXPECTED_SHA256_V1 = "37de2b5d22ea0a585dc5772d3e9cb7ea0aaa0ba48357dbee043d268bbf408f87"
 EXPECTED_SHA256_V2_ORIG = "3d869014a463449e2c4bd44628fe174f6aedc954cd7c878922baae9488b75d6e"
+EXPECTED_SHA256_V2_SYNC = "f0049cd71f5ba8545c2e3cbb850e036a7b849828321cd23aa1d04771e60d7175"
 
 
 def run_audit() -> int:
@@ -39,16 +41,19 @@ def run_audit() -> int:
     df_denom = pd.read_csv(denom_v2_sync)
     df_cov = pd.read_csv(cov_csv)
 
+    checks_run = []
     failures = []
 
     def record_check(name: str, passed: bool, detail: str):
+        idx = len(checks_run) + 1
+        checks_run.append((idx, name, passed, detail))
         status = "PASS" if passed else "FAIL"
-        print(f"  [{status}] {name}: {detail}")
+        print(f"  [{status} #{idx:02d}] {name}: {detail}")
         if not passed:
-            failures.append(f"{name}: {detail}")
+            failures.append(f"[#{idx:02d}] {name}: {detail}")
 
     # -------------------------------------------------------------------------
-    # 0. Preservation of Frozen Datasets (SHA-256 Verification)
+    # 0. Preservation of Frozen Datasets (2 checks)
     # -------------------------------------------------------------------------
     print("\n[0] PRESERVATION OF FROZEN DATASETS (SHA-256 CHECKSUMS)")
     sha_v1 = hashlib.sha256(csv_v1.read_bytes()).hexdigest()
@@ -57,7 +62,7 @@ def run_audit() -> int:
     record_check("Original Modeling Panel v2 Unmodified", sha_v2_orig == EXPECTED_SHA256_V2_ORIG, f"SHA256={sha_v2_orig[:16]}...")
 
     # -------------------------------------------------------------------------
-    # 1. Structural Completeness (1,025 topics, 15 years, 15,375 rows, 26 cols)
+    # 1. Structural Completeness (7 checks)
     # -------------------------------------------------------------------------
     print("\n[1] STRUCTURAL COMPLETENESS & INTEGRITY")
     total_rows = len(df_v2)
@@ -78,7 +83,7 @@ def run_audit() -> int:
     record_check("Zero Missing / Null Values", null_count == 0, f"Missing/Nulls={null_count}")
 
     # -------------------------------------------------------------------------
-    # 2. Denominator Consistency across all 15 years (Global, DE, CN, JP)
+    # 2. Denominator Consistency across all 15 years (9 checks)
     # -------------------------------------------------------------------------
     print("\n[2] SYNCHRONIZED DENOMINATOR CONSISTENCY (GLOBAL, DE, CN, JP ACROSS ALL 15 YEARS & ALL ROWS)")
     denom_years_ok = sorted(df_denom["year"].unique().tolist()) == expected_years
@@ -119,7 +124,7 @@ def run_audit() -> int:
         )
 
     # -------------------------------------------------------------------------
-    # 3. Non-Negativity & Fractional <= Whole Count Bounds
+    # 3. Non-Negativity & Fractional <= Whole Count Bounds (4 checks)
     # -------------------------------------------------------------------------
     print("\n[3] COUNT NON-NEGATIVITY & FRACTIONAL BOUND CONSTRAINTS (0 <= Frac <= Whole)")
     glob_neg = int((df_v2["global_count"] < 0).sum())
@@ -144,7 +149,7 @@ def run_audit() -> int:
         )
 
     # -------------------------------------------------------------------------
-    # 4. RCA Recalculation & Numerical Precision Enforcement (<= 0.00000500)
+    # 4. RCA Recalculation & Numerical Precision Enforcement (6 checks)
     # -------------------------------------------------------------------------
     print(f"\n[4] RCA RECALCULATION & PRECISION ENFORCEMENT (TOLERANCE <= {TOLERANCE_RCA:.8f})")
     for c in ["de", "cn", "jp"]:
@@ -196,15 +201,17 @@ def run_audit() -> int:
     # -------------------------------------------------------------------------
     # 6. Final Verdict & Exit Code Enforcement
     # -------------------------------------------------------------------------
+    total_checks = len(checks_run)
+    passed_checks = total_checks - len(failures)
     print("\n" + "=" * 92)
     if failures:
-        print(f"FINAL AUDIT VERDICT: FAIL ({len(failures)} check(s) failed)")
-        for idx, msg in enumerate(failures, 1):
-            print(f"  {idx}. {msg}")
+        print(f"FINAL AUDIT VERDICT: FAIL ({len(failures)}/{total_checks} check(s) failed)")
+        for msg in failures:
+            print(f"  - {msg}")
         print("=" * 92)
         return 1
     else:
-        print("FINAL AUDIT VERDICT: PASS (All 24 critical preservation, structural, denominator, bound, and RCA checks passed)")
+        print(f"FINAL AUDIT VERDICT: PASS (All {passed_checks}/{total_checks} critical preservation, structural, denominator, bound, and RCA checks passed)")
         print("=" * 92)
         return 0
 

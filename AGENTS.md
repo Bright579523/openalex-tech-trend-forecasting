@@ -55,6 +55,7 @@
   * $M2$: Country Publication Volumes ($M1$ + Log Volumes for DE, CN, JP)
   * $M3$: National Specialization ($M2$ + $RCA_{\text{AllSci}}^{\text{Frac}}$ for DE, CN, JP)
 * **Model Class:** Regularized Linear Models (Ridge Regression with $L_2$ penalty). **No deep learning / black-box models.**
+  * *Hyperparameter Selection ($\lambda$) Note for Stage 3:* Because Test Origin 2018 has only one non-overlapping prior training origin (`2015`, where $[t-5, t-3] = [2010, 2012]$, $[t-2, t] = [2013, 2015]$, and target $[t+1, t+3] = [2016, 2018]$), temporal 5-fold cross-validation across multiple training origins is not possible for Origin 2018. Therefore, Ridge penalty $\lambda$ must be selected via **cross-sectional 5-fold cross-validation across eligible topics** within the training set (or within-origin topic-level CV).
 
 ### E. Temporal Train/Test Split & Forecast Origins Scope
 * **Approved Forecast Origins (Strictly 2018 and 2021):**
@@ -87,11 +88,14 @@ d:\Thesis\
 │   ├── DOCUMENT_TYPE_AND_METADATA_AUDIT.md  # Detailed Scope, Metadata & Mathematical Audit Report
 │   ├── STAGE2_DATASET_AUDIT_REPORT.md       # Final Stage 2 Dataset Preparation Audit & Certification
 │   ├── openalex_master_panel_1025topics.csv # FROZEN Master Panel v1 (All Types Baseline, 15,375 rows)
-│   ├── openalex_modeling_panel_1025topics_v2_selected_types.csv # CERTIFIED Modeling Panel v2 (15,375 rows)
+│   ├── openalex_modeling_panel_1025topics_v2_selected_types.csv # PRESERVED Original Modeling Panel v2 (15,375 rows)
+│   ├── openalex_modeling_panel_1025topics_v2_synchronized.csv # PRIMARY Synchronized Modeling Panel v2 (15,375 rows)
 │   ├── all_science_national_denominators_fractional.csv # All-science 15-yr fractional denominators (v1)
-│   ├── all_science_national_denominators_fractional_v2_selected_types.csv # All-science denominators (v2 Selected Types)
-│   ├── extract_denominators_v2.py           # Denominator extraction script for Selected Types
-│   ├── independent_audit_v2.py              # Automated 5-point audit script for Panel v2
+│   ├── all_science_national_denominators_fractional_v2_selected_types.csv # Pre-deduplication v2 denominators (preserved)
+│   ├── all_science_national_denominators_fractional_v2_live_recheck_20261105.csv # Synchronized v2 denominators (post-dedup)
+│   ├── synchronize_modeling_panel_v2.py     # Deterministic script building synchronized v2 panel without API calls
+│   ├── extract_denominators_v2.py           # Denominator extraction script for Selected Scholarly Work Types
+│   ├── independent_audit_v2.py              # Automated 28-check verification script for Synchronized Panel v2
 │   ├── candidate_topics.csv                 # 1,025 topics classification & rationale
 │   ├── all_tech_topics_taxonomy.csv         # Full 1,025 technology taxonomy metadata
 │   ├── national_annual_totals_all_science.csv # All-science annual totals (Global, DE, CN, JP)

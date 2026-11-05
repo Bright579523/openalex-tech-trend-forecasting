@@ -16,7 +16,7 @@ This report documents the empirical investigation, root-cause diagnosis, code an
 | :---: | :--- | :---: | :---: | :---: | :---: |
 | **Task 1** | Reconcile Global All-Science Selected Works Counts (2010–2024) | **P0** | Yes (100% Untouched) | 15/15 Years Reconciled | **PASS** |
 | **Task 2** | Align Baseline Momentum ($M0_{\text{adj}}$) with Adjusted Target ($G_{\text{adj}}$) | **P0** | Yes (100% Untouched) | Formula & Windows Aligned | **PASS** |
-| **Task 3** | Strengthen Independent Audit (`independent_audit_v2.py`) with Hard Fail Exit | **P0** | Yes (100% Untouched) | 21/21 Checks Passed (`exit 0`) | **PASS** |
+| **Task 3** | Strengthen Independent Audit (`independent_audit_v2.py`) with Hard Fail Exit | **P0** | Yes (100% Untouched) | 28/28 Checks Passed (`exit 0`) | **PASS** |
 | **Task 4** | Verify Topic Classifier Provenance & Sensitivity Analysis Isolation (v1 vs. v2) | **P0** | Yes (100% Untouched) | Provenance Certified | **PASS** |
 | **Cleanup** | Replace "Peer-reviewed Literature" with "Selected Scholarly Work Types" | **P0** | Yes (100% Untouched) | All Docs Updated | **PASS** |
 
@@ -38,8 +38,8 @@ Specifically:
 1. **Pre-Update Snapshot (`2026-11-04 02:09:25 UTC+1` / `01:09:25Z`):**
    * `extract_denominators_v2.py` was executed in background task `task-677` at `2026-11-04 02:09:25 UTC+1` (committed in `d484a21` at `02:12:30 UTC+1`).
    * At that timestamp, `filter=publication_year:2010,type:article|conference-paper|review` returned `5,867,112` (and in `task-668.log` at `02:08:58 UTC+1`, sample topic `T10281` for year 2020 returned `6,601` for All Types and `5,525` for Selected Scholarly Work Types).
-2. **OpenAlex Intraday Live Index Update (`02:10 UTC+1` to `23:08 UTC+1` on 04 November 2026):**
-   * During the 21-hour interval between `02:10 UTC+1` and `23:08 UTC+1` on 4 November 2026, OpenAlex deployed a routine daily index ingestion/deduplication update.
+2. **OpenAlex Intraday Live Index Update (`02:10 UTC+1` to `23:08 UTC+1` on 04 November 2026 — 17.3M Duplicate Works Merged):**
+   * During the 21-hour interval between `02:10 UTC+1` and `23:08 UTC+1` on 4 November 2026, OpenAlex deployed a major database-wide deduplication update (officially announced on the OpenAlex blog as merging over **17.3 million duplicate works** on 4 November).
    * Across 2010–2024, Global Selected Scholarly Work Types counts shifted downward by `-1.36%` (2024) to `-5.22%` (2010), and sample topic `T10281` (2020 Selected Types) shifted from `5,525` to `5,423`.
 3. **Post-Update Snapshot (`2026-11-04 23:08:43 UTC+1` to `2026-11-05 00:55:36 UTC+1`):**
    * `Modeling Panel v2` (`openalex_modeling_panel_1025topics_v2_selected_types.csv`) was extracted at `2026-11-04 23:08:43 – 23:52:43 UTC+1` (`T10281` 2020 Selected Types = `5,423`), while joining the pre-cached denominator file from `02:09:25 UTC+1`.
@@ -128,6 +128,7 @@ The previous version of `independent_audit_v2.py`:
 
 ### 3. Files Changed
 * `openalex_feasibility_audit/independent_audit_v2.py`
+* `openalex_feasibility_audit/synchronize_modeling_panel_v2.py`
 * `extract_modeling_panel_v2_selected_types.py`
 
 ### 4. Exact Before-and-After Results
@@ -136,33 +137,17 @@ The previous version of `independent_audit_v2.py`:
   * Printed `Whole RCA Max Discrepancy` and `Fractional RCA Max Discrepancy` without boolean pass/fail gates.
   * Did not call `sys.exit(1)` on failure.
 * **After (`independent_audit_v2.py`):**
-  * Enforces **21 distinct programmatic PASS/FAIL assertions**:
-    1. `Total Row Count == 15,375` (`PASS`: `15,375`)
-    2. `Total Column Count == 26` (`PASS`: `26`)
-    3. `Unique Topics == 1,025` (`PASS`: `1,025`)
-    4. `Annual Coverage == 15 years (2010-2024)` (`PASS`: `2010..2024`)
-    5. `Balanced Panel (15 rows per topic)` (`PASS`: `True`)
-    6. `Zero Duplicate (topic_id, year)` (`PASS`: `0`)
-    7. `Zero Missing / Null Values` (`PASS`: `0`)
-    8. `Denominator Table Years (2010-2024)` (`PASS`: `15 rows`)
-    9. `Global All-Science Denominator (15 yrs x 1,025 topics)` (`PASS`: `0 mismatches`)
-    10. `DE Whole All-Science Denominator (15 yrs x 1,025 topics)` (`PASS`: `0 mismatches`)
-    11. `DE Fractional All-Science Denominator (15 yrs x 1,025 topics)` (`PASS`: `0 mismatches`)
-    12. `CN Whole All-Science Denominator (15 yrs x 1,025 topics)` (`PASS`: `0 mismatches`)
-    13. `CN Fractional All-Science Denominator (15 yrs x 1,025 topics)` (`PASS`: `0 mismatches`)
-    14. `JP Whole All-Science Denominator (15 yrs x 1,025 topics)` (`PASS`: `0 mismatches`)
-    15. `JP Fractional All-Science Denominator (15 yrs x 1,025 topics)` (`PASS`: `0 mismatches`)
-    16. `Global Topic Count >= 0` (`PASS`: `0 negative`)
-    17. `DE Non-Negative & Bound (0 <= Frac <= Whole)` (`PASS`: `0 violations`)
-    18. `CN Non-Negative & Bound (0 <= Frac <= Whole)` (`PASS`: `0 violations`)
-    19. `JP Non-Negative & Bound (0 <= Frac <= Whole)` (`PASS`: `0 violations`)
-    20. `DE, CN, JP Whole RCA Precision (<= 0.00000500)` (`PASS`: `MaxDiff = 0.00000500, ExceedCount = 0`)
-    21. `DE, CN, JP Fractional RCA Precision (<= 0.00000500)` (`PASS`: `MaxDiff = 0.00000500, ExceedCount = 0`)
-  * Calls `sys.exit(1)` if any check fails, and `sys.exit(0)` only if all 21 checks pass.
+  * Enforces **28 distinct programmatic PASS/FAIL assertions (`#01` to `#28`)**:
+    * **Preservation Checks (2 checks: `#01–#02`):** `Master Panel v1 Unmodified` (SHA-256), `Original Modeling Panel v2 Unmodified` (SHA-256).
+    * **Structural Completeness Checks (7 checks: `#03–#09`):** `Total Row Count == 15,375`, `Total Column Count == 26`, `Unique Topics == 1,025`, `Annual Coverage == 15 years (2010-2024)`, `Balanced Panel (15 rows per topic)`, `Zero Duplicate (topic_id, year)`, `Zero Missing / Null Values`.
+    * **Synchronized Denominator Checks (9 checks: `#10–#18`):** `Denominator Table Years (2010-2024)`, `Denominator Table == Coverage Table (15 yrs)`, `Global All-Science Denominator (15 yrs x 1,025 topics)`, plus Whole and Fractional All-Science Denominators for `DE`, `CN`, and `JP` (`3 countries × 2 = 6 checks`).
+    * **Non-Negativity & Fractional Bound Checks (4 checks: `#19–#22`):** `Global Topic Count >= 0`, plus `0 <= Frac <= Whole` for `DE`, `CN`, and `JP` (`3 checks`).
+    * **RCA Recalculation & Precision Checks (6 checks: `#23–#28`):** Whole RCA and Fractional RCA recalculation precision (`<= 0.00000500`) for `DE`, `CN`, and `JP` (`3 countries × 2 = 6 checks`).
+  * Dynamically counts all executed `record_check()` assertions (`28/28`) and calls `sys.exit(1)` if any check fails, or `sys.exit(0)` only if all 28 checks pass.
 
 ### 5. Validation Evidence
 Executed `python openalex_feasibility_audit\independent_audit_v2.py`:
-* Output: `FINAL AUDIT VERDICT: PASS (All 21 critical structural, denominator, bound, and RCA checks passed)`
+* Output: `FINAL AUDIT VERDICT: PASS (All 28/28 critical preservation, structural, denominator, bound, and RCA checks passed)`
 * Process Exit Code: `0`
 * **Verdict:** **PASS**
 
