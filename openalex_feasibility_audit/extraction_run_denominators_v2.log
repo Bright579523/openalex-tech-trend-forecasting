@@ -1,0 +1,27 @@
+=== ALL-SCIENCE NATIONAL DENOMINATORS V2 EXTRACTION RUN LOG ===
+Target Scope: Selected Scholarly Work Types (article|conference-paper|review)
+Script: openalex_feasibility_audit/extract_denominators_v2.py
+Countries: Global Reference + Germany (DE), China (CN), Japan (JP)
+Counting Method: Equal Fractional Counting Option C (1/k) via 2D group_by=countries_distinct_count
+Target Output: openalex_feasibility_audit/all_science_national_denominators_fractional_v2_live_recheck_20261105.csv
+--------------------------------------------------------------------------------
+[2026-11-04T23:54:00Z] Year 2010: filter='publication_year:2010,type:article|conference-paper|review' | Global=5,561,014 | DE_Whole=148,316, DE_Frac=113,467.7288 | CN_Whole=566,132, CN_Frac=540,422.2064 | JP_Whole=165,887, JP_Frac=149,963.9148 | Status=SUCCESS
+[2026-11-04T23:54:08Z] Year 2011: filter='publication_year:2011,type:article|conference-paper|review' | Global=5,860,170 | DE_Whole=147,881, DE_Frac=111,312.5921 | CN_Whole=618,897, CN_Frac=589,404.3100 | JP_Whole=169,884, JP_Frac=153,264.1597 | Status=SUCCESS
+[2026-11-04T23:54:14Z] Year 2012: filter='publication_year:2012,type:article|conference-paper|review' | Global=6,065,081 | DE_Whole=155,188, DE_Frac=115,821.5864 | CN_Whole=564,707, CN_Frac=531,739.4847 | JP_Whole=171,989, JP_Frac=154,558.3620 | Status=SUCCESS
+[2026-11-04T23:54:21Z] Year 2013: filter='publication_year:2013,type:article|conference-paper|review' | Global=6,332,435 | DE_Whole=159,746, DE_Frac=117,669.8252 | CN_Whole=589,540, CN_Frac=550,562.0599 | JP_Whole=172,775, JP_Frac=154,704.0082 | Status=SUCCESS
+[2026-11-04T23:54:28Z] Year 2014: filter='publication_year:2014,type:article|conference-paper|review' | Global=6,558,190 | DE_Whole=167,129, DE_Frac=122,253.3764 | CN_Whole=576,223, CN_Frac=529,554.3707 | JP_Whole=174,055, JP_Frac=155,089.3106 | Status=SUCCESS
+[2026-11-04T23:54:34Z] Year 2015: filter='publication_year:2015,type:article|conference-paper|review' | Global=6,661,927 | DE_Whole=170,907, DE_Frac=123,850.1275 | CN_Whole=509,514, CN_Frac=458,043.0236 | JP_Whole=171,663, JP_Frac=151,816.6634 | Status=SUCCESS
+[2026-11-04T23:54:40Z] Year 2016: filter='publication_year:2016,type:article|conference-paper|review' | Global=6,791,623 | DE_Whole=176,152, DE_Frac=125,660.0072 | CN_Whole=448,797, CN_Frac=391,044.3526 | JP_Whole=172,408, JP_Frac=151,406.1054 | Status=SUCCESS
+[2026-11-04T23:54:46Z] Year 2017: filter='publication_year:2017,type:article|conference-paper|review' | Global=6,517,757 | DE_Whole=178,183, DE_Frac=125,774.3681 | CN_Whole=494,790, CN_Frac=428,841.0172 | JP_Whole=175,925, JP_Frac=153,739.0452 | Status=SUCCESS
+[2026-11-04T23:54:52Z] Year 2018: filter='publication_year:2018,type:article|conference-paper|review' | Global=6,486,857 | DE_Whole=183,412, DE_Frac=128,721.1777 | CN_Whole=570,086, CN_Frac=493,376.6919 | JP_Whole=175,816, JP_Frac=152,386.8515 | Status=SUCCESS
+[2026-11-04T23:54:59Z] Year 2019: filter='publication_year:2019,type:article|conference-paper|review' | Global=6,781,509 | DE_Whole=189,598, DE_Frac=131,881.7076 | CN_Whole=643,755, CN_Frac=555,988.6066 | JP_Whole=174,602, JP_Frac=149,775.2166 | Status=SUCCESS
+[2026-11-04T23:55:06Z] Year 2020: filter='publication_year:2020,type:article|conference-paper|review' | Global=6,970,563 | DE_Whole=197,462, DE_Frac=134,319.4769 | CN_Whole=701,285, CN_Frac=601,652.4807 | JP_Whole=177,785, JP_Frac=150,333.8521 | Status=SUCCESS
+[2026-11-04T23:55:14Z] Year 2021: filter='publication_year:2021,type:article|conference-paper|review' | Global=6,646,194 | DE_Whole=207,055, DE_Frac=140,793.9474 | CN_Whole=796,298, CN_Frac=693,706.9186 | JP_Whole=176,532, JP_Frac=148,922.2773 | Status=SUCCESS
+[2026-11-04T23:55:21Z] Year 2022: filter='publication_year:2022,type:article|conference-paper|review' | Global=6,278,140 | DE_Whole=197,622, DE_Frac=133,738.5022 | CN_Whole=931,930, CN_Frac=824,358.1962 | JP_Whole=164,259, JP_Frac=138,227.4057 | Status=SUCCESS
+[2026-11-04T23:55:29Z] Year 2023: filter='publication_year:2023,type:article|conference-paper|review' | Global=6,648,700 | DE_Whole=195,261, DE_Frac=130,909.6731 | CN_Whole=963,918, CN_Frac=857,997.5045 | JP_Whole=160,483, JP_Frac=134,210.7849 | Status=SUCCESS
+[2026-11-04T23:55:36Z] Year 2024: filter='publication_year:2024,type:article|conference-paper|review' | Global=7,200,875 | DE_Whole=198,084, DE_Frac=131,960.3933 | CN_Whole=1,134,749, CN_Frac=1,015,931.6565 | JP_Whole=165,638, JP_Frac=138,134.2242 | Status=SUCCESS
+--------------------------------------------------------------------------------
+Extraction completed successfully across all 15 annual intervals (2010–2024).
+0 API failures, 0 retries required, 100% group conservation verified.
+Saved to: openalex_feasibility_audit/all_science_national_denominators_fractional_v2_live_recheck_20261105.csv
+================================================================================

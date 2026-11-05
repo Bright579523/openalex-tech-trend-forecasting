@@ -1,0 +1,55 @@
+[2026-11-04 23:08:40] Initiating Modeling Panel v2 Extraction (Selected Types: article|conference-paper|review)
+[2026-11-04 23:08:40] Authenticated Key: xmea...R2xD
+[2026-11-04 23:08:43] API Rate Limits -> Limit: 10000 calls/day | Remaining: 5794 calls
+[2026-11-04 23:08:43] Loaded v2 All-Science Denominators from D:\Thesis\openalex_feasibility_audit\all_science_national_denominators_fractional_v2_selected_types.csv (15 years).
+[2026-11-04 23:08:43] Loaded 1025 topics from D:\Thesis\openalex_feasibility_audit\all_tech_topics_taxonomy.csv.
+[2026-11-04 23:09:49] Progress: [25/1025] topics (375 rows) | Elapsed: 66.0s
+[2026-11-04 23:10:52] Progress: [50/1025] topics (750 rows) | Elapsed: 129.2s
+[2026-11-04 23:11:58] Progress: [75/1025] topics (1125 rows) | Elapsed: 194.9s
+[2026-11-04 23:13:08] Progress: [100/1025] topics (1500 rows) | Elapsed: 264.9s
+[2026-11-04 23:14:16] Progress: [125/1025] topics (1875 rows) | Elapsed: 332.8s
+[2026-11-04 23:15:19] Progress: [150/1025] topics (2250 rows) | Elapsed: 396.1s
+[2026-11-04 23:16:23] Progress: [175/1025] topics (2625 rows) | Elapsed: 460.0s
+[2026-11-04 23:17:29] Progress: [200/1025] topics (3000 rows) | Elapsed: 526.0s
+[2026-11-04 23:18:39] Progress: [225/1025] topics (3375 rows) | Elapsed: 596.1s
+[2026-11-04 23:19:41] Progress: [250/1025] topics (3750 rows) | Elapsed: 658.6s
+[2026-11-04 23:20:44] Progress: [275/1025] topics (4125 rows) | Elapsed: 721.2s
+[2026-11-04 23:21:50] Progress: [300/1025] topics (4500 rows) | Elapsed: 787.2s
+[2026-11-04 23:22:53] Progress: [325/1025] topics (4875 rows) | Elapsed: 850.3s
+[2026-11-04 23:23:55] Progress: [350/1025] topics (5250 rows) | Elapsed: 912.3s
+[2026-11-04 23:24:54] Progress: [375/1025] topics (5625 rows) | Elapsed: 971.5s
+[2026-11-04 23:25:57] Progress: [400/1025] topics (6000 rows) | Elapsed: 1034.2s
+[2026-11-04 23:27:00] Progress: [425/1025] topics (6375 rows) | Elapsed: 1096.9s
+[2026-11-04 23:28:04] Progress: [450/1025] topics (6750 rows) | Elapsed: 1161.5s
+[2026-11-04 23:29:08] Progress: [475/1025] topics (7125 rows) | Elapsed: 1224.9s
+[2026-11-04 23:30:10] Progress: [500/1025] topics (7500 rows) | Elapsed: 1287.6s
+[2026-11-04 23:31:13] Progress: [525/1025] topics (7875 rows) | Elapsed: 1349.7s
+[2026-11-04 23:32:17] Progress: [550/1025] topics (8250 rows) | Elapsed: 1413.7s
+[2026-11-04 23:33:20] Progress: [575/1025] topics (8625 rows) | Elapsed: 1477.1s
+[2026-11-04 23:34:25] Progress: [600/1025] topics (9000 rows) | Elapsed: 1542.2s
+[2026-11-04 23:35:28] Progress: [625/1025] topics (9375 rows) | Elapsed: 1605.6s
+[2026-11-04 23:36:32] Progress: [650/1025] topics (9750 rows) | Elapsed: 1669.4s
+[2026-11-04 23:38:01] Progress: [675/1025] topics (10125 rows) | Elapsed: 1758.6s
+[2026-11-04 23:39:03] Progress: [700/1025] topics (10500 rows) | Elapsed: 1820.1s
+[2026-11-04 23:40:06] Progress: [725/1025] topics (10875 rows) | Elapsed: 1883.1s
+[2026-11-04 23:41:07] Progress: [750/1025] topics (11250 rows) | Elapsed: 1944.7s
+[2026-11-04 23:42:11] Progress: [775/1025] topics (11625 rows) | Elapsed: 2008.6s
+[2026-11-04 23:43:14] Progress: [800/1025] topics (12000 rows) | Elapsed: 2070.8s
+[2026-11-04 23:44:17] Progress: [825/1025] topics (12375 rows) | Elapsed: 2134.0s
+[2026-11-04 23:45:18] Progress: [850/1025] topics (12750 rows) | Elapsed: 2195.4s
+[2026-11-04 23:46:22] Progress: [875/1025] topics (13125 rows) | Elapsed: 2259.2s
+[2026-11-04 23:47:27] Progress: [900/1025] topics (13500 rows) | Elapsed: 2324.1s
+[2026-11-04 23:48:30] Progress: [925/1025] topics (13875 rows) | Elapsed: 2387.3s
+[2026-11-04 23:49:33] Progress: [950/1025] topics (14250 rows) | Elapsed: 2450.2s
+[2026-11-04 23:50:37] Progress: [975/1025] topics (14625 rows) | Elapsed: 2514.6s
+[2026-11-04 23:51:39] Progress: [1000/1025] topics (15000 rows) | Elapsed: 2576.5s
+[2026-11-04 23:52:45] Progress: [1025/1025] topics (15375 rows) | Elapsed: 2642.7s
+[2026-11-04 23:52:46] Saved 15375 rows to D:\Thesis\openalex_feasibility_audit\openalex_modeling_panel_1025topics_v2_selected_types.csv
+[2026-11-04 23:52:46] Cleaned up checkpoint file after successful completion.
+[2026-11-04 23:52:46] === FINAL AUDIT & VALIDATION OF MODELING PANEL V2 ===
+[2026-11-04 23:52:46] 1. Total Row Count: 15375 | Status: PASS
+[2026-11-04 23:52:46] 2. Duplicate Topic-Years: 0 | Status: PASS
+[2026-11-04 23:52:46] 3. Missing / Null Values: 0 | Status: PASS
+[2026-11-04 23:52:46] 4. Recalculation Discrepancy RCA Frac DE: 0.00000546 | Bound <= 0.00000500: CHECK
+[2026-11-04 23:52:46] 4. Recalculation Discrepancy RCA Frac CN: 0.00000500 | Bound <= 0.00000500: CHECK
+[2026-11-04 23:52:46] 4. Recalculation Discrepancy RCA Frac JP: 0.00000509 | Bound <= 0.00000500: CHECK

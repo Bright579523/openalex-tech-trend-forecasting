@@ -84,7 +84,10 @@ d:\Thesis\
 │   ├── extract_denominators_v2.py           # สคริปต์สกัดตัวหารระดับประเทศสำหรับ Selected Scholarly Work Types
 │   ├── independent_audit_v2.py              # สคริปต์ตรวจสอบความถูกต้องอัตโนมัติ 28 รายการ
 │   ├── candidate_topics.csv                 # รายชื่อ 1,025 Topics ใน 5 สาขาเทคโนโลยี
-│   └── all_tech_topics_taxonomy.csv         # เมตาดาต้าอนุกรมวิธาน OpenAlex Topics
+│   ├── all_tech_topics_taxonomy.csv         # เมตาดาต้าอนุกรมวิธาน OpenAlex Topics
+│   ├── extraction_run.log                   # บันทึกการดึงข้อมูล Master Panel v1 (4 พ.ย. 01:08–01:52 UTC+1)
+│   ├── extraction_run_v2.log                # บันทึกการดึงข้อมูล Modeling Panel v2 (4 พ.ย. 23:08–23:52 UTC+1)
+│   └── extraction_run_denominators_v2.log   # บันทึกการดึงข้อมูลตัวหาร Synchronized Denominators (4 พ.ย. 23:54 UTC)
 │
 ├── extract_master_panel_1025topics.py       # สคริปต์สกัดข้อมูล Master Panel v1
 └── extract_modeling_panel_v2_selected_types.py # สคริปต์สกัดข้อมูล Modeling Panel v2 (Selected Types)

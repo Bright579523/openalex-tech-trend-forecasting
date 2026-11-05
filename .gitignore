@@ -4,6 +4,7 @@ __pycache__/
 *.pyo
 *.tmp
 *.log
+!openalex_feasibility_audit/*.log
 .venv/
 venv/
 env/

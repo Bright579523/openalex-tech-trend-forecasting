@@ -1743,7 +1743,7 @@ if __name__ == "__main__":
 | `openalex_feasibility_audit/all_science_national_denominators_fractional_v2_live_recheck_20261105.csv` | 2,402 | `9c2d9cccee65c156494b96447ce53045d43e514c74aa10ec9f1c85915b33afce` | **Full 15-Yr Table Included** |
 | `openalex_feasibility_audit/STAGE2_FINAL_CORRECTION_REPORT.md` | 21,478 | `4aadb33b23bc51323f0ae806cb3a0410d8ecccbf2402dc3002cb210a0fd60179` | **Full Report Included** |
 | `openalex_feasibility_audit/FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md` | 23,173 | `784edc5ffb1e71a3c853aee67da46d070ffbd18947b78bbdc2995c805f5d5bf3` | **Full Report Included** |
-| `openalex_feasibility_audit/STAGE2_DATASET_AUDIT_REPORT.md` | 14,341 | `a905a53ecf309a18f0f11f63dee24142834ca629d441114ae3a40cd6454e8648` | **Core Sections Included** |
+| `openalex_feasibility_audit/STAGE2_DATASET_AUDIT_REPORT.md` | 15,226 | `6924aad03082ce12ade53dd382cc74b1cda9b54127e8a18acd91e51b55adb402` | **Core Sections Included** |
 | `openalex_feasibility_audit/DOCUMENT_TYPE_AND_METADATA_AUDIT.md` | 13,671 | `946002c1fa81038db45d0a88065d8f9705ada9cca126ab184bb9ce1496d22d13` | **Core Sections Included** |
 | `openalex_feasibility_audit/all_tech_topics_taxonomy.csv` | 159,129 | `478e597b1569f16c8a6e7ba75b8a76df7085277e4d4ea538b34fda34228f148a` | Manifested (1,025 topics taxonomy) |
 | `openalex_feasibility_audit/all_science_national_denominators_fractional.csv` | 1,059 | `b35ead6d13cb76355cde020d342be7de9b6d504a0f73665f2d8d9812bc0339e3` | Manifested (v1 Baseline Denominators) |

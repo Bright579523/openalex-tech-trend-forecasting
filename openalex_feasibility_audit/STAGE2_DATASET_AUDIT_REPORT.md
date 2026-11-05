@@ -174,3 +174,7 @@ The candidate confirms that origins 2012 and 2015 cannot be utilized under the s
 All 13 quality, precision, and methodological alignment checks have passed strictly under the original acceptance criteria. 
 
 The dataset [`openalex_modeling_panel_1025topics_v2_selected_types.csv`](file:///d:/Thesis/openalex_feasibility_audit/openalex_modeling_panel_1025topics_v2_selected_types.csv) is certified as **complete, mathematically consistent ($\Delta \le 0.00000500$), and 100% aligned with the approved Thesis Proposal**.
+
+> [!NOTE]
+> **Post-Extraction Synchronization & Strengthened 28-Check Audit:**  
+> Following OpenAlex's official 4 November 2026 database-wide deduplication merge (>17.3M duplicate works), the primary modeling dataset was synchronized in [`openalex_modeling_panel_1025topics_v2_synchronized.csv`](file:///d:/Thesis/openalex_feasibility_audit/openalex_modeling_panel_1025topics_v2_synchronized.csv) via [`synchronize_modeling_panel_v2.py`](file:///d:/Thesis/openalex_feasibility_audit/synchronize_modeling_panel_v2.py) and certified under the **28-check programmatic gate** in [`independent_audit_v2.py`](file:///d:/Thesis/openalex_feasibility_audit/independent_audit_v2.py) (`EXIT_CODE=0`). Full reconciliation and numerical proof are documented in [`FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md`](file:///d:/Thesis/openalex_feasibility_audit/FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md).

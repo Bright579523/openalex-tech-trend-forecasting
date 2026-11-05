@@ -100,7 +100,10 @@ d:\Thesis\
 │   ├── extract_denominators_v2.py           # Denominator extraction script for Selected Scholarly Work Types
 │   ├── independent_audit_v2.py              # Automated 28-check verification script for Synchronized Panel v2
 │   ├── candidate_topics.csv                 # 1,025 topics classification & rationale
-│   └── all_tech_topics_taxonomy.csv         # Full 1,025 technology taxonomy metadata
+│   ├── all_tech_topics_taxonomy.csv         # Full 1,025 technology taxonomy metadata
+│   ├── extraction_run.log                   # Production run log for Master Panel v1 (4 Nov 01:08–01:52 UTC+1)
+│   ├── extraction_run_v2.log                # Production run log for Modeling Panel v2 (4 Nov 23:08–23:52 UTC+1)
+│   └── extraction_run_denominators_v2.log   # Production run log for Synchronized Denominators (4 Nov 23:54 UTC)
 │
 ├── extract_master_panel_1025topics.py       # Production extraction script for Master Panel v1
 └── extract_modeling_panel_v2_selected_types.py # Production extraction script for Modeling Panel v2 (Selected Types)
