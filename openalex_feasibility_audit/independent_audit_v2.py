@@ -1,28 +1,43 @@
 """
-Independent Mathematical & Structural Audit Script for Modeling Panel v2 (Selected Scholarly Work Types)
+Independent Mathematical & Structural Audit Script for Synchronized Modeling Panel v2
+Audits:
+  - Primary Synchronized Panel: openalex_modeling_panel_1025topics_v2_synchronized.csv
+  - Synchronized Denominators:  all_science_national_denominators_fractional_v2_live_recheck_20261105.csv
+  - Preserved Original v2:      openalex_modeling_panel_1025topics_v2_selected_types.csv
+  - Preserved Master Panel v1:  openalex_master_panel_1025topics.csv
+
 Enforces strict pass/fail acceptance criteria and returns non-zero exit status (sys.exit(1)) if any check fails.
 """
 
 import sys
+import hashlib
+from pathlib import Path
 import pandas as pd
 import numpy as np
 
 TOLERANCE_RCA = 0.00000500
 FLOAT_EPS = 1e-12  # Guard for IEEE 754 representation of 0.00000500
 
+EXPECTED_SHA256_V1 = "37de2b5d22ea0a585dc5772d3e9cb7ea0aaa0ba48357dbee043d268bbf408f87"
+EXPECTED_SHA256_V2_ORIG = "3d869014a463449e2c4bd44628fe174f6aedc954cd7c878922baae9488b75d6e"
+
 
 def run_audit() -> int:
-    print("=" * 88)
-    print("INDEPENDENT FINAL AUDIT: MODELING PANEL V2 (SELECTED SCHOLARLY WORK TYPES)")
-    print("=" * 88)
+    print("=" * 92)
+    print("INDEPENDENT FINAL AUDIT: SYNCHRONIZED MODELING PANEL V2 (SELECTED SCHOLARLY WORK TYPES)")
+    print("=" * 92)
 
-    csv_v2 = r"openalex_feasibility_audit\openalex_modeling_panel_1025topics_v2_selected_types.csv"
-    csv_v1 = r"openalex_feasibility_audit\openalex_master_panel_1025topics.csv"
-    denom_v2 = r"openalex_feasibility_audit\all_science_national_denominators_fractional_v2_selected_types.csv"
+    csv_v2_sync = Path(r"openalex_feasibility_audit\openalex_modeling_panel_1025topics_v2_synchronized.csv")
+    csv_v2_orig = Path(r"openalex_feasibility_audit\openalex_modeling_panel_1025topics_v2_selected_types.csv")
+    csv_v1 = Path(r"openalex_feasibility_audit\openalex_master_panel_1025topics.csv")
+    denom_v2_sync = Path(r"openalex_feasibility_audit\all_science_national_denominators_fractional_v2_live_recheck_20261105.csv")
+    cov_csv = Path(r"openalex_feasibility_audit\annual_work_types_and_topic_coverage.csv")
 
-    df_v2 = pd.read_csv(csv_v2)
+    df_v2 = pd.read_csv(csv_v2_sync)
+    df_v2_orig = pd.read_csv(csv_v2_orig)
     df_v1 = pd.read_csv(csv_v1)
-    df_denom = pd.read_csv(denom_v2)
+    df_denom = pd.read_csv(denom_v2_sync)
+    df_cov = pd.read_csv(cov_csv)
 
     failures = []
 
@@ -31,6 +46,15 @@ def run_audit() -> int:
         print(f"  [{status}] {name}: {detail}")
         if not passed:
             failures.append(f"{name}: {detail}")
+
+    # -------------------------------------------------------------------------
+    # 0. Preservation of Frozen Datasets (SHA-256 Verification)
+    # -------------------------------------------------------------------------
+    print("\n[0] PRESERVATION OF FROZEN DATASETS (SHA-256 CHECKSUMS)")
+    sha_v1 = hashlib.sha256(csv_v1.read_bytes()).hexdigest()
+    sha_v2_orig = hashlib.sha256(csv_v2_orig.read_bytes()).hexdigest()
+    record_check("Master Panel v1 Unmodified", sha_v1 == EXPECTED_SHA256_V1, f"SHA256={sha_v1[:16]}...")
+    record_check("Original Modeling Panel v2 Unmodified", sha_v2_orig == EXPECTED_SHA256_V2_ORIG, f"SHA256={sha_v2_orig[:16]}...")
 
     # -------------------------------------------------------------------------
     # 1. Structural Completeness (1,025 topics, 15 years, 15,375 rows, 26 cols)
@@ -56,9 +80,11 @@ def run_audit() -> int:
     # -------------------------------------------------------------------------
     # 2. Denominator Consistency across all 15 years (Global, DE, CN, JP)
     # -------------------------------------------------------------------------
-    print("\n[2] DENOMINATOR CONSISTENCY (GLOBAL, DE, CN, JP ACROSS ALL 15 YEARS & ALL ROWS)")
+    print("\n[2] SYNCHRONIZED DENOMINATOR CONSISTENCY (GLOBAL, DE, CN, JP ACROSS ALL 15 YEARS & ALL ROWS)")
     denom_years_ok = sorted(df_denom["year"].unique().tolist()) == expected_years
+    cov_sync_ok = bool((df_denom.sort_values("year")["global_allsci"].values == df_cov.sort_values("year")["total_selected_works"].values).all())
     record_check("Denominator Table Years (2010-2024)", denom_years_ok, f"Years={len(df_denom)} rows")
+    record_check("Denominator Table == Coverage Table (15 yrs)", cov_sync_ok, f"Exact 15-year match={cov_sync_ok}")
 
     glob_denom_mismatches = 0
     country_whole_mismatches = {"de": 0, "cn": 0, "jp": 0}
@@ -68,11 +94,9 @@ def run_audit() -> int:
         sub_panel = df_v2[df_v2["year"] == yr]
         sub_denom = df_denom[df_denom["year"] == yr].iloc[0]
 
-        # Global denominator check across all 1,025 rows in year yr
         if not (sub_panel["global_allsci_denom"] == int(sub_denom["global_allsci"])).all():
             glob_denom_mismatches += int((sub_panel["global_allsci_denom"] != int(sub_denom["global_allsci"])).sum())
 
-        # Country whole and fractional denominator checks across all 1,025 rows in year yr
         for c in ["de", "cn", "jp"]:
             w_expected = int(sub_denom[f"{c}_whole"])
             f_expected = round(float(sub_denom[f"{c}_frac"]), 4)
@@ -124,7 +148,6 @@ def run_audit() -> int:
     # -------------------------------------------------------------------------
     print(f"\n[4] RCA RECALCULATION & PRECISION ENFORCEMENT (TOLERANCE <= {TOLERANCE_RCA:.8f})")
     for c in ["de", "cn", "jp"]:
-        # Whole RCA recalculation from saved CSV columns
         calc_rca_whole = np.where(
             (df_v2["global_count"] > 0) & (df_v2[f"{c}_allsci_whole_denom"] > 0) & (df_v2[f"{c}_whole_count"] > 0),
             (df_v2[f"{c}_whole_count"] / df_v2[f"{c}_allsci_whole_denom"]) / (df_v2["global_count"] / df_v2["global_allsci_denom"]),
@@ -136,7 +159,6 @@ def run_audit() -> int:
         exceed_w = int((diff_whole > TOLERANCE_RCA + FLOAT_EPS).sum())
         invalid_w = int((np.isnan(df_v2[f"rca_whole_{c}"]) | np.isinf(df_v2[f"rca_whole_{c}"]) | (df_v2[f"rca_whole_{c}"] < 0)).sum())
 
-        # Fractional RCA recalculation from saved CSV columns
         calc_rca_frac = np.where(
             (df_v2["global_count"] > 0) & (df_v2[f"{c}_allsci_frac_denom"] > 0) & (df_v2[f"{c}_frac_count"] > 0),
             (df_v2[f"{c}_frac_count"] / df_v2[f"{c}_allsci_frac_denom"]) / (df_v2["global_count"] / df_v2["global_allsci_denom"]),
@@ -163,33 +185,27 @@ def run_audit() -> int:
         )
 
     # -------------------------------------------------------------------------
-    # 5. Summary Comparison: Master Panel v1 vs Modeling Panel v2
+    # 5. Summary Comparison: v1 vs v2 Original vs v2 Synchronized
     # -------------------------------------------------------------------------
-    print("\n[5] SUMMARY COMPARISON: MASTER PANEL V1 (ALL TYPES) VS MODELING PANEL V2 (SELECTED TYPES)")
-    tot_glob_v1 = int(df_v1["global_count"].sum())
-    tot_glob_v2 = int(df_v2["global_count"].sum())
-    print(f"  Total Global Works: v1={tot_glob_v1:,} | v2={tot_glob_v2:,} | Retention={tot_glob_v2/tot_glob_v1:.2%}")
+    print("\n[5] SUMMARY COMPARISON: V1 vs. V2 ORIGINAL vs. V2 SYNCHRONIZED")
     for c in ["de", "cn", "jp"]:
-        w_v1 = int(df_v1[f"{c}_whole_count"].sum())
-        w_v2 = int(df_v2[f"{c}_whole_count"].sum())
-        f_v1 = float(df_v1[f"{c}_frac_count"].sum())
-        f_v2 = float(df_v2[f"{c}_frac_count"].sum())
-        corr_rca = float(df_v1[f"rca_frac_{c}"].corr(df_v2[f"rca_frac_{c}"]))
-        print(f"  Country {c.upper()}: Whole Ret={w_v2/w_v1:.2%} | Frac Ret={f_v2/f_v1:.2%} | RCA Correlation (v1 vs v2)={corr_rca:.4f}")
+        corr_v1_v2sync = float(df_v1[f"rca_frac_{c}"].corr(df_v2[f"rca_frac_{c}"]))
+        corr_orig_sync = float(df_v2_orig[f"rca_frac_{c}"].corr(df_v2[f"rca_frac_{c}"]))
+        print(f"  Country {c.upper()}: RCA Frac Correlation (v1 vs v2_sync)={corr_v1_v2sync:.6f} | (v2_orig vs v2_sync)={corr_orig_sync:.8f}")
 
     # -------------------------------------------------------------------------
     # 6. Final Verdict & Exit Code Enforcement
     # -------------------------------------------------------------------------
-    print("\n" + "=" * 88)
+    print("\n" + "=" * 92)
     if failures:
         print(f"FINAL AUDIT VERDICT: FAIL ({len(failures)} check(s) failed)")
         for idx, msg in enumerate(failures, 1):
             print(f"  {idx}. {msg}")
-        print("=" * 88)
+        print("=" * 92)
         return 1
     else:
-        print("FINAL AUDIT VERDICT: PASS (All 21 critical structural, denominator, bound, and RCA checks passed)")
-        print("=" * 88)
+        print("FINAL AUDIT VERDICT: PASS (All 24 critical preservation, structural, denominator, bound, and RCA checks passed)")
+        print("=" * 92)
         return 0
 
 
