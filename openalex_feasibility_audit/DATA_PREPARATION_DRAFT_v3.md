@@ -42,7 +42,7 @@ where $k_w$ is the number of distinct countries affiliated with work $w$. The fr
 
 $$P^{\text{Frac}}_{c,i,t} = \sum_{k \ge 1} \frac{N_{c,i,t,k}}{k}$$
 
-where $N_{c,i,t,k}$ is the number of works in topic $i$ and year $t$ affiliated with country $c$ having exactly $k$ distinct countries. The counts are obtained directly from OpenAlex by server-side 2D aggregation on publication year and distinct-country count, returning exact census aggregates. Fractional counting was chosen as the primary rule because it avoids over-crediting internationally co-authored papers. Whole counts are stored in the panel as an auxiliary reference column.
+where $N_{c,i,t,k}$ is the number of works in topic $i$ and year $t$ affiliated with country $c$ having exactly $k$ distinct countries. The counts are obtained directly from OpenAlex by server-side 2D aggregation on publication year and distinct-country count, returning exact census aggregates. Following post-proposal supervisor guidance (*"Please use fractional counting for publications involving multiple countries"*), fractional counting was adopted as the primary rule because it avoids over-crediting internationally co-authored papers, while whole counts are retained in the panel as an auxiliary reference column.
 
 ### 3.3 Dataset Construction and RCA
 
@@ -143,7 +143,7 @@ $$FC_{w,c} = \frac{1}{k_w}$$
 
 $$P^{\text{Frac}}_{c,i,t} = \sum_{k \ge 1} \frac{N_{c,i,t,k}}{k}$$
 
-โดย $N_{c,i,t,k}$ คือจำนวนผลงานในหัวข้อ $i$ ปี $t$ ของประเทศ $c$ ที่มีจำนวนประเทศร่วมเขียนเท่ากับ $k$ ประเทศพอดี ข้อมูลนี้ได้จากการจัดกลุ่มแบบ 2 มิติระดับเซิร์ฟเวอร์ (`group_by=publication_year,countries_distinct_count`) ทำให้ได้ค่ายอดรวมที่แม่นยำ 100% เหตุผลที่เลือก Fractional Counting เป็นกฎหลักเนื่องจากป้องกันการให้เครดิตเกินจริงในบทความที่เขียนร่วมกันหลายประเทศ ส่วน Whole Counting เก็บไว้เป็นคอลัมน์อ้างอิงเสริม
+โดย $N_{c,i,t,k}$ คือจำนวนผลงานในหัวข้อ $i$ ปี $t$ ของประเทศ $c$ ที่มีจำนวนประเทศร่วมเขียนเท่ากับ $k$ ประเทศพอดี ข้อมูลนี้ได้จากการจัดกลุ่มแบบ 2 มิติระดับเซิร์ฟเวอร์ (`group_by=publication_year,countries_distinct_count`) ทำให้ได้ค่ายอดรวมที่แม่นยำ 100% ตามคำแนะนำเพิ่มเติมของอาจารย์ที่ปรึกษาหลังอนุมัติโครงร่างวิจัย (*"Please use fractional counting for publications involving multiple countries"*) เราจึงใช้ Fractional Counting เป็นกฎหลักเพื่อป้องกันการให้เครดิตเกินจริงในบทความที่เขียนร่วมกันหลายประเทศ โดยยังคงเก็บค่า Whole Counting ไว้ในชุดข้อมูลเป็นคอลัมน์อ้างอิงเสริม
 
 ### 3.3 การสร้างชุดข้อมูลและ RCA
 

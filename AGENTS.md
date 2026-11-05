@@ -5,13 +5,21 @@
 
 ---
 
-## 1. Project Metadata
-* **Student Degree:** M.Sc. Data Science
-* **Thesis Working Title:** *Forecasting Emerging Technology Research Trends: A Comparative Study of Germany, China, and Japan Using OpenAlex Data*
+## 1. Project Metadata & Approved Proposal Specifications
+* **Student:** Watcharapon Anaketanaset (Matriculation No. `94658335`)
+* **Student Degree:** M.Sc. in Data Science (120 ECTS)
+* **Supervisors:** First Supervisor: Prof. Dr. Iftikhar Ahmed | Second Supervisor: Dr. Shan Faiz
+* **Approved Thesis Title:** *Does National Specialisation Help Forecast Research-Topic Growth? Evidence from Germany, China, and Japan Using OpenAlex*
 * **Submission Deadline:** 12 February 2027
 * **Primary Data Source:** OpenAlex REST API (`https://api.openalex.org`)
 * **Primary Focus Countries:** Germany (DE), China (CN), Japan (JP) + Global reference (GLOBAL)
 * **Study Period:** 2010–2024 (15 annual intervals)
+* **Approved Research Questions (Strictly from Proposal):**
+  * **RQ1:** How have technology-related research topics and national specialisation developed over time in Germany, China, and Japan?
+  * **RQ2:** Do country publication counts and specialisation improve forecasts of topic growth beyond global publication history? Does specialisation add anything beyond counts?
+  * **RQ3:** Do country counts and specialisation help identify topics that become high-growth but were not high-growth at the forecast date?
+* **Supervisor's Official Post-Proposal Implementation Directive:**
+  > *"There are just a few minor points to consider during your implementation. Please use fractional counting for publications involving multiple countries, clearly explain how the training and testing periods are constructed, and include a little more relevant literature on research trend forecasting."*
 
 ---
 
@@ -58,6 +66,10 @@
   * $M3$: National Specialization ($M2$ + $RCA_{\text{AllSci}}^{\text{Frac}}$ for DE, CN, JP)
 * **Model Class:** Regularized Linear Models (Ridge Regression with $L_2$ penalty). **No deep learning / black-box models.**
   * *Hyperparameter Selection ($\lambda$) Note for Stage 3:* Because Test Origin 2018 has only one non-overlapping prior training origin (`2015`, where $[t-5, t-3] = [2010, 2012]$, $[t-2, t] = [2013, 2015]$, and target $[t+1, t+3] = [2016, 2018]$), temporal 5-fold cross-validation across multiple training origins is not possible for Origin 2018. Therefore, Ridge penalty $\lambda$ must be selected via **cross-sectional 5-fold cross-validation across eligible topics** within the training set (or within-origin topic-level CV).
+* **Evaluation Protocol (Strictly from Approved Proposal):**
+  * **Forecast Accuracy (RQ2):** Mean Absolute Error ($\text{MAE}$).
+  * **Early Identification of Emerging High-Growth Topics (RQ3):** Exclude topics already in the top 20% of adjusted growth over the past three years $[t-2, t]$. Among the remaining 80% of eligible topics, define future high-growth as the top 20% of adjusted growth over the next three years $[t+1, t+3]$ (chance level = 20%). Rank the remaining topics by predicted growth and count how many of the top 50 become high-growth (Top-50 hit count / Precision@50).
+  * **Statistical Reporting:** Report results separately for each test period (2018 and 2021), with bootstrap confidence intervals by topic.
 
 ### E. Temporal Train/Test Split & Forecast Origins Scope
 * **Approved Forecast Origins (Strictly 2018 and 2021):**

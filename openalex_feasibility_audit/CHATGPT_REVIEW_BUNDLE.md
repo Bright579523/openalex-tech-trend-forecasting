@@ -35,10 +35,13 @@
 * **Study Period:** 2010–2024 (15 annual observation intervals)
 * **Target Geographic Entities:** Germany (`DE`), China (`CN`), Japan (`JP`), and Global reference (`GLOBAL`)
 
-### B. Core Research Questions
-* **RQ1 (Main Effect):** Does incorporating national scientific specialization metrics (specifically Fractional All-Science Revealed Comparative Advantage, $RCA_{\text{AllSci}}^{\text{Frac}}$) significantly improve the forecast accuracy of 3-year future research-topic growth rate ($G_{\text{adj}}$) compared to naive adjusted momentum ($M0_{\text{adj}}$) and global history ($M1$) baselines?
-* **RQ2 (Comparative Cross-Country Analysis):** How does the predictive power of national specialization differ across Germany, China, and Japan, given their contrasting scientific portfolios, international collaboration profiles, and state-directed technology priorities?
-* **RQ3 (Methodological & Boundary Sensitivity):** How does restricting the literature scope strictly to **Selected Scholarly Work Types** (`article|conference-paper|review`) versus an unrestricted document-type corpus impact topic trajectories, national specialization rankings, and growth forecasting accuracy?
+### B. Core Research Questions (Strictly from Approved Proposal)
+* **RQ1:** How have technology-related research topics and national specialisation developed over time in Germany, China, and Japan?
+* **RQ2:** Do country publication counts and specialisation improve forecasts of topic growth beyond global publication history? Does specialisation add anything beyond counts?
+* **RQ3:** Do country counts and specialisation help identify topics that become high-growth but were not high-growth at the forecast date?
+
+### C. Supervisor's Official Post-Proposal Implementation Directive
+> *"There are just a few minor points to consider during your implementation. Please use fractional counting for publications involving multiple countries, clearly explain how the training and testing periods are constructed, and include a little more relevant literature on research trend forecasting."*
 
 ---
 
@@ -1740,14 +1743,14 @@ if __name__ == "__main__":
 | :--- | :---: | :--- | :--- |
 | `extract_modeling_panel_v2_selected_types.py` | 16,441 | `0351adbded4d4aa13d2cb0982d2a438c4c6286429a5156039e7f7a94c05b0f9e` | **Full Source Included** |
 | `openalex_feasibility_audit/extract_denominators_v2.py` | 2,138 | `5da1c516e010c830076d0f04ee5a1ad4a2fc4b11bb347ae1763d03b6b840ef0a` | **Full Source Included** |
-| `openalex_feasibility_audit/synchronize_modeling_panel_v2.py` | 18,241 | `559fa403003a53308a03bde23e3dfb1fc55e6eac7aeb31a5479043bc796edaf3` | **Full Source Included** |
-| `openalex_feasibility_audit/independent_audit_v2.py` | 13,123 | `7e64332a27608c1bd0b41f7f78479c486ff9a7f15e35417b912c6b6efc1c3b42` | **Full Source Included** |
+| `openalex_feasibility_audit/synchronize_modeling_panel_v2.py` | 18,626 | `12ac5ed79861228d1e7fd52952b286c31a25ddae1213701c815e91234bd151b9` | **Full Source Included** |
+| `openalex_feasibility_audit/independent_audit_v2.py` | 13,368 | `55b5173a18186a1244290ca7b6f41b408cdc8c591b238eb6115f811552f77f4e` | **Full Source Included** |
 | `openalex_feasibility_audit/annual_work_types_and_topic_coverage.csv` | 2,916 | `10ba5b2451caec3048ecf1a99588c056b9f13ac0e1bbec6f3b1035d59908226a` | **Full 15-Yr Table Included** |
 | `openalex_feasibility_audit/all_science_national_denominators_fractional_v2_selected_types.csv` | 1,132 | `507f5ef4b61f7d91a2919fa88c7c8f54f45560d10d64ad16b60f5ce754c13b36` | **Full 15-Yr Table Included** |
 | `openalex_feasibility_audit/all_science_national_denominators_fractional_v2_live_recheck_20261105.csv` | 2,402 | `9c2d9cccee65c156494b96447ce53045d43e514c74aa10ec9f1c85915b33afce` | **Full 15-Yr Table Included** |
-| `openalex_feasibility_audit/STAGE2_FINAL_CORRECTION_REPORT.md` | 21,543 | `bc425bbc8995dafb3e135056c9251a889ba173a9317387ab882f1a1e34d7288d` | **Full Report Included** |
-| `openalex_feasibility_audit/FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md` | 23,591 | `7cbebb8b6570a1ac46068817e5dd8d15d0f78f413e48cac40e39b978e31d79d2` | **Full Report Included** |
-| `openalex_feasibility_audit/STAGE2_DATASET_AUDIT_REPORT.md` | 16,965 | `13000006c8dd335f5c315d7c9f90b4dc966ebe78625c114680aa1400359465db` | **Core Sections Included** |
+| `openalex_feasibility_audit/STAGE2_FINAL_CORRECTION_REPORT.md` | 21,763 | `ee06ee36d571707a523728fca825dcb7038710bc2c731ff345d75d024377398d` | **Full Report Included** |
+| `openalex_feasibility_audit/FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md` | 23,860 | `5fba595a43eb75891f79cd6abe9972e3070a70fc09394e1d8273de892bf94edb` | **Full Report Included** |
+| `openalex_feasibility_audit/STAGE2_DATASET_AUDIT_REPORT.md` | 17,153 | `98e116caa0305adbe9c85abd2f6ca04b2a46db6913de356b22b0e56d9b968fbf` | **Core Sections Included** |
 | `openalex_feasibility_audit/DOCUMENT_TYPE_AND_METADATA_AUDIT.md` | 13,671 | `946002c1fa81038db45d0a88065d8f9705ada9cca126ab184bb9ce1496d22d13` | **Core Sections Included** |
 | `openalex_feasibility_audit/all_tech_topics_taxonomy.csv` | 159,129 | `478e597b1569f16c8a6e7ba75b8a76df7085277e4d4ea538b34fda34228f148a` | Manifested (1,025 topics taxonomy) |
 | `openalex_feasibility_audit/all_science_national_denominators_fractional.csv` | 1,059 | `b35ead6d13cb76355cde020d342be7de9b6d504a0f73665f2d8d9812bc0339e3` | Manifested (v1 Baseline Denominators) |
