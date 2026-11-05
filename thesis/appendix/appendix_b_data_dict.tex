@@ -1,36 +1,7 @@
-\chapter{Data Dictionary and Pilot Feasibility Study} \label{app:data_dict}
+\chapter{Data Dictionary and Pilot Study} \label{app:data_dict}
 
-\section{Master Modeling Panel Schema (26 Columns)}
-The primary dataset (\texttt{openalex\_modeling\_panel\_1025topics\_v2\_synchronized.csv}) contains 15,375 rows and the following 26 attributes:
-
-\begin{enumerate}
-    \item \texttt{topic\_id}: OpenAlex canonical topic identifier (e.g., \texttt{T10281}).
-    \item \texttt{topic\_name}: Official topic title in the OpenAlex taxonomy.
-    \item \texttt{field_name}: High-level field within Physical Sciences.
-    \item \texttt{subfield_name}: Intermediate domain classification.
-    \item \texttt{year}: Publication year (2010--2024).
-    \item \texttt{retrieval_timestamp}: UTC timestamp of API extraction.
-    \item \texttt{global_count}: Total unique global publication count in selected work types.
-    \item \texttt{global_allsci_denom}: Total global all-science publications in selected work types.
-    \item \texttt{de_whole_count}: Germany whole publication count ($P_{\text{Whole}}$).
-    \item \texttt{de_frac_count}: Germany fractional publication count ($P_{\text{Frac}}$, Option C: $1/k$).
-    \item \texttt{de_allsci_whole_denom}: Germany national all-science whole publication volume.
-    \item \texttt{de_allsci_frac_denom}: Germany national all-science fractional publication volume.
-    \item \texttt{rca_frac_de}: Germany Fractional All-Science RCA ($RCA_{\text{AllSci}}^{\text{Frac}}$).
-    \item \texttt{rca_whole_de}: Germany Whole All-Science RCA ($RCA_{\text{AllSci}}^{\text{Whole}}$).
-    \item \texttt{cn_whole_count}: China whole publication count.
-    \item \texttt{cn_frac_count}: China fractional publication count.
-    \item \texttt{cn_allsci_whole_denom}: China national all-science whole publication volume.
-    \item \texttt{cn_allsci_frac_denom}: China national all-science fractional publication volume.
-    \item \texttt{rca_frac_cn}: China Fractional All-Science RCA.
-    \item \texttt{rca_whole_cn}: China Whole All-Science RCA.
-    \item \texttt{jp_whole_count}: Japan whole publication count.
-    \item \texttt{jp_frac_count}: Japan fractional publication count.
-    \item \texttt{jp_allsci_whole_denom}: Japan national all-science whole publication volume.
-    \item \texttt{jp_allsci_frac_denom}: Japan national all-science fractional publication volume.
-    \item \texttt{rca_frac_jp}: Japan Fractional All-Science RCA.
-    \item \texttt{rca_whole_jp}: Japan Whole All-Science RCA.
-\end{enumerate}
+\section{Master Modeling Panel Data Dictionary}
+% [Insert 26-column variable definitions and schemas]
 
 \section{Phase 1 Pilot Feasibility Study}
-During the preliminary Stage 1 feasibility phase, country-level equal fractional counting ($1/k$) was benchmarked against whole counting across a representative pilot cohort of 50 technology topics. The analysis revealed a Pearson correlation of $r = 0.9968$ between fractional and whole RCA metrics, while reducing multi-country co-authorship inflation by over 50\%--60\% relative to author-level ground truth. This empirical pilot established the technical feasibility of Option C ($1/k$) prior to production scaling across the full 1,025-topic universe.
+% [Insert documentation of Phase 1 50-topic pilot study, Option C validation, and r = 0.9968 note]

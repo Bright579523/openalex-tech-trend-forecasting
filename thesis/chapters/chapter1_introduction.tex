@@ -1,69 +1,19 @@
 \chapter{Introduction} \label{chap:intro}
 
 \section{Background}
-Scientific research and technological development progress at an uneven pace: while certain scientific topics experience exponential expansion and redefine technological paradigms, others grow modestly, stagnate, or diminish over time. The capacity to anticipate which research domains will undergo accelerated growth holds profound implications for researchers, corporate strategists, academic institutions, and national science policy makers \citep{rotolo2015}. Governments worldwide allocate substantial portions of public funding to identify and foster ``critical,'' ``emerging,'' or ``strategic'' technologies. However, strategic allocation requires robust, timely, and objective forecasting mechanisms that can navigate the inherent uncertainty of nascent scientific domains.
-
-The concept of an ``emerging technology'' encompasses multiple qualitative and quantitative dimensions, including radical novelty, relatively fast growth, coherence, prominent socio-economic impact, and non-negligible uncertainty \citep{rotolo2015}. Among these dimensions, publication growth constitutes a central empirical trace through which scientific emergence manifests and can be systematically monitored. Prior computational bibliometric studies have leveraged publication counts, citation trajectories, and machine learning models to forecast topic expansion \citep{liang2021}. More recently, scholarship in science dynamics and economic complexity has demonstrated that national scientific specialisation reflects institutional capabilities and predictive path dependencies within national research spaces \citep{galanmena2026}. 
-
-This thesis investigates a distinct and unexplored question: \emph{Can national scientific specialisation help forecast how fast a technology-related research topic will grow globally, and can it assist in identifying topics that have not yet achieved high growth at the forecast date?}
-
-To investigate this question empirically, this study examines three major national research systems with contrasting institutional architectures, geopolitical priorities, and developmental trajectories:
-\begin{enumerate}
-    \item \textbf{Germany (DE):} A mature, highly internationalised, and decentralised European science system characterized by long-standing strengths in precision engineering, materials science, and chemical engineering.
-    \item \textbf{China (CN):} An rapidly expanding, state-directed scientific ecosystem driven by strategic technological modernization, whose national research and development (R\&D) expenditure increased substantially to approximately 2.7\% of gross domestic product (GDP) in 2024 \citep{nbs2025}.
-    \item \textbf{Japan (JP):} A technologically advanced East Asian research system with deep historical capabilities in hardware, energy, and robotics, operating under demographic transition and structural R\&D restructuring.
-\end{enumerate}
-Together, these three countries represent a major portion of global technological output and provide a rich comparative testbed for evaluating whether national specialization patterns encode predictive signals regarding global topic dynamics.
+% [Insert your background text here: motivation, context of science policy, and comparison of Germany, China, Japan]
 
 \section{Problem Statement}
-Existing approaches to research trend forecasting predominantly rely on global-level indicators, such as past aggregate publication volume, citation velocity, and textual term burstiness \citep{liang2021}. While global historical momentum provides a robust baseline, it suffers from a fundamental limitation: by definition, global aggregate counts are lag indicators that reflect consensus that has already occurred across the scientific community. By the time a topic achieves high global volume, it is no longer nascent.
-
-Conversely, individual national research systems frequently act as early incubators or concentrated testbeds for specific technological trajectories before widespread global diffusion takes place. For example, national technology roadmaps, concentrated industrial consortia, or state-funded target programs in nations such as China, Germany, or Japan may mobilize substantial research activity into specialized niches years prior to broader international adoption. 
-
-However, whether national scientific activity genuinely provides advance forecasting power beyond naive momentum and global history remains an open empirical question. Specifically:
-\begin{itemize}
-    \item Does observing publication volume from individual leading countries add predictive accuracy over global publication history alone?
-    \item Does relative national specialization---measured via Revealed Comparative Advantage (RCA)---provide informative signal beyond mere absolute national publication counts?
-    \item Can national specialization assist in the early identification of emerging topics---specifically identifying topics that are currently outside the top-growth tier but will subsequently experience high growth?
-\end{itemize}
-Addressing these questions requires addressing significant methodological challenges: eliminating lookahead bias, enforcing leakage-free temporal training and testing boundaries, properly accounting for multi-country co-authorship via fractional attribution, and establishing transparent, parameter-free momentum baselines.
+% [Insert your problem statement here: limitations of global counts alone, need for early emergence signals]
 
 \section{Research Objectives}
-The primary objective of this thesis is to empirically determine whether incorporating national publication volumes and fractional Revealed Comparative Advantage (RCA) from Germany, China, and Japan improves the forecasting of future three-year research-topic growth rate across 1,025 technology topics indexed in OpenAlex \citep{priem2022}.
-
-The specific objectives of the study are:
-\begin{enumerate}
-    \item To construct a leakage-free, balanced longitudinal panel spanning 15 annual intervals (2010--2024) across 1,025 physical science and technology topics, incorporating fractional publication counts and all-science national denominators.
-    \item To analyze the longitudinal evolution of technology topics and national scientific specialization across Germany, China, and Japan over the 2010--2024 period.
-    \item To build and evaluate a nested hierarchy of regularized linear forecasting models ($M0$ to $M3$) across two strictly non-overlapping temporal test horizons (Test Origin 2018: 2019--2021; Test Origin 2021: 2022--2024).
-    \item To determine whether national specialization adds incremental predictive power beyond absolute national publication counts and global publication history.
-    \item To assess the utility of national specialization in identifying emerging, high-growth topics early, specifically focusing on topics not previously in the top growth quintile.
-\end{enumerate}
+% [Insert your research objectives here]
 
 \section{Research Questions}
-To achieve these objectives, the thesis addresses three formal Research Questions (RQs) approved in the research proposal:
-\begin{itemize}
-    \item[\textbf{RQ1:}] \emph{How have technology-related research topics and national specialisation developed over time in Germany, China, and Japan?}
-    \item[\textbf{RQ2:}] \emph{Do country publication counts and specialisation improve forecasts of topic growth beyond global publication history? Does specialisation add anything beyond counts?}
-    \item[\textbf{RQ3:}] \emph{Do country counts and specialisation help identify topics that become high-growth but were not high-growth at the forecast date?}
-\end{itemize}
+% [Insert your research questions here: RQ1, RQ2, RQ3]
 
 \section{Contributions}
-This thesis provides several distinct contributions to the fields of scientometrics, science and technology policy, and quantitative research forecasting:
-\begin{itemize}
-    \item \textbf{Methodological Rigor and Leakage Elimination:} Unlike studies that employ retrospective cross-validation across randomly partitioned topics, this research enforces strict origin-specific eligibility criteria ($P_{[t-2, t]} \ge 50$ works) and temporal train/test partitioning, completely eliminating lookahead bias and outcome leakage.
-    \item \textbf{Equal Fractional Country Attribution ($1/k$):} In response to supervisory guidance and bibliometric best practice, the study implements server-side equal fractional counting for international collaborative works, eliminating the inflationary double-counting bias inherent in whole counting while preserving 100\% group census coverage.
-    \item \textbf{Aligned Global Normalization:} The target variable and the naive momentum baseline are mathematically aligned by explicitly subtracting global all-science growth under the identical selected scholarly work types scope (`article|conference-paper|review`), isolating true technological topic growth from the underlying expansion of the bibliographic database.
-    \item \textbf{High-Growth Early Identification Benchmark (RQ3):} The study operationalizes a rigorous decision-theoretic evaluation protocol for emerging topic identification by conditioning specifically on topics outside the top growth quintile at the forecast origin, testing model precision against a formal 20\% chance level.
-    \item \textbf{Open Science and Reproducibility:} The complete master dataset, synchronized denominator tables, and deterministic extraction and audit pipelines are permanently archived with cryptographic checksums (SHA-256) in a public repository.
-\end{itemize}
+% [Insert your main contributions here: methodological, empirical, practical]
 
 \section{Thesis Organization}
-The remainder of this thesis is structured as follows:
-\begin{itemize}
-    \item \textbf{Chapter~\ref{chap:background} (Background):} Introduces the theoretical foundations of emerging technologies, scientometric indicators, economic complexity, and the mathematical definition of Revealed Comparative Advantage (RCA).
-    \item \textbf{Chapter~\ref{chap:lit} (Literature Review):} Critically reviews prior literature on research trend forecasting, bibliometric predictors, national scientific diversification, and identifies the core research gap addressed by this work.
-    \item \textbf{Chapter~\ref{chap:method} (Methodology):} Details the OpenAlex data extraction, selected scholarly work types filtering, fractional attribution mechanism, dataset synchronization, feature engineering hierarchy ($M0$--$M3$), temporal evaluation splits, and bootstrap inference protocols.
-    \item \textbf{Chapter~\ref{chap:res} (Results and Discussions):} Presents empirical findings for RQ1 (historical specialization trajectories), RQ2 (forecast accuracy across model tiers), and RQ3 (early identification of emerging high-growth topics), accompanied by in-depth discussion and sensitivity analyses.
-    \item \textbf{Chapter~\ref{chap:conc} (Conclusions):} Summarizes the primary findings, discusses practical implications for science policy and R\&D investment, explicitly acknowledges methodological limitations, and outlines fruitful avenues for future research.
-\end{itemize}
+% [Insert your thesis organization overview here: summary of Chapters 2 through 6]

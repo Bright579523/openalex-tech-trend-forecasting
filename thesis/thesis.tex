@@ -2,8 +2,8 @@
 %% thesis.tex
 %% Master Thesis Master Document
 %% University of Europe for Applied Sciences (UE), Potsdam
-%% Author: Watcharapon Anaketanaset (Matriculation No. 94658335)
-%% Supervisor: Prof. Dr. Iftikhar Ahmed
+%% Degree: M.Sc. in Data Science (120 ECTS)
+%% Supervisor: Prof. Dr. Iftikhar Ahmed | Second Supervisor: Dr. Shan Faiz
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{uethesis}
 
@@ -11,9 +11,10 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{array}
+\usepackage{graphicx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Set Thesis Information (Approved Proposal & UE Potsdam Directives)
+%% Thesis Metadata Setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\thesistitle}{Does National Specialisation Help Forecast Research-Topic Growth? Evidence from Germany, China, and Japan Using OpenAlex}
 \renewcommand{\thesisauthor}{Watcharapon Anaketanaset}
@@ -25,27 +26,26 @@
 \renewcommand{\degree}{Master of Science in Data Science (120 ECTS)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Define Abstract Content
+%% Abstract (Placeholder)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\theabstract}{
-Anticipating which scientific and technological topics will experience rapid expansion is of critical importance for researchers, research institutions, and national science policy makers. While prior research forecasting models have predominantly relied on past aggregate global publication history, national research systems frequently serve as concentrated incubators for specialized technologies before global diffusion occurs. This thesis examines whether incorporating national publication volumes and national scientific specialisation---measured via Fractional All-Science Revealed Comparative Advantage ($RCA_{\text{AllSci}}^{\text{Frac}}$)---improves the forecast accuracy of future 3-year global research-topic growth across 1,025 technology topics indexed in OpenAlex from 2010 to 2024.
-
-Focusing on three major scientific powers with contrasting institutional architectures---Germany (DE), China (CN), and Japan (JP)---the study constructs a leakage-free, balanced longitudinal panel encompassing 15,375 topic-year observations restricted to selected scholarly work types (`article`, `conference-paper`, `review`). Publications are attributed using server-side equal fractional counting ($1/k$), eliminating multi-country co-authorship inflation while preserving census coverage. A nested hierarchy of regularized linear models ($M0$ to $M3$) is evaluated across two strictly non-overlapping temporal test horizons (Test Origins 2018 and 2021). Both continuous forecast accuracy (Mean Absolute Error) and early identification of emerging high-growth topics outside the historical top growth quintile (Precision@50) are assessed with bootstrap confidence intervals. The findings provide rigorous empirical evidence regarding the predictive utility of national specialization in technology trend forecasting.
+% Write your abstract here (typically 3/4 page, max 1 page).
+% It should cover: Context, Problem Statement, Methodology, Key Results, and Contributions.
 
 \vspace{0.5cm}
 \noindent \textbf{Keywords:} Research Trend Forecasting, Scientometrics, OpenAlex, National Specialisation, Revealed Comparative Advantage, Fractional Counting, Emerging Technologies
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Begin Document
+%% Document Body
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-% Front matter: Title page, Author Declaration, Abstract, Table of Contents, Lists of Tables & Figures
+% Generates Title Page, Front Matter, Author Declaration, Abstract, ToC, List of Tables, List of Figures
 \beginthesis
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Main Chapters
+%% Chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{chapters/chapter1_introduction}
 \input{chapters/chapter2_background}
@@ -62,7 +62,7 @@ Focusing on three major scientific powers with contrasting institutional archite
 \input{appendix/appendix_b_data_dict}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Bibliography
+%% Bibliography (Harvard Style: agsm)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \bibliography{ref}

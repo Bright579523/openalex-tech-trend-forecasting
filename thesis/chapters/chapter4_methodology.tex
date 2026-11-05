@@ -1,94 +1,25 @@
 \chapter{Methodology} \label{chap:method}
 
-\section{Data Source and Topic Taxonomy}
-This study utilizes OpenAlex \citep{priem2022}, a comprehensive open bibliometric catalog of global scholarly research. Technology topics are identified using the OpenAlex Topics taxonomy, which clusters scholarly works based on Leiden CWTS direct citation networks. The analysis encompasses exactly 1,025 technology topics situated within five Physical Sciences fields: Engineering (560 topics), Computer Science (302 topics), Materials Science (123 topics), Energy (27 topics), and Chemical Engineering (13 topics).
+\section{OpenAlex Data}
+% [Insert description of OpenAlex data source, Physical Sciences scope, and the 1,025 topics taxonomy]
 
-\section{Work Selection and Country Attribution}
-\subsection{Selected Scholarly Work Types}
-To reflect established scholarly publication genres while preserving data integrity, the primary modeling corpus is strictly restricted to works classified as:
-\begin{equation}
-    \text{Scope} = \{\text{article}, \text{conference-paper}, \text{review}\}
-\end{equation}
-This structural genre filter excludes editorials, errata, preprints, dissertations, book chapters, and paratextual records.
+\section{Fractional Counting}
+% [Insert explanation of Option C: 1/k country-level equal fractional counting vs. whole counting]
 
-\subsection{Topic Assignment via Primary Topic}
-Each work in OpenAlex is assigned exactly one primary topic. Works are retrieved using the filter \texttt{primary\_topic.id:Txxxxx}, ensuring that every document belongs to a unique topic and eliminating cross-topic double counting.
+\section{Dataset Construction}
+% [Insert description of balanced panel structure (15,375 rows, 26 columns, 2010--2024)]
 
-\subsection{Country-Level Equal Fractional Counting ($1/k$)}
-Country attribution is derived from the institutional affiliations recorded in publication authorships. To prevent over-crediting internationally co-authored publications, this study implements equal fractional counting at the country level as directed by supervisory feedback:
-\begin{equation}
-    FC_{w,c} = \frac{1}{k_w}
-\end{equation}
-where $k_w$ denotes the number of distinct countries represented among the institutional affiliations of work $w$. The annual fractional publication count for country $c$ in topic $i$ and year $t$ is computed via:
-\begin{equation}
-    P^{\text{Frac}}(c, i, t) = \sum_{k \ge 1} \frac{N(c, i, t, k)}{k}
-\end{equation}
-where $N(c, i, t, k)$ represents the count of publications in topic $i$ and year $t$ affiliated with country $c$ having exactly $k$ distinct participating countries. Whole counting ($P^{\text{Whole}}$) is preserved as an auxiliary baseline column for methodological comparison.
+\section{Revealed Comparative Advantage (RCA)}
+% [Insert formulation of Fractional All-Science RCA and denominator synchronization]
 
-\section{Dataset Construction and Revealed Comparative Advantage (RCA)}
-The finalized primary panel comprises a complete, balanced matrix of 15,375 rows (1,025 topics $\times$ 15 years, 2010--2024) across 26 attributes. National scientific specialization is formalized via Fractional All-Science Revealed Comparative Advantage:
-\begin{equation}
-    RCA_{\text{AllSci}}^{\text{Frac}}(c, i, t) = \frac{P^{\text{Frac}}(c, i, t) / P^{\text{Frac}}(c, \text{AllSci}, t)}{P(\text{Global}, i, t) / P(\text{Global}, \text{AllSci}, t)}
-\end{equation}
-where both the topic count (numerator) and the national all-science total (denominator) strictly enforce the identical $1/k$ fractional counting rule and selected scholarly work types scope.
+\section{Feature Engineering}
+% [Insert definitions of target variable G_adj and baseline momentum M0_adj]
 
-\section{Target Variable and Adjusted Momentum Baseline}
-\subsection{Target Variable ($G_{\text{adj}}$)}
-The prediction target is the forward 3-year log growth rate of global topic volume adjusted for the baseline growth of global science:
-\begin{equation}
-    G_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t+1, t+3]}^{(i)}\right) - \ln\left(1 + P_{[t-2, t]}^{(i)}\right)\right] - \left[\ln\left(1 + W_{[t+1, t+3]}\right) - \ln\left(1 + W_{[t-2, t]}\right)\right]
-\end{equation}
-where $P^{(i)}$ is the global volume in topic $i$, and $W$ denotes the global total publication volume across all fields of science under the identical selected work types.
+\section{Forecasting Models (M0--M3)}
+% [Insert description of model hierarchy: M0 (Momentum), M1 (Global), M2 (Country Volumes), M3 (Specialisation)]
 
-\subsection{Adjusted Momentum Baseline ($M0_{\text{adj}}$)}
-The naive benchmark baseline computes historical window-to-window growth with the identical global-growth adjustment:
-\begin{equation}
-    M0_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t-2, t]}^{(i)}\right) - \ln\left(1 + P_{[t-5, t-3]}^{(i)}\right)\right] - \left[\ln\left(1 + W_{[t-2, t]}\right) - \ln\left(1 + W_{[t-5, t-3]}\right)\right]
-\end{equation}
-ensuring that $M0_{\text{adj}}$ predicts the identical conceptual growth metric as $G_{\text{adj}}$ without learned parameters ($G_{\text{adj}}(i, t) = M0_{\text{adj}}(i, t+3)$).
+\section{Temporal Evaluation}
+% [Insert description of test horizons (2018, 2021), origin-specific eligibility (>= 50 works), and leakage-free cutoff]
 
-\section{Model Hierarchy}
-The forecasting architecture evaluates four nested model tiers:
-\begin{itemize}
-    \item \textbf{$M0$ (Na\"ive Adjusted Momentum):} Parameter-free persistence baseline ($\hat{y} = M0_{\text{adj}}$).
-    \item \textbf{$M1$ (Global History):} Ridge regression incorporating $M0_{\text{adj}}$ and past log global volume $\ln(1 + P_{[t-2, t]}^{(i)})$.
-    \item \textbf{$M2$ (Country Volumes):} $M1$ extended with log publication volumes for Germany, China, and Japan ($\ln(1 + P^{\text{Frac}}(c, i, [t-2, t]))$).
-    \item \textbf{$M3$ (National Specialisation):} $M2$ extended with national Revealed Comparative Advantage metrics ($RCA_{\text{AllSci}}^{\text{Frac}}(c, i, t)$) for DE, CN, and JP.
-\end{itemize}
-
-\section{Temporal Train/Test Split and Eligibility}
-\subsection{Forecast Origins}
-Evaluation is strictly restricted to two non-overlapping test horizons matching the research proposal:
-\begin{table}[ht]
-    \centering
-    \caption{Temporal Evaluation Horizons and Window Construction}
-    \label{tab:windows}
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Forecast Origin ($t$)} & \textbf{Past Window $[t-2, t]$} & \textbf{Momentum Base $[t-5, t-3]$} & \textbf{Future Window $[t+1, t+3]$} \\
-        \midrule
-        \textbf{Test Origin 2018} & 2016--2018 & 2013--2015 & 2019--2021 \\
-        \textbf{Test Origin 2021} & 2019--2021 & 2016--2018 & 2022--2024 \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-Under the leakage-free training constraint ($t_{\text{train}} \le t_{\text{test}} - 3$), Origin 2015 serves as the single non-overlapping training window for Test Origin 2018. Origin 2015 is retained as a training origin only and not evaluated as a test origin because no earlier eligible training origin exists (an origin of 2012 would require momentum base data from 2007--2009, which lies outside the 2010--2024 dataset).
-
-\subsection{Historical Origin-Specific Eligibility}
-To prevent lookahead bias, a topic enters evaluation at forecast origin $t$ if and only if it accumulated at least 50 global publications in the historical 3-year window:
-\begin{equation}
-    P_{[t-2, t]}^{(i)} \ge 50 \text{ works}
-\end{equation}
-Under this criterion, exactly \textbf{992 topics (96.78\%)} qualify at Origin 2018 and \textbf{995 topics (97.07\%)} qualify at Origin 2021.
-
-\section{Evaluation Protocols and Statistical Inference}
-Model performance is evaluated against two complementary tasks:
-\begin{enumerate}
-    \item \textbf{Continuous Forecast Accuracy (RQ2):} Assessed via Mean Absolute Error (MAE):
-    \begin{equation}
-        \text{MAE} = \frac{1}{N_{\text{elig}}} \sum_{i=1}^{N_{\text{elig}}} \left| G_{\text{adj}}(i, t) - \hat{G}_{\text{adj}}(i, t) \right|
-    \end{equation}
-    \item \textbf{Early Identification of Emerging Topics (RQ3):} Topics already in the top 20\% of past adjusted growth ($[t-2, t]$) are excluded. Among the remaining 80\% of eligible topics, future high growth is defined as the top 20\% of adjusted growth over $[t+1, t+3]$ (chance level = 20\%). Topics are ranked by predicted growth, and the number of realized high-growth topics among the top 50 (Precision@50) is quantified.
-\end{enumerate}
-Statistical inference is conducted via non-parametric bootstrap resampling by topic ($B = 1,000$ iterations) to construct 95\% confidence intervals for all reported metrics.
+\section{Bootstrap Inference}
+% [Insert evaluation metrics (MAE for RQ2, Precision@50 for RQ3) and bootstrap confidence intervals]
