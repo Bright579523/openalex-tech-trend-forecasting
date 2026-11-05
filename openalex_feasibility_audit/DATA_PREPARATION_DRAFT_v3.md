@@ -73,7 +73,7 @@ This demonstrates that the deduplication update shifted denominator scale while 
 | Duplicate topic-year records | 0 duplicate records | **PASS** |
 | Missing / null values | 0 across all 399,750 matrix cells | **PASS** |
 | Denominator mismatches | 0 mismatched rows across all 15 years | **PASS** |
-| Fractional count violations ($P_{\text{Frac}} > P_{\text{Whole}}$) | 0 violations (0 non-negative infractions) | **PASS** |
+| Fractional-count bound violations ($0 \le P_{\text{Frac}} \le P_{\text{Whole}}$) | 0 violations | **PASS** |
 | RCA recalculation maximum discrepancy | $\le 0.00000500$ across all 92,250 RCA cells | **PASS** |
 | Independent audit gate | 29 / 29 checks passed (`exit 0`) | **PASS** |
 
@@ -93,11 +93,11 @@ This demonstrates that the deduplication update shifted denominator scale while 
 | **2018** | 2016–2018 | 2013–2015 | 2019–2021 |
 | **2021** | 2019–2021 | 2016–2018 | 2022–2024 |
 
-*Rationale for Origin Selection:* Constructing the momentum base $[t-5, t-3]$ for Origin 2012 requires data from $[2007, 2009]$, which lies outside our 2010–2024 dataset. Furthermore, Origin 2015 has no prior non-overlapping training window with momentum base within the 2010–2024 bounds ($t_{\text{train}} \le 2015 - 3 = 2012$). Under the leakage-free training cutoff ($t_{\text{train}} \le t_{\text{test}} - 3$), Origin 2015 serves as the single non-overlapping training window for Test Origin 2018. Therefore, formal model evaluation is conducted strictly on Origins 2018 and 2021.
+*Rationale for Origin Selection (wording to be verified against the approved Proposal before finalizing):* Origin 2015 is retained as a training origin for the 2018 test because its three-year outcome window (2016–2018) is fully observed by the 2018 forecast origin. It is not evaluated as a test origin because no earlier eligible training origin is available: a training origin of 2012 or earlier would require a momentum reference window in 2007–2009, which lies outside the 2010–2024 dataset. Under the leakage-free cutoff ($t_{\text{train}} \le t_{\text{test}} - 3$), formal model evaluation is therefore conducted on Origins 2018 and 2021 only.
 
 **Historical Origin-Specific Eligibility.** A topic enters evaluation at origin $t$ if and only if it has accumulated at least 50 global publications in the recent 3-year window:
 $$P_{[t-2, t]}^{(i)} \ge 50 \text{ works}$$
-Under the primary Selected Scholarly Work Types panel, **992 topics (96.78%)** qualify at Origin 2018, and **995 topics (97.07%)** qualify at Origin 2021 (the 996 figure belongs to the All Types Master Panel v1 baseline). Because eligibility is evaluated strictly using historical data available up to origin $t$, lookahead bias is eliminated.
+Under the primary Selected Scholarly Work Types panel, **992 topics (96.78%)** qualify at Origin 2018, and **995 topics (97.07%)** qualify at Origin 2021. Because eligibility is evaluated strictly using historical data available up to origin $t$, lookahead bias is eliminated.
 
 **Target Variable ($G_{\text{adj}}$).** Future 3-year log growth rate adjusted for global all-science growth:
 $$G_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t+1, t+3]}^{(i)}\right) - \ln\left(1 + P_{[t-2, t]}^{(i)}\right)\right] - \left[\ln\left(1 + W_{[t+1, t+3]}\right) - \ln\left(1 + W_{[t-2, t]}\right)\right]$$
@@ -174,7 +174,7 @@ $$RCA_{c,i,t} = \frac{P_{c,i,t} \,/\, P_{c,\text{All},t}}{P_{\text{Global},i,t} 
 | ข้อมูลซ้ำซ้อน (Topic-Year) | 0 รายการ | **PASS** |
 | ค่าสูญหาย (Missing / Null) | 0 ค่า จากทั้งหมด 399,750 เซลล์ | **PASS** |
 | ความไม่สอดคล้องของตัวหาร | 0 แถว ตลอด 15 ปี | **PASS** |
-| การละเมิดเงื่อนไขขอบเขต ($P_{\text{Frac}} > P_{\text{Whole}}$) | 0 รายการ (ไม่มีค่าติดลบ) | **PASS** |
+| การละเมิดขอบเขตของค่านับแบบเศษส่วน ($0 \le P_{\text{Frac}} \le P_{\text{Whole}}$) | 0 รายการ | **PASS** |
 | ความคลาดเคลื่อนในการคำนวณ RCA ซ้ำ | $\le 0.00000500$ จาก 92,250 เซลล์ RCA ทั้งหมด | **PASS** |
 | การตรวจสอบอิสระ (Independent Audit Gate) | ผ่านครบ 29 / 29 รายการ (`exit 0`) | **PASS** |
 
@@ -194,11 +194,11 @@ $$RCA_{c,i,t} = \frac{P_{c,i,t} \,/\, P_{c,\text{All},t}}{P_{\text{Global},i,t} 
 | **2018** | 2016–2018 | 2013–2015 | 2019–2021 |
 | **2021** | 2019–2021 | 2016–2018 | 2022–2024 |
 
-*เหตุผลในการเลือกจุดพยากรณ์:* การคำนวณ Momentum ฐาน $[t-5, t-3]$ ของ Origin 2012 ต้องใช้ข้อมูลปี $[2007, 2009]$ ซึ่งอยู่นอกชุดข้อมูลปี 2010–2024 ของเรา นอกจากนี้ Origin 2015 ไม่มีช่วงเทรนก่อนหน้าที่ไม่ทับซ้อนกันและมี Momentum ครบ ($t_{\text{train}} \le 2015 - 3 = 2012$) ดังนั้นภายใต้เกณฑ์ปลอด Lookahead Bias ($t_{\text{train}} \le t_{\text{test}} - 3$) จุด 2015 จึงทำหน้าที่เป็น Training Window เดียวให้กับ Test Origin 2018 การประเมินผลของโมเดลจึงทำเฉพาะจุด 2018 และ 2021 อย่างเคร่งครัด
+*เหตุผลในการเลือกจุดพยากรณ์ (ต้องตรวจกับ Proposal ที่อนุมัติก่อนใช้เป็นข้อความสุดท้าย):* ปี 2015 ใช้เป็นจุดฝึก (Training Origin) ของ Test 2018 ได้ เพราะช่วงผลลัพธ์ 3 ปีของมัน (2016–2018) ทราบครบแล้วก่อนถึงจุดพยากรณ์ 2018 แต่ไม่ใช้ 2015 เป็นจุดทดสอบ เพราะไม่มีจุดฝึกก่อนหน้าที่ใช้ได้ จุดฝึกปี 2012 หรือก่อนนั้นต้องใช้ช่วงอ้างอิง Momentum ปี 2007–2009 ซึ่งอยู่นอกชุดข้อมูลปี 2010–2024 ภายใต้เกณฑ์ปลอด Lookahead Bias ($t_{\text{train}} \le t_{\text{test}} - 3$) การประเมินโมเดลจึงทำเฉพาะจุด 2018 และ 2021
 
 **เกณฑ์การมีสิทธิ์ของหัวข้อ (Historical Origin-Specific Eligibility):** หัวข้อจะมีสิทธิ์เข้าสู่การทดสอบที่จุด $t$ เมื่อมีผลงานสะสมระดับโลกในรอบ 3 ปีที่ผ่านมาไม่ต่ำกว่า 50 ผลงาน:
 $$P_{[t-2, t]}^{(i)} \ge 50 \text{ ผลงาน}$$
-บน Panel หลัก (Selected Types) มีหัวข้อผ่านเกณฑ์ **992 หัวข้อ (96.78%)** ณ จุด 2018 และ **995 หัวข้อ (97.07%)** ณ จุด 2021 (ตัวเลข 996 เดิมเป็นตัวเลขจาก Master Panel v1 All Types) เนื่องจากเกณฑ์นี้ประเมินจากข้อมูลอดีต ณ จุด $t$ เท่านั้น จึงไม่มี Lookahead Bias
+บน Panel หลัก (Selected Types) มีหัวข้อผ่านเกณฑ์ **992 หัวข้อ (96.78%)** ณ จุด 2018 และ **995 หัวข้อ (97.07%)** ณ จุด 2021 เนื่องจากเกณฑ์นี้ประเมินจากข้อมูลอดีต ณ จุด $t$ เท่านั้น จึงไม่มี Lookahead Bias
 
 **ตัวแปรเป้าหมาย ($G_{\text{adj}}$):** อัตราการเติบโตแบบลอการิทึม 3 ปีข้างหน้าปรับด้วยการเติบโตของวิทยาศาสตร์โลก:
 $$G_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t+1, t+3]}^{(i)}\right) - \ln\left(1 + P_{[t-2, t]}^{(i)}\right)\right] - \left[\ln\left(1 + W_{[t+1, t+3]}\right) - \ln\left(1 + W_{[t-2, t]}\right)\right]$$
@@ -207,3 +207,15 @@ $$G_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t+1, t+3]}^{(i)}\right) - \ln\le
 **โมเมนตัมพื้นฐาน ($M0_{\text{adj}}$):** อัตราการเติบโตในอดีตปรับด้วยการเติบโตของวิทยาศาสตร์โลก:
 $$M0_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t-2, t]}^{(i)}\right) - \ln\left(1 + P_{[t-5, t-3]}^{(i)}\right)\right] - \left[\ln\left(1 + W_{[t-2, t]}\right) - \ln\left(1 + W_{[t-5, t-3]}\right)\right]$$
 สูตร $M0_{\text{adj}}$ ใช้นิยามช่วงเวลา 3 ปี การแปลงค่า Log และการหักลบการเติบโตของวิทยาศาสตร์โลกแบบเดียวกับ $G_{\text{adj}}$ ทุกประการ ทำให้ทำนายตัวแปรเป้าหมายแนวคิดเดียวกันโดยไม่มีพารามิเตอร์ที่ต้องเทรน: $G_{\text{adj}}(i, t) = M0_{\text{adj}}(i, t+3)$
+
+
+---
+
+## References (OpenAlex official sources)
+
+1. OpenAlex (4 November 2026). *17 million duplicate works merged: a new matcher for OpenAlex.* OpenAlex Blog. https://blog.openalex.org/17-million-duplicate-works-merged-a-new-matcher-for-openalex/ (reports 17,315,197 duplicate works merged)
+2. OpenAlex (6 October 2026). *Same topics, better assignments: a new topic classifier for OpenAlex.* OpenAlex Blog. https://blog.openalex.org/same-topics-better-assignments/
+3. OpenAlex Help Center. *Topics.* https://help.openalex.org/data/topics/
+4. OpenAlex Help Center. *Work types.* https://help.openalex.org/data/work-types/
+
+> Citation status: Items 3 and 4 were fetched successfully (HTTP 200); item 3 mentions Qwen. Items 1 and 2 returned HTTP 406 to an automated request, so their content (including the 17,315,197 figure) was not independently verified here. Open them in a browser and check the title, date and number before finalizing. Access dates must be added at submission.
