@@ -65,7 +65,7 @@
   * **Test Origin 2021:** Past window $[2019, 2021]$, Momentum base $[2016, 2018]$, Future evaluation $[2022, 2024]$.
 * **Why Earlier Origins (2012, 2015) are Excluded:**
   * Calculating past momentum $[t-5, t-3]$ for Origin 2012 requires data from $[2007, 2009]$, which does not exist in our 2010–2024 dataset.
-  * Origin 2015 has no prior non-overlapping training window $\le 2015 - 3 = 2012$ without 2007–2009 data.
+  * Origin 2015 is retained as a training origin for Test Origin 2018 (its outcome window 2016–2018 is fully observed by the 2018 forecast origin). It is not a test origin because no earlier eligible training origin exists (a 2012 origin would need momentum data from 2007–2009).
   * Therefore, the research design strictly restricts evaluation to Origins 2018 and 2021, matching the approved Proposal.
 * **Leakage-Free Cutoff:** Training origins $t_{\text{train}} \le \text{test\_origin} - 3$.
 
