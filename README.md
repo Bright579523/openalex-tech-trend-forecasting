@@ -82,7 +82,7 @@ d:\Thesis\
 │   ├── annual_work_types_and_topic_coverage.csv # ตารางสัดส่วนประเภทเอกสารและความครอบคลุม 15 ปี
 │   ├── synchronize_modeling_panel_v2.py     # สคริปต์สร้าง Synchronized Panel v2 แบบทำซ้ำได้ 100% โดยไม่ต้องยิง API
 │   ├── extract_denominators_v2.py           # สคริปต์สกัดตัวหารระดับประเทศสำหรับ Selected Scholarly Work Types
-│   ├── independent_audit_v2.py              # สคริปต์ตรวจสอบความถูกต้องอัตโนมัติ 28 รายการ
+│   ├── independent_audit_v2.py              # สคริปต์ตรวจสอบความถูกต้องอัตโนมัติ 29 รายการ
 │   ├── candidate_topics.csv                 # รายชื่อ 1,025 Topics ใน 5 สาขาเทคโนโลยี
 │   ├── all_tech_topics_taxonomy.csv         # เมตาดาต้าอนุกรมวิธาน OpenAlex Topics
 │   ├── extraction_run.log                   # บันทึกการดึงข้อมูล Master Panel v1 (4 พ.ย. 01:08–01:52 UTC+1)
