@@ -14,8 +14,9 @@
 
 This report documents the completion of **Stage 2: Dataset Preparation** and the **Stage 2.1 Methodological Consistency Audit** for the OpenAlex technology growth forecasting project.
 
-The primary modeling dataset (**Modeling Panel v2**) was extracted from OpenAlex covering **1,025 physical science and technology topics** over **15 annual intervals (2010–2024)** for **Germany (DE), China (CN), Japan (JP)**, and **Global (GLOBAL)**, restricted specifically to core peer-reviewed scholarly literature matching the approved Thesis Proposal:
+The primary modeling dataset (**Modeling Panel v2**) was extracted from OpenAlex covering **1,025 physical science and technology topics** over **15 annual intervals (2010–2024)** for **Germany (DE), China (CN), Japan (JP)**, and **Global (GLOBAL)**, restricted specifically to **Selected Scholarly Work Types** matching the approved Thesis Proposal:
 $$\text{Scope} = \{\text{article}, \text{conference-paper}, \text{review}\}$$
+*(Note: This scope reflects OpenAlex's structural work-type classification and does not assert that every individual record in these categories has undergone formal peer review.)*
 
 All 4,100 production API queries were executed with server-side 2D fail-fast group conservation checks (`meta.count == sum(parent groups) == sum(nested subgroups)`). The resulting panel contains **15,375 rows and 26 columns** with zero missing values and zero duplicate records.
 
@@ -58,7 +59,7 @@ All 4,100 production API queries were executed with server-side 2D fail-fast gro
 * **Total Rows:** 15,375 ($1,025 \text{ topics} \times 15 \text{ years}$).
 * **Duplicate Topic-Years:** 0.
 * **Missing Values:** 0 across all 26 columns.
-* **Zero-Volume Topics (20 Topics):** Exactly 20 topics have zero publications across 2010–2024 in core peer-reviewed types. They are explicitly represented with zeros (not omitted), ensuring clean handling by the Origin-Specific Eligibility filter ($\ge 50$ works in $[t-2, t]$) without lookahead bias.
+* **Zero-Volume Topics (20 Topics):** Exactly 20 topics have zero publications across 2010–2024 in Selected Scholarly Work Types. They are explicitly represented with zeros (not omitted), ensuring clean handling by the Origin-Specific Eligibility filter ($\ge 50$ works in $[t-2, t]$) without lookahead bias.
 
 ### B. Denominator Synchronization Check
 * Tested against `all_science_national_denominators_fractional_v2_selected_types.csv` across all 15 years:
@@ -95,26 +96,29 @@ $$RCA_{\text{calc}}^{\text{Frac}}(c, i, t) = \frac{P_{\text{Frac}}(c, i, t) / \t
 
 ## 5. Methodological Reconciliation with Approved Proposal
 
-### A. Target Growth Rate: Global Science Inflation Adjustment
+### A. Target Growth Rate & Adjusted Momentum Baseline ($M0_{\text{adj}}$)
 In accordance with the approved Research Design, the raw growth formula is corrected to subtract the growth of overall scientific output, ensuring that the target reflects genuine technological emergence rather than database-wide volume growth:
 
-$$G_{\text{adj}}(i,t) = \underbrace{\left[\ln(1 + P_{[t+1, t+3]}^{(i)}) - \ln(1 + P_{[t-2, t]}^{(i)})\right]}_{\text{Topic Growth Rate}} - \underbrace{\left[\ln(1 + W_{[t+1, t+3]}) - \ln(1 + W_{[t-2, t]})\right]}_{\text{Global All-Science Growth Rate}}$$
+$$G_{\text{adj}}(i,t) = \underbrace{\left[\ln(1 + P_{[t+1, t+3]}^{(i)}) - \ln(1 + P_{[t-2, t]}^{(i)})\right]}_{\text{Topic Future Log Growth}} - \underbrace{\left[\ln(1 + W_{[t+1, t+3]}) - \ln(1 + W_{[t-2, t]})\right]}_{\text{Global All-Science Future Log Growth}}$$
+
+To ensure that the Naïve Momentum Baseline ($M0$) predicts the exact same adjusted-growth concept as $G_{\text{adj}}(i,t)$, the baseline momentum feature is likewise defined as **Adjusted Momentum ($M0_{\text{adj}}$)**:
+
+$$M0_{\text{adj}}(i,t) = \underbrace{\left[\ln(1 + P_{[t-2, t]}^{(i)}) - \ln(1 + P_{[t-5, t-3]}^{(i)})\right]}_{\text{Topic Past Log Growth}} - \underbrace{\left[\ln(1 + W_{[t-2, t]}) - \ln(1 + W_{[t-5, t-3]})\right]}_{\text{Global All-Science Past Log Growth}}$$
 
 Where:
-* $P_{[t+1, t+3]}^{(i)}$ is the total publication volume of topic $i$ in the 3-year future window.
-* $P_{[t-2, t]}^{(i)}$ is the total publication volume of topic $i$ in the 3-year past window.
-* $W$ is the total Global All-Science volume under the identical Selected Types scope (`article|conference-paper|review`), available from `all_science_national_denominators_fractional_v2_selected_types.csv`.
+* $P_{[t+1, t+3]}^{(i)}$, $P_{[t-2, t]}^{(i)}$, and $P_{[t-5, t-3]}^{(i)}$ are the global publication volumes of topic $i$ in the future $[t+1, t+3]$, recent $[t-2, t]$, and previous $[t-5, t-3]$ 3-year windows.
+* $W_{[t+1, t+3]}$, $W_{[t-2, t]}$, and $W_{[t-5, t-3]}$ are the total Global All-Science volumes across the exact same 3-year windows under the identical Selected Scholarly Work Types scope (`article|conference-paper|review`).
 
 ### B. Forecast Origins & Data Feasibility
 The experimental design strictly adheres to the **two approved Forecast Origins**:
 1. **Origin $t = 2018$:**
-   * Past Observation Window: $[2016, 2018]$
+   * Past Observation Window $[t-2, t]$: $[2016, 2018]$
    * Momentum Base Window $[t-5, t-3]$: $[2013, 2015]$ (Fully available in 2010–2024 dataset)
-   * Future Evaluation Window: $[2019, 2021]$
+   * Future Evaluation Window $[t+1, t+3]$: $[2019, 2021]$
 2. **Origin $t = 2021$:**
-   * Past Observation Window: $[2019, 2021]$
+   * Past Observation Window $[t-2, t]$: $[2019, 2021]$
    * Momentum Base Window $[t-5, t-3]$: $[2016, 2018]$
-   * Future Evaluation Window: $[2022, 2024]$
+   * Future Evaluation Window $[t+1, t+3]$: $[2022, 2024]$
 
 *Clarification on Earlier Pilot Origins (2012, 2015):*  
 The candidate confirms that origins 2012 and 2015 cannot be utilized under the standard momentum definition. Specifically, for origin 2012, calculating past momentum $[t-5, t-3]$ would require data from $[2007, 2009]$, which does not exist in our 2010–2024 dataset. Furthermore, origin 2015 has no prior non-overlapping origin for training. Therefore, **the research design strictly restricts evaluation to Origins 2018 and 2021**, perfectly matching the approved Proposal.
@@ -128,16 +132,18 @@ The candidate confirms that origins 2012 and 2015 cannot be utilized under the s
 
 ## 6. Comparative Analysis: Master Panel v1 vs. Modeling Panel v2
 
+* **Classifier Provenance:** Both Master Panel v1 (`2026-11-04 01:08–01:51 UTC+1`) and Modeling Panel v2 (`2026-11-04 23:08–23:52 UTC+1`) were extracted on the same calendar day (4 November 2026), well after OpenAlex's **6 October 2026 Qwen3-8B Topic Classifier** update and **15 July 2026 Work-Type Reclassification**. Both panels share 100% identical topic taxonomy definitions and classifier versions.
+
 | Dimension | Panel v1 (All Types Baseline) | Panel v2 (Selected Types Primary) | Retention Ratio (v2 / v1) | Scientometric Interpretation |
 | :--- | :---: | :---: | :---: | :--- |
-| **Global Tech Works** | 28,728,317 | 22,510,971 | **78.36%** | Core peer-reviewed types account for 78.4% of total volume |
-| **Germany Whole Works** | 899,444 | 722,798 | **80.36%** | 19.6% non-peer-reviewed outputs excluded |
-| **Germany Frac Works** | 691,806.39 | 544,660.64 | **78.73%** | German peer-reviewed fractional credit |
-| **China Whole Works** | 4,917,250 | 4,653,398 | **94.63%** | Very high peer-reviewed concentration |
-| **China Frac Works** | 4,417,175.76 | 4,189,429.44 | **94.84%** | Minimal distortion from non-peer-reviewed types |
-| **Japan Whole Works** | 914,136 | 816,615 | **89.33%** | Stable peer-reviewed profile |
-| **Japan Frac Works** | 800,102.32 | 714,234.85 | **89.26%** | Japanese peer-reviewed fractional credit |
-| **DE RCA Correlation (v1 vs v2)** | — | — | **0.8895** | Specialization shifts slightly when non-articles are excluded |
+| **Global Tech Works** | 28,728,317 | 22,510,971 | **78.36%** | Selected Scholarly Work Types account for 78.4% of total volume |
+| **Germany Whole Works** | 899,444 | 722,798 | **80.36%** | 19.6% non-selected document types excluded |
+| **Germany Frac Works** | 691,806.39 | 544,660.64 | **78.73%** | German Selected Scholarly Work Types fractional credit |
+| **China Whole Works** | 4,917,250 | 4,653,398 | **94.63%** | High concentration in Selected Scholarly Work Types |
+| **China Frac Works** | 4,417,175.76 | 4,189,429.44 | **94.84%** | Minimal shift from non-selected document types |
+| **Japan Whole Works** | 914,136 | 816,615 | **89.33%** | Stable Selected Scholarly Work Types profile |
+| **Japan Frac Works** | 800,102.32 | 714,234.85 | **89.26%** | Japanese Selected Scholarly Work Types fractional credit |
+| **DE RCA Correlation (v1 vs v2)** | — | — | **0.8895** | Specialization shifts slightly when non-selected types are excluded |
 | **CN RCA Correlation (v1 vs v2)** | — | — | **0.9908** | Near-perfect specialization stability |
 | **JP RCA Correlation (v1 vs v2)** | — | — | **0.9589** | High specialization stability |
 

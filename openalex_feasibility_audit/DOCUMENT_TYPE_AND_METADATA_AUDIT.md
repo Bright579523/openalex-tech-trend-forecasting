@@ -15,11 +15,12 @@
 ### A. Critical Review of "All Types" vs. "Selected Types"
 In earlier exploratory notes, it was hypothesized that including "All Types" could capture early signals of emerging technologies (such as Preprints and Conference Abstracts). Following critical review, this hypothesis has been properly contextualized:
 
-1. **Untested Emerging Signal Hypothesis:** While preprints and conference presentations often precede formal journal publications, non-peer-reviewed categories in OpenAlex also encompass **Datasets, Dissertations, Catalogue Records, Book Chapters, Books, and Paratexts**.
+1. **Untested Emerging Signal Hypothesis:** While preprints and conference presentations often precede formal journal publications, non-selected categories in OpenAlex also encompass **Datasets, Dissertations, Catalogue Records, Book Chapters, Books, and Paratexts**.
 2. **OpenAlex Official Warning on Document Inflation:** The official OpenAlex documentation explicitly cautions that Datasets and Catalogue Records can exist in disproportionately large volumes, distorting `works_count` within certain fields. OpenAlex formally recommends filtering by document type when the analytical objective is to measure scientific research output.
 3. **Generalizability of Sample Topic Ratios:** Earlier sample checks showing 67% to 92% retention for core types were based on only 5 sample topics. They do not constitute empirical proof for the entire 1,025-topic universe.
-4. **Conclusion:** Claiming that "All Types" provides a superior emergence signal is an untested proposition. The thesis must not present it as an established scientific truth. Instead, the research design approved in the thesis proposal specifies peer-reviewed publications:
+4. **Conclusion:** Claiming that "All Types" provides a superior emergence signal is an untested proposition. The thesis must not present it as an established scientific truth. Instead, the research design approved in the thesis proposal specifies **Selected Scholarly Work Types**:
    $$\text{Scope} = \{\text{article}, \text{conference-paper}, \text{review}\}$$
+   *(Terminological Note: We refer to this filtered scope strictly as **Selected Scholarly Work Types** rather than "peer-reviewed literature," because OpenAlex's `type` classifier identifies document genre and does not independently verify peer-review status for every indexed item.)*
 
 ---
 
@@ -128,8 +129,8 @@ The national and global denominators for Selected Types (`all_science_national_d
 | **2024** | 11,002,324 | 7,299,947 | 66.4% | 277,727 | 199,108 | 71.7% | 1,268,544 | 1,136,724 | 89.6% | 196,335 | 166,767 | 84.9% |
 
 **Key Scientometric Insights:**
-1. Core peer-reviewed types represent ~65–73% of Global output, ~72–78% of German output, ~89–98% of Chinese output, and ~85–90% of Japanese output.
-2. Filtering by document types causes differential proportional shifts across nations, meaning that calculating RCA on Selected Types requires strictly using the matching Selected Types All-Science denominators (which our pipeline guarantees).
+1. Selected Scholarly Work Types (`article|conference-paper|review`) represent ~65–73% of Global output, ~72–78% of German output, ~89–98% of Chinese output, and ~85–90% of Japanese output.
+2. Filtering by document types causes differential proportional shifts across nations, meaning that calculating RCA on Selected Scholarly Work Types requires strictly using the matching Selected Scholarly Work Types All-Science denominators (which our pipeline guarantees).
 
 ---
 
@@ -139,7 +140,7 @@ When discussing this milestone with the thesis supervisor (University of Europe 
 
 > **Thesis Methodology Memo: Operational Scope & Document Types**  
 > 
-> * **Background:** The original thesis proposal defined the target research population as peer-reviewed scientific literature (*Articles, Conference Papers, and Reviews*).
+> * **Background:** The original thesis proposal defined the target research population as Selected Scholarly Work Types (*Articles, Conference Papers, and Reviews*).
 > * **Execution Milestone:** We have successfully completed and frozen the 1,025-topic Master Dataset under an unrestricted document-type scope (*Master Panel v1*), fully audited for 100% group conservation and zero missing values.
 > * **Proposal Alignment:** To strictly adhere to the approved research proposal and avoid extraneous document inflation (e.g. from datasets or catalogue records), we have developed and verified the filtered extraction pipeline (*Modeling Panel v2*) with exact matching All-Science denominators.
 > * **Methodological Contribution:** We propose using **Modeling Panel v2 (`article|conference-paper|review`)** as the primary dataset for feature engineering and trend forecasting, while utilizing **Master Panel v1 (All Types)** for a comprehensive **Sensitivity Analysis**. This demonstrates how document-type boundaries impact national specialization (RCA) and predictive performance, elevating the academic rigor of the master's thesis.

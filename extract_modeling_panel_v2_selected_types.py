@@ -303,25 +303,56 @@ def run_v2_extraction(args):
 
 def validate_dataset(df: pd.DataFrame):
     log_msg("=== FINAL AUDIT & VALIDATION OF MODELING PANEL V2 ===")
-    rows_passed = (len(df) == 15375) or (len(df) > 0 and len(df) % 15 == 0)
-    log_msg(f"1. Total Row Count: {len(df)} | Status: {'PASS' if rows_passed else 'CHECK'}")
+    failures = []
     
-    dup_count = df.duplicated(subset=["topic_id", "year"]).sum()
+    rows_passed = (len(df) == 15375) and (df["topic_id"].nunique() == 1025) and (df["year"].nunique() == 15)
+    log_msg(f"1. Total Row Count: {len(df)} (Topics={df['topic_id'].nunique()}, Years={df['year'].nunique()}) | Status: {'PASS' if rows_passed else 'FAIL'}")
+    if not rows_passed:
+        failures.append("Row/Topic/Year count check failed")
+    
+    dup_count = int(df.duplicated(subset=["topic_id", "year"]).sum())
     log_msg(f"2. Duplicate Topic-Years: {dup_count} | Status: {'PASS' if dup_count == 0 else 'FAIL'}")
+    if dup_count != 0:
+        failures.append(f"Found {dup_count} duplicate topic-years")
     
-    null_count = df.isnull().sum().sum()
+    null_count = int(df.isnull().sum().sum())
     log_msg(f"3. Missing / Null Values: {null_count} | Status: {'PASS' if null_count == 0 else 'FAIL'}")
+    if null_count != 0:
+        failures.append(f"Found {null_count} null values")
     
-    # Recalculate RCA and check maximum discrepancy
+    # Check fractional <= whole bounds and recalculate RCA (Whole & Fractional)
+    tol = 0.00000500 + 1e-12
     for c in ["de", "cn", "jp"]:
+        bound_violations = int((df[f'{c}_frac_count'] > df[f'{c}_whole_count'] + 1e-9).sum() + (df[f'{c}_frac_count'] < 0).sum())
+        log_msg(f"4a. Fractional Bound (0 <= Frac <= Whole) {c.upper()}: Violations={bound_violations} | Status: {'PASS' if bound_violations == 0 else 'FAIL'}")
+        if bound_violations != 0:
+            failures.append(f"Fractional bound violation for {c.upper()}: {bound_violations}")
+
+        calc_rca_whole = np.where(
+            (df['global_count'] > 0) & (df[f'{c}_allsci_whole_denom'] > 0) & (df[f'{c}_whole_count'] > 0),
+            (df[f'{c}_whole_count'] / df[f'{c}_allsci_whole_denom']) / (df['global_count'] / df['global_allsci_denom']),
+            0.0
+        )
+        max_diff_w = float(np.abs(calc_rca_whole - df[f'rca_whole_{c}']).max())
+        w_ok = max_diff_w <= tol
+        log_msg(f"4b. Recalculation Discrepancy RCA Whole {c.upper()}: {max_diff_w:.8f} | Bound <= 0.00000500: {'PASS' if w_ok else 'FAIL'}")
+        if not w_ok:
+            failures.append(f"Whole RCA discrepancy exceeded 0.00000500 for {c.upper()}: {max_diff_w:.8f}")
+
         calc_rca_frac = np.where(
             (df['global_count'] > 0) & (df[f'{c}_allsci_frac_denom'] > 0) & (df[f'{c}_frac_count'] > 0),
             (df[f'{c}_frac_count'] / df[f'{c}_allsci_frac_denom']) / (df['global_count'] / df['global_allsci_denom']),
             0.0
         )
-        diff = np.abs(calc_rca_frac - df[f'rca_frac_{c}'])
-        max_diff = diff.max()
-        log_msg(f"4. Recalculation Discrepancy RCA Frac {c.upper()}: {max_diff:.8f} | Bound <= 0.00000500: {'PASS' if max_diff <= 0.000005001 else 'CHECK'}")
+        max_diff_f = float(np.abs(calc_rca_frac - df[f'rca_frac_{c}']).max())
+        f_ok = max_diff_f <= tol
+        log_msg(f"4c. Recalculation Discrepancy RCA Frac {c.upper()}: {max_diff_f:.8f} | Bound <= 0.00000500: {'PASS' if f_ok else 'FAIL'}")
+        if not f_ok:
+            failures.append(f"Fractional RCA discrepancy exceeded 0.00000500 for {c.upper()}: {max_diff_f:.8f}")
+
+    if failures:
+        log_msg(f"CRITICAL VALIDATION FAILURE: {failures}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Extract OpenAlex Modeling Panel v2 (Selected Types)")

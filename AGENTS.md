@@ -45,12 +45,13 @@
 ### D. Forecasting Formulation, Target & Baseline
 * **Target Variable:** Future 3-Year Log Growth Rate Adjusted for Global Research Growth:
   $$G_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t+1, t+3]}^{(i)}\right) - \ln\left(1 + P_{[t-2, t]}^{(i)}\right)\right] - \left[\ln\left(1 + W_{[t+1, t+3]}\right) - \ln\left(1 + W_{[t-2, t]}\right)\right]$$
-  where $W$ is the total Global All-Science publication count under the identical Selected Types scope (`article|conference-paper|review`).
-* **Primary Benchmark Baseline ($M0$ Momentum):** Consistent Window-to-Window Past Growth:
-  $$M_{\text{window}}(i, t) = \ln\left(1 + P_{[t-2, t]}^{(i)}\right) - \ln\left(1 + P_{[t-5, t-3]}^{(i)}\right)$$
+  where $W$ is the total Global All-Science publication count under the identical Selected Scholarly Work Types scope (`article|conference-paper|review`).
+* **Primary Benchmark Baseline ($M0_{\text{adj}}$ Adjusted Momentum):** Consistent Window-to-Window Past Growth Adjusted for Global All-Science Growth:
+  $$M0_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t-2, t]}^{(i)}\right) - \ln\left(1 + P_{[t-5, t-3]}^{(i)}\right)\right] - \left[\ln\left(1 + W_{[t-2, t]}\right) - \ln\left(1 + W_{[t-5, t-3]}\right)\right]$$
+  where $[t-2, t]$ is the recent 3-year window, $[t-5, t-3]$ is the previous 3-year window, and $W$ uses the exact same two 3-year windows so that $M0_{\text{adj}}$ predicts the identical adjusted-growth concept as $G_{\text{adj}}$.
 * **Model Hierarchy:**
-  * $M0$: Naïve Momentum Baseline (No parameters)
-  * $M1$: Global History ($M0$ + Past Log Global Volume)
+  * $M0$: Naïve Adjusted Momentum Baseline ($M0_{\text{adj}}$, no learned parameters)
+  * $M1$: Global History ($M0_{\text{adj}}$ + Past Log Global Volume)
   * $M2$: Country Publication Volumes ($M1$ + Log Volumes for DE, CN, JP)
   * $M3$: National Specialization ($M2$ + $RCA_{\text{AllSci}}^{\text{Frac}}$ for DE, CN, JP)
 * **Model Class:** Regularized Linear Models (Ridge Regression with $L_2$ penalty). **No deep learning / black-box models.**
