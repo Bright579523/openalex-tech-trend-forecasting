@@ -36,50 +36,62 @@
 * **Universe Size:** Exactly **1,025 topics**.
 * **Prevalence / Eligibility Rule:** **Origin-Specific Historical Eligibility** ($\ge 50$ global works in $[t-2, t]$).
   * *Rationale:* Strictly eliminates Lookahead Bias. Evaluated separately at each forecast origin.
-  * *Coverage on Primary Panel v2 (Selected Types):* Origin 2018 (**992 topics**, 96.78%), Origin 2021 (**995 topics**, 97.07%).
-  * *Baseline Panel v1 Note:* On the unconstrained All Types panel, coverage was 2012 (985, 96.1%), 2015 (990, 96.6%), 2018 (992, 96.8%), 2021 (996, 97.2%). For the primary research design, strictly report **992 (2018) and 995 (2021)**.
-  * *Zero-Volume Topics:* 21 topics in the taxonomy have 0 eligible works in 2010–2021; this rule automatically and cleanly filters them out.
+  * *Coverage on Primary Panel v2 (Selected Types):* Training Origin 2015 (**990 topics**, 96.59%), Training Origin 2016 (**990**, 96.59%), Training Origin 2017 (**991**, 96.68%), Test Origin 2018 (**992 topics**, 96.78%), Test Origin 2021 (**995 topics**, 97.07%).
+  * *Baseline Panel v1 Note:* On the unconstrained All Types panel, coverage was 2012 (985, 96.1%), 2015 (990, 96.6%), 2018 (992, 96.8%), 2021 (996, 97.2%). For the primary research design, strictly report **992 (2018) and 995 (2021)** (with training counts **990** for Test 2018 and **3,963** pooled topic–origin observations across 2015–2018 for Test 2021).
+  * *Zero-Volume Topics:* 21 topics in the taxonomy have 0 eligible works in 2010–2021 on Synchronized Panel v2 (20 across the full 2010–2024 window); the $\ge 50$ historical eligibility rule automatically and cleanly filters them out.
 
 ### B. Paper Counting & Country Attribution
 * **Primary Counting Rule:** **Country-Level Equal Fractional Counting (Option C: $1/k$)** via server-side 2D aggregation (`group_by=publication_year,countries_distinct_count` with filter `authorships.institutions.country_code`).
   * *Formula:* $FC_{w,c} = \frac{1}{k_w}$; $P_{\text{Frac}}(c, i, t) = \sum_{k \ge 1} \frac{N(c, i, t, k)}{k}$ where $k_w$ is the number of distinct countries on paper $w$.
   * *Methodological Status:* Fully satisfies the Supervisor's requirement for fractional counting; strictly verified in Pre-Extraction Audit (100% group conservation, zero missing/null $k$, error reduced by >50-60% vs author-level ground truth). Note that pilot correlation $r = 0.9968$ from Phase 1 is reserved for Appendix/feasibility documentation and omitted from the main thesis text.
-* **Reference Comparison Rule:** **Whole Counting** is also preserved in the master panel as an auxiliary baseline column for methodological comparison and sensitivity analysis.
+* **Reference Comparison Rule:** **Whole Counting** is also preserved in the modeling panel as an auxiliary baseline column for methodological comparison and the pre-declared **Whole-Counting Alternative (`M2-WC`, `M3-WC`)** sensitivity analysis on Synchronized Panel v2.
 
 ### C. Revealed Comparative Advantage (RCA) Definition
 * **Sole Primary Feature:** **Fractional All-Science RCA ($RCA_{\text{AllSci}}^{\text{Frac}}$)**
   $$RCA_{\text{AllSci}}^{\text{Frac}}(c, i, t) = \frac{P_{\text{Frac}}(c, i, t) / P_{\text{Frac}}(c, \text{AllSci}, t)}{P(\text{Global}, i, t) / P(\text{Global}, \text{AllSci}, t)}$$
+  For 3-year forecasting windows $[t-2, t]$, $RCA^{\text{Frac}}_{c,i,[t-2,t]}$ is computed via the **ratio-of-sums** over $[t-2, t]$ and used in its **raw (untransformed, un-winsorized)** form in the primary specification ($M3$).
 * *Methodological Consistency:* Both the topic volume (numerator) and the national all-science total (denominator) strictly employ the identical $1/k$ fractional counting rule. Denominators for 2010–2024 are verified and saved in `all_science_national_denominators_fractional_v2_live_recheck_20261105.csv`.
 * *Ranking Invariance:* Recalculating $RCA_{\text{AllSci}}^{\text{Frac}}$ between original and synchronized panels across all 15,375 topic-year observations yields Pearson $r = 0.99983$ (DE), $r = 0.99986$ (CN), and $r = 0.99987$ (JP), confirming that the deduplication update shifted denominator scale while preserving specialization rankings.
 
-### D. Forecasting Formulation, Target & Baseline
+### D. Forecasting Formulation, Target & Baseline (Locked Decisions 2–4)
 * **Target Variable:** Future 3-Year Log Growth Rate Adjusted for Global Research Growth:
   $$G_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t+1, t+3]}^{(i)}\right) - \ln\left(1 + P_{[t-2, t]}^{(i)}\right)\right] - \left[\ln\left(1 + W_{[t+1, t+3]}\right) - \ln\left(1 + W_{[t-2, t]}\right)\right]$$
   where $W$ is the total Global All-Science publication count under the identical Selected Scholarly Work Types scope (`article|conference-paper|review`).
 * **Primary Benchmark Baseline ($M0_{\text{adj}}$ Adjusted Momentum):** Consistent Window-to-Window Past Growth Adjusted for Global All-Science Growth:
   $$M0_{\text{adj}}(i, t) = \left[\ln\left(1 + P_{[t-2, t]}^{(i)}\right) - \ln\left(1 + P_{[t-5, t-3]}^{(i)}\right)\right] - \left[\ln\left(1 + W_{[t-2, t]}\right) - \ln\left(1 + W_{[t-5, t-3]}\right)\right]$$
   where $[t-2, t]$ is the recent 3-year window, $[t-5, t-3]$ is the previous 3-year window, and $W$ uses the exact same two 3-year windows so that $M0_{\text{adj}}$ predicts the identical adjusted-growth concept as $G_{\text{adj}}$.
-* **Model Hierarchy:**
-  * $M0$: Naïve Adjusted Momentum Baseline ($M0_{\text{adj}}$, no learned parameters)
-  * $M1$: Global History ($M0_{\text{adj}}$ + Past Log Global Volume)
-  * $M2$: Country Publication Volumes ($M1$ + Log Volumes for DE, CN, JP)
-  * $M3$: National Specialization ($M2$ + $RCA_{\text{AllSci}}^{\text{Frac}}$ for DE, CN, JP)
-* **Model Class:** Regularized Linear Models (Ridge Regression with $L_2$ penalty). **No deep learning / black-box models.**
-  * *Hyperparameter Selection ($\lambda$) Note for Stage 3:* Because Test Origin 2018 has only one non-overlapping prior training origin (`2015`, where $[t-5, t-3] = [2010, 2012]$, $[t-2, t] = [2013, 2015]$, and target $[t+1, t+3] = [2016, 2018]$), temporal 5-fold cross-validation across multiple training origins is not possible for Origin 2018. Therefore, Ridge penalty $\lambda$ must be selected via **cross-sectional 5-fold cross-validation across eligible topics** within the training set (or within-origin topic-level CV).
-* **Evaluation Protocol (Strictly from Approved Proposal):**
-  * **Forecast Accuracy (RQ2):** Mean Absolute Error ($\text{MAE}$).
-  * **Early Identification of Emerging High-Growth Topics (RQ3):** Exclude topics already in the top 20% of adjusted growth over the past three years $[t-2, t]$. Among the remaining 80% of eligible topics, define future high-growth as the top 20% of adjusted growth over the next three years $[t+1, t+3]$ (chance level = 20%). Rank the remaining topics by predicted growth and count how many of the top 50 become high-growth (Top-50 hit count / Precision@50).
-  * **Statistical Reporting:** Report results separately for each test period (2018 and 2021), with bootstrap confidence intervals by topic.
+* **Model Hierarchy (Locked Decision 2 — Option C: 2 + 3 + 3 Progressive Design):**
+  * $M0$: Unfitted Adjusted Momentum Baseline ($\hat{G}_{\text{adj}}^{(M0)}(i, t) = M0_{\text{adj}}(i, t)$, no learned parameters)
+  * $M1$: Global History (*2 features*: $M0_{\text{adj}}(i, t)$ and $\ln\left(1 + P_{\text{Global}, i, [t-2, t]}\right)$)
+  * $M2$: Country Publication Volumes (*5 features*: $M1$ + $\ln\left(1 + P^{\text{Frac}}_{c, i, [t-2, t]}\right)$ for $c \in \{\text{DE, CN, JP}\}$)
+  * $M3$: National Specialisation Primary Specification (*8 features*: $M2$ + 3-year ratio-of-sums **Raw Fractional RCA** $RCA^{\text{Frac}}_{c, i, [t-2, t]}$ for $c \in \{\text{DE, CN, JP}\}$; not winsorized in the primary specification)
+  * *Statistical Interpretation:* Comparing $M2$ and $M3$ tests whether an RCA-based relative-specialisation *feature representation* improves out-of-sample predictive performance beyond global and national log-count features in a regularized linear model; it does not claim that RCA contains statistically independent raw information from publication counts.
+* **Pre-Declared Closed List of Sensitivity Analyses (Evaluated on Both RQ2 and RQ3):**
+  1. **`M3-LogRCA`:** Replaces the 3 raw fractional RCA features in $M3$ with $\ln\left(1 + RCA^{\text{Frac}}_{c, i, [t-2, t]}\right)$.
+  2. **`Whole-Counting Alternative` (`M2-WC` and `M3-WC`):** Uses whole-count log volumes $\ln\left(1 + P^{\text{Whole}}_{c, i, [t-2, t]}\right)$ in `M2-WC` and whole-count 3-year ratio-of-sums Raw RCA ($RCA^{\text{Whole}}_{c, i, [t-2, t]}$) in `M3-WC` on Synchronized Panel v2, maintaining a strictly consistent counting basis across counts and RCA.
+  * *Explicit Exclusions:* `Master Panel v1 (All Types)` is **not** used as a forecasting sensitivity dataset (study scope is strictly Selected Scholarly Work Types on Synchronized Panel v2). No ad-hoc sensitivity analyses may be added post-hoc.
+* **Model Class & Hyperparameter Selection (Locked Decision 3):**
+  * Regularized Linear Models (`Pipeline([("scaler", StandardScaler()), ("ridge", Ridge())])` with $L_2$ penalty; `StandardScaler` fitted strictly within each training fold; target variable never standardized). **No deep learning / black-box models.**
+  * *Topic-Grouped 5-Fold Cross-Validation:* Both Test Origins (`2018` and `2021`) use `GroupKFold(n_splits=5, shuffle=True, random_state=42)` grouped by `groups = topic_id` (referred to as *Topic-grouped Cross-validation for Hyperparameter Selection*, while final evaluation is the *Temporal Holdout* at Origins 2018 and 2021).
+  * *Alpha Grid & Tie-Breaking Rule:* Candidate grid $\alpha \in \operatorname{logspace}(-3, 5, 41)$ ($10^{-3}$ to $10^5$, 41 values), minimizing mean CV MAE (expand grid if boundary is hit). A custom **callable `refit` rule** selects the $\alpha$ with minimum mean CV MAE, and if multiple candidates lie within an **absolute tolerance of $10^{-12}$ (`1e-12`)** of the minimum CV MAE, selects the **largest $\alpha$** (strongest regularization). Full fold scores and CV tables for all 41 candidates are archived.
+* **Evaluation & Topic-Level Paired Bootstrap Protocol (Locked Decision 4):**
+  * **Forecast Accuracy (RQ2):** Mean Absolute Error ($\text{MAE}$), compared strictly within each Forecast Origin (`2018` and `2021` separately).
+  * **Early Identification of Emerging High-Growth Topics (RQ3):** At each Test Origin, exclude the top 20% of eligible topics with $M0_{\text{adj}}(i, t) \ge Q_{0.80}^{\text{Past}}(t)$ (`199` topics removed; `0` boundary ties), leaving the **Remaining Pool** of **`793` topics (Origin 2018)** and **`796` topics (Origin 2021)**. Within the Remaining Pool, define future high-growth as $HG_i = \mathbb{I}\left(G_{\text{adj}}(i, t) \ge Q_{0.80}^{\text{Future}}(t)\right)$. Report the **Actual Chance Rate** ($N_{\text{Future HG}} / N_{\text{Remaining Pool}}$) and **Chance Expected Hits@50** ($50 \times N_{\text{Future HG}} / N_{\text{Remaining Pool}}$; expected $\approx 159/793 = 20.05\%$ or $10.03$ hits in 2018, and $\approx 160/796 = 20.10\%$ or $10.05$ hits in 2021). Rank the Remaining Pool descending by $\hat{G}_{\text{adj}}^{(M)}(i, t)$ across all models (`M0–M3` and sensitivity models; tie-break by ascending `topic_id`) and report both $\text{Hits@50}$ and $\text{Precision@50} = \text{Hits@50}/50$ (explicitly noting they are two representations of the same quantity).
+  * **Statistical Reporting (Paired Topic Bootstrap):** Report 95% Percentile CIs (`B = 5,000` iterations, `random_state = 42`) using the **exact same bootstrap topic index draws across all models** for both model-level metrics and paired differences ($\Delta\text{MAE}$, $\Delta\text{Hits@50}$, $\Delta\text{Precision@50}$). For RQ2, resample eligible test topics ($N=992$ in 2018; $N=995$ in 2021) conditional on fitted predictions (without refitting/retuning $\alpha$ per replicate). For RQ3, resample with replacement directly within the fixed Remaining Pool ($N=793$ in 2018; $N=796$ in 2021) keeping $HG_i$ and $\hat{G}_{\text{adj}}^{(M)}$ fixed (without recomputing quantiles) and re-ranking the resampled pool to take the Top 50 slots.
 
-### E. Temporal Train/Test Split & Forecast Origins Scope
-* **Approved Forecast Origins (Strictly 2018 and 2021):**
-  * **Test Origin 2018:** Past window $[2016, 2018]$, Momentum base $[2013, 2015]$, Future evaluation $[2019, 2021]$.
-  * **Test Origin 2021:** Past window $[2019, 2021]$, Momentum base $[2016, 2018]$, Future evaluation $[2022, 2024]$.
-* **Why Earlier Origins (2012, 2015) are Excluded:**
-  * Calculating past momentum $[t-5, t-3]$ for Origin 2012 requires data from $[2007, 2009]$, which does not exist in our 2010–2024 dataset.
-  * Origin 2015 is retained as a training origin for Test Origin 2018 (its outcome window 2016–2018 is fully observed by the 2018 forecast origin). It is not a test origin because no earlier eligible training origin exists (a 2012 origin would need momentum data from 2007–2009).
-  * Therefore, the research design strictly restricts evaluation to Origins 2018 and 2021, matching the approved Proposal.
-* **Leakage-Free Cutoff:** Training origins $t_{\text{train}} \le \text{test\_origin} - 3$.
+### E. Temporal Train/Test Split & Forecast Origins Scope (Locked Decision 1 — Option A)
+* **Approved Test Forecast Origins (Strictly 2018 and 2021):**
+  * **Test Origin 2018:**
+    * *Training Set:* **Origin `2015`** ($N_{\text{train}} = \mathbf{990}$ eligible topics; momentum base $[2010, 2012]$, recent window $[2013, 2015]$, training target $[2016, 2018]$).
+    * *Test Set:* **Origin `2018`** ($N_{\text{test}} = \mathbf{992}$ eligible topics, RQ3 Remaining Pool $= \mathbf{793}$; momentum base $[2013, 2015]$, recent window $[2016, 2018]$, future evaluation $[2019, 2021]$).
+  * **Test Origin 2021:**
+    * *Training Set:* **Expanding Annual Origins `2015–2018`** ($N_{\text{train}} = 990 + 990 + 991 + 992 = \mathbf{3,963}$ pooled topic–origin observations, all with target windows $[t_{\text{train}}+1, t_{\text{train}}+3] \le 2021$).
+    * *Test Set:* **Origin `2021`** ($N_{\text{test}} = \mathbf{995}$ eligible topics, RQ3 Remaining Pool $= \mathbf{796}$; momentum base $[2016, 2018]$, recent window $[2019, 2021]$, future evaluation $[2022, 2024]$).
+* **Why Earlier Origins (2012, 2015) are Excluded as Test Origins:**
+  * Calculating past momentum $[t-5, t-3]$ for Origin 2012 requires data from $[2007, 2009]$, which does not exist in our 2010–2024 dataset; thus Origin 2012 cannot be used as either a training or test origin.
+  * **Origin 2015 is strictly retained as a Training Origin** (for both Test Origin 2018 and Test Origin 2021, because its outcome window `2016–2018` is fully observed by 2018). It is excluded **only as a Test Origin** because no earlier eligible training origin exists prior to 2015 (a leakage-free training origin for 2015 would be 2012, which lacks 2007–2009 momentum data).
+  * Therefore, out-of-sample test evaluation is strictly restricted to **Test Origins 2018 and 2021**, matching the approved Proposal.
+* **Leakage-Free Cutoff & Pooling Conditions:** Training origins satisfy $t_{\text{train}} \le \text{test\_origin} - 3$ (zero temporal leakage into the test period). Overlapping outcome windows among pooled training origins (`2015–2018` for Test 2021) occur strictly inside the historical training period; models are compared strictly within each Forecast Origin under a documented structural-stability assumption.
 
 ---
 
@@ -103,6 +115,7 @@ d:\Thesis\
 │   ├── STAGE2_FINAL_CORRECTION_REPORT.md    # Stage 2 Final Correction & Reconciliation Report
 │   ├── FINAL_DENOMINATOR_AND_RCA_VERIFICATION.md # Synchronized Panel v2 & RCA Verification Report
 │   ├── DATA_PREPARATION_DRAFT_v3.md         # Definitive Data Preparation chapter draft (Bilingual, Certified Handover)
+│   ├── CHAPTER4_METHODOLOGY_MASTER_SPEC.md  # Locked Chapter 4 Methodology Master Specification & Decision Lock (Decisions 1–4)
 │   ├── CHATGPT_REVIEW_BUNDLE.md             # Consolidated Independent Review Bundle
 │   ├── openalex_master_panel_1025topics.csv # FROZEN Master Panel v1 (All Types Baseline, 15,375 rows)
 │   ├── openalex_modeling_panel_1025topics_v2_selected_types.csv # PRESERVED Original Modeling Panel v2 (15,375 rows)
@@ -152,10 +165,10 @@ d:\Thesis\
    - Work Type Classifier: Major reclassification update (deployed 15 July 2026, reclassified 49.6M works).
 5. **RCA Numerical Precision Resolved:** Verified that Whole RCA and Fractional RCA recalculation errors across all 92,250 cells are strictly $\Delta \le \mathbf{0.00000500}$, meeting the exact theoretical rounding ceiling.
 6. **Dual-Panel Architecture Established:**
-   - **Master Panel v1 (All Types):** Frozen baseline for methodological comparison / sensitivity analysis (`openalex_master_panel_1025topics.csv`).
+   - **Master Panel v1 (All Types):** Frozen baseline for data-scope audit comparison in Stage 2 (`openalex_master_panel_1025topics.csv`; explicitly excluded from Stage 3 forecasting sensitivity analyses).
    - **Modeling Panel v2 (Selected Types: `type:article|conference-paper|review`):** Primary research design dataset matching proposal (Synchronized: `openalex_modeling_panel_1025topics_v2_synchronized.csv`, Preserved original: `openalex_modeling_panel_1025topics_v2_selected_types.csv`).
 7. **Stage 2: Full Modeling Dataset Extraction & Audit:** COMPLETE, CERTIFIED, AND FROZEN (29/29 checks PASS, `independent_audit_v2.py`).
-8. **Handover & Chapter 3 Drafting:** `DATA_PREPARATION_DRAFT_v3.md` established as definitive single source of truth for Chapter 3 Data Preparation text (4 sections: 3.1–3.4; Forecast Windows, Eligibility, Target, and Baseline allocated to Methodology).
-9. **Next Milestone (Stage 3):**
-   - Await user approval on Dataset Readiness Report.
-   - Upon approval, proceed to Feature Engineering ($M0-M3$ features) and Target Variable generation ($G(i, t)$). Strictly train on Primary Panel v2 (no duplicate modeling for RQ3).
+8. **Handover & Chapter 3 / Chapter 4 Specification:** `DATA_PREPARATION_DRAFT_v3.md` established as definitive data-preparation reference; `CHAPTER4_METHODOLOGY_MASTER_SPEC.md` established and **OFFICIALLY LOCKED** for Decisions 1–4, closed sensitivity protocol (`M3-LogRCA` and `Whole-Counting Alternative` `M2-WC`/`M3-WC`), callable `refit` $\alpha$ tie-breaking rule (`1e-12` tolerance, largest $\alpha$), Actual Chance Level reporting, and Paired Topic Bootstrap (`B = 5,000`, `seed = 42`).
+9. **Next Milestone (Pre-Stage 3 Diagnostic & Stage 3 Implementation):**
+   - Execute the **Pre-Stage 3 Read-Only Upper-Tail Diagnostic** on 3-year Raw Fractional RCA (`Median`, `P95`, `Max`, Spearman correlation with $\ln(1 + P_{\text{Global}, i, [t-2, t]})$, and top-RCA topic inspection across eligible origins, without winsorizing or dropping topics).
+   - Proceed upon user instruction to draft Chapter 4 (`Sections 4.4–4.8`) and implement Stage 3 Feature Engineering ($M0\text{–}M3$ + pre-declared sensitivities) and Target Variable generation ($G_{\text{adj}}(i, t)$) strictly on Synchronized Modeling Panel v2.
