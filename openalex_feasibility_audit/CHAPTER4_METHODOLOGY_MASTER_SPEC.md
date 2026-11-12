@@ -1,8 +1,8 @@
 # Chapter 4 Methodology Master Specification & Decision Lock
 
 > **Purpose:** Consolidated factual reference compiling all verified metadata from the Approved Proposal, `AGENTS.md`, Stage 2 Audit Reports, Primary Synchronized Dataset, Git Repository, and Python Environment — including the **Final Methodology Decision Lock** (Decisions 1–4 and pre-declared sensitivity/diagnostic protocols) governing Chapter 4 and Stage 3 implementation.  
-> **Date:** 11 November 2026  
-> **Status:** Stage 2 Data Frozen (`29/29` Audit Checks PASS) | **Methodology Decisions: LOCKED (11 Nov 2026)** | **Stage 3 Modeling Code: NOT YET WRITTEN**
+> **Date:** 12 November 2026 (Decisions 1–4 locked 11 Nov 2026; Section 7 Implementation Lock added 12 Nov 2026)<br>
+> **Status:** Stage 2 Data Frozen (`29/29` Audit Checks PASS) | **Methodology & Implementation Spec (Decisions 1–4 + Section 7): LOCKED (12 Nov 2026)** | **Stage 3 Modeling Code: NOT YET WRITTEN**
 
 ---
 
@@ -115,7 +115,7 @@ Because **Stage 3 has not started**, no modeling script or Ridge hyperparameter 
 
 * **Python:** `3.13.2` (`MSC v.1942 64 bit (AMD64)`, Windows 11)
 * **Libraries:** `pandas 2.2.3`, `numpy 2.2.4`, `scikit-learn 1.8.0`, `scipy 1.17.0`
-* **Git Repository:** `https://github.com/Bright579523/openalex-tech-trend-forecasting.git` (active branch `main`, HEAD commit `654bdc5`)
+* **Git Repository:** `https://github.com/Bright579523/openalex-tech-trend-forecasting.git` (active branch `main`; Methodology Decision Lock commit `c9f9de0`)
 * **Existing Production / Audit Scripts:** `extract_master_panel_1025topics.py`, `extract_modeling_panel_v2_selected_types.py`, `openalex_feasibility_audit/extract_denominators_v2.py`, `openalex_feasibility_audit/synchronize_modeling_panel_v2.py`, `openalex_feasibility_audit/independent_audit_v2.py`.
 
 ---
@@ -185,7 +185,7 @@ All count and RCA features are aggregated over the three-year historical window 
 ### Decision 3 — Ridge Hyperparameter Selection & Topic-Grouped Cross-Validation (LOCKED)
 
 * **Cross-Validation Scheme (Identical Across Test Origins 2018 and 2021):**
-  * **Splitter:** `GroupKFold(n_splits=5, shuffle=True, random_state=42)` grouped by `groups = topic_id` (verified supported in `scikit-learn 1.8.0`).
+  * **Splitter:** `GroupKFold(n_splits=5, shuffle=True, random_state=42)` grouped by `groups = topic_id` (requires `scikit-learn >= 1.6`; verified in `scikit-learn 1.8.0`).
   * **Methodological Framing:** Referred to as **Topic-grouped 5-fold Cross-validation for Hyperparameter Selection**. Grouping by `topic_id` ensures that the same research topic never appears simultaneously in both training and validation folds (which is essential when pooling 2015–2018 for Test Origin 2021, and reduces identically to shuffled 5-fold topic CV on the single-origin 2015 training set for Test Origin 2018). Because observations from different training years may still span folds in the 2021 training set, this procedure is strictly for hyperparameter tuning; final forecasting evaluation relies on the strict **Temporal Holdout** at Test Origins `2018` and `2021`.
 * **Pipeline & Candidate Grid:**
   * **Pipeline:** `Pipeline([("scaler", StandardScaler()), ("ridge", Ridge())])` so standardization is estimated strictly inside each training fold.
@@ -244,4 +244,107 @@ Before writing any Stage 3 modeling code, execute a read-only diagnostic on the 
 3. **Upper-Tail Topic Inspection:** Inspect the top-RCA topics in each country to verify whether extreme RCA values occur primarily in smaller topics near the $\ge 50$ global-works eligibility threshold.
 4. **Strict Non-Modification Rule:** Do **not** winsorize features and do **not** drop any eligible topics from the primary dataset on the basis of this diagnostic. Its purpose is strictly to understand and document the empirical distribution of RCA prior to modeling, not to alter the data to improve model fit.
 
+---
+
+## 7. Stage 3 Implementation Specification & Statistical Precision Protocol (LOCKED — 12 Nov 2026)
+
+This section locks exact software, numerical, algorithmic, and reporting rules derived from the Pre-Stage 3 Implementation Audit (`pre_stage3_audit`) so that Stage 3 scripts and Chapter 4 text match without ambiguity.
+
+### 7.1 Pre-Implementation Verification & Software Dependency Lock
+
+* **Pre-Stage 3 Read-Only Audit Status:** Verified SHA-256 integrity of primary and auxiliary CSVs, zero missing/infinite values across all eligible feature/target frames (`2015–2021`), exact $W_{[a,b]}$ window sums, exact $G_{\text{adj}}(i, t) = M0_{\text{adj}}(i, t+3)$ identity, `GroupKFold` behavior, RQ3 quantile boundaries, and all whole-count sensitivity inputs.
+* **Upper-Tail Raw Fractional RCA Diagnostic Summary (Read-Only Confirmation):** Across Origins `2015` ($N=990$), `2018` ($N=992$), `2021` ($N=995$), and Pooled `2015–2018` ($N=3,963$):
+  * Maximum 3-year Raw Fractional RCA values range between `7.1188` and `12.4237` (Origin `2015`: DE `7.1188`, CN `8.4161`, JP `12.4237`; Origin `2018`: DE `9.1964`, CN `9.6911`, JP `10.5157`; Origin `2021`: DE `8.9830`, CN `8.0661`, JP `12.1597`).
+  * Spearman rank correlation $\rho$ between Raw Fractional RCA and $\ln(1 + P_{\text{Global},i,[t-2,t]})$ is **positive and statistically significant** in every country and origin (`+0.0835` to `+0.1883`, all $p < 0.01$; Pooled `2015–2018`: DE $\rho = 0.1242$, CN $\rho = 0.1433$, JP $\rho = 0.1244$). Extreme upper-tail values are driven predominantly by well-established, specialized research topics (e.g., `T14146` with `2,968` global works in `2013–2015`; `T11741` with `1,649` in `2016–2018`; `T11347` with `2,828` in `2016–2018`), with only isolated smaller-topic cases (`T14351`, `53` works in JP `2015`). The non-winsorization lock is empirically confirmed.
+* **Pinned Software Stack & Minimum Dependency Constraint:**
+  * `Python`: `3.13.2`
+  * `numpy`: `2.2.4` *(PCG64 default bit generator via `np.random.default_rng`)*
+  * `pandas`: `2.2.3`
+  * `scipy`: `1.17.0`
+  * `scikit-learn`: **`>= 1.6` REQUIRED minimum** *(pinned runtime: `1.8.0`)*. **Explicit constraint:** `GroupKFold(shuffle=True, random_state=...)` was introduced in `scikit-learn 1.6`; running on `< 1.6` will fail with `TypeError`.
+
+---
+
+### 7.2 Topic-Grouped Cross-Validation & Direct Target Leakage Proof
+
+* **Algebraic Target-Leakage Proof ($G_{\text{adj}}(i, t) = M0_{\text{adj}}(i, t+3)$):**
+  By construction of the consecutive 3-year window growth equations in Section 3.4, every topic $i$ satisfies:
+  $$G_{\text{adj}}(i, t) = M0_{\text{adj}}(i, t+3)$$
+  (empirically verified across all `1,025` topics for $t \in \{2015, 2016, 2017, 2018\}$ with $\max |G_{\text{adj}}(i,t) - M0_{\text{adj}}(i,t+3)| = 0.00 \times 10^0$).
+  In the pooled `2015–2018` training set for Test Origin `2021` (`3,963` rows across `993` unique topics: `989` appearing in all 4 origins, plus `1` with 3 rows, `1` with 2 rows, and `2` with 1 row), standard row-level `KFold` can place `(Topic A, Origin 2018)` inside a training fold while `(Topic A, Origin 2015)` sits in the corresponding validation fold — exposing the validation target $G_{\text{adj}}(A, 2015)$ directly through the training feature $M0_{\text{adj}}(A, 2018)$. Using `GroupKFold` grouped by `topic_id` therefore eliminates **direct target leakage** inherent in the lag-window formulation, rather than serving merely as a generic grouped-data precaution.
+* **Exact Splitter Configuration (Identical Across Both Test Origins):**
+  ```python
+  cv_splitter = GroupKFold(n_splits=5, shuffle=True, random_state=42)
+  ```
+  with `groups = train_df["topic_id"]`.
+  * *Verified Origin 2018 Behavior (`N_train = 990`, 1 row per topic):* Produces partitions strictly identical to `KFold(n_splits=5, shuffle=True, random_state=42)` (`[198, 198, 198, 198, 198]` topics per fold; `0` cross-fold overlap).
+  * *Verified Origin 2021 Behavior (`N_train = 3,963`, `993` unique topics):* Eliminates all cross-fold topic overlap (`0` shared topics between train and validation folds; `[199, 199, 199, 198, 198]` unique topics and `[796, 790, 796, 789, 792]` rows per fold), while `shuffle=True` balances annual origins (`196–199` rows per year in every fold).
+
+---
+
+### 7.3 `GridSearchCV(refit=callable)` Implementation & CV Score Extraction Rule
+
+* **Estimator & Parameter Grid:**
+  `Pipeline([("scaler", StandardScaler()), ("ridge", Ridge())])`, `param_grid = {"ridge__alpha": np.logspace(-3, 5, 41)}`, `scoring = "neg_mean_absolute_error"`.
+* **Callable `refit` Tie-Breaking Rule (`1e-12` Tolerance, Largest $\alpha$):**
+  1. Read `mean_scores = cv_results["mean_test_score"]` (negative MAE).
+  2. Identify `best_neg_mae = np.max(mean_scores)`.
+  3. Find all candidate indices where `mean_scores >= best_neg_mae - 1e-12` (equivalently, $\text{MAE}(\alpha) \le \text{MAE}_{\min} + 10^{-12}$).
+  4. Return the maximum candidate index among tied candidates (selecting the largest $\alpha$ under the ascending `np.logspace(-3, 5, 41)` grid).
+* **Critical `scikit-learn` Extraction Rule (Do NOT Access `gs.best_score_`):**
+  * In `scikit-learn 1.8.0`, passing a callable to `GridSearchCV(..., refit=callable)` populates `gs.best_index_`, `gs.best_params_`, and `gs.best_estimator_`, **but does NOT populate `gs.best_score_`** (calling `gs.best_score_` raises `AttributeError`).
+  * All Stage 3 scripts MUST extract the selected model's 5-fold mean CV MAE via:
+    ```python
+    cv_mae = -float(gs.cv_results_["mean_test_score"][gs.best_index_])
+    ```
+  * Persist the full `cv_results_` table (`mean_test_score`, `std_test_score`, `split0_test_score` through `split4_test_score`, and `param_ridge__alpha` for all 41 candidates) for every model and origin.
+
+---
+
+### 7.4 RQ3 Quantile Method, Boundary Inequality (`>=`), & Origin 2021 Exact-Index Behavior
+
+* **Uniform Quantile & Boundary Lock (Applied to Both Past Filtering and Future Classification):**
+  * Explicitly invoke NumPy linear interpolation in both steps:
+    ```python
+    q80 = float(np.quantile(values, 0.80, method="linear"))
+    ```
+  * **Step 1 (Past High-Growth Exclusion):** Exclude topics with `m0_adj >= Q80_past`, leaving the Remaining Pool strictly `< Q80_past` (`793` topics for Origin 2018; `796` topics for Origin 2021; `0` boundary near-ties within `1e-9` at either origin).
+  * **Step 2 (Future High-Growth Assignment):** Within the Remaining Pool, define realized high-growth as:
+    ```python
+    hg = (rem_df["g_adj"] >= q80_fut).astype(int)
+    ```
+* **Verified Boundary Counts & Origin 2021 Exact-Index Note:**
+  * **Origin 2018 (`N_rem = 793`):** Linear quantile index $(793 - 1) \times 0.80 = 633.60$ interpolates strictly between two adjacent sorted observations; both `>=` and `>` produce **`159` future high-growth topics** (`Actual Chance Rate = 159 / 793 = 20.0504%`, `Chance Expected Hits@50 = 10.0252`).
+  * **Origin 2021 (`N_rem = 796`):** Linear quantile index $(796 - 1) \times 0.80 = 636.00$ lands on an **exact sorted data point** (sorted index `636`, `Q80_fut = 0.06890643`, unique boundary value). Applying the locked `>=` criterion yields **`160` future high-growth topics** (`Actual Chance Rate = 160 / 796 = 20.1005%`, `Chance Expected Hits@50 = 10.0503`), whereas strict `>` would yield `159` (`19.9749%`). Per pre-registered discipline, the `>=` rule is retained without modification and explicitly documented in Chapter 4 (Section 4.7).
+* **Deterministic Top-50 Ranking Tie-Breaker:** Sort topics in the Remaining Pool descending by $\hat{G}_{\text{adj}}^{(M)}(i, t)$ with ties broken by ascending `topic_id` (`sort_values(by=["pred_g_adj", "topic_id"], ascending=[False, True])`). *(Note: exact `M0_adj` duplicates exist inside the Remaining Pool — 3 duplicate pairs / 6 topics in 2018 and 1 duplicate pair / 2 topics in 2021 — and are deterministically ordered by `topic_id` when evaluating `M0`.)*
+
+---
+
+### 7.5 Paired Topic Bootstrap Protocol (`B = 5,000`, Generator Isolation & Conditional CI Scope)
+
+* **Fixed Parameters:** `B = 5,000` replicates; 95% Percentile CIs computed via explicit `np.percentile(values, [2.5, 97.5], method="linear")`.
+* **Per-Evaluation Generator Isolation (`np.random.default_rng(42)`):**
+  Instantiate a **fresh** `rng = np.random.default_rng(42)` separately for each `(RQ, Origin)` evaluation suite and draw one integer index matrix (`rng.integers(0, N, size=(5000, N))`) reused across **all** primary (`M0–M3`) and sensitivity (`M3-LogRCA`, `M2-WC`, `M3-WC`) models within that suite:
+
+| Evaluation Suite | Index Matrix Shape | Sampling Pool ($N$) | Fixed Conditioned Quantities |
+| :--- | :---: | :--- | :--- |
+| **RQ2 – Origin 2018** | `(5000, 992)` | Eligible 2018 test topics | Fitted predictions $\hat{G}_{\text{adj}}^{(M)}$ & realized $G_{\text{adj}}$ |
+| **RQ2 – Origin 2021** | `(5000, 995)` | Eligible 2021 test topics | Fitted predictions $\hat{G}_{\text{adj}}^{(M)}$ & realized $G_{\text{adj}}$ |
+| **RQ3 – Origin 2018** | `(5000, 793)` | Fixed 2018 Remaining Pool | Realized $HG_i$ & predictions $\hat{G}_{\text{adj}}^{(M)}$ *(no inner $Q_{0.80}$ recompute)* |
+| **RQ3 – Origin 2021** | `(5000, 796)` | Fixed 2021 Remaining Pool | Realized $HG_i$ & predictions $\hat{G}_{\text{adj}}^{(M)}$ *(no inner $Q_{0.80}$ recompute)* |
+
+* **Terminology & Statistical Precision on Generator Seeding:** Re-initializing `np.random.default_rng(42)` (`numpy 2.2.4`, PCG64) per `(RQ, Origin)` suite prevents **execution-order dependence** (reordering RQ2 vs. RQ3 or 2018 vs. 2021 calculations does not alter any evaluation table). Because each generator starts from seed `42`, the four matrices share an identical generator initialization rather than forming strictly independent cross-suite random streams; exact paired comparisons within every `(RQ, Origin)` suite remain 100% preserved, and software reproducibility is anchored by pinning `numpy 2.2.4`.
+* **Conditional Confidence Interval Interpretation Scope (Explicit Limitation):** Bootstrap 95% Percentile CIs measure **test-topic sampling uncertainty conditional on the fitted Ridge coefficients and tuned $\alpha$ values**. They do **not** reflect estimation variance from refitting regression weights or re-tuning $\alpha$ across bootstrap draws. This conditional scope must be stated explicitly in Chapter 4 and Chapter 5.
+* **RQ3 Re-Ranking Rule in Bootstrap Draws:** For replicate $b$, index the Remaining Pool via `matrix[b]`, sort the `N` sampled draws by `(-pred_g_adj, topic_id)`, take the first `50` positions (`[:50]`), and sum `hg` (if a topic is sampled multiple times with replacement, each sampled draw retains its identical `pred_g_adj`, `topic_id`, and `hg` and occupies consecutive slots upon sorting).
+
+---
+
+### 7.6 Chapter 4 Content Distribution & Bibliographic Note
+
+* **Chapter 4 Exposition Plan (Distributing Rationales in Context):**
+  * **Section 4.5:** Model hierarchy (`M0–M3` + closed sensitivities), Ridge ($L_2$) regularisation, hyperparameter $\alpha$, and fold-isolated `StandardScaler`.
+  * **Section 4.6:** Temporal train/test split (`2015 -> 2018`; `2015–2018 -> 2021`), `GroupKFold` (`n_splits=5`, `shuffle=True`, `random_state=42`) with explicit $G_{\text{adj}}(i,t) = M0_{\text{adj}}(i,t+3)$ target-leakage proof, `MAE`, and conditional Paired Topic Bootstrap (`B = 5,000`, 95% Percentile CI, `method="linear"`).
+  * **Section 4.7:** RQ3 emerging-growth evaluation: Past $Q_{0.80}$ exclusion (`>=`), Future $Q_{0.80}$ labeling (`>=`, highlighting Origin 2021 sorted index `636` yielding `160` topics / `20.10%`), Actual Chance Level, Top-50 deterministic ranking tie-breaker, `Hits@50` and `Precision@50` equivalence, and RQ3 conditional paired bootstrap.
+  * **Section 4.8:** Consolidated Reproducibility & Environment Summary Table consolidating random seed (`42`), CV folds (`5`), bootstrap replicates (`5,000`), quantile/percentile method (`linear`), pinned software stack (`Python 3.13.2`, `numpy 2.2.4`, `pandas 2.2.3`, `scipy 1.17.0`, `scikit-learn 1.8.0` with `>= 1.6` lower bound), and data/script lineage.
+* **Bibliographic Verification Note (`ref.bib`):** Prior to citing Efron & Tibshirani (1993) (*An Introduction to the Bootstrap*, Chapman & Hall) in Section 4.6/4.8, verify the exact edition, ISBN/DOI, and publisher metadata of the specific print/edition cited before inserting into `thesis/ref.bib`.
 
