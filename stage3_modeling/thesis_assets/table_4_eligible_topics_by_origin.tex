@@ -1,0 +1,28 @@
+% Suggested Placement: Chapter 4, Section 4.6 (Temporal Train/Test Split and Origin Eligibility)
+% Suggested Label: \label{tab:origin-eligibility}
+% Verified directly from stage3_modeling/stage3_origin_features_targets.csv (7,175 rows)
+\begin{table}[htbp]
+\centering
+\caption{Topic eligibility counts across all valid forecast origins (2015--2021) under the origin-specific historical rule $\sum_{y=t-2}^{t} P_{\text{Global}}(i, y) \ge 50$}
+\label{tab:origin-eligibility}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{c c c c r r r r l}
+\toprule
+\textbf{Origin ($t$)} & \textbf{Momentum} & \textbf{Features/Elig.} & \textbf{Target} & \textbf{Total} & \textbf{Eligible} & \textbf{Ineligible} & \textbf{Share} & \textbf{Stage 3 Role} \\
+\midrule
+\textbf{2015} & 2010--2012 & 2013--2015 & 2016--2018 & 1,025 & \textbf{990} & 35 & 96.59\% & Train (2018 \& 2021) \\
+\textbf{2016} & 2011--2013 & 2014--2016 & 2017--2019 & 1,025 & \textbf{990} & 35 & 96.59\% & Train (2021 only) \\
+\textbf{2017} & 2012--2014 & 2015--2017 & 2018--2020 & 1,025 & \textbf{991} & 34 & 96.68\% & Train (2021 only) \\
+\textbf{2018} & 2013--2015 & 2016--2018 & 2019--2021 & 1,025 & \textbf{992} & 33 & 96.78\% & Test 1 / Train (2021) \\
+\textbf{2019} & 2014--2016 & 2017--2019 & 2020--2022 & 1,025 & \textbf{994} & 31 & 96.98\% & Valid origin (non-test) \\
+\textbf{2020} & 2015--2017 & 2018--2020 & 2021--2023 & 1,025 & \textbf{995} & 30 & 97.07\% & Valid origin (non-test) \\
+\textbf{2021} & 2016--2018 & 2019--2021 & 2022--2024 & 1,025 & \textbf{995} & 30 & 97.07\% & Test 2 (holdout) \\
+\midrule
+\textbf{All 7 Origins} & \multicolumn{3}{c}{Pooled canonical Stage 3.1 rows ($7 \times 1{,}025$)} & 7,175 & \textbf{6,947} & 228 & 96.82\% & Canonical Stage 3.1 output \\
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\parbox{14.8cm}{\scriptsize \textit{Notes:} Eligibility is evaluated strictly from past global selected-work counts in $[t-2, t]$ without future information. All 1,025 technology topics are retained per origin in the canonical Stage 3.1 table via an explicit Boolean \texttt{eligible} indicator; Stage 3.2 constructs the Test 2018 ($N_{\text{train}}=990$, $N_{\text{test}}=992$) and Test 2021 ($N_{\text{train}}=3{,}963$ across 2015--2018, $N_{\text{test}}=995$) modeling subsets from eligible rows only.}
+\end{table}

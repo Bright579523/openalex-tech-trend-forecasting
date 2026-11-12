@@ -1,0 +1,30 @@
+% Suggested Placement: Chapter 4, Sections 4.4--4.5 (Model Hierarchy and Feature Definitions)
+% Suggested Label: \label{tab:model-features}
+% Verified strictly against stage3_feature_target_manifest.json and stage3_origin_features_targets.csv
+\begin{table}[htbp]
+\centering
+\caption{Feature definitions, counts, and analytical roles for benchmark, primary (\texttt{M0}--\texttt{M3}), and pre-declared sensitivity specifications}
+\label{tab:model-features}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.75cm} >{\raggedright\arraybackslash}p{2.05cm} c >{\raggedright\arraybackslash}p{4.75cm} >{\raggedright\arraybackslash}p{3.65cm}}
+\toprule
+\textbf{Model} & \textbf{Role} & \textbf{\# Feat.} & \textbf{Feature Columns (\texttt{X})} & \textbf{Analytical Purpose} \\
+\midrule
+\texttt{M0} & Primary Benchmark & 0 (Unfitted) & \textit{None (unfitted direct rule: } \texttt{m0\_adj}\textit{)} & Direct adjusted past momentum baseline predicting $G_{\text{adj}}(i,t) = M0_{\text{adj}}(i,t)$ without learned weights. \\
+\addlinespace[3pt]
+\texttt{M1} & Primary Hierarchy & 2 & \texttt{m0\_adj}, \texttt{ln\_global\_topic\_3yr} & Ridge regression on past momentum and global 3-year topic scale over $[t-2, t]$. \\
+\texttt{M2} & Primary Hierarchy & 5 & \texttt{m0\_adj}, \texttt{ln\_global\_topic\_3yr}, \texttt{ln\_frac\_de\_3yr}, \texttt{ln\_frac\_cn\_3yr}, \texttt{ln\_frac\_jp\_3yr} & Adds log 3-year $1/k$ fractional topic counts for DE, CN, and JP to M1. \\
+\texttt{M3} & Primary Specification & 8 & \texttt{m0\_adj}, \texttt{ln\_global\_topic\_3yr}, \texttt{ln\_frac\_de\_3yr}, \texttt{ln\_frac\_cn\_3yr}, \texttt{ln\_frac\_jp\_3yr}, \texttt{rca\_frac\_de\_3yr}, \texttt{rca\_frac\_cn\_3yr}, \texttt{rca\_frac\_jp\_3yr} & Primary specification: adds raw 3-year ratio-of-sums fractional RCA for DE, CN, and JP to M2. \\
+\addlinespace[3pt]
+\midrule
+\texttt{M3-LogRCA} & Sensitivity 1 (Pre-Declared) & 8 & \texttt{m0\_adj}, \texttt{ln\_global\_topic\_3yr}, \texttt{ln\_frac\_de\_3yr}, \texttt{ln\_frac\_cn\_3yr}, \texttt{ln\_frac\_jp\_3yr}, \texttt{ln\_rca\_frac\_de\_3yr}, \texttt{ln\_rca\_frac\_cn\_3yr}, \texttt{ln\_rca\_frac\_jp\_3yr} & Replaces raw fractional RCA in M3 with $\ln(1 + RCA^{\text{Frac}})$ while holding M2 counts fixed. \\
+\addlinespace[3pt]
+\texttt{M2-WC} & Sensitivity 2 (Pre-Declared) & 5 & \texttt{m0\_adj}, \texttt{ln\_global\_topic\_3yr}, \texttt{ln\_whole\_de\_3yr}, \texttt{ln\_whole\_cn\_3yr}, \texttt{ln\_whole\_jp\_3yr} & Whole-counting counterpart to M2 using whole-count log topic volumes for DE, CN, and JP. \\
+\texttt{M3-WC} & Sensitivity 2 (Pre-Declared) & 8 & \texttt{m0\_adj}, \texttt{ln\_global\_topic\_3yr}, \texttt{ln\_whole\_de\_3yr}, \texttt{ln\_whole\_cn\_3yr}, \texttt{ln\_whole\_jp\_3yr}, \texttt{rca\_whole\_de\_3yr}, \texttt{rca\_whole\_cn\_3yr}, \texttt{rca\_whole\_jp\_3yr} & Pairs whole-count log volumes with whole-count 3-year ratio-of-sums RCA using consistent whole-count denominators. \\
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\parbox{14.8cm}{\scriptsize \textit{Notes:} All predictive features are computed strictly from publications in years $\le t$ at forecast origin $t$; future outcome counts ($[t+1, t+3]$) and target \texttt{g\_adj} are excluded from every feature set \texttt{X}. Fitted models (\texttt{M1}--\texttt{M3-WC}) use standardized Ridge regression with \texttt{StandardScaler} estimated strictly within each cross-validation training fold. \texttt{M0} is evaluated directly via \texttt{m0\_adj} without parameter fitting.}
+\end{table}

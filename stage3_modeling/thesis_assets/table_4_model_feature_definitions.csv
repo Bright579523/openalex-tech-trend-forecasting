@@ -1,0 +1,8 @@
+model,role,n_features,feature_columns,purpose
+M0,Primary Benchmark,0 (Unfitted),None (direct rule: m0_adj),"Direct adjusted past momentum baseline predicting G_adj(i,t) = M0_adj(i,t) without learned parameters."
+M1,Primary Hierarchy,2,"m0_adj, ln_global_topic_3yr",Tests whether linear Ridge weighting of past momentum and global 3-year topic scale improves out-of-sample growth forecasts.
+M2,Primary Hierarchy,5,"m0_adj, ln_global_topic_3yr, ln_frac_de_3yr, ln_frac_cn_3yr, ln_frac_jp_3yr","Adds log-transformed 3-year fractional publication volumes for Germany (DE), China (CN), and Japan (JP) beyond M1 global history."
+M3,Primary Specification,8,"m0_adj, ln_global_topic_3yr, ln_frac_de_3yr, ln_frac_cn_3yr, ln_frac_jp_3yr, rca_frac_de_3yr, rca_frac_cn_3yr, rca_frac_jp_3yr","Primary specialisation model adding untransformed, unwinsorized 3-year ratio-of-sums fractional RCA for DE, CN, and JP to M2."
+M3-LogRCA,Sensitivity 1 (Pre-Declared),8,"m0_adj, ln_global_topic_3yr, ln_frac_de_3yr, ln_frac_cn_3yr, ln_frac_jp_3yr, ln_rca_frac_de_3yr, ln_rca_frac_cn_3yr, ln_rca_frac_jp_3yr",Replaces raw fractional RCA in M3 with ln(1 + RCA) while holding all M2 count features fixed to test functional-form sensitivity.
+M2-WC,Sensitivity 2 (Pre-Declared),5,"m0_adj, ln_global_topic_3yr, ln_whole_de_3yr, ln_whole_cn_3yr, ln_whole_jp_3yr","Whole-counting counterpart to M2 replacing fractional DE, CN, and JP topic counts with whole-count log volumes."
+M3-WC,Sensitivity 2 (Pre-Declared),8,"m0_adj, ln_global_topic_3yr, ln_whole_de_3yr, ln_whole_cn_3yr, ln_whole_jp_3yr, rca_whole_de_3yr, rca_whole_cn_3yr, rca_whole_jp_3yr",Full whole-counting counterpart to M3 adding whole-count 3-year ratio-of-sums RCA paired strictly with whole-count all-science denominators.

@@ -1,0 +1,253 @@
+{
+  "stage": "3.1_feature_and_target_construction",
+  "created_utc": "2026-11-12T01:05:16Z",
+  "git": {
+    "git_head": "ffc17163b0a914d62fa4861a0f9e9a5c3e8eb382",
+    "required_checkpoint_commit": "ffc1716",
+    "checkpoint_is_ancestor": true
+  },
+  "software_environment": {
+    "python": "3.13.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.2.4",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit_learn": "1.8.0"
+  },
+  "inputs": {
+    "primary_panel": {
+      "path": "openalex_feasibility_audit/openalex_modeling_panel_1025topics_v2_synchronized.csv",
+      "rows": 15375,
+      "columns": 26,
+      "sha256_pre": "f0049cd71f5ba8545c2e3cbb850e036a7b849828321cd23aa1d04771e60d7175",
+      "sha256_post": "f0049cd71f5ba8545c2e3cbb850e036a7b849828321cd23aa1d04771e60d7175",
+      "expected_sha256": "f0049cd71f5ba8545c2e3cbb850e036a7b849828321cd23aa1d04771e60d7175",
+      "preserved_byte_for_byte": true
+    },
+    "national_denominators": {
+      "path": "openalex_feasibility_audit/all_science_national_denominators_fractional_v2_live_recheck_20261105.csv",
+      "rows": 15,
+      "columns": 10,
+      "sha256_pre": "9c2d9cccee65c156494b96447ce53045d43e514c74aa10ec9f1c85915b33afce",
+      "sha256_post": "9c2d9cccee65c156494b96447ce53045d43e514c74aa10ec9f1c85915b33afce",
+      "expected_sha256": "9c2d9cccee65c156494b96447ce53045d43e514c74aa10ec9f1c85915b33afce",
+      "preserved_byte_for_byte": true
+    }
+  },
+  "output": {
+    "path": "stage3_modeling/stage3_origin_features_targets.csv",
+    "rows": 7175,
+    "columns": 42,
+    "column_order": [
+      "forecast_origin",
+      "topic_id",
+      "topic_name",
+      "field_name",
+      "subfield_name",
+      "eligible",
+      "g_adj",
+      "m0_adj",
+      "ln_global_topic_3yr",
+      "ln_frac_de_3yr",
+      "ln_frac_cn_3yr",
+      "ln_frac_jp_3yr",
+      "rca_frac_de_3yr",
+      "rca_frac_cn_3yr",
+      "rca_frac_jp_3yr",
+      "ln_rca_frac_de_3yr",
+      "ln_rca_frac_cn_3yr",
+      "ln_rca_frac_jp_3yr",
+      "ln_whole_de_3yr",
+      "ln_whole_cn_3yr",
+      "ln_whole_jp_3yr",
+      "rca_whole_de_3yr",
+      "rca_whole_cn_3yr",
+      "rca_whole_jp_3yr",
+      "global_topic_prev3yr",
+      "global_topic_3yr",
+      "w_allsci_prev3yr",
+      "w_allsci_past3yr",
+      "frac_de_3yr",
+      "frac_cn_3yr",
+      "frac_jp_3yr",
+      "denom_frac_de_3yr",
+      "denom_frac_cn_3yr",
+      "denom_frac_jp_3yr",
+      "whole_de_3yr",
+      "whole_cn_3yr",
+      "whole_jp_3yr",
+      "denom_whole_de_3yr",
+      "denom_whole_cn_3yr",
+      "denom_whole_jp_3yr",
+      "target_global_topic_fut3yr",
+      "target_w_allsci_fut3yr"
+    ],
+    "sha256": "9fc15d6ed16ade633547bfca9efca1db92827aa665cbb4509d76c7dae057f488",
+    "csv_serialization": {
+      "index": false,
+      "encoding": "utf-8",
+      "lineterminator": "\\n",
+      "float_format": null
+    }
+  },
+  "forecast_origins": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+  ],
+  "topics_per_origin": 1025,
+  "eligibility_definition": {
+    "column": "eligible",
+    "rule": "sum(global_count over [t-2, t]) >= 50",
+    "min_global_works_3yr": 50,
+    "ineligible_rows_retained": true
+  },
+  "schema_roles": {
+    "identifier_columns": [
+      "forecast_origin",
+      "topic_id",
+      "topic_name",
+      "field_name",
+      "subfield_name",
+      "eligible"
+    ],
+    "target_column": "g_adj",
+    "audit_past_window_columns": [
+      "global_topic_prev3yr",
+      "global_topic_3yr",
+      "w_allsci_prev3yr",
+      "w_allsci_past3yr",
+      "frac_de_3yr",
+      "frac_cn_3yr",
+      "frac_jp_3yr",
+      "denom_frac_de_3yr",
+      "denom_frac_cn_3yr",
+      "denom_frac_jp_3yr",
+      "whole_de_3yr",
+      "whole_cn_3yr",
+      "whole_jp_3yr",
+      "denom_whole_de_3yr",
+      "denom_whole_cn_3yr",
+      "denom_whole_jp_3yr"
+    ],
+    "audit_future_window_columns": [
+      "target_global_topic_fut3yr",
+      "target_w_allsci_fut3yr"
+    ],
+    "model_feature_sets": {
+      "M0": [],
+      "M1": [
+        "m0_adj",
+        "ln_global_topic_3yr"
+      ],
+      "M2": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr"
+      ],
+      "M3": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "rca_frac_de_3yr",
+        "rca_frac_cn_3yr",
+        "rca_frac_jp_3yr"
+      ],
+      "M3-LogRCA": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "ln_rca_frac_de_3yr",
+        "ln_rca_frac_cn_3yr",
+        "ln_rca_frac_jp_3yr"
+      ],
+      "M2-WC": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_whole_de_3yr",
+        "ln_whole_cn_3yr",
+        "ln_whole_jp_3yr"
+      ],
+      "M3-WC": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_whole_de_3yr",
+        "ln_whole_cn_3yr",
+        "ln_whole_jp_3yr",
+        "rca_whole_de_3yr",
+        "rca_whole_cn_3yr",
+        "rca_whole_jp_3yr"
+      ]
+    }
+  },
+  "formulas_and_windows": {
+    "g_adj": "[ln(1 + P_Global(i,[t+1,t+3])) - ln(1 + P_Global(i,[t-2,t]))] - [ln(1 + W([t+1,t+3])) - ln(1 + W([t-2,t]))]",
+    "m0_adj": "[ln(1 + P_Global(i,[t-2,t])) - ln(1 + P_Global(i,[t-5,t-3]))] - [ln(1 + W([t-2,t])) - ln(1 + W([t-5,t-3]))]",
+    "log_counts": "ln(1 + sum(count over [t-2, t]))",
+    "rca_frac_3yr": "ratio-of-sums: (sum_3yr(P_frac_c) / sum_3yr(Denom_frac_c)) / (sum_3yr(P_global) / sum_3yr(W_allsci)); 0.0 when P_global_3yr == 0",
+    "ln_rca_frac_3yr": "ln(1 + rca_frac_c_3yr)",
+    "rca_whole_3yr": "ratio-of-sums: (sum_3yr(P_whole_c) / sum_3yr(Denom_whole_c)) / (sum_3yr(P_global) / sum_3yr(W_allsci)); 0.0 when P_global_3yr == 0",
+    "windows": {
+      "momentum_base": "[t-5, t-3]",
+      "recent_features_and_eligibility": "[t-2, t]",
+      "future_target_only": "[t+1, t+3]"
+    }
+  },
+  "builder_validation_results": {
+    "check_a_identity_max_abs_diff": {
+      "2015_to_2018": 0.0,
+      "2016_to_2019": 0.0,
+      "2017_to_2020": 0.0,
+      "2018_to_2021": 0.0
+    },
+    "check_c_eligibility_counts": {
+      "2015": {
+        "total_topics": 1025,
+        "eligible_topics": 990,
+        "ineligible_topics": 35
+      },
+      "2016": {
+        "total_topics": 1025,
+        "eligible_topics": 990,
+        "ineligible_topics": 35
+      },
+      "2017": {
+        "total_topics": 1025,
+        "eligible_topics": 991,
+        "ineligible_topics": 34
+      },
+      "2018": {
+        "total_topics": 1025,
+        "eligible_topics": 992,
+        "ineligible_topics": 33
+      },
+      "2019": {
+        "total_topics": 1025,
+        "eligible_topics": 994,
+        "ineligible_topics": 31
+      },
+      "2020": {
+        "total_topics": 1025,
+        "eligible_topics": 995,
+        "ineligible_topics": 30
+      },
+      "2021": {
+        "total_topics": 1025,
+        "eligible_topics": 995,
+        "ineligible_topics": 30
+      }
+    },
+    "check_d_all_rows_finite_no_nulls": true,
+    "check_e_feature_lengths_and_leakage_isolation": true
+  }
+}

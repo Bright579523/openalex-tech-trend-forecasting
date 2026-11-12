@@ -1,0 +1,34 @@
+% Suggested Placement: Appendix A (Stage 3.1 Independent Audit Summary)
+% Suggested Label: \label{tab:stage31-validation}
+% Grounded in stage3_feature_target_audit_report.md (19/19 PASS) and stage3_feature_target_manifest.json
+\begin{table}[htbp]
+\centering
+\caption{Summary of Stage 3.1 feature and target construction validation checks and independent leakage audit results}
+\label{tab:stage31-validation}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.45cm} >{\raggedright\arraybackslash}p{4.85cm} c >{\raggedright\arraybackslash}p{5.15cm}}
+\toprule
+\textbf{Validation Domain} & \textbf{Verification Scope} & \textbf{Status} & \textbf{Observed Audit Evidence} \\
+\midrule
+Input Integrity & Pre-run SHA-256 and structural check on Synchronized Panel v2 ($15{,}375 \times 26$) and National Denominators ($15 \times 10$). & \textbf{PASS} & Hashes \texttt{f0049cd7...} and \texttt{9c2d9ccc...}; 0 nulls; 100\% year/denominator alignment. \\
+\addlinespace[3pt]
+Output Dimensions & Canonical table dimensions, valid origin range (2015--2021), full 1,025-topic retention, and manifest checksum parity. & \textbf{PASS} & $7{,}175 \times 42$ rows/cols; 1,025 topics/origin; 0 duplicates; output SHA-256 \texttt{9fc15d6e...}. \\
+\addlinespace[3pt]
+Formula Verification & Independent scalar recomputation (\texttt{csv.DictReader} + \texttt{math.log1p}) over 7,175 rows; identity $G_{\text{adj}}(i,t)=M0_{\text{adj}}(i,t+3)$. & \textbf{PASS} & 0 discrete errors; model $\max|\Delta|=2.665\times 10^{-15}$; identity $\max|\Delta|=0.00$. \\
+\addlinespace[3pt]
+Feature/Target Separation & Schema disjointness between \texttt{X} feature lists and future/target columns; verification of raw unwinsorized M3 RCA. & \textbf{PASS} & 0 overlap with \texttt{g\_adj} or \texttt{target\_*}; feature counts \texttt{M1}=2, \texttt{M2}=5, \texttt{M3}=8; raw max JP RCA $= 12.4237$. \\
+\addlinespace[3pt]
+Time-Window Leakage Tests & Forward-year poisoning test replacing all years $> t$ with $999{,}999{,}999$ across every topic and origin. & \textbf{PASS} & Scalar feature/eligibility diff $= 0.00$ (CSV $\max|\Delta|=2.66\times 10^{-15}$); target shifts ($\min|\Delta|=5.94$). \\
+\addlinespace[3pt]
+Missing \& Infinite Values & Completeness, finiteness, and monotonicity bounds ($0 \le P_{\text{Frac}} \le P_{\text{Whole}} \le P_{\text{Global}}$, $\text{RCA} \ge 0$). & \textbf{PASS} & 0 nulls; 0 NaNs; 0 $\pm\infty$ (all 7,175 and 6,947 eligible rows); 100\% bound compliance. \\
+\addlinespace[3pt]
+Independent Audit (19/19) & Standalone audit suite (\texttt{audit\_stage3\_features\_targets.py}, zero builder imports) checking all origin counts and equations. & \textbf{PASS} & $19 / 19$ checks PASS (\texttt{exit 0}); eligible counts 2015--2021: 990, 990, 991, 992, 994, 995, 995. \\
+\addlinespace[3pt]
+Source-Data Preservation & Post-build and post-audit SHA-256 verification ensuring frozen Stage 2 datasets remain unaltered. & \textbf{PASS} & Byte-for-byte identical to frozen Stage 2 checksums. \\
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\parbox{14.8cm}{\scriptsize \textit{Notes:} Verified on \texttt{stage3\_origin\_features\_targets.csv} ($7{,}175 \times 42$; $6{,}947$ eligible observations across origins 2015--2021) at Git checkpoint \texttt{ffc1716}. All sensitivity counting bases (\texttt{M3-LogRCA}, \texttt{M2-WC}, \texttt{M3-WC}) match the Stage 3.1 manifest without post-hoc modification.}
+\end{table}
