@@ -1,0 +1,3 @@
+Evaluation Suite,Training Origins,Evaluation Window,Train Obs (Unique Topics),5-Fold GroupKFold Val Rows (Overlap),Eligible Test Topics,Excluded Past HG (>= Q80_past),RQ3 Remaining Pool (< Q80_past),Future HG (>= Q80_fut),Actual Chance Rate,Chance Expected Hits@50
+Test Origin 2018,2015,2019-2021,990 (990),198 / 198 / 198 / 198 / 198 (0),992,199 (Q80=0.1763),793,159 (Q80=0.0216),20.05%,10.03
+Test Origin 2021,2015-2018 (Pooled),2022-2024,"3,963 (993)",796 / 790 / 796 / 789 / 792 (0),995,199 (Q80=0.1418),796,160 (Q80=0.0689),20.10%,10.05

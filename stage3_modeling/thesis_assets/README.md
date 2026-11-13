@@ -80,4 +80,30 @@
 ```bash
 python -B stage3_modeling/thesis_assets/build_thesis_tables.py
 python -B stage3_modeling/thesis_assets/fig_4_feature_target_workflow.py
+python -B stage3_modeling/thesis_assets/build_stage3_2_thesis_assets.py
 ```
+
+---
+
+## Stage 3.2 Thesis Assets (Derived Strictly from Audited Stage 3.2 Splits)
+
+### 5. Temporal Split, Topic-Grouped CV, and RQ3 Cohort Summary Table
+* **Files:**
+  * [`table_4_temporal_split_and_rq3_pool.csv`](table_4_temporal_split_and_rq3_pool.csv)
+  * [`table_4_temporal_split_and_rq3_pool.tex`](table_4_temporal_split_and_rq3_pool.tex)
+* **Generator Script:** [`build_stage3_2_thesis_assets.py`](build_stage3_2_thesis_assets.py)
+* **Suggested Thesis Number:** **Table 4.x** *(Chapter 4 Methodology; tentative label `tab:stage32-splits-rq3`)*
+* **Suggested Caption:** *Temporal Train/Test Partitions, Topic-Grouped Cross-Validation Structure, and RQ3 Cohort Filtering Summary for Test Forecast Origins 2018 and 2021.*
+* **Chapter & Subsection Placement:** **Chapter 4 (Methodology), Sections 4.6–4.7** — Temporal Train/Test Split, Topic-Grouped CV, and RQ3 Remaining Pool Filtering.
+* **Authoritative Source:** `stage3_modeling/stage3_2_splits/stage3_2_splits_manifest.json` and `stage3_modeling/stage3_2_splits/stage3_2_splits_audit_report.md` (`22/22 PASS`).
+
+### 6. Temporal Backtesting & Empirical RQ3 Cohort Partition Figure
+* **Files:**
+  * [`fig_4_temporal_split_and_rq3_design.svg`](fig_4_temporal_split_and_rq3_design.svg)
+  * [`fig_4_temporal_split_and_rq3_design.pdf`](fig_4_temporal_split_and_rq3_design.pdf)
+  * [`fig_4_temporal_split_and_rq3_design.png`](fig_4_temporal_split_and_rq3_design.png)
+* **Generator Script:** [`build_stage3_2_thesis_assets.py`](build_stage3_2_thesis_assets.py)
+* **Suggested Thesis Number:** **Figure 4.x** *(Chapter 4 Methodology; tentative label `fig:stage32-splits-rq3`)*
+* **Suggested Caption:** *Leakage-free expanding backtesting timeline (2010–2024) and empirical RQ3 high-growth cohort partitioning on verified eligible test topics at Forecast Origins 2018 ($N=992$) and 2021 ($N=995$).*
+* **Chapter & Subsection Placement:** **Chapter 4 (Methodology), Sections 4.6–4.7**.
+* **Authoritative Source:** Plotted 100% from real Stage 3.2 verified files (`test_2018.csv`, `test_2021.csv`, `rq3_pool_2018.csv`, `rq3_pool_2021.csv`, `stage3_2_splits_manifest.json`).

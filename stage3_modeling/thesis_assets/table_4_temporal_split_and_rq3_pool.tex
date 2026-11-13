@@ -1,0 +1,31 @@
+% Auto-generated from stage3_modeling/stage3_2_splits/stage3_2_splits_manifest.json (Stage 3.2 verified 22/22 PASS)
+\begin{table}[htbp]
+    \centering
+    \small
+    \caption{Temporal Train/Test Partitions, Topic-Grouped Cross-Validation Structure, and RQ3 Cohort Filtering Summary for Test Forecast Origins 2018 and 2021}
+    \label{tab:stage32-splits-rq3}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Partition / Metric} & \textbf{Test Origin 2018} & \textbf{Test Origin 2021} \\
+        \midrule
+        Training origin(s) & 2015 & 2015--2018 (Expanding) \\
+        Training observation rows ($N_{\text{train}}$) & 990 & 3,963 \\
+        Unique training topics & 990 & 993 \\
+        5-Fold \texttt{GroupKFold} cross-fold topic overlap & 0 & 0 \\
+        \midrule
+        Future evaluation window $[t+1, t+3]$ & 2019--2021 & 2022--2024 \\
+        Eligible test topics ($N_{\text{test}}$, $\sum_{[t-2,t]} P_{\text{Global}} \ge 50$) & 992 & 995 \\
+        Past high-growth threshold $Q_{0.80}^{\text{Past}}$ (\texttt{linear}) & 0.176273 & 0.141774 \\
+        Excluded past high-growth topics ($\ge Q_{0.80}^{\text{Past}}$) & 199 & 199 \\
+        \textbf{RQ3 Remaining Pool} ($< Q_{0.80}^{\text{Past}}$) & \textbf{793} & \textbf{796} \\
+        Future high-growth threshold $Q_{0.80}^{\text{Fut}}$ (\texttt{linear}) & 0.021604 & 0.068906 \\
+        Future high-growth topics ($HG_i = 1$, $\ge Q_{0.80}^{\text{Fut}}$) & 159 & 160$^{\dagger}$ \\
+        Actual Chance Rate ($N_{\text{Future HG}} / N_{\text{Rem}}$) & 20.05\% & 20.10\% \\
+        Chance Expected Hits@50 ($50 \times \text{Chance Rate}$) & 10.03 & 10.05 \\
+        \bottomrule
+    \end{tabular}
+    \begin{minipage}{0.92\textwidth}
+    \vspace{0.35em}\footnotesize
+    \textit{Note:} $^{\dagger}$At Test Origin 2021 ($N_{\text{Rem}} = 796$), linear interpolation index $(796-1)\times 0.80 = 636.0$ lands on an exact sorted observation ($Q_{0.80}^{\text{Fut}} = 0.06890643$); the locked inclusive criterion ($\ge$) yields 160 future high-growth topics. Topic-grouped CV uses \texttt{GroupKFold(n\_splits=5, shuffle=True, random\_state=42)} grouped by \texttt{topic\_id}.
+    \end{minipage}
+\end{table}

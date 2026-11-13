@@ -1,0 +1,635 @@
+{
+  "stage": "3.3",
+  "title": "Ridge Regression and GroupKFold Hyperparameter Tuning",
+  "environment": {
+    "python": "3.13.2",
+    "numpy": "2.2.4",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.8.0",
+    "joblib": "1.5.3",
+    "sklearn_min_required": "1.6"
+  },
+  "source_inputs": {
+    "stage3_2_manifest_relative_path": "stage3_modeling/stage3_2_splits/stage3_2_splits_manifest.json",
+    "stage3_2_manifest_sha256": "934f6e19fa54fb5b7b5121b02f4b278aa8e52b9c7265c4db550c30b371edafcd",
+    "training_files_used": {
+      "2018": {
+        "features_path": "stage3_modeling/stage3_2_splits/train_2018_features.csv",
+        "features_sha256": "89b220d14407d6b3b3cde69c2a9fb3ac1a8b6fc92bc0af28411520b708730ce1",
+        "targets_path": "stage3_modeling/stage3_2_splits/train_2018_targets.csv",
+        "targets_sha256": "307c2bfce2dd663a1f133d679d58875ec4060cfb91155469da719b84c2543a7a"
+      },
+      "2021": {
+        "features_path": "stage3_modeling/stage3_2_splits/train_2021_features.csv",
+        "features_sha256": "cfa72f2ef21142b917feecddef57434bbc998becadd511747aa123cd1c72c8dc",
+        "targets_path": "stage3_modeling/stage3_2_splits/train_2021_targets.csv",
+        "targets_sha256": "262d7ee044b5b158fbf844ebf19d71e077bf2ec2fdbd9d339cc6d15a877779da"
+      }
+    }
+  },
+  "locked_hyperparameter_protocol": {
+    "pipeline_steps": [
+      "StandardScaler()",
+      "Ridge()"
+    ],
+    "scoring": "neg_mean_absolute_error",
+    "cv_splitter": "GroupKFold(n_splits=5, shuffle=True, random_state=42)",
+    "initial_alpha_grid": "np.logspace(-3, 5, 41)",
+    "tie_breaking_rule": "max_alpha within 1e-12 absolute tolerance of min mean CV MAE",
+    "tie_tolerance": 1e-12,
+    "score_extraction": "-float(gs.cv_results_['mean_test_score'][gs.best_index_])",
+    "n_jobs": 1
+  },
+  "experiments": {
+    "2018": {
+      "test_origin": 2018,
+      "train_origins": [
+        2015
+      ],
+      "train_rows": 990,
+      "train_unique_topics": 990,
+      "target_column": "g_adj",
+      "cv_splitter": "GroupKFold(n_splits=5, shuffle=True, random_state=42)",
+      "group_column": "topic_id",
+      "folds": [
+        {
+          "fold": 0,
+          "train_rows": 792,
+          "val_rows": 198,
+          "train_unique_topics": 792,
+          "val_unique_topics": 198,
+          "topic_overlap": 0
+        },
+        {
+          "fold": 1,
+          "train_rows": 792,
+          "val_rows": 198,
+          "train_unique_topics": 792,
+          "val_unique_topics": 198,
+          "topic_overlap": 0
+        },
+        {
+          "fold": 2,
+          "train_rows": 792,
+          "val_rows": 198,
+          "train_unique_topics": 792,
+          "val_unique_topics": 198,
+          "topic_overlap": 0
+        },
+        {
+          "fold": 3,
+          "train_rows": 792,
+          "val_rows": 198,
+          "train_unique_topics": 792,
+          "val_unique_topics": 198,
+          "topic_overlap": 0
+        },
+        {
+          "fold": 4,
+          "train_rows": 792,
+          "val_rows": 198,
+          "train_unique_topics": 792,
+          "val_unique_topics": 198,
+          "topic_overlap": 0
+        }
+      ],
+      "fold_assignments_relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_folds_2018.csv",
+      "fold_assignments_sha256": "12d9331b0f1a41e1b3d81ffd47243f52e252953a82d892fb1dfba79f5804ea52",
+      "models": {
+        "M0": {
+          "fitted": false,
+          "role": "unfitted_direct_momentum_benchmark",
+          "feature_columns": [],
+          "benchmark_column": "m0_adj"
+        },
+        "M1": {
+          "fitted": true,
+          "feature_columns": [
+            "m0_adj",
+            "ln_global_topic_3yr"
+          ],
+          "n_features": 2,
+          "train_rows_refit": 990,
+          "selected_alpha": 1.584893192461114e-07,
+          "selected_log10_alpha": -6.8,
+          "best_index": 1,
+          "mean_cv_mae": 0.1336048687391765,
+          "std_cv_mae": 0.0070868384334640275,
+          "fold_maes": [
+            0.1385328497767618,
+            0.1384348401320127,
+            0.128902521766152,
+            0.14025887230941922,
+            0.12189525971153675
+          ],
+          "n_tied_candidates_within_1e_12": 2,
+          "grid_expanded": true,
+          "expansion_history": [
+            {
+              "round": 0,
+              "log10_min": -3.0,
+              "log10_max": 5.0,
+              "n_candidates": 41,
+              "selected_alpha": 0.001,
+              "selected_cv_mae": 0.13360487725779138,
+              "boundary_hit": "lower"
+            },
+            {
+              "round": 1,
+              "log10_min": -5.0,
+              "log10_max": 5.0,
+              "n_candidates": 51,
+              "selected_alpha": 1e-05,
+              "selected_cv_mae": 0.133604868823026,
+              "boundary_hit": "lower"
+            }
+          ],
+          "final_alpha_grid": {
+            "log10_min": -7.0,
+            "log10_max": 5.0,
+            "log10_step": 0.2,
+            "n_candidates": 61,
+            "alpha_min": 1e-07,
+            "alpha_max": 100000.0
+          },
+          "selected_on_boundary": false,
+          "refit_intercept": 0.032327592316167095,
+          "refit_standardized_coefs": {
+            "m0_adj": 0.21955867991434208,
+            "ln_global_topic_3yr": -0.03611689133109769
+          },
+          "pipeline_relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2018_m1.joblib",
+          "pipeline_sha256": "b528e37db5f9feeed68e8d8c36680f63c91b666a0d0bf7b9cb40e2c0c9611be4",
+          "cv_results_relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2018_m1.csv",
+          "cv_results_sha256": "2c61588005747191666bcddaa3265c8ad835f6219aec9827d46739f8fd90f00e"
+        },
+        "M2": {
+          "fitted": true,
+          "feature_columns": [
+            "m0_adj",
+            "ln_global_topic_3yr",
+            "ln_frac_de_3yr",
+            "ln_frac_cn_3yr",
+            "ln_frac_jp_3yr"
+          ],
+          "n_features": 5,
+          "train_rows_refit": 990,
+          "selected_alpha": 25.118864315095795,
+          "selected_log10_alpha": 1.4,
+          "best_index": 22,
+          "mean_cv_mae": 0.13502281927086723,
+          "std_cv_mae": 0.007176930487485701,
+          "fold_maes": [
+            0.14088214186848322,
+            0.1378489896922654,
+            0.12763718554613568,
+            0.1433124184969086,
+            0.12543336075054337
+          ],
+          "n_tied_candidates_within_1e_12": 1,
+          "grid_expanded": false,
+          "expansion_history": [],
+          "final_alpha_grid": {
+            "log10_min": -3.0,
+            "log10_max": 5.0,
+            "log10_step": 0.2,
+            "n_candidates": 41,
+            "alpha_min": 0.001,
+            "alpha_max": 100000.0
+          },
+          "selected_on_boundary": false,
+          "refit_intercept": 0.032327592316167095,
+          "refit_standardized_coefs": {
+            "m0_adj": 0.21258763597000957,
+            "ln_global_topic_3yr": -0.10186709157249212,
+            "ln_frac_de_3yr": 0.053515400836448006,
+            "ln_frac_cn_3yr": 0.011889114371065084,
+            "ln_frac_jp_3yr": 0.023957631103831603
+          },
+          "pipeline_relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2018_m2.joblib",
+          "pipeline_sha256": "6755acef3223757c57ae8d742807c5315e3a1ed0f864907bb7f8f55196d708e5",
+          "cv_results_relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2018_m2.csv",
+          "cv_results_sha256": "9f84a4b3b97b0dd9b4a179b8aece8fb738f6e8519de6936b33df689937d1fa2b"
+        },
+        "M3": {
+          "fitted": true,
+          "feature_columns": [
+            "m0_adj",
+            "ln_global_topic_3yr",
+            "ln_frac_de_3yr",
+            "ln_frac_cn_3yr",
+            "ln_frac_jp_3yr",
+            "rca_frac_de_3yr",
+            "rca_frac_cn_3yr",
+            "rca_frac_jp_3yr"
+          ],
+          "n_features": 8,
+          "train_rows_refit": 990,
+          "selected_alpha": 10.0,
+          "selected_log10_alpha": 1.0,
+          "best_index": 20,
+          "mean_cv_mae": 0.13373121743348773,
+          "std_cv_mae": 0.006696105293124462,
+          "fold_maes": [
+            0.13955970904277673,
+            0.1360756970284627,
+            0.12734535684973042,
+            0.1412740456461692,
+            0.12440127860029958
+          ],
+          "n_tied_candidates_within_1e_12": 1,
+          "grid_expanded": false,
+          "expansion_history": [],
+          "final_alpha_grid": {
+            "log10_min": -3.0,
+            "log10_max": 5.0,
+            "log10_step": 0.2,
+            "n_candidates": 41,
+            "alpha_min": 0.001,
+            "alpha_max": 100000.0
+          },
+          "selected_on_boundary": false,
+          "refit_intercept": 0.032327592316167116,
+          "refit_standardized_coefs": {
+            "m0_adj": 0.21515754985657326,
+            "ln_global_topic_3yr": -0.15915390454752362,
+            "ln_frac_de_3yr": 0.05354354169409256,
+            "ln_frac_cn_3yr": 0.040755277773100944,
+            "ln_frac_jp_3yr": 0.07257274938041619,
+            "rca_frac_de_3yr": -0.005874605799226757,
+            "rca_frac_cn_3yr": -0.021371422279008945,
+            "rca_frac_jp_3yr": -0.03829631633104478
+          },
+          "pipeline_relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2018_m3.joblib",
+          "pipeline_sha256": "ebe10abebbf4c02c81986f6820d318210e2fcd3e24d89684992482e974be4d4b",
+          "cv_results_relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2018_m3.csv",
+          "cv_results_sha256": "2391f28abd42431dfb583c2e0c6f5fdea6aa8a914bdd324dc0023800fd04f3d1"
+        }
+      }
+    },
+    "2021": {
+      "test_origin": 2021,
+      "train_origins": [
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "train_rows": 3963,
+      "train_unique_topics": 993,
+      "target_column": "g_adj",
+      "cv_splitter": "GroupKFold(n_splits=5, shuffle=True, random_state=42)",
+      "group_column": "topic_id",
+      "folds": [
+        {
+          "fold": 0,
+          "train_rows": 3167,
+          "val_rows": 796,
+          "train_unique_topics": 794,
+          "val_unique_topics": 199,
+          "topic_overlap": 0
+        },
+        {
+          "fold": 1,
+          "train_rows": 3173,
+          "val_rows": 790,
+          "train_unique_topics": 794,
+          "val_unique_topics": 199,
+          "topic_overlap": 0
+        },
+        {
+          "fold": 2,
+          "train_rows": 3167,
+          "val_rows": 796,
+          "train_unique_topics": 794,
+          "val_unique_topics": 199,
+          "topic_overlap": 0
+        },
+        {
+          "fold": 3,
+          "train_rows": 3174,
+          "val_rows": 789,
+          "train_unique_topics": 795,
+          "val_unique_topics": 198,
+          "topic_overlap": 0
+        },
+        {
+          "fold": 4,
+          "train_rows": 3171,
+          "val_rows": 792,
+          "train_unique_topics": 795,
+          "val_unique_topics": 198,
+          "topic_overlap": 0
+        }
+      ],
+      "fold_assignments_relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_folds_2021.csv",
+      "fold_assignments_sha256": "89fe89f30952307c9231f3765e16cc2540d6eb8fa79a6ea12e24d95660b7efd1",
+      "models": {
+        "M0": {
+          "fitted": false,
+          "role": "unfitted_direct_momentum_benchmark",
+          "feature_columns": [],
+          "benchmark_column": "m0_adj"
+        },
+        "M1": {
+          "fitted": true,
+          "feature_columns": [
+            "m0_adj",
+            "ln_global_topic_3yr"
+          ],
+          "n_features": 2,
+          "train_rows_refit": 3963,
+          "selected_alpha": 1e-06,
+          "selected_log10_alpha": -6.0,
+          "best_index": 5,
+          "mean_cv_mae": 0.14199738917999993,
+          "std_cv_mae": 0.007609455220709149,
+          "fold_maes": [
+            0.14930638777246005,
+            0.13900658930981036,
+            0.14107482982259031,
+            0.15080043613741728,
+            0.12979870285772163
+          ],
+          "n_tied_candidates_within_1e_12": 6,
+          "grid_expanded": true,
+          "expansion_history": [
+            {
+              "round": 0,
+              "log10_min": -3.0,
+              "log10_max": 5.0,
+              "n_candidates": 41,
+              "selected_alpha": 0.001,
+              "selected_cv_mae": 0.14199739012226228,
+              "boundary_hit": "lower"
+            },
+            {
+              "round": 1,
+              "log10_min": -5.0,
+              "log10_max": 5.0,
+              "n_candidates": 51,
+              "selected_alpha": 1e-05,
+              "selected_cv_mae": 0.14199738918848878,
+              "boundary_hit": "lower"
+            }
+          ],
+          "final_alpha_grid": {
+            "log10_min": -7.0,
+            "log10_max": 5.0,
+            "log10_step": 0.2,
+            "n_candidates": 61,
+            "alpha_min": 1e-07,
+            "alpha_max": 100000.0
+          },
+          "selected_on_boundary": false,
+          "refit_intercept": 0.019844584565381584,
+          "refit_standardized_coefs": {
+            "m0_adj": 0.22279110183869036,
+            "ln_global_topic_3yr": -0.046046569220189876
+          },
+          "pipeline_relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2021_m1.joblib",
+          "pipeline_sha256": "31c31b18409fe995191193e7db76d2304c40aff38e30f7570d920c8db102940e",
+          "cv_results_relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2021_m1.csv",
+          "cv_results_sha256": "d000a2ff3469323b37f6198e3b0eb29614d8a6a1ba0d3eabac1a9c821e68d870"
+        },
+        "M2": {
+          "fitted": true,
+          "feature_columns": [
+            "m0_adj",
+            "ln_global_topic_3yr",
+            "ln_frac_de_3yr",
+            "ln_frac_cn_3yr",
+            "ln_frac_jp_3yr"
+          ],
+          "n_features": 5,
+          "train_rows_refit": 3963,
+          "selected_alpha": 3.981071705534969e-06,
+          "selected_log10_alpha": -5.4,
+          "best_index": 8,
+          "mean_cv_mae": 0.1413273977255686,
+          "std_cv_mae": 0.007408662732047422,
+          "fold_maes": [
+            0.14827448764279652,
+            0.13846016282177986,
+            0.14056620047665871,
+            0.14996059421718103,
+            0.12937554346942698
+          ],
+          "n_tied_candidates_within_1e_12": 9,
+          "grid_expanded": true,
+          "expansion_history": [
+            {
+              "round": 0,
+              "log10_min": -3.0,
+              "log10_max": 5.0,
+              "n_candidates": 41,
+              "selected_alpha": 0.001,
+              "selected_cv_mae": 0.14132739795802005,
+              "boundary_hit": "lower"
+            },
+            {
+              "round": 1,
+              "log10_min": -5.0,
+              "log10_max": 5.0,
+              "n_candidates": 51,
+              "selected_alpha": 1e-05,
+              "selected_cv_mae": 0.1413273977269733,
+              "boundary_hit": "lower"
+            }
+          ],
+          "final_alpha_grid": {
+            "log10_min": -7.0,
+            "log10_max": 5.0,
+            "log10_step": 0.2,
+            "n_candidates": 61,
+            "alpha_min": 1e-07,
+            "alpha_max": 100000.0
+          },
+          "selected_on_boundary": false,
+          "refit_intercept": 0.01984458456538159,
+          "refit_standardized_coefs": {
+            "m0_adj": 0.22358261669863497,
+            "ln_global_topic_3yr": -0.04746234664679698,
+            "ln_frac_de_3yr": 0.0002733869884732161,
+            "ln_frac_cn_3yr": 0.013242221732026537,
+            "ln_frac_jp_3yr": -0.012247457257752982
+          },
+          "pipeline_relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2021_m2.joblib",
+          "pipeline_sha256": "9f7d04b414236a5d2e67df65597ca55ec40616139a638e5ad5a5c50c407ca13c",
+          "cv_results_relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2021_m2.csv",
+          "cv_results_sha256": "b55210c950d167bbea15b4017b7506c826c9142a352537d897450dfc0dc90da0"
+        },
+        "M3": {
+          "fitted": true,
+          "feature_columns": [
+            "m0_adj",
+            "ln_global_topic_3yr",
+            "ln_frac_de_3yr",
+            "ln_frac_cn_3yr",
+            "ln_frac_jp_3yr",
+            "rca_frac_de_3yr",
+            "rca_frac_cn_3yr",
+            "rca_frac_jp_3yr"
+          ],
+          "n_features": 8,
+          "train_rows_refit": 3963,
+          "selected_alpha": 63.09573444801933,
+          "selected_log10_alpha": 1.8,
+          "best_index": 24,
+          "mean_cv_mae": 0.1416654755576731,
+          "std_cv_mae": 0.0075935573079778,
+          "fold_maes": [
+            0.1496410921597514,
+            0.13814431034043384,
+            0.1404115643112753,
+            0.1502044233151524,
+            0.1299259876617524
+          ],
+          "n_tied_candidates_within_1e_12": 1,
+          "grid_expanded": false,
+          "expansion_history": [],
+          "final_alpha_grid": {
+            "log10_min": -3.0,
+            "log10_max": 5.0,
+            "log10_step": 0.2,
+            "n_candidates": 41,
+            "alpha_min": 0.001,
+            "alpha_max": 100000.0
+          },
+          "selected_on_boundary": false,
+          "refit_intercept": 0.019844584565381577,
+          "refit_standardized_coefs": {
+            "m0_adj": 0.2192159336623031,
+            "ln_global_topic_3yr": -0.048548959932402366,
+            "ln_frac_de_3yr": -0.005826508380071159,
+            "ln_frac_cn_3yr": -0.00423925534238678,
+            "ln_frac_jp_3yr": 0.014472926160352544,
+            "rca_frac_de_3yr": 0.0029616059154106626,
+            "rca_frac_cn_3yr": 0.008476781435256297,
+            "rca_frac_jp_3yr": -0.017889521738109333
+          },
+          "pipeline_relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2021_m3.joblib",
+          "pipeline_sha256": "bb4ccbf8fcf526f2d517e88f9bae34e200094ddcdf3eeb78168d356bd5121cc9",
+          "cv_results_relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2021_m3.csv",
+          "cv_results_sha256": "505092ff1171d115e29a256046f49c94c4e1471ed8636fd1818081ad03ed47c4"
+        }
+      }
+    }
+  },
+  "outputs": {
+    "cv_folds_2018.csv": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_folds_2018.csv",
+      "role": "cv_fold_assignments",
+      "rows": 990,
+      "columns": 3,
+      "sha256": "12d9331b0f1a41e1b3d81ffd47243f52e252953a82d892fb1dfba79f5804ea52"
+    },
+    "cv_results/cv_results_2018_m1.csv": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2018_m1.csv",
+      "role": "cv_results",
+      "rows": 61,
+      "columns": 17,
+      "sha256": "2c61588005747191666bcddaa3265c8ad835f6219aec9827d46739f8fd90f00e"
+    },
+    "models/ridge_pipeline_2018_m1.joblib": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2018_m1.joblib",
+      "role": "fitted_pipeline",
+      "n_samples_fit": 990,
+      "n_features_fit": 2,
+      "sha256": "b528e37db5f9feeed68e8d8c36680f63c91b666a0d0bf7b9cb40e2c0c9611be4"
+    },
+    "cv_results/cv_results_2018_m2.csv": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2018_m2.csv",
+      "role": "cv_results",
+      "rows": 41,
+      "columns": 17,
+      "sha256": "9f84a4b3b97b0dd9b4a179b8aece8fb738f6e8519de6936b33df689937d1fa2b"
+    },
+    "models/ridge_pipeline_2018_m2.joblib": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2018_m2.joblib",
+      "role": "fitted_pipeline",
+      "n_samples_fit": 990,
+      "n_features_fit": 5,
+      "sha256": "6755acef3223757c57ae8d742807c5315e3a1ed0f864907bb7f8f55196d708e5"
+    },
+    "cv_results/cv_results_2018_m3.csv": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2018_m3.csv",
+      "role": "cv_results",
+      "rows": 41,
+      "columns": 17,
+      "sha256": "2391f28abd42431dfb583c2e0c6f5fdea6aa8a914bdd324dc0023800fd04f3d1"
+    },
+    "models/ridge_pipeline_2018_m3.joblib": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2018_m3.joblib",
+      "role": "fitted_pipeline",
+      "n_samples_fit": 990,
+      "n_features_fit": 8,
+      "sha256": "ebe10abebbf4c02c81986f6820d318210e2fcd3e24d89684992482e974be4d4b"
+    },
+    "cv_folds_2021.csv": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_folds_2021.csv",
+      "role": "cv_fold_assignments",
+      "rows": 3963,
+      "columns": 3,
+      "sha256": "89fe89f30952307c9231f3765e16cc2540d6eb8fa79a6ea12e24d95660b7efd1"
+    },
+    "cv_results/cv_results_2021_m1.csv": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2021_m1.csv",
+      "role": "cv_results",
+      "rows": 61,
+      "columns": 17,
+      "sha256": "d000a2ff3469323b37f6198e3b0eb29614d8a6a1ba0d3eabac1a9c821e68d870"
+    },
+    "models/ridge_pipeline_2021_m1.joblib": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2021_m1.joblib",
+      "role": "fitted_pipeline",
+      "n_samples_fit": 3963,
+      "n_features_fit": 2,
+      "sha256": "31c31b18409fe995191193e7db76d2304c40aff38e30f7570d920c8db102940e"
+    },
+    "cv_results/cv_results_2021_m2.csv": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2021_m2.csv",
+      "role": "cv_results",
+      "rows": 61,
+      "columns": 17,
+      "sha256": "b55210c950d167bbea15b4017b7506c826c9142a352537d897450dfc0dc90da0"
+    },
+    "models/ridge_pipeline_2021_m2.joblib": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2021_m2.joblib",
+      "role": "fitted_pipeline",
+      "n_samples_fit": 3963,
+      "n_features_fit": 5,
+      "sha256": "9f7d04b414236a5d2e67df65597ca55ec40616139a638e5ad5a5c50c407ca13c"
+    },
+    "cv_results/cv_results_2021_m3.csv": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/cv_results/cv_results_2021_m3.csv",
+      "role": "cv_results",
+      "rows": 41,
+      "columns": 17,
+      "sha256": "505092ff1171d115e29a256046f49c94c4e1471ed8636fd1818081ad03ed47c4"
+    },
+    "models/ridge_pipeline_2021_m3.joblib": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2021_m3.joblib",
+      "role": "fitted_pipeline",
+      "n_samples_fit": 3963,
+      "n_features_fit": 8,
+      "sha256": "bb4ccbf8fcf526f2d517e88f9bae34e200094ddcdf3eeb78168d356bd5121cc9"
+    },
+    "stage3_3_model_selection_summary.csv": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/stage3_3_model_selection_summary.csv",
+      "role": "model_selection_summary",
+      "rows": 8,
+      "columns": 24,
+      "sha256": "e98c67d225601cbf62f1abcdde8d2f42cb6f2d7d79610b10ce3389cc8805765f"
+    }
+  },
+  "boundary_assertions": {
+    "strict_stage3_3_only": true,
+    "test_files_read": false,
+    "test_predictions_generated": false,
+    "test_mae_evaluated": false,
+    "bootstrap_evaluated": false,
+    "rq3_top50_evaluated": false,
+    "sensitivity_models_fitted": false
+  }
+}

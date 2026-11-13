@@ -1,0 +1,625 @@
+{
+  "stage": "3.2",
+  "title": "Train/Test Dataset Construction and RQ3 Candidate-Pool Splits",
+  "environment": {
+    "python": "3.13.2",
+    "numpy": "2.2.4",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.8.0",
+    "sklearn_min_required": "1.6"
+  },
+  "source_inputs": {
+    "stage3_1_features_targets": {
+      "relative_path": "stage3_modeling/stage3_origin_features_targets.csv",
+      "sha256": "9fc15d6ed16ade633547bfca9efca1db92827aa665cbb4509d76c7dae057f488",
+      "rows": 7175,
+      "columns": 42
+    },
+    "stage2_synchronized_panel": {
+      "relative_path": "openalex_feasibility_audit/openalex_modeling_panel_1025topics_v2_synchronized.csv",
+      "sha256": "f0049cd71f5ba8545c2e3cbb850e036a7b849828321cd23aa1d04771e60d7175"
+    },
+    "stage2_denominators": {
+      "relative_path": "openalex_feasibility_audit/all_science_national_denominators_fractional_v2_live_recheck_20261105.csv",
+      "sha256": "9c2d9cccee65c156494b96447ce53045d43e514c74aa10ec9f1c85915b33afce"
+    }
+  },
+  "schema_separation": {
+    "identifier_columns": [
+      "forecast_origin",
+      "topic_id",
+      "topic_name",
+      "field_name",
+      "subfield_name",
+      "eligible"
+    ],
+    "predictor_columns": [
+      "m0_adj",
+      "ln_global_topic_3yr",
+      "ln_frac_de_3yr",
+      "ln_frac_cn_3yr",
+      "ln_frac_jp_3yr",
+      "rca_frac_de_3yr",
+      "rca_frac_cn_3yr",
+      "rca_frac_jp_3yr",
+      "ln_rca_frac_de_3yr",
+      "ln_rca_frac_cn_3yr",
+      "ln_rca_frac_jp_3yr",
+      "ln_whole_de_3yr",
+      "ln_whole_cn_3yr",
+      "ln_whole_jp_3yr",
+      "rca_whole_de_3yr",
+      "rca_whole_cn_3yr",
+      "rca_whole_jp_3yr"
+    ],
+    "feature_export_columns": [
+      "forecast_origin",
+      "topic_id",
+      "topic_name",
+      "field_name",
+      "subfield_name",
+      "eligible",
+      "m0_adj",
+      "ln_global_topic_3yr",
+      "ln_frac_de_3yr",
+      "ln_frac_cn_3yr",
+      "ln_frac_jp_3yr",
+      "rca_frac_de_3yr",
+      "rca_frac_cn_3yr",
+      "rca_frac_jp_3yr",
+      "ln_rca_frac_de_3yr",
+      "ln_rca_frac_cn_3yr",
+      "ln_rca_frac_jp_3yr",
+      "ln_whole_de_3yr",
+      "ln_whole_cn_3yr",
+      "ln_whole_jp_3yr",
+      "rca_whole_de_3yr",
+      "rca_whole_cn_3yr",
+      "rca_whole_jp_3yr"
+    ],
+    "target_export_columns": [
+      "forecast_origin",
+      "topic_id",
+      "g_adj",
+      "target_global_topic_fut3yr",
+      "target_w_allsci_fut3yr"
+    ],
+    "rq3_label_export_columns": [
+      "forecast_origin",
+      "topic_id",
+      "g_adj",
+      "hg_future"
+    ],
+    "model_feature_sets": {
+      "M0": [],
+      "M1": [
+        "m0_adj",
+        "ln_global_topic_3yr"
+      ],
+      "M2": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr"
+      ],
+      "M3": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "rca_frac_de_3yr",
+        "rca_frac_cn_3yr",
+        "rca_frac_jp_3yr"
+      ],
+      "M3-LogRCA": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "ln_rca_frac_de_3yr",
+        "ln_rca_frac_cn_3yr",
+        "ln_rca_frac_jp_3yr"
+      ],
+      "M2-WC": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_whole_de_3yr",
+        "ln_whole_cn_3yr",
+        "ln_whole_jp_3yr"
+      ],
+      "M3-WC": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_whole_de_3yr",
+        "ln_whole_cn_3yr",
+        "ln_whole_jp_3yr",
+        "rca_whole_de_3yr",
+        "rca_whole_cn_3yr",
+        "rca_whole_jp_3yr"
+      ]
+    }
+  },
+  "experiments": {
+    "2018": {
+      "experiment_id": "experiment_a_2018",
+      "test_origin": 2018,
+      "test_feature_window": "[2016, 2018]",
+      "test_momentum_base_window": "[2013, 2015]",
+      "test_target_window": "[2019, 2021]",
+      "train_origins": [
+        2015
+      ],
+      "train_origin_row_counts": {
+        "2015": 990
+      },
+      "train_rows": 990,
+      "train_unique_topics": 990,
+      "test_rows": 992,
+      "test_unique_topics": 992,
+      "max_train_target_end_year": 2018,
+      "test_leakage_overlap_rows": 0,
+      "internal_train_target_overlap_note": "No multi-origin overlap (single training origin 2015).",
+      "group_kfold_preview": {
+        "cv_splitter": "GroupKFold(n_splits=5, shuffle=True, random_state=42)",
+        "group_column": "topic_id",
+        "folds": [
+          {
+            "fold": 0,
+            "train_rows": 792,
+            "val_rows": 198,
+            "train_unique_topics": 792,
+            "val_unique_topics": 198,
+            "topic_overlap": 0
+          },
+          {
+            "fold": 1,
+            "train_rows": 792,
+            "val_rows": 198,
+            "train_unique_topics": 792,
+            "val_unique_topics": 198,
+            "topic_overlap": 0
+          },
+          {
+            "fold": 2,
+            "train_rows": 792,
+            "val_rows": 198,
+            "train_unique_topics": 792,
+            "val_unique_topics": 198,
+            "topic_overlap": 0
+          },
+          {
+            "fold": 3,
+            "train_rows": 792,
+            "val_rows": 198,
+            "train_unique_topics": 792,
+            "val_unique_topics": 198,
+            "topic_overlap": 0
+          },
+          {
+            "fold": 4,
+            "train_rows": 792,
+            "val_rows": 198,
+            "train_unique_topics": 792,
+            "val_unique_topics": 198,
+            "topic_overlap": 0
+          }
+        ],
+        "zero_cross_fold_topic_overlap": true
+      },
+      "rq3": {
+        "quantile_method": "numpy.quantile(..., 0.80, method='linear')",
+        "inclusion_operators": {
+          "past_high_growth_exclusion": "m0_adj >= q80_past",
+          "remaining_pool": "m0_adj < q80_past",
+          "future_high_growth_label": "g_adj >= q80_future"
+        },
+        "q80_past": 0.17627271725742796,
+        "past_excluded_rows": 199,
+        "past_boundary_ties": 0,
+        "remaining_pool_rows": 793,
+        "linear_quantile_index_in_pool": 633.6,
+        "q80_future": 0.021604467586710644,
+        "future_boundary_ties": 0,
+        "future_hg_count_ge": 159,
+        "future_hg_count_strict_gt": 159,
+        "actual_chance_rate": 0.2005044136191677,
+        "chance_expected_hits_at_50": 10.025220680958386
+      },
+      "files": [
+        "train_2018_features.csv",
+        "train_2018_targets.csv",
+        "test_2018_features.csv",
+        "test_2018_targets.csv",
+        "rq3_2018_pool_features.csv",
+        "rq3_2018_pool_labels.csv"
+      ]
+    },
+    "2021": {
+      "experiment_id": "experiment_b_2021",
+      "test_origin": 2021,
+      "test_feature_window": "[2019, 2021]",
+      "test_momentum_base_window": "[2016, 2018]",
+      "test_target_window": "[2022, 2024]",
+      "train_origins": [
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "train_origin_row_counts": {
+        "2015": 990,
+        "2016": 990,
+        "2017": 991,
+        "2018": 992
+      },
+      "train_rows": 3963,
+      "train_unique_topics": 993,
+      "test_rows": 995,
+      "test_unique_topics": 995,
+      "max_train_target_end_year": 2021,
+      "test_leakage_overlap_rows": 0,
+      "internal_train_target_overlap_note": "Pooled annual training origins 2015-2018 have overlapping 3-year target windows strictly <= 2021; includes 989 exact G_adj(2015)==M0_adj(2018) topic pairs (max abs diff 0.00e+00), requiring GroupKFold by topic_id in Stage 3.3.",
+      "group_kfold_preview": {
+        "cv_splitter": "GroupKFold(n_splits=5, shuffle=True, random_state=42)",
+        "group_column": "topic_id",
+        "folds": [
+          {
+            "fold": 0,
+            "train_rows": 3167,
+            "val_rows": 796,
+            "train_unique_topics": 794,
+            "val_unique_topics": 199,
+            "topic_overlap": 0
+          },
+          {
+            "fold": 1,
+            "train_rows": 3173,
+            "val_rows": 790,
+            "train_unique_topics": 794,
+            "val_unique_topics": 199,
+            "topic_overlap": 0
+          },
+          {
+            "fold": 2,
+            "train_rows": 3167,
+            "val_rows": 796,
+            "train_unique_topics": 794,
+            "val_unique_topics": 199,
+            "topic_overlap": 0
+          },
+          {
+            "fold": 3,
+            "train_rows": 3174,
+            "val_rows": 789,
+            "train_unique_topics": 795,
+            "val_unique_topics": 198,
+            "topic_overlap": 0
+          },
+          {
+            "fold": 4,
+            "train_rows": 3171,
+            "val_rows": 792,
+            "train_unique_topics": 795,
+            "val_unique_topics": 198,
+            "topic_overlap": 0
+          }
+        ],
+        "zero_cross_fold_topic_overlap": true
+      },
+      "rq3": {
+        "quantile_method": "numpy.quantile(..., 0.80, method='linear')",
+        "inclusion_operators": {
+          "past_high_growth_exclusion": "m0_adj >= q80_past",
+          "remaining_pool": "m0_adj < q80_past",
+          "future_high_growth_label": "g_adj >= q80_future"
+        },
+        "q80_past": 0.14177448584725297,
+        "past_excluded_rows": 199,
+        "past_boundary_ties": 0,
+        "remaining_pool_rows": 796,
+        "linear_quantile_index_in_pool": 636.0,
+        "q80_future": 0.0689064310591565,
+        "future_boundary_ties": 1,
+        "future_hg_count_ge": 160,
+        "future_hg_count_strict_gt": 159,
+        "actual_chance_rate": 0.20100502512562815,
+        "chance_expected_hits_at_50": 10.050251256281408
+      },
+      "files": [
+        "train_2021_features.csv",
+        "train_2021_targets.csv",
+        "test_2021_features.csv",
+        "test_2021_targets.csv",
+        "rq3_2021_pool_features.csv",
+        "rq3_2021_pool_labels.csv"
+      ]
+    }
+  },
+  "outputs": {
+    "train_2018_features.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/train_2018_features.csv",
+      "role": "features",
+      "rows": 990,
+      "columns": 23,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "topic_name",
+        "field_name",
+        "subfield_name",
+        "eligible",
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "rca_frac_de_3yr",
+        "rca_frac_cn_3yr",
+        "rca_frac_jp_3yr",
+        "ln_rca_frac_de_3yr",
+        "ln_rca_frac_cn_3yr",
+        "ln_rca_frac_jp_3yr",
+        "ln_whole_de_3yr",
+        "ln_whole_cn_3yr",
+        "ln_whole_jp_3yr",
+        "rca_whole_de_3yr",
+        "rca_whole_cn_3yr",
+        "rca_whole_jp_3yr"
+      ],
+      "sha256": "89b220d14407d6b3b3cde69c2a9fb3ac1a8b6fc92bc0af28411520b708730ce1"
+    },
+    "train_2018_targets.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/train_2018_targets.csv",
+      "role": "targets",
+      "rows": 990,
+      "columns": 5,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "g_adj",
+        "target_global_topic_fut3yr",
+        "target_w_allsci_fut3yr"
+      ],
+      "sha256": "307c2bfce2dd663a1f133d679d58875ec4060cfb91155469da719b84c2543a7a"
+    },
+    "test_2018_features.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/test_2018_features.csv",
+      "role": "features",
+      "rows": 992,
+      "columns": 23,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "topic_name",
+        "field_name",
+        "subfield_name",
+        "eligible",
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "rca_frac_de_3yr",
+        "rca_frac_cn_3yr",
+        "rca_frac_jp_3yr",
+        "ln_rca_frac_de_3yr",
+        "ln_rca_frac_cn_3yr",
+        "ln_rca_frac_jp_3yr",
+        "ln_whole_de_3yr",
+        "ln_whole_cn_3yr",
+        "ln_whole_jp_3yr",
+        "rca_whole_de_3yr",
+        "rca_whole_cn_3yr",
+        "rca_whole_jp_3yr"
+      ],
+      "sha256": "d43a96c3d4b3d8133b5553c3e0d3a568d403194d8017efce5a4ba760dd7600fa"
+    },
+    "test_2018_targets.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/test_2018_targets.csv",
+      "role": "targets",
+      "rows": 992,
+      "columns": 5,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "g_adj",
+        "target_global_topic_fut3yr",
+        "target_w_allsci_fut3yr"
+      ],
+      "sha256": "abfda6a6febae17d8b6533a2eb0fec2b61dd921e745898e8758070cec8fd11ec"
+    },
+    "rq3_2018_pool_features.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/rq3_2018_pool_features.csv",
+      "role": "rq3_features",
+      "rows": 793,
+      "columns": 23,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "topic_name",
+        "field_name",
+        "subfield_name",
+        "eligible",
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "rca_frac_de_3yr",
+        "rca_frac_cn_3yr",
+        "rca_frac_jp_3yr",
+        "ln_rca_frac_de_3yr",
+        "ln_rca_frac_cn_3yr",
+        "ln_rca_frac_jp_3yr",
+        "ln_whole_de_3yr",
+        "ln_whole_cn_3yr",
+        "ln_whole_jp_3yr",
+        "rca_whole_de_3yr",
+        "rca_whole_cn_3yr",
+        "rca_whole_jp_3yr"
+      ],
+      "sha256": "772ac2a144c754cc3a8101b4f519067acd72ac55b76c4f45f42d6769f02a0c45"
+    },
+    "rq3_2018_pool_labels.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/rq3_2018_pool_labels.csv",
+      "role": "rq3_labels",
+      "rows": 793,
+      "columns": 4,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "g_adj",
+        "hg_future"
+      ],
+      "sha256": "bef7b90da7ab194abe8d583fbc7ea5609de50f29dce3c9a647e05582f22e277a"
+    },
+    "train_2021_features.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/train_2021_features.csv",
+      "role": "features",
+      "rows": 3963,
+      "columns": 23,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "topic_name",
+        "field_name",
+        "subfield_name",
+        "eligible",
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "rca_frac_de_3yr",
+        "rca_frac_cn_3yr",
+        "rca_frac_jp_3yr",
+        "ln_rca_frac_de_3yr",
+        "ln_rca_frac_cn_3yr",
+        "ln_rca_frac_jp_3yr",
+        "ln_whole_de_3yr",
+        "ln_whole_cn_3yr",
+        "ln_whole_jp_3yr",
+        "rca_whole_de_3yr",
+        "rca_whole_cn_3yr",
+        "rca_whole_jp_3yr"
+      ],
+      "sha256": "cfa72f2ef21142b917feecddef57434bbc998becadd511747aa123cd1c72c8dc"
+    },
+    "train_2021_targets.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/train_2021_targets.csv",
+      "role": "targets",
+      "rows": 3963,
+      "columns": 5,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "g_adj",
+        "target_global_topic_fut3yr",
+        "target_w_allsci_fut3yr"
+      ],
+      "sha256": "262d7ee044b5b158fbf844ebf19d71e077bf2ec2fdbd9d339cc6d15a877779da"
+    },
+    "test_2021_features.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/test_2021_features.csv",
+      "role": "features",
+      "rows": 995,
+      "columns": 23,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "topic_name",
+        "field_name",
+        "subfield_name",
+        "eligible",
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "rca_frac_de_3yr",
+        "rca_frac_cn_3yr",
+        "rca_frac_jp_3yr",
+        "ln_rca_frac_de_3yr",
+        "ln_rca_frac_cn_3yr",
+        "ln_rca_frac_jp_3yr",
+        "ln_whole_de_3yr",
+        "ln_whole_cn_3yr",
+        "ln_whole_jp_3yr",
+        "rca_whole_de_3yr",
+        "rca_whole_cn_3yr",
+        "rca_whole_jp_3yr"
+      ],
+      "sha256": "85751d18950130c1854f96918d62dd24aca0317aaf61ad4098b922535b29ca7a"
+    },
+    "test_2021_targets.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/test_2021_targets.csv",
+      "role": "targets",
+      "rows": 995,
+      "columns": 5,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "g_adj",
+        "target_global_topic_fut3yr",
+        "target_w_allsci_fut3yr"
+      ],
+      "sha256": "ce5c55b76b95bbf0de6d4669ffc078dde7e1d784d9b920f50be99143831728db"
+    },
+    "rq3_2021_pool_features.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/rq3_2021_pool_features.csv",
+      "role": "rq3_features",
+      "rows": 796,
+      "columns": 23,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "topic_name",
+        "field_name",
+        "subfield_name",
+        "eligible",
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "rca_frac_de_3yr",
+        "rca_frac_cn_3yr",
+        "rca_frac_jp_3yr",
+        "ln_rca_frac_de_3yr",
+        "ln_rca_frac_cn_3yr",
+        "ln_rca_frac_jp_3yr",
+        "ln_whole_de_3yr",
+        "ln_whole_cn_3yr",
+        "ln_whole_jp_3yr",
+        "rca_whole_de_3yr",
+        "rca_whole_cn_3yr",
+        "rca_whole_jp_3yr"
+      ],
+      "sha256": "1bae5ee3e15ab521adb657c6388556a771d2b1107c02629533f5117024877528"
+    },
+    "rq3_2021_pool_labels.csv": {
+      "relative_path": "stage3_modeling/stage3_2_splits/rq3_2021_pool_labels.csv",
+      "role": "rq3_labels",
+      "rows": 796,
+      "columns": 4,
+      "column_names": [
+        "forecast_origin",
+        "topic_id",
+        "g_adj",
+        "hg_future"
+      ],
+      "sha256": "39631ca097e890464c9fe026768e16aa43af09aba4076c69d99adb54b29bf030"
+    }
+  },
+  "boundary_assertions": {
+    "strict_stage3_2_only": true,
+    "scalers_fitted": false,
+    "models_trained": false,
+    "hyperparameters_tuned": false,
+    "test_predictions_generated": false,
+    "bootstrap_evaluated": false
+  }
+}
