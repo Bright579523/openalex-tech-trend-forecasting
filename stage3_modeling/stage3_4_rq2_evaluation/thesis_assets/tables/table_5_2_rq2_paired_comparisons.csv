@@ -1,0 +1,9 @@
+Experiment,Test Origin,Comparison,Definition,Test N,Observed Delta MAE,CI 95% Low,CI 95% High,Excludes Zero,Delta MAE (95% Paired CI),Direction Interpretation
+Experiment A (2018),2018,M1 vs M0,MAE(M1) - MAE(M0),992,-0.010785723851351209,-0.016473130279098473,-0.00485550798451899,True,"-0.0108 [-0.0165, -0.0049]",Lower MAE (error reduction; 95% paired CI strictly < 0)
+Experiment A (2018),2018,M2 vs M1,MAE(M2) - MAE(M1),992,0.015892950166642522,0.013204036546577242,0.018684624252621407,True,"+0.0159 [+0.0132, +0.0187]",Higher MAE (error increase; 95% paired CI strictly > 0)
+Experiment A (2018),2018,M3 vs M2,MAE(M3) - MAE(M2),992,0.00045149150447373887,-0.0010992313722416615,0.00199126700453487,False,"+0.0005 [-0.0011, +0.0020]",Slightly higher MAE (error increase; 95% paired CI spans 0)
+Experiment A (2018),2018,M3 vs M0,MAE(M3) - MAE(M0),992,0.005558717819765052,-0.001003100827159406,0.012125981160338755,False,"+0.0056 [-0.0010, +0.0121]",Slightly higher MAE (error increase; 95% paired CI spans 0)
+Experiment B (2021),2021,M1 vs M0,MAE(M1) - MAE(M0),995,-0.012200509357393252,-0.019124811594919945,-0.005733227368750548,True,"-0.0122 [-0.0191, -0.0057]",Lower MAE (error reduction; 95% paired CI strictly < 0)
+Experiment B (2021),2021,M2 vs M1,MAE(M2) - MAE(M1),995,-0.0016706186427672687,-0.002277762197199032,-0.0010733978277410452,True,"-0.0017 [-0.0023, -0.0011]",Lower MAE (error reduction; 95% paired CI strictly < 0)
+Experiment B (2021),2021,M3 vs M2,MAE(M3) - MAE(M2),995,-5.910429243513593e-05,-0.0007818343536941059,0.0006349511390932228,False,"-0.0001 [-0.0008, +0.0006]",Slightly lower MAE (error reduction; 95% paired CI spans 0)
+Experiment B (2021),2021,M3 vs M0,MAE(M3) - MAE(M0),995,-0.013930232292595657,-0.020898136400561727,-0.007314881539559871,True,"-0.0139 [-0.0209, -0.0073]",Lower MAE (error reduction; 95% paired CI strictly < 0)

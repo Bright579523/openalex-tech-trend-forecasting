@@ -1,0 +1,514 @@
+{
+  "stage": "3.4",
+  "title": "RQ2 Held-Out Test Evaluation (M0\u2013M3)",
+  "execution_timestamp_utc": "2026-11-13T21:26:57Z",
+  "git_commit_hash": "3688d35711464d42525d27103dc55ff7a38828a7",
+  "environment": {
+    "python": "3.13.2",
+    "numpy": "2.2.4",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit_learn": "1.8.0",
+    "joblib": "1.5.3",
+    "sklearn_min_required": "1.6"
+  },
+  "validation_status": {
+    "preflight_passed": true,
+    "refit_occurred": false,
+    "retuning_occurred": false,
+    "ranking_evaluated": false,
+    "alternative_specs_evaluated": false
+  },
+  "upstream_references": {
+    "stage3_2_manifest": {
+      "relative_path": "stage3_modeling/stage3_2_splits/stage3_2_splits_manifest.json",
+      "sha256": "934f6e19fa54fb5b7b5121b02f4b278aa8e52b9c7265c4db550c30b371edafcd"
+    },
+    "stage3_3_manifest": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/stage3_3_ridge_manifest.json",
+      "sha256": "c112bef05e8a97bd18bf0d617e1b5282d0de4aa3667ee8970b5bf4ed15926363"
+    },
+    "stage3_3_summary": {
+      "relative_path": "stage3_modeling/stage3_3_ridge_tuning/stage3_3_model_selection_summary.csv",
+      "sha256": "e98c67d225601cbf62f1abcdde8d2f42cb6f2d7d79610b10ce3389cc8805765f"
+    },
+    "test_inputs": {
+      "2018": {
+        "features_path": "stage3_modeling/stage3_2_splits/test_2018_features.csv",
+        "features_sha256": "d43a96c3d4b3d8133b5553c3e0d3a568d403194d8017efce5a4ba760dd7600fa",
+        "targets_path": "stage3_modeling/stage3_2_splits/test_2018_targets.csv",
+        "targets_sha256": "abfda6a6febae17d8b6533a2eb0fec2b61dd921e745898e8758070cec8fd11ec",
+        "n_test": 992
+      },
+      "2021": {
+        "features_path": "stage3_modeling/stage3_2_splits/test_2021_features.csv",
+        "features_sha256": "85751d18950130c1854f96918d62dd24aca0317aaf61ad4098b922535b29ca7a",
+        "targets_path": "stage3_modeling/stage3_2_splits/test_2021_targets.csv",
+        "targets_sha256": "ce5c55b76b95bbf0de6d4669ffc078dde7e1d784d9b920f50be99143831728db",
+        "n_test": 995
+      }
+    },
+    "stage3_3_pipelines": {
+      "2018": {
+        "M1": {
+          "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2018_m1.joblib",
+          "sha256": "b528e37db5f9feeed68e8d8c36680f63c91b666a0d0bf7b9cb40e2c0c9611be4",
+          "selected_alpha": 1.584893192461114e-07
+        },
+        "M2": {
+          "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2018_m2.joblib",
+          "sha256": "6755acef3223757c57ae8d742807c5315e3a1ed0f864907bb7f8f55196d708e5",
+          "selected_alpha": 25.118864315095795
+        },
+        "M3": {
+          "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2018_m3.joblib",
+          "sha256": "ebe10abebbf4c02c81986f6820d318210e2fcd3e24d89684992482e974be4d4b",
+          "selected_alpha": 10.0
+        }
+      },
+      "2021": {
+        "M1": {
+          "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2021_m1.joblib",
+          "sha256": "31c31b18409fe995191193e7db76d2304c40aff38e30f7570d920c8db102940e",
+          "selected_alpha": 1e-06
+        },
+        "M2": {
+          "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2021_m2.joblib",
+          "sha256": "9f7d04b414236a5d2e67df65597ca55ec40616139a638e5ad5a5c50c407ca13c",
+          "selected_alpha": 3.981071705534969e-06
+        },
+        "M3": {
+          "relative_path": "stage3_modeling/stage3_3_ridge_tuning/models/ridge_pipeline_2021_m3.joblib",
+          "sha256": "bb4ccbf8fcf526f2d517e88f9bae34e200094ddcdf3eeb78168d356bd5121cc9",
+          "selected_alpha": 63.09573444801933
+        }
+      }
+    }
+  },
+  "model_specifications": {
+    "M0": {
+      "description": "Direct momentum benchmark (M0_adj, unfitted)",
+      "feature_columns": [],
+      "n_features": 0,
+      "fitted": false
+    },
+    "M1": {
+      "description": "Ridge: M0_adj + global 3-yr log volume",
+      "feature_columns": [
+        "m0_adj",
+        "ln_global_topic_3yr"
+      ],
+      "n_features": 2,
+      "fitted": true
+    },
+    "M2": {
+      "description": "Ridge: M1 + DE/CN/JP 3-yr log fractional counts",
+      "feature_columns": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr"
+      ],
+      "n_features": 5,
+      "fitted": true
+    },
+    "M3": {
+      "description": "Ridge: M2 + DE/CN/JP 3-yr raw fractional RCA",
+      "feature_columns": [
+        "m0_adj",
+        "ln_global_topic_3yr",
+        "ln_frac_de_3yr",
+        "ln_frac_cn_3yr",
+        "ln_frac_jp_3yr",
+        "rca_frac_de_3yr",
+        "rca_frac_cn_3yr",
+        "rca_frac_jp_3yr"
+      ],
+      "n_features": 8,
+      "fitted": true
+    }
+  },
+  "evaluation_protocol": {
+    "research_question": "RQ2",
+    "metric": "MAE = mean(abs(y_true - y_pred))",
+    "pooled_test_estimate": false,
+    "bootstrap": {
+      "replicates_B": 5000,
+      "random_seed": 42,
+      "rng_constructor": "np.random.default_rng(42)",
+      "percentile_levels": [
+        2.5,
+        97.5
+      ],
+      "percentile_method": "linear",
+      "paired_design": "Single shared (5000, N) index matrix across M0\u2013M3 per origin",
+      "delta_definition": "MAE(augmented) - MAE(reference)"
+    }
+  },
+  "experiments": {
+    "2018": {
+      "experiment_id": "experiment_a_2018",
+      "test_origin": 2018,
+      "train_origins": [
+        2015
+      ],
+      "target_window": "[2019, 2021]",
+      "n_test": 992,
+      "predictions_relative_path": "stage3_modeling/stage3_4_rq2_evaluation/predictions/predictions_test_2018.csv",
+      "predictions_sha256": "add240d22e2bd14ba160d7eba9c01e55973117ae942d65c911b28fa402fd2f1b",
+      "models": {
+        "M0": {
+          "n_features": 0,
+          "selected_alpha": null,
+          "mae": 0.17179918294390942,
+          "boot_mean_mae": 0.17173371389135422,
+          "boot_sd_mae": 0.005922059512545419,
+          "ci_95_low": 0.16038706607323974,
+          "ci_95_high": 0.18353072400282555
+        },
+        "M1": {
+          "n_features": 2,
+          "selected_alpha": 1.584893192461114e-07,
+          "mae": 0.1610134590925582,
+          "boot_mean_mae": 0.16103465961094804,
+          "boot_sd_mae": 0.005034781766800338,
+          "ci_95_low": 0.15147204880461432,
+          "ci_95_high": 0.17112191825974607
+        },
+        "M2": {
+          "n_features": 5,
+          "selected_alpha": 25.118864315095795,
+          "mae": 0.17690640925920073,
+          "boot_mean_mae": 0.17695343955167078,
+          "boot_sd_mae": 0.005243445091768008,
+          "ci_95_low": 0.16695629850923432,
+          "ci_95_high": 0.1874072258878008
+        },
+        "M3": {
+          "n_features": 8,
+          "selected_alpha": 10.0,
+          "mae": 0.17735790076367447,
+          "boot_mean_mae": 0.17740060520065912,
+          "boot_sd_mae": 0.005336159216657917,
+          "ci_95_low": 0.16731535830561003,
+          "ci_95_high": 0.1880361222698562
+        }
+      },
+      "paired_comparisons": {
+        "M1_vs_M0": {
+          "augmented_model": "M1",
+          "reference_model": "M0",
+          "mae_reference": 0.17179918294390942,
+          "mae_augmented": 0.1610134590925582,
+          "delta_mae_observed": -0.010785723851351209,
+          "boot_mean_delta": -0.010699054280406175,
+          "boot_sd_delta": 0.0029664252295443535,
+          "ci_95_low": -0.016473130279098473,
+          "ci_95_high": -0.00485550798451899,
+          "ci_95_excludes_zero": true,
+          "pct_bootstrap_draws_negative": 100.0,
+          "direction_interpretation": "Lower MAE (error reduction; 95% paired CI strictly < 0)"
+        },
+        "M2_vs_M1": {
+          "augmented_model": "M2",
+          "reference_model": "M1",
+          "mae_reference": 0.1610134590925582,
+          "mae_augmented": 0.17690640925920073,
+          "delta_mae_observed": 0.015892950166642522,
+          "boot_mean_delta": 0.015918779940722733,
+          "boot_sd_delta": 0.0014117787210010417,
+          "ci_95_low": 0.013204036546577242,
+          "ci_95_high": 0.018684624252621407,
+          "ci_95_excludes_zero": true,
+          "pct_bootstrap_draws_negative": 0.0,
+          "direction_interpretation": "Higher MAE (error increase; 95% paired CI strictly > 0)"
+        },
+        "M3_vs_M2": {
+          "augmented_model": "M3",
+          "reference_model": "M2",
+          "mae_reference": 0.17690640925920073,
+          "mae_augmented": 0.17735790076367447,
+          "delta_mae_observed": 0.00045149150447373887,
+          "boot_mean_delta": 0.0004471656489883438,
+          "boot_sd_delta": 0.0007903027920964695,
+          "ci_95_low": -0.0010992313722416615,
+          "ci_95_high": 0.00199126700453487,
+          "ci_95_excludes_zero": false,
+          "pct_bootstrap_draws_negative": 28.4,
+          "direction_interpretation": "Slightly higher MAE (error increase; 95% paired CI spans 0)"
+        },
+        "M3_vs_M0": {
+          "augmented_model": "M3",
+          "reference_model": "M0",
+          "mae_reference": 0.17179918294390942,
+          "mae_augmented": 0.17735790076367447,
+          "delta_mae_observed": 0.005558717819765052,
+          "boot_mean_delta": 0.005666891309304903,
+          "boot_sd_delta": 0.0033917427876179484,
+          "ci_95_low": -0.001003100827159406,
+          "ci_95_high": 0.012125981160338755,
+          "ci_95_excludes_zero": false,
+          "pct_bootstrap_draws_negative": 5.12,
+          "direction_interpretation": "Slightly higher MAE (error increase; 95% paired CI spans 0)"
+        }
+      }
+    },
+    "2021": {
+      "experiment_id": "experiment_b_2021",
+      "test_origin": 2021,
+      "train_origins": [
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "target_window": "[2022, 2024]",
+      "n_test": 995,
+      "predictions_relative_path": "stage3_modeling/stage3_4_rq2_evaluation/predictions/predictions_test_2021.csv",
+      "predictions_sha256": "8dbb481a7f1dba33c19c789dee8708897a27ca6a14f411a718f8bb236f1fde22",
+      "models": {
+        "M0": {
+          "n_features": 0,
+          "selected_alpha": null,
+          "mae": 0.16578040251498716,
+          "boot_mean_mae": 0.16581801673041238,
+          "boot_sd_mae": 0.009788799522601505,
+          "ci_95_low": 0.14823288826896597,
+          "ci_95_high": 0.1865937559980492
+        },
+        "M1": {
+          "n_features": 2,
+          "selected_alpha": 1e-06,
+          "mae": 0.1535798931575939,
+          "boot_mean_mae": 0.15362211194987088,
+          "boot_sd_mae": 0.008034069775708133,
+          "ci_95_low": 0.1392761231551624,
+          "ci_95_high": 0.17083586419077865
+        },
+        "M2": {
+          "n_features": 5,
+          "selected_alpha": 3.981071705534969e-06,
+          "mae": 0.15190927451482664,
+          "boot_mean_mae": 0.15194984039894188,
+          "boot_sd_mae": 0.008041830324945608,
+          "ci_95_low": 0.13756897633027684,
+          "ci_95_high": 0.16921693952407132
+        },
+        "M3": {
+          "n_features": 8,
+          "selected_alpha": 63.09573444801933,
+          "mae": 0.1518501702223915,
+          "boot_mean_mae": 0.1518860307608546,
+          "boot_sd_mae": 0.00798361603921846,
+          "ci_95_low": 0.1375347317496329,
+          "ci_95_high": 0.16894154509103965
+        }
+      },
+      "paired_comparisons": {
+        "M1_vs_M0": {
+          "augmented_model": "M1",
+          "reference_model": "M0",
+          "mae_reference": 0.16578040251498716,
+          "mae_augmented": 0.1535798931575939,
+          "delta_mae_observed": -0.012200509357393252,
+          "boot_mean_delta": -0.0121959047805415,
+          "boot_sd_delta": 0.0034310031590802166,
+          "ci_95_low": -0.019124811594919945,
+          "ci_95_high": -0.005733227368750548,
+          "ci_95_excludes_zero": true,
+          "pct_bootstrap_draws_negative": 99.98,
+          "direction_interpretation": "Lower MAE (error reduction; 95% paired CI strictly < 0)"
+        },
+        "M2_vs_M1": {
+          "augmented_model": "M2",
+          "reference_model": "M1",
+          "mae_reference": 0.1535798931575939,
+          "mae_augmented": 0.15190927451482664,
+          "delta_mae_observed": -0.0016706186427672687,
+          "boot_mean_delta": -0.0016722715509290078,
+          "boot_sd_delta": 0.00030595931884259085,
+          "ci_95_low": -0.002277762197199032,
+          "ci_95_high": -0.0010733978277410452,
+          "ci_95_excludes_zero": true,
+          "pct_bootstrap_draws_negative": 100.0,
+          "direction_interpretation": "Lower MAE (error reduction; 95% paired CI strictly < 0)"
+        },
+        "M3_vs_M2": {
+          "augmented_model": "M3",
+          "reference_model": "M2",
+          "mae_reference": 0.15190927451482664,
+          "mae_augmented": 0.1518501702223915,
+          "delta_mae_observed": -5.910429243513593e-05,
+          "boot_mean_delta": -6.380963808728119e-05,
+          "boot_sd_delta": 0.00036418547934129316,
+          "ci_95_low": -0.0007818343536941059,
+          "ci_95_high": 0.0006349511390932228,
+          "ci_95_excludes_zero": false,
+          "pct_bootstrap_draws_negative": 56.64,
+          "direction_interpretation": "Slightly lower MAE (error reduction; 95% paired CI spans 0)"
+        },
+        "M3_vs_M0": {
+          "augmented_model": "M3",
+          "reference_model": "M0",
+          "mae_reference": 0.16578040251498716,
+          "mae_augmented": 0.1518501702223915,
+          "delta_mae_observed": -0.013930232292595657,
+          "boot_mean_delta": -0.013931985969557786,
+          "boot_sd_delta": 0.0034886802720371568,
+          "ci_95_low": -0.020898136400561727,
+          "ci_95_high": -0.007314881539559871,
+          "ci_95_excludes_zero": true,
+          "pct_bootstrap_draws_negative": 99.98,
+          "direction_interpretation": "Lower MAE (error reduction; 95% paired CI strictly < 0)"
+        }
+      }
+    }
+  },
+  "outputs": {
+    "predictions/predictions_test_2018.csv": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/predictions/predictions_test_2018.csv",
+      "role": "test_predictions",
+      "rows": 992,
+      "columns": 19,
+      "sha256": "add240d22e2bd14ba160d7eba9c01e55973117ae942d65c911b28fa402fd2f1b"
+    },
+    "bootstrap/bootstrap_indices_2018.npz": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/bootstrap/bootstrap_indices_2018.npz",
+      "role": "bootstrap_index_matrix",
+      "shape": [
+        5000,
+        992
+      ],
+      "dtype": "int64",
+      "sha256": "b8a44d46749ee0359043fc00624e6709c73ddf70713e3b0c5895c34c47281c23"
+    },
+    "predictions/predictions_test_2021.csv": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/predictions/predictions_test_2021.csv",
+      "role": "test_predictions",
+      "rows": 995,
+      "columns": 19,
+      "sha256": "8dbb481a7f1dba33c19c789dee8708897a27ca6a14f411a718f8bb236f1fde22"
+    },
+    "bootstrap/bootstrap_indices_2021.npz": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/bootstrap/bootstrap_indices_2021.npz",
+      "role": "bootstrap_index_matrix",
+      "shape": [
+        5000,
+        995
+      ],
+      "dtype": "int64",
+      "sha256": "074b6a7eb1ad9a140e532a17816b38484002fd85cfc17adfb9ad6321a9d46284"
+    },
+    "bootstrap/bootstrap_metadata.json": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/bootstrap/bootstrap_metadata.json",
+      "role": "bootstrap_metadata",
+      "sha256": "bc7dfcb865448dca5f90bd3cbbf954357d2dc136e79014810fc98e61d4ad95c9"
+    },
+    "metrics/mae_summary.csv": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/metrics/mae_summary.csv",
+      "role": "mae_summary",
+      "rows": 8,
+      "columns": 13,
+      "sha256": "7e4bfbc496f9f596ab53ca7629ea6ad1451524ebfa951882d7a9fb8595806be3"
+    },
+    "metrics/mae_bootstrap_ci.csv": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/metrics/mae_bootstrap_ci.csv",
+      "role": "mae_bootstrap_ci",
+      "rows": 8,
+      "columns": 14,
+      "sha256": "769bced05b61f305a1c3dd968f11dff5f5730fe48a60e836bcd5d3d391ff3130"
+    },
+    "metrics/paired_mae_differences.csv": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/metrics/paired_mae_differences.csv",
+      "role": "paired_mae_differences",
+      "rows": 8,
+      "columns": 16,
+      "sha256": "a48e6717858db46d8cbcc2ac98951d589ea97efbf6964741d0f51f071553291e"
+    },
+    "metrics/paired_mae_bootstrap_ci.csv": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/metrics/paired_mae_bootstrap_ci.csv",
+      "role": "paired_mae_bootstrap_ci",
+      "rows": 8,
+      "columns": 19,
+      "sha256": "0d47c7637f04669c980494a6e6b9ea9a5aba698eb4618da4970742f95c90a7ae"
+    },
+    "thesis_assets/tables/table_5_1_rq2_mae_performance.csv": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/tables/table_5_1_rq2_mae_performance.csv",
+      "role": "thesis_table_csv",
+      "sha256": "6bde2de97073ceab26561eecc1c6ddf756c52d79e7874418b7b49d3a5c4aa1f1"
+    },
+    "thesis_assets/tables/table_5_1_rq2_mae_performance.tex": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/tables/table_5_1_rq2_mae_performance.tex",
+      "role": "thesis_table_tex",
+      "sha256": "7c9b68a61df4dc445932e978b5d0e404b59c5600d08492b10c3eb1fc1e12aa13"
+    },
+    "thesis_assets/tables/table_5_2_rq2_paired_comparisons.csv": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/tables/table_5_2_rq2_paired_comparisons.csv",
+      "role": "thesis_table_csv",
+      "sha256": "b4b44bef7f34c941375ca171552d44901754050b3214785ac156fa8d748a85f1"
+    },
+    "thesis_assets/tables/table_5_2_rq2_paired_comparisons.tex": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/tables/table_5_2_rq2_paired_comparisons.tex",
+      "role": "thesis_table_tex",
+      "sha256": "91963bc5715a30d821fd5fd851e302bcc229766a0d696f727e615c540edc90be"
+    },
+    "thesis_assets/figures/fig_5_1_rq2_mae_comparison.pdf": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/figures/fig_5_1_rq2_mae_comparison.pdf",
+      "role": "thesis_figure_pdf",
+      "sha256": "e3dcd38fe49429f5a10b162f5cd59f3beec83cf842fdc4b902e137ee82146654"
+    },
+    "thesis_assets/figures/fig_5_1_rq2_mae_comparison.svg": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/figures/fig_5_1_rq2_mae_comparison.svg",
+      "role": "thesis_figure_svg",
+      "sha256": "33ae1105266e19c4debf796f683bcdc120889e53ff17722e729a0da12793662e"
+    },
+    "thesis_assets/figures/fig_5_1_rq2_mae_comparison.png": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/figures/fig_5_1_rq2_mae_comparison.png",
+      "role": "thesis_figure_png",
+      "sha256": "96847bdce176a0de42bf5c9fa412bf8891bcde0c0be45f6c4a7aaa871f78c5e9"
+    },
+    "thesis_assets/figures/fig_5_2_rq2_paired_mae_differences.pdf": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/figures/fig_5_2_rq2_paired_mae_differences.pdf",
+      "role": "thesis_figure_pdf",
+      "sha256": "0b2c630d4360c0d5fbd0656e700388cd723668bdb512373a442a069b3311ddc9"
+    },
+    "thesis_assets/figures/fig_5_2_rq2_paired_mae_differences.svg": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/figures/fig_5_2_rq2_paired_mae_differences.svg",
+      "role": "thesis_figure_svg",
+      "sha256": "af147b21181a116593128227a6bd7f0701b24246c2ab6fc62da9a3e19bbc263e"
+    },
+    "thesis_assets/figures/fig_5_2_rq2_paired_mae_differences.png": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/figures/fig_5_2_rq2_paired_mae_differences.png",
+      "role": "thesis_figure_png",
+      "sha256": "244b4f657078764e9261704d1242eea5b674cbbbdc83f4b1e651b6735f3c62b0"
+    },
+    "thesis_assets/README.md": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/README.md",
+      "role": "thesis_assets_readme",
+      "sha256": "3497b4f009c7222757dceea6b720bd5267c964bd7f7e1665a10d8ab1367e8ce6"
+    }
+  },
+  "source_scripts": {
+    "builder": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/build_stage3_4_evaluation.py",
+      "sha256": "99cdd45763a3b50e682a70a38272c5b1a110cb2a608dd1037ca1b91564fd72d6"
+    },
+    "auditor": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/audit_stage3_4_evaluation.py",
+      "sha256": "74c8e0d31e862c17c4406d07eb30c30bb1b060987590b3c76c76ee02ad30fb30"
+    },
+    "thesis_assets_generator": {
+      "relative_path": "stage3_modeling/stage3_4_rq2_evaluation/thesis_assets/scripts/build_stage3_4_thesis_assets.py",
+      "sha256": "1d62f9f2db46a71b565f56e0ebe67f79a01080031599220e9eff828a080b7ed2"
+    }
+  },
+  "boundary_assertions": {
+    "strict_stage3_4_rq2_only": true,
+    "models_refitted": false,
+    "scalers_refitted": false,
+    "alpha_retuned": false,
+    "candidate_pool_ranked": false,
+    "alternative_specs_evaluated": false
+  }
+}
